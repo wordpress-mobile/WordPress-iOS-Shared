@@ -5,5 +5,16 @@
 //
 
 #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+
+#ifndef IS_IPAD
+#define IS_IPAD   ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad)
+#endif
+#ifndef IS_IPHONE
+#define IS_IPHONE   (!IS_IPAD)
+#endif
+#ifndef IS_RETINA
+#define IS_RETINA ([[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2)
+#endif
+
 #endif
