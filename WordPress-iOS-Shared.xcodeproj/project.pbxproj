@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		11C57791069648A182814A7F /* libPods-WordPress-iOS-SharedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB27C06297E44D28B1C3115 /* libPods-WordPress-iOS-SharedTests.a */; };
-		2BAB44B0A3ED425CA3CFAE3B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 89FB46481F8C48FF92F81210 /* libPods.a */; };
+		5491CC08CC7A4237B0CD8FA9 /* libPods-WordPress-iOS-SharedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */; };
 		931A0FEE192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
 		931A0FFC192A9CDD00D3CC11 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FFB192A9CDD00D3CC11 /* XCTest.framework */; };
 		931A0FFD192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
@@ -29,6 +28,7 @@
 		931A1038192AA34300D3CC11 /* WPImageSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1037192AA34300D3CC11 /* WPImageSourceTest.m */; };
 		931A103B192AA35B00D3CC11 /* AsyncTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A103A192AA35B00D3CC11 /* AsyncTestHelper.m */; };
 		931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 931A103D192AA3DB00D3CC11 /* test-image.jpg */; };
+		F45AF04D6E344F4CBD2A4B65 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B405468864FD7A0D16B74 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2577020A2B0B46A39FABB4D7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
-		6BB27C06297E44D28B1C3115 /* libPods-WordPress-iOS-SharedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-SharedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89FB46481F8C48FF92F81210 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		344E7D676BD744309E866B0C /* Pods-WordPress-iOS-SharedTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.xcconfig"; path = "Pods/Pods-WordPress-iOS-SharedTests.xcconfig"; sourceTree = "<group>"; };
 		931A0FEA192A9CDD00D3CC11 /* libWordPress-iOS-Shared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWordPress-iOS-Shared.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A0FED192A9CDD00D3CC11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		931A0FF1192A9CDD00D3CC11 /* WordPress-iOS-Shared-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Prefix.pch"; sourceTree = "<group>"; };
@@ -91,7 +89,9 @@
 		931A1039192AA35B00D3CC11 /* AsyncTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncTestHelper.h; sourceTree = "<group>"; };
 		931A103A192AA35B00D3CC11 /* AsyncTestHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncTestHelper.m; sourceTree = "<group>"; };
 		931A103D192AA3DB00D3CC11 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
-		FEA9860A69754E7D85E760E0 /* Pods-WordPress-iOS-SharedTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.xcconfig"; path = "Pods/Pods-WordPress-iOS-SharedTests.xcconfig"; sourceTree = "<group>"; };
+		A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-SharedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB8B405468864FD7A0D16B74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41764475ADE4A768BB073D2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				931A0FEE192A9CDD00D3CC11 /* Foundation.framework in Frameworks */,
-				2BAB44B0A3ED425CA3CFAE3B /* libPods.a in Frameworks */,
+				F45AF04D6E344F4CBD2A4B65 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 				931A0FFC192A9CDD00D3CC11 /* XCTest.framework in Frameworks */,
 				931A0FFF192A9CDD00D3CC11 /* UIKit.framework in Frameworks */,
 				931A0FFD192A9CDD00D3CC11 /* Foundation.framework in Frameworks */,
-				11C57791069648A182814A7F /* libPods-WordPress-iOS-SharedTests.a in Frameworks */,
+				5491CC08CC7A4237B0CD8FA9 /* libPods-WordPress-iOS-SharedTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,8 +126,8 @@
 				931A1003192A9CDD00D3CC11 /* WordPress-iOS-SharedTests */,
 				931A0FEC192A9CDD00D3CC11 /* Frameworks */,
 				931A0FEB192A9CDD00D3CC11 /* Products */,
-				2577020A2B0B46A39FABB4D7 /* Pods.xcconfig */,
-				FEA9860A69754E7D85E760E0 /* Pods-WordPress-iOS-SharedTests.xcconfig */,
+				F41764475ADE4A768BB073D2 /* Pods.xcconfig */,
+				344E7D676BD744309E866B0C /* Pods-WordPress-iOS-SharedTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,8 +146,8 @@
 				931A0FED192A9CDD00D3CC11 /* Foundation.framework */,
 				931A0FFB192A9CDD00D3CC11 /* XCTest.framework */,
 				931A0FFE192A9CDD00D3CC11 /* UIKit.framework */,
-				89FB46481F8C48FF92F81210 /* libPods.a */,
-				6BB27C06297E44D28B1C3115 /* libPods-WordPress-iOS-SharedTests.a */,
+				AB8B405468864FD7A0D16B74 /* libPods.a */,
+				A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 931A100D192A9CDD00D3CC11 /* Build configuration list for PBXNativeTarget "WordPress-iOS-Shared" */;
 			buildPhases = (
-				2F8D47C3B12B4E5DADE337AC /* Check Pods Manifest.lock */,
+				D865F76D3A71404FA05F3833 /* Check Pods Manifest.lock */,
 				931A0FE6192A9CDD00D3CC11 /* Sources */,
 				931A0FE7192A9CDD00D3CC11 /* Frameworks */,
 				931A0FE8192A9CDD00D3CC11 /* CopyFiles */,
@@ -269,7 +269,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 931A1010192A9CDD00D3CC11 /* Build configuration list for PBXNativeTarget "WordPress-iOS-SharedTests" */;
 			buildPhases = (
-				ED99D60BE3774963A5159C9F /* Check Pods Manifest.lock */,
+				052C5B3CA7F142FD9B13727E /* Check Pods Manifest.lock */,
 				931A0FF6192A9CDD00D3CC11 /* Sources */,
 				931A0FF7192A9CDD00D3CC11 /* Frameworks */,
 				931A0FF8192A9CDD00D3CC11 /* Resources */,
@@ -340,7 +340,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-WordPress-iOS-SharedTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2F8D47C3B12B4E5DADE337AC /* Check Pods Manifest.lock */ = {
+		052C5B3CA7F142FD9B13727E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,7 +370,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ED99D60BE3774963A5159C9F /* Check Pods Manifest.lock */ = {
+		D865F76D3A71404FA05F3833 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -507,12 +507,12 @@
 		};
 		931A100E192A9CDD00D3CC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2577020A2B0B46A39FABB4D7 /* Pods.xcconfig */;
+			baseConfigurationReference = F41764475ADE4A768BB073D2 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/WordPress_iOS_Shared.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -520,12 +520,12 @@
 		};
 		931A100F192A9CDD00D3CC11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2577020A2B0B46A39FABB4D7 /* Pods.xcconfig */;
+			baseConfigurationReference = F41764475ADE4A768BB073D2 /* Pods.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/WordPress_iOS_Shared.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -533,7 +533,7 @@
 		};
 		931A1011192A9CDD00D3CC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEA9860A69754E7D85E760E0 /* Pods-WordPress-iOS-SharedTests.xcconfig */;
+			baseConfigurationReference = 344E7D676BD744309E866B0C /* Pods-WordPress-iOS-SharedTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -554,7 +554,7 @@
 		};
 		931A1012192A9CDD00D3CC11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FEA9860A69754E7D85E760E0 /* Pods-WordPress-iOS-SharedTests.xcconfig */;
+			baseConfigurationReference = 344E7D676BD744309E866B0C /* Pods-WordPress-iOS-SharedTests.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
