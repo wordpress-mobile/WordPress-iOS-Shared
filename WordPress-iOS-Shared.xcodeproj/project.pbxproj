@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5491CC08CC7A4237B0CD8FA9 /* libPods-WordPress-iOS-SharedTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */; };
+		9309B52D192BEECC00B69F69 /* WordPressShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 9309B52C192BEECC00B69F69 /* WordPressShared.m */; };
 		931A0FEE192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
 		931A0FFC192A9CDD00D3CC11 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FFB192A9CDD00D3CC11 /* XCTest.framework */; };
 		931A0FFD192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		344E7D676BD744309E866B0C /* Pods-WordPress-iOS-SharedTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.xcconfig"; path = "Pods/Pods-WordPress-iOS-SharedTests.xcconfig"; sourceTree = "<group>"; };
+		9309B52B192BEECC00B69F69 /* WordPressShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressShared.h; path = Exclude/WordPressShared.h; sourceTree = "<group>"; };
+		9309B52C192BEECC00B69F69 /* WordPressShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressShared.m; path = Exclude/WordPressShared.m; sourceTree = "<group>"; };
 		931A0FEA192A9CDD00D3CC11 /* libWordPress-iOS-Shared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWordPress-iOS-Shared.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A0FED192A9CDD00D3CC11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		931A0FF1192A9CDD00D3CC11 /* WordPress-iOS-Shared-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Prefix.pch"; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				931A0FF1192A9CDD00D3CC11 /* WordPress-iOS-Shared-Prefix.pch */,
+				9309B52B192BEECC00B69F69 /* WordPressShared.h */,
+				9309B52C192BEECC00B69F69 /* WordPressShared.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9309B52D192BEECC00B69F69 /* WordPressShared.m in Sources */,
 				931A1016192A9D5200D3CC11 /* NSString+Util.m in Sources */,
 				931A1023192A9DFC00D3CC11 /* WPStyleGuide.m in Sources */,
 				931A102F192A9E3200D3CC11 /* WPTableViewSectionHeaderView.m in Sources */,
@@ -512,6 +518,7 @@
 				DSTROOT = /tmp/WordPress_iOS_Shared.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch";
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -525,6 +532,7 @@
 				DSTROOT = /tmp/WordPress_iOS_Shared.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch";
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
