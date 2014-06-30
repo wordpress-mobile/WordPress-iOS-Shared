@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/WordPressiOS"
   s.platform     = :ios, "7.0"
   s.source       = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :branch => "feature/fonts" }
-  s.source_files  = "WordPress-iOS-Shared
+  s.source_files  = "WordPress-iOS-Shared"
   s.exclude_files = "WordPress-iOS-Shared/Exclude"
   s.ios.resource_bundle = { 'WordPress-iOS-Shared' => 'WordPress-iOS-Shared/Assets/*.ttf' }
   # s.public_header_files = "Classes/**/*.h"
