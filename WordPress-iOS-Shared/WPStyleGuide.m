@@ -154,32 +154,32 @@
 
 + (UIColor *)baseLighterBlue
 {
-    return [UIColor colorWithRed:30/255.0f green:140/255.0f blue:190/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
 }
 
 + (UIColor *)baseDarkerBlue
 {
-    return [UIColor colorWithRed:0/255.0f green:116/255.0f blue:162/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
 }
 
 + (UIColor *)lightBlue
 {
-	return [UIColor colorWithRed:120/255.0f green:200/255.0f blue:230/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:120/255.0f green:220/255.0f blue:250/255.0f alpha:1.0f];
 }
 
 + (UIColor *)newKidOnTheBlockBlue
 {
-	return [UIColor colorWithRed:46/255.0f green:162/255.0f blue:204/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:0/255.0f green:170/255.0f blue:220/255.0f alpha:1.0f];
 }
 
 + (UIColor *)midnightBlue
 {
-	return [UIColor colorWithRed:0/255.0f green:86/255.0f blue:132/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:0/255.0f green:80/255.0f blue:130/255.0f alpha:1.0f];
 }
 
 + (UIColor *)jazzyOrange
 {
-	return [UIColor colorWithRed:241/255.0f green:131/255.0f blue:30/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:240/255.0f green:130/255.0f blue:30/255.0f alpha:1.0f];
 }
 
 + (UIColor *)fireOrange
@@ -194,37 +194,37 @@
 
 + (UIColor *)littleEddieGrey
 {
-	return [UIColor colorWithRed:51/255.0f green:51/255.0f blue:51/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:50/255.0f green:65/255.0f blue:85/255.0f alpha:1.0f];
 }
 
 + (UIColor *)whisperGrey
 {
-    return  [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:1.0f];
+    return  [UIColor colorWithRed:82/255.0f green:122/255.0f blue:148/255.0f alpha:1.0f];
 }
 
 + (UIColor *)allTAllShadeGrey
 {
-	return  [UIColor colorWithRed:153/255.0f green:153/255.0f blue:153/255.0f alpha:1.0f];
+	return  [UIColor colorWithRed:144/255.0f green:174/255.0f blue:194/255.0f alpha:1.0f];
 }
 
 + (UIColor *)readGrey
 {
-	return [UIColor colorWithRed:221/255.0f green:221/255.0f blue:221/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:210/255.0f green:222/255.0f blue:230/255.0f alpha:1.0f];
 }
 
 + (UIColor *)itsEverywhereGrey
 {
-	return [UIColor colorWithRed:238/255.0f green:238/255.0f blue:238/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:232/255.0f green:240/255.0f blue:247/255.0f alpha:1.0f];
 }
 
 + (UIColor *)darkAsNightGrey
 {
-	return [UIColor colorWithRed:16/255.0f green:16/255.0f blue:16/255.0f alpha:1.0f];
+	return [UIColor colorWithRed:0/255.0f green:80/255.0f blue:130/255.0f alpha:1.0f];
 }
 
 + (UIColor *)textFieldPlaceholderGrey
 {
-    return [UIColor colorWithRed:184.0f/255.0f green:184.0f/255.0f blue:184.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
 }
 
 + (UIColor *)validationErrorRed
@@ -243,11 +243,11 @@
 }
 
 + (UIColor *)statsLighterBlue {
-    return [UIColor colorWithRed:143.0f/255.0f green:186.0f/255.0f blue:203.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
 }
 
 + (UIColor *)statsDarkerBlue {
-    return [UIColor colorWithRed:25.0f/255.0f green:88.0f/255.0f blue:137.0f/255.0f alpha:1.0f];
+    return [UIColor colorWithRed:50.0f/255.0f green:65.0f/255.0f blue:85.0f/255.0f alpha:1.0f];
 }
 
 + (UIColor *)keyboardColor {
@@ -275,12 +275,12 @@
 
 + (UIColor *)notificationsLightGrey
 {
-	return [UIColor colorWithRed:0xF2/255.0 green:0xF2/255.0 blue:0xF2/255.0 alpha:0xFF/255.0];
+	return [UIColor colorWithRed:244/255.0f green:248/255.0f blue:250/255.0f alpha:1.0f];
 }
 
 + (UIColor *)notificationsDarkGrey
 {
-	return [UIColor UIColorFromHex:0xE3E3E3];
+	return [UIColor colorWithRed:210/255.0f green:222/255.0f blue:230/255.0f alpha:1.0f];
 }
 
 + (UIBarButtonItemStyle)barButtonStyleForDone
