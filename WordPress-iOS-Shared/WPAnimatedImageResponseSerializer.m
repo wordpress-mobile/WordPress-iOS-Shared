@@ -23,10 +23,12 @@
 	
 	static NSString* kGifMimeType = @"image/gif";
 	
-	BOOL isNotAGif = ![response.MIMEType isEqualToString:kGifMimeType];
-	BOOL invalidResponse = ![self validateResponse:(NSHTTPURLResponse*)response data:data error:error];
-	BOOL mustBeHandledBySuperclass = invalidResponse || isNotAGif;
-	
+    // if the image is not a GIF
+	BOOL mustBeHandledBySuperclass = ![response.MIMEType isEqualToString:kGifMimeType];
+    if (!mustBeHandledBySuperclass) {
+        mustBeHandledBySuperclass = ![self validateResponse:(NSHTTPURLResponse*)response data:data error:error];
+    }
+
     if (mustBeHandledBySuperclass) {
         image = [super responseObjectForResponse:response
 											data:data
