@@ -7,10 +7,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansLightFontOfSize:(CGFloat)size
 {
+    NSString *resourceName = @"OpenSans-Light";
     NSString *fontName = @"OpenSans-Light";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -22,10 +23,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansItalicFontOfSize:(CGFloat)size
 {
+    NSString *resourceName = @"OpenSans-Italic";
     NSString *fontName = @"OpenSans-Italic";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -37,10 +39,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansLightItalicFontOfSize:(CGFloat)size
 {
+    NSString *resourceName = @"OpenSans-LightItalic";
     NSString *fontName = @"OpenSans-LightItalic";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -52,10 +55,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansBoldFontOfSize:(CGFloat)size
 {
+    NSString *resourceName = @"OpenSans-Bold";
     NSString *fontName = @"OpenSans-Bold";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -67,10 +71,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansBoldItalicFontOfSize:(CGFloat)size
 {
+    NSString *resourceName = @"OpenSans-BoldItalic";
     NSString *fontName = @"OpenSans-BoldItalic";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -82,10 +87,11 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 
 + (UIFont *)openSansRegularFontOfSize:(CGFloat)size
 {
-    NSString *fontName = @"OpenSans-Regular";
+    NSString *resourceName = @"OpenSans-Regular";
+    NSString *fontName = @"OpenSans";
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontNamed:fontName];
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
@@ -95,7 +101,7 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
     return font;
 }
 
-+ (void)dynamicallyLoadFontNamed:(NSString *)name
++ (void)dynamicallyLoadFontResourceNamed:(NSString *)name
 {
     NSString *resourceName = [NSString stringWithFormat:@"%@/%@", kBundle, name];
     NSURL *url = [[NSBundle mainBundle] URLForResource:resourceName withExtension:@"ttf"];
