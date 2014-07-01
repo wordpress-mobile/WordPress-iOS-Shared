@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = "http://twitter.com/WordPressiOS"
   s.platform     = :ios, "7.0"
   s.source_files = 'WordPress-iOS-Shared'
-  s.resources = ["WordPress-iOS-Shared/Assets/*.ttf"]
+  s.ios.resource_bundle = { 'WordPress-iOS-Shared' => 'WordPress-iOS-Shared/Assets/*.ttf' }
   s.exclude_files = 'WordPress-iOS-Shared/Exclude'
   s.prefix_header_file = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch"
   s.requires_arc = true
