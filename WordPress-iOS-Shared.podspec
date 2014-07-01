@@ -14,11 +14,10 @@ Pod::Spec.new do |s|
   s.author             = { "Aaron Douglas" => "astralbodies@gmail.com" }
   s.social_media_url   = "http://twitter.com/WordPressiOS"
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :branch => "feature/fonts" }
-  s.source_files  = "WordPress-iOS-Shared"
-  s.exclude_files = "WordPress-iOS-Shared/Exclude"
+  s.source_files = 'WordPress-iOS-Shared'
+#s.resources = ["Assets/*.ttf"]
   s.ios.resource_bundle = { 'WordPress-iOS-Shared' => 'WordPress-iOS-Shared/Assets/*.ttf' }
-  # s.public_header_files = "Classes/**/*.h"
+  s.exclude_files = 'WordPress-iOS-Shared/Exclude'
   s.prefix_header_file = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch"
   s.requires_arc = true
 
