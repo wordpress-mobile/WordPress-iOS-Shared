@@ -153,6 +153,11 @@
 
 #pragma mark - Colors
 
++ (UIColor *)wordPressBlue
+{
+    return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
+}
+
 + (UIColor *)baseLighterBlue
 {
     return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
