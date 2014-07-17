@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="584" y="184"/>
         </scene>
-        <!--ColorsTableViewController-->
+        <!--Colors-->
         <scene sceneID="D8y-YQ-Lxc">
             <objects>
-                <tableViewController id="gST-5B-Eng" userLabel="ColorsTableViewController" customClass="ColorsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="gST-5B-Eng" userLabel="Colors" customClass="ColorsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="N3d-nx-SQg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="1160" y="-128"/>
         </scene>
-        <!--Fonts Table View Controller-->
+        <!--Fonts-->
         <scene sceneID="4MO-fZ-5pR">
             <objects>
-                <tableViewController id="oZF-a3-L4m" customClass="FontsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="oZF-a3-L4m" userLabel="Fonts" customClass="FontsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="22" sectionFooterHeight="22" id="gxK-Ar-DfH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
