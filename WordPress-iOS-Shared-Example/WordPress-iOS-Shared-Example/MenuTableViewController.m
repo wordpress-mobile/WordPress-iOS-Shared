@@ -12,7 +12,7 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.menuItems = @[@"Fonts", @"Colors"];
+        self.menuItems = @[NSLocalizedString(@"Fonts", nil) , NSLocalizedString(@"Colors", nil)];
         self.title = NSLocalizedString(@"WordPress iOS Shared Entities", nil);
     }
     return self;
