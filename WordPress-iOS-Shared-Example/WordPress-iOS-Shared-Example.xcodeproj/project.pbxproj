@@ -14,13 +14,13 @@
 		852FBB55197755CC002C5249 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB54197755CC002C5249 /* main.m */; };
 		852FBB59197755CC002C5249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB58197755CC002C5249 /* AppDelegate.m */; };
 		852FBB5C197755CC002C5249 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main_iPhone.storyboard */; };
-		852FBB5F197755CC002C5249 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5D197755CC002C5249 /* Main_iPad.storyboard */; };
 		852FBB64197755CC002C5249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB63197755CC002C5249 /* Images.xcassets */; };
 		852FBB6B197755CC002C5249 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB6A197755CC002C5249 /* XCTest.framework */; };
 		852FBB6C197755CC002C5249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB48197755CC002C5249 /* Foundation.framework */; };
 		852FBB6D197755CC002C5249 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB4C197755CC002C5249 /* UIKit.framework */; };
 		852FBB75197755CC002C5249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB73197755CC002C5249 /* InfoPlist.strings */; };
 		852FBB77197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB76197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m */; };
+		85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A420C41977993100F0F603 /* FontTableViewCell.m */; };
 		85D9A73A197786FC00480221 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A739197786FC00480221 /* MenuTableViewController.m */; };
 		85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73C1977891600480221 /* FontsTableViewController.m */; };
 		85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73F1977891F00480221 /* ColorsTableViewController.m */; };
@@ -51,13 +51,14 @@
 		852FBB57197755CC002C5249 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		852FBB58197755CC002C5249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		852FBB5B197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
-		852FBB5E197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		852FBB63197755CC002C5249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		852FBB69197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordPress-iOS-Shared-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FBB6A197755CC002C5249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		852FBB72197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordPress-iOS-Shared-ExampleTests-Info.plist"; sourceTree = "<group>"; };
 		852FBB74197755CC002C5249 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		852FBB76197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordPress_iOS_Shared_ExampleTests.m; sourceTree = "<group>"; };
+		85A420C31977993100F0F603 /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
+		85A420C41977993100F0F603 /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
 		85D9A738197786FC00480221 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
 		85D9A739197786FC00480221 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		85D9A73B1977891600480221 /* FontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsTableViewController.h; sourceTree = "<group>"; };
@@ -129,7 +130,6 @@
 				852FBB57197755CC002C5249 /* AppDelegate.h */,
 				852FBB58197755CC002C5249 /* AppDelegate.m */,
 				852FBB5A197755CC002C5249 /* Main_iPhone.storyboard */,
-				852FBB5D197755CC002C5249 /* Main_iPad.storyboard */,
 				852FBB63197755CC002C5249 /* Images.xcassets */,
 				852FBB4F197755CC002C5249 /* Supporting Files */,
 				85D9A738197786FC00480221 /* MenuTableViewController.h */,
@@ -138,6 +138,8 @@
 				85D9A73C1977891600480221 /* FontsTableViewController.m */,
 				85D9A73E1977891F00480221 /* ColorsTableViewController.h */,
 				85D9A73F1977891F00480221 /* ColorsTableViewController.m */,
+				85A420C31977993100F0F603 /* FontTableViewCell.h */,
+				85A420C41977993100F0F603 /* FontTableViewCell.m */,
 			);
 			path = "WordPress-iOS-Shared-Example";
 			sourceTree = "<group>";
@@ -249,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				852FBB5F197755CC002C5249 /* Main_iPad.storyboard in Resources */,
 				852FBB64197755CC002C5249 /* Images.xcassets in Resources */,
 				852FBB5C197755CC002C5249 /* Main_iPhone.storyboard in Resources */,
 				852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */,
@@ -304,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */,
 				85D9A73A197786FC00480221 /* MenuTableViewController.m in Sources */,
 				85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */,
 				852FBB59197755CC002C5249 /* AppDelegate.m in Sources */,
@@ -345,14 +347,6 @@
 				852FBB5B197755CC002C5249 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		852FBB5D197755CC002C5249 /* Main_iPad.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				852FBB5E197755CC002C5249 /* Base */,
-			);
-			name = Main_iPad.storyboard;
 			sourceTree = "<group>";
 		};
 		852FBB73197755CC002C5249 /* InfoPlist.strings */ = {

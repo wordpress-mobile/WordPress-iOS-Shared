@@ -1,14 +1,32 @@
-//
-//  FontsTableViewController.m
-//  WordPress-iOS-Shared-Example
-//
-//  Created by Sendhil Panchadsaram on 7/16/14.
-//  Copyright (c) 2014 WordPress. All rights reserved.
-//
-
 #import "FontsTableViewController.h"
+#import "FontTableViewCell.h"
+#import <WordPress-iOS-Shared/WPStyleGuide.h>
 
 @interface FontsTableViewController ()
+
+@property (nonatomic, strong) NSArray *fonts;
+
+@end
+
+@interface FontAndAttributes : NSObject
+
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) UIFont *font;
+@property (nonatomic, strong) NSDictionary *attributes;
+
++ (instancetype)initWithTitle:(NSString *)title andFont:(UIFont *)font andAttributes:(NSDictionary *)attributes;
+
+@end
+
+@implementation FontAndAttributes
+
++ (instancetype)initWithTitle:(NSString *)title andFont:(UIFont *)font andAttributes:(NSDictionary *)attributes {
+    FontAndAttributes *fontAndAttributes = [[[self class] alloc] init];
+    fontAndAttributes.title = title;
+    fontAndAttributes.font = font;
+    fontAndAttributes.attributes = attributes;
+    return fontAndAttributes;
+}
 
 @end
 
@@ -18,6 +36,21 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.title = NSLocalizedString(@"Fonts", nil);
+        self.fonts = @[
+                       [FontAndAttributes initWithTitle:@"Large Post Title Font" andFont:[WPStyleGuide largePostTitleFont] andAttributes:[WPStyleGuide largePostTitleAttributes]],
+                       [FontAndAttributes initWithTitle:@"Post Title Font" andFont:[WPStyleGuide postTitleFont] andAttributes:nil],
+                       [FontAndAttributes initWithTitle:@"Post Title Font Bold" andFont:[WPStyleGuide postTitleFontBold] andAttributes:[WPStyleGuide postTitleAttributes]],
+                       [FontAndAttributes initWithTitle:@"Subtitle Font" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributes]],
+                       [FontAndAttributes initWithTitle:@"Subtitle Font Italic" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleItalicAttributes]],
+                       [FontAndAttributes initWithTitle:@"Subtitle Font Bold" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributesBold]],
+                       [FontAndAttributes initWithTitle:@"Label Font" andFont:[WPStyleGuide labelFont] andAttributes:[WPStyleGuide labelAttributes]],
+                       [FontAndAttributes initWithTitle:@"Label Font Normal" andFont:[WPStyleGuide labelFontNormal] andAttributes:[WPStyleGuide labelAttributes]],
+                       [FontAndAttributes initWithTitle:@"Regular Text Font" andFont:[WPStyleGuide regularTextFont] andAttributes:[WPStyleGuide regularTextAttributes]],
+                       [FontAndAttributes initWithTitle:@"Regular Text Bold" andFont:[WPStyleGuide regularTextFontBold] andAttributes:[WPStyleGuide regularTextAttributes]],
+                       [FontAndAttributes initWithTitle:@"Tableview Text Font" andFont:[WPStyleGuide tableviewTextFont] andAttributes:nil],
+                       [FontAndAttributes initWithTitle:@"Tableview Subtitle Font" andFont:[WPStyleGuide tableviewSubtitleFont] andAttributes:nil],
+                       [FontAndAttributes initWithTitle:@"Tableview Section Header Font" andFont:[WPStyleGuide tableviewSectionHeaderFont] andAttributes:nil],
+                       ];
     }
     return self;
 }
@@ -25,94 +58,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return [self.fonts count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+    FontTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FontsCell" forIndexPath:indexPath];
+    FontAndAttributes *fontAndAttributes = self.fonts[indexPath.row];
+    cell.title.text = fontAndAttributes.title;
+    if ([fontAndAttributes.attributes count] > 0) {
+        cell.title.attributedText = [[NSAttributedString alloc] initWithString:fontAndAttributes.title attributes:fontAndAttributes.attributes];
+    }
+    cell.title.font = fontAndAttributes.font;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
