@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MenuTableViewController.h
 //  WordPress-iOS-Shared-Example
 //
 //  Created by Sendhil Panchadsaram on 7/16/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MenuTableViewController : UITableViewController
 
 @end
