@@ -37,19 +37,19 @@
     if (self) {
         self.title = NSLocalizedString(@"Fonts", nil);
         self.fonts = @[
-                       [FontDetails initWithTitle:@"Large Post Title Font" andFont:[WPStyleGuide largePostTitleFont] andAttributes:[WPStyleGuide largePostTitleAttributes]],
-                       [FontDetails initWithTitle:@"Post Title Font" andFont:[WPStyleGuide postTitleFont] andAttributes:nil],
-                       [FontDetails initWithTitle:@"Post Title Font Bold" andFont:[WPStyleGuide postTitleFontBold] andAttributes:[WPStyleGuide postTitleAttributes]],
-                       [FontDetails initWithTitle:@"Subtitle Font" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributes]],
-                       [FontDetails initWithTitle:@"Subtitle Font Italic" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleItalicAttributes]],
-                       [FontDetails initWithTitle:@"Subtitle Font Bold" andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributesBold]],
-                       [FontDetails initWithTitle:@"Label Font" andFont:[WPStyleGuide labelFont] andAttributes:[WPStyleGuide labelAttributes]],
-                       [FontDetails initWithTitle:@"Label Font Normal" andFont:[WPStyleGuide labelFontNormal] andAttributes:[WPStyleGuide labelAttributes]],
-                       [FontDetails initWithTitle:@"Regular Text Font" andFont:[WPStyleGuide regularTextFont] andAttributes:[WPStyleGuide regularTextAttributes]],
-                       [FontDetails initWithTitle:@"Regular Text Bold" andFont:[WPStyleGuide regularTextFontBold] andAttributes:[WPStyleGuide regularTextAttributes]],
-                       [FontDetails initWithTitle:@"Tableview Text Font" andFont:[WPStyleGuide tableviewTextFont] andAttributes:nil],
-                       [FontDetails initWithTitle:@"Tableview Subtitle Font" andFont:[WPStyleGuide tableviewSubtitleFont] andAttributes:nil],
-                       [FontDetails initWithTitle:@"Tableview Section Header Font" andFont:[WPStyleGuide tableviewSectionHeaderFont] andAttributes:nil],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Large Post Title Font", nil) andFont:[WPStyleGuide largePostTitleFont] andAttributes:[WPStyleGuide largePostTitleAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Post Title Font", nil) andFont:[WPStyleGuide postTitleFont] andAttributes:nil],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Post Title Font Bold", nil) andFont:[WPStyleGuide postTitleFontBold] andAttributes:[WPStyleGuide postTitleAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Subtitle Font", nil) andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Subtitle Font Italic", nil) andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleItalicAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Subtitle Font Bold", nil) andFont:[WPStyleGuide subtitleFont] andAttributes:[WPStyleGuide subtitleAttributesBold]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Label Font", nil) andFont:[WPStyleGuide labelFont] andAttributes:[WPStyleGuide labelAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Label Font Normal", nil) andFont:[WPStyleGuide labelFontNormal] andAttributes:[WPStyleGuide labelAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Regular Text Font", nil) andFont:[WPStyleGuide regularTextFont] andAttributes:[WPStyleGuide regularTextAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Regular Text Bold", nil) andFont:[WPStyleGuide regularTextFontBold] andAttributes:[WPStyleGuide regularTextAttributes]],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Tableview Text Font", nil) andFont:[WPStyleGuide tableviewTextFont] andAttributes:nil],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Tableview Subtitle Font", nil) andFont:[WPStyleGuide tableviewSubtitleFont] andAttributes:nil],
+                       [FontDetails initWithTitle:NSLocalizedString(@"Tableview Section Header Font", nil) andFont:[WPStyleGuide tableviewSectionHeaderFont] andAttributes:nil],
                        ];
     }
     return self;
