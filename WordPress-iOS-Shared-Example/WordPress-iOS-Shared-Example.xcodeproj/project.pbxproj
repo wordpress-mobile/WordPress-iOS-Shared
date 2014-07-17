@@ -15,27 +15,12 @@
 		852FBB59197755CC002C5249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB58197755CC002C5249 /* AppDelegate.m */; };
 		852FBB5C197755CC002C5249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main.storyboard */; };
 		852FBB64197755CC002C5249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB63197755CC002C5249 /* Images.xcassets */; };
-		852FBB6B197755CC002C5249 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB6A197755CC002C5249 /* XCTest.framework */; };
-		852FBB6C197755CC002C5249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB48197755CC002C5249 /* Foundation.framework */; };
-		852FBB6D197755CC002C5249 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB4C197755CC002C5249 /* UIKit.framework */; };
-		852FBB75197755CC002C5249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB73197755CC002C5249 /* InfoPlist.strings */; };
-		852FBB77197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB76197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m */; };
 		85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A420C41977993100F0F603 /* FontTableViewCell.m */; };
 		85D9A73A197786FC00480221 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A739197786FC00480221 /* MenuTableViewController.m */; };
 		85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73C1977891600480221 /* FontsTableViewController.m */; };
 		85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73F1977891F00480221 /* ColorsTableViewController.m */; };
 		EC81CE668DE94D458BA9910B /* libPods-WordPress-iOS-Shared-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		852FBB6E197755CC002C5249 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 852FBB3D197755CC002C5249 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 852FBB44197755CC002C5249;
-			remoteInfo = "WordPress-iOS-Shared-Example";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-Shared-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,11 +37,7 @@
 		852FBB58197755CC002C5249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		852FBB5B197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		852FBB63197755CC002C5249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		852FBB69197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordPress-iOS-Shared-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FBB6A197755CC002C5249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		852FBB72197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordPress-iOS-Shared-ExampleTests-Info.plist"; sourceTree = "<group>"; };
-		852FBB74197755CC002C5249 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		852FBB76197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordPress_iOS_Shared_ExampleTests.m; sourceTree = "<group>"; };
 		85A420C31977993100F0F603 /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
 		85A420C41977993100F0F603 /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
 		85D9A738197786FC00480221 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
@@ -79,16 +60,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		852FBB66197755CC002C5249 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				852FBB6B197755CC002C5249 /* XCTest.framework in Frameworks */,
-				852FBB6D197755CC002C5249 /* UIKit.framework in Frameworks */,
-				852FBB6C197755CC002C5249 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				852FBB4E197755CC002C5249 /* WordPress-iOS-Shared-Example */,
-				852FBB70197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests */,
 				852FBB47197755CC002C5249 /* Frameworks */,
 				852FBB46197755CC002C5249 /* Products */,
 				4062594BBCE643DE9121F1BF /* Pods-WordPress-iOS-Shared-Example.xcconfig */,
@@ -107,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */,
-				852FBB69197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -155,24 +124,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		852FBB70197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB76197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m */,
-				852FBB71197755CC002C5249 /* Supporting Files */,
-			);
-			path = "WordPress-iOS-Shared-ExampleTests";
-			sourceTree = "<group>";
-		};
-		852FBB71197755CC002C5249 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB72197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests-Info.plist */,
-				852FBB73197755CC002C5249 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,24 +146,6 @@
 			productReference = 852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		852FBB68197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 852FBB7D197755CC002C5249 /* Build configuration list for PBXNativeTarget "WordPress-iOS-Shared-ExampleTests" */;
-			buildPhases = (
-				852FBB65197755CC002C5249 /* Sources */,
-				852FBB66197755CC002C5249 /* Frameworks */,
-				852FBB67197755CC002C5249 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				852FBB6F197755CC002C5249 /* PBXTargetDependency */,
-			);
-			name = "WordPress-iOS-Shared-ExampleTests";
-			productName = "WordPress-iOS-Shared-ExampleTests";
-			productReference = 852FBB69197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,11 +154,6 @@
 			attributes = {
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = WordPress;
-				TargetAttributes = {
-					852FBB68197755CC002C5249 = {
-						TestTargetID = 852FBB44197755CC002C5249;
-					};
-				};
 			};
 			buildConfigurationList = 852FBB40197755CC002C5249 /* Build configuration list for PBXProject "WordPress-iOS-Shared-Example" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -241,7 +169,6 @@
 			projectRoot = "";
 			targets = (
 				852FBB44197755CC002C5249 /* WordPress-iOS-Shared-Example */,
-				852FBB68197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,14 +181,6 @@
 				852FBB64197755CC002C5249 /* Images.xcassets in Resources */,
 				852FBB5C197755CC002C5249 /* Main.storyboard in Resources */,
 				852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		852FBB67197755CC002C5249 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				852FBB75197755CC002C5249 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,23 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		852FBB65197755CC002C5249 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				852FBB77197755CC002C5249 /* WordPress_iOS_Shared_ExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		852FBB6F197755CC002C5249 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 852FBB44197755CC002C5249 /* WordPress-iOS-Shared-Example */;
-			targetProxy = 852FBB6E197755CC002C5249 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		852FBB51197755CC002C5249 /* InfoPlist.strings */ = {
@@ -347,14 +250,6 @@
 				852FBB5B197755CC002C5249 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		852FBB73197755CC002C5249 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				852FBB74197755CC002C5249 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -460,46 +355,6 @@
 			};
 			name = Release;
 		};
-		852FBB7E197755CC002C5249 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordPress-iOS-Shared-Example.app/WordPress-iOS-Shared-Example";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WordPress-iOS-Shared-ExampleTests/WordPress-iOS-Shared-ExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		852FBB7F197755CC002C5249 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordPress-iOS-Shared-Example.app/WordPress-iOS-Shared-Example";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
-				INFOPLIST_FILE = "WordPress-iOS-Shared-ExampleTests/WordPress-iOS-Shared-ExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -517,15 +372,6 @@
 			buildConfigurations = (
 				852FBB7B197755CC002C5249 /* Debug */,
 				852FBB7C197755CC002C5249 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		852FBB7D197755CC002C5249 /* Build configuration list for PBXNativeTarget "WordPress-iOS-Shared-ExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				852FBB7E197755CC002C5249 /* Debug */,
-				852FBB7F197755CC002C5249 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
