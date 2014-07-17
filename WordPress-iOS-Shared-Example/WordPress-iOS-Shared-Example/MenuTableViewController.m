@@ -49,6 +49,7 @@
     } else {
         [self performSegueWithIdentifier:@"ColorsSegue" sender:nil];
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end
