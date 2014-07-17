@@ -13,7 +13,7 @@
 		852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB51197755CC002C5249 /* InfoPlist.strings */; };
 		852FBB55197755CC002C5249 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB54197755CC002C5249 /* main.m */; };
 		852FBB59197755CC002C5249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB58197755CC002C5249 /* AppDelegate.m */; };
-		852FBB5C197755CC002C5249 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main_iPhone.storyboard */; };
+		852FBB5C197755CC002C5249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main.storyboard */; };
 		852FBB64197755CC002C5249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB63197755CC002C5249 /* Images.xcassets */; };
 		852FBB6B197755CC002C5249 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB6A197755CC002C5249 /* XCTest.framework */; };
 		852FBB6C197755CC002C5249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB48197755CC002C5249 /* Foundation.framework */; };
@@ -50,7 +50,7 @@
 		852FBB56197755CC002C5249 /* WordPress-iOS-Shared-Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Example-Prefix.pch"; sourceTree = "<group>"; };
 		852FBB57197755CC002C5249 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		852FBB58197755CC002C5249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		852FBB5B197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		852FBB5B197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		852FBB63197755CC002C5249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		852FBB69197755CC002C5249 /* WordPress-iOS-Shared-ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WordPress-iOS-Shared-ExampleTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FBB6A197755CC002C5249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -129,7 +129,7 @@
 			children = (
 				852FBB57197755CC002C5249 /* AppDelegate.h */,
 				852FBB58197755CC002C5249 /* AppDelegate.m */,
-				852FBB5A197755CC002C5249 /* Main_iPhone.storyboard */,
+				852FBB5A197755CC002C5249 /* Main.storyboard */,
 				852FBB63197755CC002C5249 /* Images.xcassets */,
 				852FBB4F197755CC002C5249 /* Supporting Files */,
 				85D9A738197786FC00480221 /* MenuTableViewController.h */,
@@ -252,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				852FBB64197755CC002C5249 /* Images.xcassets in Resources */,
-				852FBB5C197755CC002C5249 /* Main_iPhone.storyboard in Resources */,
+				852FBB5C197755CC002C5249 /* Main.storyboard in Resources */,
 				852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,12 +341,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		852FBB5A197755CC002C5249 /* Main_iPhone.storyboard */ = {
+		852FBB5A197755CC002C5249 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				852FBB5B197755CC002C5249 /* Base */,
 			);
-			name = Main_iPhone.storyboard;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		852FBB73197755CC002C5249 /* InfoPlist.strings */ = {
