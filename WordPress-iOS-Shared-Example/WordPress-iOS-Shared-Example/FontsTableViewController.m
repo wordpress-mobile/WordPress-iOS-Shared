@@ -21,7 +21,7 @@
 @implementation FontDetails
 
 + (instancetype)initWithTitle:(NSString *)title andFont:(UIFont *)font andAttributes:(NSDictionary *)attributes {
-    FontDetails *fontDetails = [[[self class] alloc] init];
+    FontDetails *fontDetails = [[self class] new];
     fontDetails.title = title;
     fontDetails.font = font;
     fontDetails.attributes = attributes;

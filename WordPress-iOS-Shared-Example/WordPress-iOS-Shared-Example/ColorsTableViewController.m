@@ -19,7 +19,7 @@
 @implementation ColorDetails
 
 + (instancetype)initWithTitle:(NSString *)title andColor:(UIColor *)color {
-    ColorDetails *colorDetails = [[[self class] alloc] init];
+    ColorDetails *colorDetails = [[self class] new];
     colorDetails.title = title;
     colorDetails.color = color;
     return colorDetails;
