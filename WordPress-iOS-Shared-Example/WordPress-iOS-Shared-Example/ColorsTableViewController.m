@@ -3,7 +3,7 @@
 
 @interface ColorsTableViewController ()
 
-@property (nonatomic, strong) NSArray *colors;
+@property (nonatomic, strong) NSMutableArray *colors;
 
 @end
 
@@ -33,32 +33,10 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.title = NSLocalizedString(@"Colors", nil);
-        self.colors = @[
-                        [ColorDetails initWithTitle:NSLocalizedString(@"WordPress Blue", nil) andColor:[WPStyleGuide wordPressBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Base Lighter Blue", nil) andColor:[WPStyleGuide baseLighterBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Base Darker Blue", nil) andColor:[WPStyleGuide baseDarkerBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Light Blue", nil) andColor:[WPStyleGuide lightBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"New Kid on the Block Blue", nil) andColor:[WPStyleGuide newKidOnTheBlockBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Midnight Blue", nil) andColor:[WPStyleGuide midnightBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Jazzy Orange", nil) andColor:[WPStyleGuide jazzyOrange]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Fire Orange", nil) andColor:[WPStyleGuide fireOrange]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Big Eddie Grey", nil) andColor:[WPStyleGuide bigEddieGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Little Eddie Grey", nil) andColor:[WPStyleGuide littleEddieGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Whisper Grey", nil) andColor:[WPStyleGuide whisperGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"All T All Shade Grey", nil) andColor:[WPStyleGuide allTAllShadeGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Read Grey", nil) andColor:[WPStyleGuide readGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"It's Everywhere Grey", nil) andColor:[WPStyleGuide itsEverywhereGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Dark As Night Grey", nil) andColor:[WPStyleGuide darkAsNightGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Text Field Placeholder Grey", nil) andColor:[WPStyleGuide textFieldPlaceholderGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Validation Error Red", nil) andColor:[WPStyleGuide validationErrorRed]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Stats Lighter Blue", nil) andColor:[WPStyleGuide statsLighterBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Stats Darker Blue", nil) andColor:[WPStyleGuide statsDarkerBlue]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Table View Action Color", nil) andColor:[WPStyleGuide tableViewActionColor]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Button Action Color", nil) andColor:[WPStyleGuide buttonActionColor]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Keyboard Color", nil) andColor:[WPStyleGuide keyboardColor]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Notifiations Light Grey", nil) andColor:[WPStyleGuide notificationsLightGrey]],
-                        [ColorDetails initWithTitle:NSLocalizedString(@"Notifiations Dark Grey", nil) andColor:[WPStyleGuide notificationsDarkGrey]],
-                        ];
+        self.colors = [NSMutableArray array];
+        for (NSDictionary *colorInformation in [self colorDetails]) {
+            [self.colors addObject:[ColorDetails initWithTitle:colorInformation[@"title"] andColor:colorInformation[@"color"]]];
+        }
     }
     return self;
 }
@@ -89,6 +67,38 @@
     cell.backgroundColor = colorDetails.color;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+
+#pragma mark - Private Methods
+
+- (NSArray *)colorDetails {
+    NSArray *colorDetails = @[
+                              @{@"title": @"WordPress Blue", @"color": [WPStyleGuide wordPressBlue]},
+                              @{@"title": @"Base Lighter Blue", @"color": [WPStyleGuide baseLighterBlue]},
+                              @{@"title": @"Base Darker Blue", @"color": [WPStyleGuide baseLighterBlue]},
+                              @{@"title": @"Light Blue", @"color": [WPStyleGuide baseLighterBlue]},
+                              @{@"title": @"New Kid on the Block Blue", @"color": [WPStyleGuide newKidOnTheBlockBlue]},
+                              @{@"title": @"Midnight Blue", @"color": [WPStyleGuide midnightBlue]},
+                              @{@"title": @"Jazzy Orange", @"color": [WPStyleGuide jazzyOrange]},
+                              @{@"title": @"Fire Orange", @"color": [WPStyleGuide fireOrange]},
+                              @{@"title": @"Big Eddie Grey", @"color": [WPStyleGuide bigEddieGrey]},
+                              @{@"title": @"Little Eddie Grey", @"color": [WPStyleGuide littleEddieGrey]},
+                              @{@"title": @"Whisper Grey", @"color": [WPStyleGuide whisperGrey]},
+                              @{@"title": @"All T All Shade Grey", @"color": [WPStyleGuide allTAllShadeGrey]},
+                              @{@"title": @"Read Grey", @"color": [WPStyleGuide readGrey]},
+                              @{@"title": @"It's Everywhere Grey", @"color": [WPStyleGuide itsEverywhereGrey]},
+                              @{@"title": @"Dark as Night Grey", @"color": [WPStyleGuide darkAsNightGrey]},
+                              @{@"title": @"Text Field Placeholder Grey", @"color": [WPStyleGuide textFieldPlaceholderGrey]},
+                              @{@"title": @"Validation Error Red", @"color": [WPStyleGuide validationErrorRed]},
+                              @{@"title": @"Stats Lighter Blue", @"color": [WPStyleGuide statsLighterBlue]},
+                              @{@"title": @"Stats Darker Blue", @"color": [WPStyleGuide statsDarkerBlue]},
+                              @{@"title": @"Table View Action Color", @"color": [WPStyleGuide tableViewActionColor]},
+                              @{@"title": @"Button Action Color", @"color": [WPStyleGuide buttonActionColor]},
+                              @{@"title": @"Keyboard Color", @"color": [WPStyleGuide keyboardColor]},
+                              @{@"title": @"Notifications Light Grey", @"color": [WPStyleGuide notificationsLightGrey]},
+                              @{@"title": @"Notifications Dark Grey", @"color": [WPStyleGuide notificationsDarkGrey]},
+                              ];
+    return colorDetails;
 }
 
 @end
