@@ -16,7 +16,6 @@
 		852FBB5C197755CC002C5249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main.storyboard */; };
 		852FBB64197755CC002C5249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB63197755CC002C5249 /* Images.xcassets */; };
 		85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A420C41977993100F0F603 /* FontTableViewCell.m */; };
-		85D9A73A197786FC00480221 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A739197786FC00480221 /* MenuTableViewController.m */; };
 		85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73C1977891600480221 /* FontsTableViewController.m */; };
 		85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73F1977891F00480221 /* ColorsTableViewController.m */; };
 		EC81CE668DE94D458BA9910B /* libPods-WordPress-iOS-Shared-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */; };
@@ -40,8 +39,6 @@
 		852FBB6A197755CC002C5249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		85A420C31977993100F0F603 /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
 		85A420C41977993100F0F603 /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
-		85D9A738197786FC00480221 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewController.h; sourceTree = "<group>"; };
-		85D9A739197786FC00480221 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		85D9A73B1977891600480221 /* FontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsTableViewController.h; sourceTree = "<group>"; };
 		85D9A73C1977891600480221 /* FontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsTableViewController.m; sourceTree = "<group>"; };
 		85D9A73E1977891F00480221 /* ColorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsTableViewController.h; sourceTree = "<group>"; };
@@ -101,8 +98,6 @@
 				852FBB5A197755CC002C5249 /* Main.storyboard */,
 				852FBB63197755CC002C5249 /* Images.xcassets */,
 				852FBB4F197755CC002C5249 /* Supporting Files */,
-				85D9A738197786FC00480221 /* MenuTableViewController.h */,
-				85D9A739197786FC00480221 /* MenuTableViewController.m */,
 				85D9A73B1977891600480221 /* FontsTableViewController.h */,
 				85D9A73C1977891600480221 /* FontsTableViewController.m */,
 				85D9A73E1977891F00480221 /* ColorsTableViewController.h */,
@@ -225,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */,
-				85D9A73A197786FC00480221 /* MenuTableViewController.m in Sources */,
 				85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */,
 				852FBB59197755CC002C5249 /* AppDelegate.m in Sources */,
 				85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */,
