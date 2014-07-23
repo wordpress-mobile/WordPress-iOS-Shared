@@ -4,7 +4,7 @@
 #import "WPAnimatedImageResponseSerializer.h"
 
 static int ddLogLevel = LOG_LEVEL_INFO;
-
+NSUInteger const WPImageSourceMaxConcurrentOperations = 10;
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 @implementation WPImageSource {
@@ -34,6 +34,7 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
     self = [super init];
     if (self) {
         _downloadingQueue = [[NSOperationQueue alloc] init];
+        [_downloadingQueue setMaxConcurrentOperationCount:WPImageSourceMaxConcurrentOperations];
         _urlDownloadsInProgress = [[NSMutableSet alloc] init];
         _successBlocks = [[NSMutableDictionary alloc] init];
         _failureBlocks = [[NSMutableDictionary alloc] init];
