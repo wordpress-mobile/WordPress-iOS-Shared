@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
                    This is the first step required to build WordPress-iOS with UI components.
                    DESC
 
-  s.homepage     = "http://make.wordpress.org/mobile"
+  s.homepage     = "http://apps.wordpress.org"
   s.license      = "GPLv2"
   s.author             = { "Aaron Douglas" => "astralbodies@gmail.com" }
   s.social_media_url   = "http://twitter.com/WordPressiOS"
