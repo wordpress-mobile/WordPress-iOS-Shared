@@ -2,6 +2,12 @@
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <Reachability.h>
 
+@interface CTNetworkHelper () {
+    CTTelephonyNetworkInfo *_telephonyInfo;
+}
+
+@end
+
 @implementation CTNetworkHelper
 
 + (id)sharedNetworkHelper
@@ -11,20 +17,27 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedHelper = [[self alloc] init];
+    });
 
-        CTTelephonyNetworkInfo *telephonyInfo = [CTTelephonyNetworkInfo new];
-        [sharedHelper updateMaxConcurrentDownloadsForCurrentConnection:telephonyInfo];
+    return sharedHelper;
+}
+
+- (id)init
+{
+    if (self = [super init]) {
+        _telephonyInfo = [CTTelephonyNetworkInfo new];
+        [self updateMaxConcurrentDownloadsForCurrentConnection:_telephonyInfo];
 
         [NSNotificationCenter.defaultCenter addObserverForName:CTRadioAccessTechnologyDidChangeNotification
                                                         object:nil
                                                          queue:nil
                                                     usingBlock:^(NSNotification *note)
          {
-             [[CTNetworkHelper sharedNetworkHelper] updateMaxConcurrentDownloadsForCurrentConnection:telephonyInfo];
+             [self updateMaxConcurrentDownloadsForCurrentConnection:_telephonyInfo];
          }];
-    });
+    }
 
-    return sharedHelper;
+    return self;
 }
 
 #pragma mark - Private Methods
