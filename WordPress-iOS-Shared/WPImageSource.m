@@ -5,7 +5,6 @@
 #import "CTNetworkHelper.h"
 
 static int ddLogLevel = LOG_LEVEL_INFO;
-NSUInteger const WPImageSourceMaxConcurrentOperations = 10;
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 @implementation WPImageSource {
