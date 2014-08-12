@@ -2,6 +2,7 @@
 #import "WPImageSource.h"
 
 #import "WPAnimatedImageResponseSerializer.h"
+#import "CTNetworkHelper.h"
 
 static int ddLogLevel = LOG_LEVEL_INFO;
 NSUInteger const WPImageSourceMaxConcurrentOperations = 10;
@@ -34,7 +35,10 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
     self = [super init];
     if (self) {
         _downloadingQueue = [[NSOperationQueue alloc] init];
-        [_downloadingQueue setMaxConcurrentOperationCount:WPImageSourceMaxConcurrentOperations];
+
+        CTNetworkHelper *networkHelper = [CTNetworkHelper sharedNetworkHelper];
+        [_downloadingQueue setMaxConcurrentOperationCount:networkHelper.maxConcurrentDownloads];
+
         _urlDownloadsInProgress = [[NSMutableSet alloc] init];
         _successBlocks = [[NSMutableDictionary alloc] init];
         _failureBlocks = [[NSMutableDictionary alloc] init];
