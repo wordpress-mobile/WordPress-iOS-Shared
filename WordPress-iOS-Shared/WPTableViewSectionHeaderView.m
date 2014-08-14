@@ -1,6 +1,5 @@
 #import "WPTableViewSectionHeaderView.h"
 #import "WPTableViewCell.h"
-#import "WPStyleGuide.h"
 #import "NSString+Util.h"
 
 @interface WPTableViewSectionHeaderView() {
