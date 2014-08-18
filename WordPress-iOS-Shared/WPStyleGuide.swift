@@ -245,7 +245,7 @@ import UIKit
     }
 
     class func spacerForNavigationBarButtonItems() -> UIBarButtonItem {
-        var spacerButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace,
+        var spacerButton = UIBarButtonItem(barButtonSystemItem: .FixedSpace,
                                                         target: nil,
                                                         action: nil)
         spacerButton.width = -16.0
