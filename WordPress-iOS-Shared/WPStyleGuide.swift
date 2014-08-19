@@ -95,6 +95,27 @@ import UIKit
         static let nuxFormPlaceholderText = UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
         static let notificationsLightGrey = UIColor(red: 244/255.0, green: 248/255.0, blue: 250/255.0, alpha: 1.0)
         static let notificationsDarkGrey = UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
+
+        static let keyboardColor = { () -> UIColor in
+            let versionString = UIDevice.currentDevice().systemVersion
+            let hasLighterKeyboard = versionString.compare("7.1", options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
+            let is_iPad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
+
+            if hasLighterKeyboard {
+                if is_iPad {
+                    return UIColor(red: 207/255, green: 210/255, blue: 213/255, alpha: 1.0)
+                } else {
+                    return UIColor(red: 220/255, green: 223/255, blue: 226/255, alpha: 1.0)
+                }
+            }
+
+            if is_iPad {
+                return UIColor(red: 217/255, green: 220/255, blue: 220/255, alpha: 223/255)
+            } else {
+                return UIColor(red: 204/255, green: 208/255, blue: 214/255, alpha: 1.0)
+            }
+        }
+
     }
 
     // MARK: Class functions for Obj-C
@@ -121,7 +142,7 @@ import UIKit
     public class func nuxFormPlaceholderText() -> UIColor { return Colors.nuxFormPlaceholderText }
     public class func notificationsLightGrey() -> UIColor { return Colors.notificationsLightGrey }
     public class func notificationsDarkGrey() -> UIColor { return Colors.notificationsDarkGrey }
-
+    public class func keyboardColor() -> UIColor { return Colors.keyboardColor() }
 
     class func barButtonStyleForDone() -> UIBarButtonItemStyle {
         return .Plain
@@ -216,25 +237,5 @@ import UIKit
         let followedString = NSLocalizedString("Following", comment: "User is following the blog.")
         followButton.setTitle(followedString, forState: .Selected)
         followButton.setImage(UIImage(named: "reader-postaction-following"), forState: .Selected)
-    }
-
-    class func keyboardColor() -> UIColor {
-        let versionString = UIDevice.currentDevice().systemVersion
-        let hasLighterKeyboard = versionString.compare("7.1", options: NSStringCompareOptions.NumericSearch) == NSComparisonResult.OrderedAscending
-        let is_iPad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
-
-        if hasLighterKeyboard {
-            if is_iPad {
-                return UIColor(red: 207/255, green: 210/255, blue: 213/255, alpha: 1.0)
-            } else {
-                return UIColor(red: 220/255, green: 223/255, blue: 226/255, alpha: 1.0)
-            }
-        }
-        
-        if is_iPad {
-            return UIColor(red: 217/255, green: 220/255, blue: 220/255, alpha: 223/255)
-        } else {
-            return UIColor(red: 204/255, green: 208/255, blue: 214/255, alpha: 1.0)
-        }
     }
 }
