@@ -1,146 +1,73 @@
 import UIKit
 
-@objc class WPStyleGuide {
+@objc public class WPStyleGuide {
     // MARK: - Fonts
-    class func largePostTitleFont() -> UIFont {
-        return WPFontManager.openSansLightFontOfSize(32.0)
+    struct Fonts {
+        static let largePostTitle = WPFontManager.openSansLightFontOfSize(32.0)
+        static let postTitle = WPFontManager.openSansRegularFontOfSize(16.0)
+        static let postTitleBold = WPFontManager.openSansBoldFontOfSize(16.0)
+        static let subtitle = WPFontManager.openSansRegularFontOfSize(12.0)
+        static let subtitleItalic = WPFontManager.openSansItalicFontOfSize(12.0)
+        static let subtitleBold = WPFontManager.openSansBoldFontOfSize(12.0)
+        static let label = WPFontManager.openSansBoldFontOfSize(10.0)
+        static let labelNormal = WPFontManager.openSansRegularFontOfSize(10.0)
+        static let regularText = WPFontManager.openSansRegularFontOfSize(16.0)
+        static let regularTextBold = WPFontManager.openSansBoldFontOfSize(16.0)
+        static let tableviewText = WPFontManager.openSansRegularFontOfSize(18.0)
+        static let tableviewSubtitle = WPFontManager.openSansLightFontOfSize(18.0)
+        static let tableviewSectionHeader = WPFontManager.openSansBoldFontOfSize(12.0)
     }
 
-    class func largePostTitleAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 35.0
-        paragraphStyle.maximumLineHeight = 35.0
+    // MARK: Class functions for Obj-C
+    public class func largePostTitleFont() -> UIFont { return Fonts.largePostTitle }
+    public class func postTitleFont() -> UIFont { return Fonts.postTitle }
+    public class func postTitleFontBold() -> UIFont { return Fonts.postTitleBold }
+    public class func subtitleFont() -> UIFont { return Fonts.subtitle }
+    public class func subtitleFontItalic() -> UIFont { return Fonts.subtitleItalic }
+    public class func subtitleFontBold() -> UIFont { return Fonts.subtitleBold }
+    public class func labelFont() -> UIFont { return Fonts.label }
+    public class func labelFontNormal() -> UIFont { return Fonts.labelNormal }
+    public class func regularTextFont() -> UIFont { return Fonts.regularText }
+    public class func regularTextFontBold() -> UIFont { return Fonts.regularTextBold }
+    public class func tableviewTextFont() -> UIFont { return Fonts.tableviewText }
+    public class func tableviewSubtitleFont() -> UIFont { return Fonts.tableviewSubtitle }
+    public class func tableviewSectionHeaderFont() -> UIFont { return Fonts.tableviewSectionHeader }
 
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.largePostTitleFont()]
-    }
+    // MARK: - Font Attributes
+    struct FontAttributes {
+        static let largePostTitle = WPStyleGuide.buildParagraphStyle(font: Fonts.largePostTitle, minimumHeight: 35, maximumHeight: 35)
+        static let postTitle = WPStyleGuide.buildParagraphStyle(font: Fonts.postTitle, minimumHeight: 19, maximumHeight: 19)
+        static let postTitleBold = WPStyleGuide.buildParagraphStyle(font: Fonts.postTitleBold, minimumHeight: 19, maximumHeight: 19)
+        static let subtitle = WPStyleGuide.buildParagraphStyle(font: Fonts.subtitle, minimumHeight: 14, maximumHeight: 14)
+        static let subtitleItalic = WPStyleGuide.buildParagraphStyle(font: Fonts.subtitleItalic, minimumHeight: 14, maximumHeight: 14)
+        static let subtitleBold = WPStyleGuide.buildParagraphStyle(font: Fonts.subtitleBold, minimumHeight: 14, maximumHeight: 14)
+        static let label = WPStyleGuide.buildParagraphStyle(font: Fonts.label, minimumHeight: 12, maximumHeight: 12)
+        static let regularText = WPStyleGuide.buildParagraphStyle(font: Fonts.regularText, minimumHeight: 24, maximumHeight: 24)
 
-    class func postTitleFont() -> UIFont {
-        return WPFontManager.openSansRegularFontOfSize(16.0)
-    }
+        static let defaultDTCoreTextOptions = { () -> NSDictionary in
+            let defaultStyles = "blockquote {background-color: #EEEEEE; width: 100%; display: block; padding: 8px 5px 10px 0;}"
 
-    class func postTitleFontBold() -> UIFont {
-        return WPFontManager.openSansBoldFontOfSize(16.0)
-    }
+            var cssStylesheet = DTCSSStylesheet(styleBlock: defaultStyles)
 
-    class func postTitleAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 19.0
-        paragraphStyle.maximumLineHeight = 19.0
+            let is_iPad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
 
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.postTitleFont()]
-    }
-
-    class func postTitleAttributesBold() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 19.0
-        paragraphStyle.maximumLineHeight = 19.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.postTitleFontBold()]
-    }
-
-    class func subtitleFont() -> UIFont {
-        return WPFontManager.openSansRegularFontOfSize(12.0)
-    }
-
-    class func subtitleAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 14.0
-        paragraphStyle.maximumLineHeight = 14.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.subtitleFont()]
-    }
-
-    class func subtitleFontItalic() -> UIFont {
-        return WPFontManager.openSansItalicFontOfSize(12.0)
-    }
-
-    class func subtitleItalicAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 14.0
-        paragraphStyle.maximumLineHeight = 14.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.subtitleFontItalic()]
-    }
-
-    class func subtitleFontBold() -> UIFont {
-        return WPFontManager.openSansBoldFontOfSize(12.0)
-    }
-
-    class func subtitleAttributesBold() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 14.0
-        paragraphStyle.maximumLineHeight = 14.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.subtitleFontBold()]
-    }
-
-    class func labelFont() -> UIFont {
-        return WPFontManager.openSansBoldFontOfSize(10.0)
-    }
-
-    class func labelFontNormal() -> UIFont {
-        return WPFontManager.openSansRegularFontOfSize(10.0)
-    }
-
-    class func labelAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 12.0
-        paragraphStyle.maximumLineHeight = 12.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.labelFont()]
-    }
-
-    class func regularTextFont() -> UIFont {
-        return WPFontManager.openSansRegularFontOfSize(16.0)
-    }
-
-    class func regularTextFontBold() -> UIFont {
-        return WPFontManager.openSansBoldFontOfSize(16.0)
-    }
-
-    class func regularTextAttributes() -> NSDictionary {
-        var paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.minimumLineHeight = 24.0
-        paragraphStyle.maximumLineHeight = 24.0
-
-        return [NSParagraphStyleAttributeName: paragraphStyle,
-                NSFontAttributeName:           self.regularTextFont()]
-    }
-
-    class func tableviewTextFont() -> UIFont {
-        return WPFontManager.openSansRegularFontOfSize(18.0)
-    }
-
-    class func tableviewSubtitleFont() -> UIFont {
-        return WPFontManager.openSansLightFontOfSize(18.0)
-    }
-
-    class func tableviewSectionHeaderFont() -> UIFont {
-        return WPFontManager.openSansBoldFontOfSize(12.0)
-    }
-
-    class func defaultDTCoreTextOptions() -> NSDictionary {
-        let defaultStyles = "blockquote {background-color: #EEEEEE; width: 100%; display: block; padding: 8px 5px 10px 0;}"
-
-        var cssStylesheet = DTCSSStylesheet(styleBlock: defaultStyles)
-
-        let is_iPad = UIDevice.currentDevice().userInterfaceIdiom == .Pad
-
-        return [DTDefaultFontFamily:            "Open Sans",
+            return [DTDefaultFontFamily:            "Open Sans",
                 DTDefaultLineHeightMultiplier:  (is_iPad ? 1.6 : 1.4),
                 DTDefaultFontSize:              (is_iPad ? 18 : 16),
-                DTDefaultTextColor:             self.littleEddieGrey(),
-                DTDefaultLinkColor:             self.baseLighterBlue(),
-                DTDefaultLinkHighlightColor:    self.midnightBlue(),
+                DTDefaultTextColor:             Colors.littleEddieGrey,
+                DTDefaultLinkColor:             Colors.baseLighterBlue,
+                DTDefaultLinkHighlightColor:    Colors.midnightBlue,
                 DTDefaultLinkDecoration:        false,
                 DTDefaultStyleSheet:            cssStylesheet]
+        }
+    }
+
+    private class func buildParagraphStyle(#font: UIFont, minimumHeight: UInt8, maximumHeight: UInt8) -> NSDictionary {
+        var paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.minimumLineHeight = CGFloat(minimumHeight)
+        paragraphStyle.maximumLineHeight = CGFloat(maximumHeight)
+
+        return [NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName: font]
     }
 
     // MARK: - Colors
@@ -169,6 +96,32 @@ import UIKit
         static let notificationsLightGrey = UIColor(red: 244/255.0, green: 248/255.0, blue: 250/255.0, alpha: 1.0)
         static let notificationsDarkGrey = UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
     }
+
+    // MARK: Class functions for Obj-C
+    public class func wordPressBlue() -> UIColor { return Colors.wordPressBlue }
+    public class func baseLighterBlue() -> UIColor { return Colors.baseLighterBlue }
+    public class func baseDarkerBlue() -> UIColor { return Colors.baseDarkerBlue }
+    public class func lightBlue() -> UIColor { return Colors.lightBlue }
+    public class func newKidOnTheBlockBlue() -> UIColor { return Colors.newKidOnTheBlockBlue }
+    public class func midnightBlue() -> UIColor { return Colors.midnightBlue }
+    public class func jazzyOrange() -> UIColor { return Colors.jazzyOrange }
+    public class func fireOrange() -> UIColor { return Colors.fireOrange }
+    public class func bigEddieGrey() -> UIColor { return Colors.bigEddieGrey }
+    public class func littleEddieGrey() -> UIColor { return Colors.littleEddieGrey }
+    public class func whisperGrey() -> UIColor { return Colors.whisperGrey }
+    public class func allTAllShadeGrey() -> UIColor { return Colors.allTAllShadeGrey }
+    public class func readGrey() -> UIColor { return Colors.readGrey }
+    public class func itsEverywhereGrey() -> UIColor { return Colors.itsEverywhereGrey }
+    public class func darkAsNightGrey() -> UIColor { return Colors.darkAsNightGrey }
+    public class func textFieldPlaceholderGrey() -> UIColor { return Colors.textFieldPlaceholderGrey }
+    public class func validationErrorRed() -> UIColor { return Colors.validationErrorRed }
+    public class func tableViewActionColor() -> UIColor { return Colors.tableViewActionColor }
+    public class func buttonActionColor() -> UIColor { return Colors.buttonActionColor }
+    public class func nuxFormText() -> UIColor { return Colors.nuxFormText }
+    public class func nuxFormPlaceholderText() -> UIColor { return Colors.nuxFormPlaceholderText }
+    public class func notificationsLightGrey() -> UIColor { return Colors.notificationsLightGrey }
+    public class func notificationsDarkGrey() -> UIColor { return Colors.notificationsDarkGrey }
+
 
     class func barButtonStyleForDone() -> UIBarButtonItemStyle {
         return .Plain
@@ -200,66 +153,65 @@ import UIKit
     }
 
     class func configureTableViewActionCell(cell: UITableViewCell) {
-        cell.textLabel.font = self.tableviewTextFont()
-        cell.textLabel.textColor = self.tableViewActionColor()
+        cell.textLabel.font = Fonts.tableviewText
+        cell.textLabel.textColor = Colors.tableViewActionColor
     }
 
     class func configureTableViewCell(cell: UITableViewCell) {
-        cell.textLabel.font = self.tableviewTextFont()
-        cell.textLabel.textColor = self.whisperGrey()
+        cell.textLabel.font = Fonts.tableviewText
+        cell.textLabel.textColor = Colors.whisperGrey
         cell.textLabel.sizeToFit()
 
-        cell.detailTextLabel.font = self.tableviewSubtitleFont()
-        cell.detailTextLabel.textColor = self.whisperGrey()
+        cell.detailTextLabel.font = Fonts.tableviewSubtitle
+        cell.detailTextLabel.textColor = Colors.whisperGrey
         cell.detailTextLabel.sizeToFit()
 
         if cell.isKindOfClass(UITableViewTextFieldCell) {
             var tfcell = cell as UITableViewTextFieldCell
-            tfcell.textField.textColor = self.whisperGrey()
+            tfcell.textField.textColor = Colors.whisperGrey
         }
     }
 
     class func configureTableViewTextCell(cell: UITableViewTextFieldCell) {
         self.configureTableViewCell(cell)
-        cell.textField.font = self.tableviewSubtitleFont()
+        cell.textField.font = Fonts.tableviewSubtitle
 
         if cell.textField.enabled {
-            cell.textField.textColor = self.darkAsNightGrey()
+            cell.textField.textColor = Colors.darkAsNightGrey
             cell.textField.textAlignment = .Left
         } else {
-            cell.textField.textColor = self.textFieldPlaceholderGrey()
+            cell.textField.textColor = Colors.textFieldPlaceholderGrey
             cell.textField.textAlignment = .Right
         }
     }
 
     class func configureTableViewSmallSubtitleCell(cell: UITableViewCell) {
         self.configureTableViewCell(cell)
-        cell.detailTextLabel.font = self.subtitleFont()
+        cell.detailTextLabel.font = Fonts.subtitle
     }
 
     class func configureColorsForView(view: UIView, tableView: UITableView) {
         tableView.backgroundView = nil
-        tableView.backgroundColor = self.itsEverywhereGrey()
-        tableView.separatorColor = self.readGrey()
-
-        view.backgroundColor = self.itsEverywhereGrey()
+        tableView.backgroundColor = Colors.itsEverywhereGrey
+        tableView.separatorColor = Colors.readGrey
+        view.backgroundColor = Colors.itsEverywhereGrey
     }
 
     class func configureColorsForView(view: UIView, collectionView: UICollectionView) {
         collectionView.backgroundView = nil
-        collectionView.backgroundColor = self.itsEverywhereGrey()
-        view.backgroundColor = self.itsEverywhereGrey()
+        collectionView.backgroundColor = Colors.itsEverywhereGrey
+        view.backgroundColor = Colors.itsEverywhereGrey
     }
 
     class func configureFollowButton(followButton: UIButton) {
         followButton.contentHorizontalAlignment = .Left
         followButton.backgroundColor = UIColor.clearColor()
-        followButton.titleLabel.font = self.subtitleFont()
+        followButton.titleLabel.font = Fonts.subtitle
 
         let followString = NSLocalizedString("Follow", comment: "Prompt to follow a blog.")
         followButton.setTitle(followString, forState: .Normal)
         followButton.setImage(UIImage(named: "reader-postaction-follow"), forState: .Normal)
-        followButton.setTitleColor(self.allTAllShadeGrey(), forState: .Normal)
+        followButton.setTitleColor(Colors.allTAllShadeGrey, forState: .Normal)
 
         let followedString = NSLocalizedString("Following", comment: "User is following the blog.")
         followButton.setTitle(followedString, forState: .Selected)
