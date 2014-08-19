@@ -144,96 +144,30 @@ import UIKit
     }
 
     // MARK: - Colors
-    class func wordPressBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
-    }
-
-    class func baseLighterBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
-    }
-
-    class func baseDarkerBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
-    }
-
-    class func lightBlue() -> UIColor {
-        return UIColor(red: 120/255.0, green: 220/255.0, blue: 250/255.0, alpha: 1.0)
-    }
-
-    class func newKidOnTheBlockBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 170/255.0, blue: 220/255.0, alpha: 1.0)
-    }
-
-    class func midnightBlue() -> UIColor {
-        return UIColor(red: 0/255.0, green: 80/255.0, blue: 130/255.0, alpha: 1.0)
-    }
-
-    class func jazzyOrange() -> UIColor {
-        return UIColor(red: 240/255.0, green: 130/255.0, blue: 30/255.0, alpha: 1.0)
-    }
-
-    class func fireOrange() -> UIColor {
-        return UIColor(red: 213/255.0, green: 78/255.0, blue: 33/255.0, alpha: 1.0)
-    }
-
-    class func bigEddieGrey() -> UIColor {
-        return UIColor(red: 34/255.0, green: 34/255.0, blue: 34/255.0, alpha: 1.0)
-    }
-
-    class func littleEddieGrey() -> UIColor {
-        return UIColor(red: 50/255.0, green: 65/255.0, blue: 85/255.0, alpha: 1.0)
-    }
-
-    class func whisperGrey() -> UIColor {
-        return UIColor(red: 82/255.0, green: 122/255.0, blue: 148/255.0, alpha: 1.0)
-    }
-
-    class func allTAllShadeGrey() -> UIColor {
-        return UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
-    }
-
-    class func readGrey() -> UIColor {
-        return UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
-    }
-
-    class func itsEverywhereGrey() -> UIColor {
-        return UIColor(red: 232/255.0, green: 240/255.0, blue: 247/255.0, alpha: 1.0)
-    }
-
-    class func darkAsNightGrey() -> UIColor {
-        return UIColor(red: 0/255.0, green: 80/255.0, blue: 130/255.0, alpha: 1.0)
-    }
-
-    class func textFieldPlaceholderGrey() -> UIColor {
-        return UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
-    }
-
-    class func validationErrorRed() -> UIColor {
-        return UIColor(red: 0.7, green: 0.0, blue: 0.0, alpha: 1.0)
-    }
-
-    class func tableViewActionColor() -> UIColor {
-        return self.baseLighterBlue()
-    }
-
-    class func buttonActionColor() -> UIColor {
-        return self.baseLighterBlue()
-    }
-
-    class func nuxFormText() -> UIColor {
-        return UIColor(red: 50/255.0, green: 65/255.0, blue: 85/255.0, alpha: 1.0)
-    }
-
-    class func nuxFormPlaceholderText() -> UIColor {
-        return UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
-    }
-
-    class func notificationsLightGrey() -> UIColor {
-        return UIColor(red: 244/255.0, green: 248/255.0, blue: 250/255.0, alpha: 1.0)
-    }
-
-    class func notificationsDarkGrey() -> UIColor {
-        return UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
+    struct Colors {
+        static let wordPressBlue = UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
+        static let baseLighterBlue = UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
+        static let baseDarkerBlue = UIColor(red: 0/255.0, green: 135/255.0, blue: 190/255.0, alpha: 1.0)
+        static let lightBlue = UIColor(red: 120/255.0, green: 220/255.0, blue: 250/255.0, alpha: 1.0)
+        static let newKidOnTheBlockBlue = UIColor(red: 0/255.0, green: 170/255.0, blue: 220/255.0, alpha: 1.0)
+        static let midnightBlue = UIColor(red: 0/255.0, green: 80/255.0, blue: 130/255.0, alpha: 1.0)
+        static let jazzyOrange = UIColor(red: 240/255.0, green: 130/255.0, blue: 30/255.0, alpha: 1.0)
+        static let fireOrange = UIColor(red: 213/255.0, green: 78/255.0, blue: 33/255.0, alpha: 1.0)
+        static let bigEddieGrey = UIColor(red: 34/255.0, green: 34/255.0, blue: 34/255.0, alpha: 1.0)
+        static let littleEddieGrey = UIColor(red: 50/255.0, green: 65/255.0, blue: 85/255.0, alpha: 1.0)
+        static let whisperGrey = UIColor(red: 82/255.0, green: 122/255.0, blue: 148/255.0, alpha: 1.0)
+        static let allTAllShadeGrey = UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
+        static let readGrey = UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
+        static let itsEverywhereGrey = UIColor(red: 232/255.0, green: 240/255.0, blue: 247/255.0, alpha: 1.0)
+        static let darkAsNightGrey = UIColor(red: 0/255.0, green: 80/255.0, blue: 130/255.0, alpha: 1.0)
+        static let textFieldPlaceholderGrey = UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
+        static let validationErrorRed = UIColor(red: 0.7, green: 0.0, blue: 0.0, alpha: 1.0)
+        static let tableViewActionColor = baseLighterBlue
+        static let buttonActionColor = baseLighterBlue
+        static let nuxFormText = UIColor(red: 50/255.0, green: 65/255.0, blue: 85/255.0, alpha: 1.0)
+        static let nuxFormPlaceholderText = UIColor(red: 144/255.0, green: 174/255.0, blue: 194/255.0, alpha: 1.0)
+        static let notificationsLightGrey = UIColor(red: 244/255.0, green: 248/255.0, blue: 250/255.0, alpha: 1.0)
+        static let notificationsDarkGrey = UIColor(red: 210/255.0, green: 222/255.0, blue: 230/255.0, alpha: 1.0)
     }
 
     class func barButtonStyleForDone() -> UIBarButtonItemStyle {
