@@ -1,6 +1,5 @@
 #import "WPNoResultsView.h"
 #import <QuartzCore/QuartzCore.h>
-#import "WPStyleGuide.h"
 #import "WPNUXUtility.h"
 #import "WPFontManager.h"
 
