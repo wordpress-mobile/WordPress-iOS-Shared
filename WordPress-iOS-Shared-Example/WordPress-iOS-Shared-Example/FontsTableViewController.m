@@ -78,23 +78,22 @@
 #pragma mark - Private Methods
 
 - (NSArray *)fontDetails {
-    NSArray *fontDetails = @[
-                             @{@"title": NSLocalizedString(@"Large Post Title Font", nil), @"font": [WPStyleGuide largePostTitleFont], @"attributes": [WPStyleGuide largePostTitleAttributes]},
-                             @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
-                             @{@"title": NSLocalizedString(@"Post Title Font Bold", nil), @"font": [WPStyleGuide postTitleFontBold], @"attributes": [WPStyleGuide postTitleAttributesBold]},
-                             @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
-                             @{@"title": NSLocalizedString(@"Subtitle Font", nil), @"font": [WPStyleGuide subtitleFont], @"attributes": [WPStyleGuide subtitleAttributes]},
-                             @{@"title": NSLocalizedString(@"Subtitle Font Italic", nil), @"font": [WPStyleGuide subtitleFontItalic], @"attributes": [WPStyleGuide subtitleItalicAttributes]},
-                             @{@"title": NSLocalizedString(@"Subtitle Font Bold", nil), @"font": [WPStyleGuide subtitleFontBold], @"attributes": [WPStyleGuide subtitleAttributesBold]},
-                             @{@"title": NSLocalizedString(@"Label Font", nil), @"font": [WPStyleGuide labelFont], @"attributes": [WPStyleGuide labelAttributes]},
-                             @{@"title": NSLocalizedString(@"Label Font Normal", nil), @"font": [WPStyleGuide labelFontNormal], @"attributes": [WPStyleGuide labelAttributes]},
-                             @{@"title": NSLocalizedString(@"Regular Text Font", nil), @"font": [WPStyleGuide regularTextFont], @"attributes": [WPStyleGuide regularTextAttributes]},
-                             @{@"title": NSLocalizedString(@"Regular Text Font Bold", nil), @"font": [WPStyleGuide regularTextFontBold], @"attributes": [WPStyleGuide regularTextAttributes]},
-                             @{@"title": NSLocalizedString(@"Tableview Text Font", nil), @"font": [WPStyleGuide tableviewTextFont], @"attributes": [NSNull null]},
-                             @{@"title": NSLocalizedString(@"Tableview Subtitle Font", nil), @"font": [WPStyleGuide tableviewSubtitleFont], @"attributes": [NSNull null]},
-                             @{@"title": NSLocalizedString(@"Tableview Section Header Font", nil), @"font": [WPStyleGuide tableviewSectionHeaderFont], @"attributes": [NSNull null]},
-                             ];
-    return fontDetails;
+    return @[
+             @{@"title": NSLocalizedString(@"Large Post Title Font", nil), @"font": [WPStyleGuide largePostTitleFont], @"attributes": [WPStyleGuide largePostTitleAttributes]},
+             @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
+             @{@"title": NSLocalizedString(@"Post Title Font Bold", nil), @"font": [WPStyleGuide postTitleFontBold], @"attributes": [WPStyleGuide postTitleAttributesBold]},
+             @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
+             @{@"title": NSLocalizedString(@"Subtitle Font", nil), @"font": [WPStyleGuide subtitleFont], @"attributes": [WPStyleGuide subtitleAttributes]},
+             @{@"title": NSLocalizedString(@"Subtitle Font Italic", nil), @"font": [WPStyleGuide subtitleFontItalic], @"attributes": [WPStyleGuide subtitleItalicAttributes]},
+             @{@"title": NSLocalizedString(@"Subtitle Font Bold", nil), @"font": [WPStyleGuide subtitleFontBold], @"attributes": [WPStyleGuide subtitleAttributesBold]},
+             @{@"title": NSLocalizedString(@"Label Font", nil), @"font": [WPStyleGuide labelFont], @"attributes": [WPStyleGuide labelAttributes]},
+             @{@"title": NSLocalizedString(@"Label Font Normal", nil), @"font": [WPStyleGuide labelFontNormal], @"attributes": [WPStyleGuide labelAttributes]},
+             @{@"title": NSLocalizedString(@"Regular Text Font", nil), @"font": [WPStyleGuide regularTextFont], @"attributes": [WPStyleGuide regularTextAttributes]},
+             @{@"title": NSLocalizedString(@"Regular Text Font Bold", nil), @"font": [WPStyleGuide regularTextFontBold], @"attributes": [WPStyleGuide regularTextAttributes]},
+             @{@"title": NSLocalizedString(@"Tableview Text Font", nil), @"font": [WPStyleGuide tableviewTextFont], @"attributes": [NSNull null]},
+             @{@"title": NSLocalizedString(@"Tableview Subtitle Font", nil), @"font": [WPStyleGuide tableviewSubtitleFont], @"attributes": [NSNull null]},
+             @{@"title": NSLocalizedString(@"Tableview Section Header Font", nil), @"font": [WPStyleGuide tableviewSectionHeaderFont], @"attributes": [NSNull null]},
+             ];
 }
 
 @end

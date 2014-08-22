@@ -72,33 +72,32 @@
 #pragma mark - Private Methods
 
 - (NSArray *)colorDetails {
-    NSArray *colorDetails = @[
-                              @{@"title": @"WordPress Blue", @"color": [WPStyleGuide wordPressBlue]},
-                              @{@"title": @"Base Lighter Blue", @"color": [WPStyleGuide baseLighterBlue]},
-                              @{@"title": @"Base Darker Blue", @"color": [WPStyleGuide baseLighterBlue]},
-                              @{@"title": @"Light Blue", @"color": [WPStyleGuide baseLighterBlue]},
-                              @{@"title": @"New Kid on the Block Blue", @"color": [WPStyleGuide newKidOnTheBlockBlue]},
-                              @{@"title": @"Midnight Blue", @"color": [WPStyleGuide midnightBlue]},
-                              @{@"title": @"Jazzy Orange", @"color": [WPStyleGuide jazzyOrange]},
-                              @{@"title": @"Fire Orange", @"color": [WPStyleGuide fireOrange]},
-                              @{@"title": @"Big Eddie Grey", @"color": [WPStyleGuide bigEddieGrey]},
-                              @{@"title": @"Little Eddie Grey", @"color": [WPStyleGuide littleEddieGrey]},
-                              @{@"title": @"Whisper Grey", @"color": [WPStyleGuide whisperGrey]},
-                              @{@"title": @"All T All Shade Grey", @"color": [WPStyleGuide allTAllShadeGrey]},
-                              @{@"title": @"Read Grey", @"color": [WPStyleGuide readGrey]},
-                              @{@"title": @"It's Everywhere Grey", @"color": [WPStyleGuide itsEverywhereGrey]},
-                              @{@"title": @"Dark as Night Grey", @"color": [WPStyleGuide darkAsNightGrey]},
-                              @{@"title": @"Text Field Placeholder Grey", @"color": [WPStyleGuide textFieldPlaceholderGrey]},
-                              @{@"title": @"Validation Error Red", @"color": [WPStyleGuide validationErrorRed]},
-                              @{@"title": @"Stats Lighter Blue", @"color": [WPStyleGuide statsLighterBlue]},
-                              @{@"title": @"Stats Darker Blue", @"color": [WPStyleGuide statsDarkerBlue]},
-                              @{@"title": @"Table View Action Color", @"color": [WPStyleGuide tableViewActionColor]},
-                              @{@"title": @"Button Action Color", @"color": [WPStyleGuide buttonActionColor]},
-                              @{@"title": @"Keyboard Color", @"color": [WPStyleGuide keyboardColor]},
-                              @{@"title": @"Notifications Light Grey", @"color": [WPStyleGuide notificationsLightGrey]},
-                              @{@"title": @"Notifications Dark Grey", @"color": [WPStyleGuide notificationsDarkGrey]},
-                              ];
-    return colorDetails;
+    return @[
+             @{@"title": @"WordPress Blue", @"color": [WPStyleGuide wordPressBlue]},
+             @{@"title": @"Base Lighter Blue", @"color": [WPStyleGuide baseLighterBlue]},
+             @{@"title": @"Base Darker Blue", @"color": [WPStyleGuide baseLighterBlue]},
+             @{@"title": @"Light Blue", @"color": [WPStyleGuide baseLighterBlue]},
+             @{@"title": @"New Kid on the Block Blue", @"color": [WPStyleGuide newKidOnTheBlockBlue]},
+             @{@"title": @"Midnight Blue", @"color": [WPStyleGuide midnightBlue]},
+             @{@"title": @"Jazzy Orange", @"color": [WPStyleGuide jazzyOrange]},
+             @{@"title": @"Fire Orange", @"color": [WPStyleGuide fireOrange]},
+             @{@"title": @"Big Eddie Grey", @"color": [WPStyleGuide bigEddieGrey]},
+             @{@"title": @"Little Eddie Grey", @"color": [WPStyleGuide littleEddieGrey]},
+             @{@"title": @"Whisper Grey", @"color": [WPStyleGuide whisperGrey]},
+             @{@"title": @"All T All Shade Grey", @"color": [WPStyleGuide allTAllShadeGrey]},
+             @{@"title": @"Read Grey", @"color": [WPStyleGuide readGrey]},
+             @{@"title": @"It's Everywhere Grey", @"color": [WPStyleGuide itsEverywhereGrey]},
+             @{@"title": @"Dark as Night Grey", @"color": [WPStyleGuide darkAsNightGrey]},
+             @{@"title": @"Text Field Placeholder Grey", @"color": [WPStyleGuide textFieldPlaceholderGrey]},
+             @{@"title": @"Validation Error Red", @"color": [WPStyleGuide validationErrorRed]},
+             @{@"title": @"Table View Action Color", @"color": [WPStyleGuide tableViewActionColor]},
+             @{@"title": @"Button Action Color", @"color": [WPStyleGuide buttonActionColor]},
+             @{@"title": @"Keyboard Color", @"color": [WPStyleGuide keyboardColor]},
+             @{@"title": @"Notifications Light Grey", @"color": [WPStyleGuide notificationsLightGrey]},
+             @{@"title": @"Notifications Dark Grey", @"color": [WPStyleGuide notificationsDarkGrey]},
+             @{@"title": @"NUX Form Text", @"color": [WPStyleGuide nuxFormText]},
+             @{@"title": @"NUX Form Placeholder Text", @"color": [WPStyleGuide nuxFormPlaceholderText]}
+             ];
 }
 
 @end
