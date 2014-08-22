@@ -2,9 +2,9 @@
 #import "WPImageSource.h"
 
 #import "WPAnimatedImageResponseSerializer.h"
+#import "CTNetworkHelper.h"
 
 static int ddLogLevel = LOG_LEVEL_INFO;
-
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 @implementation WPImageSource {
@@ -34,6 +34,10 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
     self = [super init];
     if (self) {
         _downloadingQueue = [[NSOperationQueue alloc] init];
+
+        CTNetworkHelper *networkHelper = [CTNetworkHelper sharedNetworkHelper];
+        [_downloadingQueue setMaxConcurrentOperationCount:networkHelper.maxConcurrentDownloads];
+
         _urlDownloadsInProgress = [[NSMutableSet alloc] init];
         _successBlocks = [[NSMutableDictionary alloc] init];
         _failureBlocks = [[NSMutableDictionary alloc] init];
@@ -46,7 +50,11 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
     [self downloadImageForURL:url authToken:nil withSuccess:success failure:failure];
 }
 
-- (void)downloadImageForURL:(NSURL *)url authToken:(NSString *)authToken withSuccess:(void (^)(UIImage *))success failure:(void (^)(NSError *))failure {
+- (void)downloadImageForURL:(NSURL *)url
+                  authToken:(NSString *)authToken
+                withSuccess:(void (^)(UIImage *))success
+                    failure:(void (^)(NSError *))failure
+{
     NSParameterAssert(url != nil);
     
     [self addCallbackForURL:url withSuccess:success failure:failure];
@@ -59,17 +67,22 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 #pragma mark - Downloader
 
-- (void)startDownloadForURL:(NSURL *)url authToken:(NSString *)authToken {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+- (void)startDownloadForURL:(NSURL *)url authToken:(NSString *)authToken
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^
+    {
         NSURL *requestURL = url;
         if (authToken) {
             if (![url.absoluteString hasPrefix:@"https"]) {
-                NSString *sslUrl = [url.absoluteString stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"];
+                NSString *sslUrl = [url.absoluteString stringByReplacingOccurrencesOfString:@"http://"
+                                                                                 withString:@"https://"];
                 requestURL = [NSURL URLWithString:sslUrl];
             }
         }
         
-        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:60];
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL
+                                                               cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                                           timeoutInterval:60];
         if (authToken) {
             [request addValue:[NSString stringWithFormat:@"Bearer %@", authToken] forHTTPHeaderField:@"Authorization"];
         }
@@ -122,7 +135,8 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 - (void)downloadSucceededWithNilImageForURL:(NSURL *)url response:(NSHTTPURLResponse *)response
 {
-    DDLogError(@"WPImageSource download completed sucessfully but the image was nil. Headers: %@", [response allHeaderFields]);
+    DDLogError(@"WPImageSource download completed sucessfully but the image was nil. Headers: %@",
+               [response allHeaderFields]);
     NSString *description = [NSString stringWithFormat:@"A download request ended successfully but the image was nil. URL: %@", [url absoluteString]];
     NSError *error = [NSError errorWithDomain:WPImageSourceErrorDomain
                                          code:WPImageSourceErrorNilImage
