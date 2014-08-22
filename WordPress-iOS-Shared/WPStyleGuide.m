@@ -248,14 +248,6 @@
     return [WPStyleGuide baseLighterBlue];
 }
 
-+ (UIColor *)statsLighterBlue {
-    return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
-}
-
-+ (UIColor *)statsDarkerBlue {
-    return [UIColor colorWithRed:50.0f/255.0f green:65.0f/255.0f blue:85.0f/255.0f alpha:1.0f];
-}
-
 + (UIColor *)keyboardColor {
     // Pre iOS 7.1 uses a the lighter keyboard background.
     // There doesn't seem to be a good way to get the keyboard background color
