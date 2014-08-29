@@ -2,13 +2,14 @@
 #import "UITableViewTextFieldCell.h"
 #import "UIColor+Helpers.h"
 #import <DTCoreText/DTCoreText.h>
+#import "WPFontManager.h"
 
 @implementation WPStyleGuide
 
 #pragma mark - Fonts
 + (UIFont *)largePostTitleFont
 {
-    return [UIFont fontWithName:@"OpenSans-Light" size:32.0];
+    return [WPFontManager openSansLightFontOfSize:32.0];
 }
 
 + (NSDictionary *)largePostTitleAttributes
@@ -21,12 +22,12 @@
 
 + (UIFont *)postTitleFont
 {
-    return [UIFont fontWithName:@"OpenSans" size:16.0];
+    return [WPFontManager openSansRegularFontOfSize:16.0];
 }
 
 + (UIFont *)postTitleFontBold
 {
-    return [UIFont fontWithName:@"OpenSans-Bold" size:16.0];
+    return [WPFontManager openSansBoldFontOfSize:16.0];
 }
 
 + (NSDictionary *)postTitleAttributes
@@ -46,7 +47,7 @@
 
 + (UIFont *)subtitleFont
 {
-    return [UIFont fontWithName:@"OpenSans" size:12.0];
+    return [WPFontManager openSansRegularFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleAttributes
@@ -59,7 +60,7 @@
 
 + (UIFont *)subtitleFontItalic
 {
-    return [UIFont fontWithName:@"OpenSans-Italic" size:12.0];
+    return [WPFontManager openSansItalicFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleItalicAttributes
@@ -72,7 +73,7 @@
 
 + (UIFont *)subtitleFontBold
 {
-    return [UIFont fontWithName:@"OpenSans-Bold" size:12.0];
+    return [WPFontManager openSansBoldFontOfSize:12.0];
 }
 
 + (NSDictionary *)subtitleAttributesBold
@@ -85,12 +86,12 @@
 
 + (UIFont *)labelFont
 {
-    return [UIFont fontWithName:@"OpenSans-Bold" size:10.0];
+    return [WPFontManager openSansBoldFontOfSize:10.0];
 }
 
 + (UIFont *)labelFontNormal
 {
-    return [UIFont fontWithName:@"OpenSans" size:10.0];
+    return [WPFontManager openSansRegularFontOfSize:10.0];
 }
 
 + (NSDictionary *)labelAttributes
@@ -103,12 +104,12 @@
 
 + (UIFont *)regularTextFont
 {
-    return [UIFont fontWithName:@"OpenSans" size:16.0];
+    return [WPFontManager openSansRegularFontOfSize:16.0];
 }
 
 + (UIFont *)regularTextFontBold
 {
-    return [UIFont fontWithName:@"OpenSans-Bold" size:16.0];    
+    return [WPFontManager openSansBoldFontOfSize:16.0];
 }
 
 + (NSDictionary *)regularTextAttributes
@@ -121,17 +122,17 @@
 
 + (UIFont *)tableviewTextFont
 {
-    return [UIFont fontWithName:@"OpenSans" size:18.0];
+    return [WPFontManager openSansRegularFontOfSize:18.0];
 }
 
 + (UIFont *)tableviewSubtitleFont
 {
-    return [UIFont fontWithName:@"OpenSans-Light" size:18.0];
+    return [WPFontManager openSansLightFontOfSize:18.0];
 }
 
 + (UIFont *)tableviewSectionHeaderFont
 {
-    return [UIFont fontWithName:@"OpenSans-Bold" size:12.0];
+    return [WPFontManager openSansBoldFontOfSize:12.0];
 }
 
 + (NSDictionary *)defaultDTCoreTextOptions
@@ -151,6 +152,11 @@
 }
 
 #pragma mark - Colors
+
++ (UIColor *)wordPressBlue
+{
+    return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
+}
 
 + (UIColor *)baseLighterBlue
 {
@@ -232,6 +238,14 @@
     return [UIColor colorWithRed:0.7 green:0.0 blue:0.0 alpha:1.0];
 }
 
++ (UIColor *)nuxFormText {
+    return [UIColor colorWithRed:50.0f/255.0f green:65.0f/255.0f blue:85.0f/255.0f alpha:1.0f];
+}
+
++ (UIColor *)nuxFormPlaceholderText {
+    return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
+}
+
 + (UIColor *)tableViewActionColor
 {
     return [WPStyleGuide baseLighterBlue];
@@ -240,14 +254,6 @@
 + (UIColor *)buttonActionColor
 {
     return [WPStyleGuide baseLighterBlue];
-}
-
-+ (UIColor *)statsLighterBlue {
-    return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
-}
-
-+ (UIColor *)statsDarkerBlue {
-    return [UIColor colorWithRed:50.0f/255.0f green:65.0f/255.0f blue:85.0f/255.0f alpha:1.0f];
 }
 
 + (UIColor *)keyboardColor {
@@ -377,7 +383,7 @@
     [followButton setTitle:followedString forState:UIControlStateSelected];
     [followButton setImage:[UIImage imageNamed:@"reader-postaction-follow"] forState:UIControlStateNormal];
     [followButton setImage:[UIImage imageNamed:@"reader-postaction-following"] forState:UIControlStateSelected];
-    [followButton setTitleColor:[UIColor colorWithHexString:@"aaa"] forState:UIControlStateNormal];
+    [followButton setTitleColor:[self allTAllShadeGrey] forState:UIControlStateNormal];
 }
 
 @end
