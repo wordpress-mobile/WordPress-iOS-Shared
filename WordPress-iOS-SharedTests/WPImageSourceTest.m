@@ -22,6 +22,61 @@
     [super tearDown];
 }
 
+- (void)testSendTokensToWordPressDotCom
+{
+    NSString *requestUrl = @"http://test.wordpress.com/images/test-image.jpg";
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    __block NSString *lastAuthHeader = nil;
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+    }];
+
+    WPImageSource *source = [WPImageSource sharedSource];
+
+    ATHStart();
+    [source downloadImageForURL:url
+                      authToken:@"TOKEN"
+                    withSuccess:^(UIImage *image) {
+                        ATHNotify();
+                    } failure:^(NSError *error) {
+                        XCTFail();
+                        ATHNotify();
+                    }];
+    ATHEnd();
+
+    XCTAssertEqualObjects(lastAuthHeader, @"Bearer TOKEN");
+}
+
+- (void)testDontSendTokensOutsideWordPressDotCom
+{
+    NSString *requestUrl = @"http://test.blog/images/test-image.jpg";
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    __block NSString *lastAuthHeader = nil;
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+    }];
+
+    WPImageSource *source = [WPImageSource sharedSource];
+
+    ATHStart();
+    [source downloadImageForURL:url
+                      authToken:@"TOKEN"
+                    withSuccess:^(UIImage *image) {
+                        ATHNotify();
+                    } failure:^(NSError *error) {
+                        XCTFail();
+                        ATHNotify();
+                    }];
+    ATHEnd();
+    XCTAssertNil(lastAuthHeader);
+}
+
 - (void)testImagesArentDownloadedTwice
 {
     NSString *requestUrl = @"http://test.blog/images/test-image.jpg";
