@@ -49,7 +49,7 @@
     NSString *webColor = nil;
     
     // This method only works for RGB colors
-    if (self && CGColorGetNumberOfComponents(self.CGColor) == 4)
+    if (CGColorGetNumberOfComponents(self.CGColor) == 4)
     {
         // Get the red, green and blue components
         const CGFloat *components = CGColorGetComponents(self.CGColor);
@@ -61,11 +61,10 @@
         blue = roundf(components[2] * 255.0);
         
         // Convert with %02x (use 02 to always get two chars)
-        webColor = [[NSString alloc]initWithFormat:@"%02lx%02lx%02lx", (long)red, (long)green, (long)blue];
+        webColor = [[NSString alloc] initWithFormat:@"%02lx%02lx%02lx", (long)red, (long)green, (long)blue];
     }
     
     return webColor;
-    
 }
 
 @end
