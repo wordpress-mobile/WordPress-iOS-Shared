@@ -55,13 +55,12 @@
         const CGFloat *components = CGColorGetComponents(self.CGColor);
         
         // These components range from 0.0 till 1.0 and need to be converted to 0 till 255
-        CGFloat red, green, blue;
-        red = roundf(components[0] * 255.0);
-        green = roundf(components[1] * 255.0);
-        blue = roundf(components[2] * 255.0);
+        CGFloat red = roundf(components[0] * 255.0);
+        CGFloat green = roundf(components[1] * 255.0);
+        CGFloat blue = roundf(components[2] * 255.0);
         
         // Convert with %02x (use 02 to always get two chars)
-        webColor = [[NSString alloc] initWithFormat:@"%02lx%02lx%02lx", (long)red, (long)green, (long)blue];
+        webColor = [NSString stringWithFormat:@"%02lx%02lx%02lx", (long)red, (long)green, (long)blue];
     }
     
     return webColor;
