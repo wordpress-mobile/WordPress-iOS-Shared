@@ -90,6 +90,7 @@
              @{@"title": NSLocalizedString(@"Label Font Normal", nil), @"font": [WPStyleGuide labelFontNormal], @"attributes": [WPStyleGuide labelAttributes]},
              @{@"title": NSLocalizedString(@"Regular Text Font", nil), @"font": [WPStyleGuide regularTextFont], @"attributes": [WPStyleGuide regularTextAttributes]},
              @{@"title": NSLocalizedString(@"Regular Text Font Bold", nil), @"font": [WPStyleGuide regularTextFontBold], @"attributes": [WPStyleGuide regularTextAttributes]},
+             @{@"title": NSLocalizedString(@"Regular Text Font Semibold", nil), @"font": [WPStyleGuide regularTextFontSemiBold], @"attributes": [WPStyleGuide regularTextAttributes]},
              @{@"title": NSLocalizedString(@"Tableview Text Font", nil), @"font": [WPStyleGuide tableviewTextFont], @"attributes": [NSNull null]},
              @{@"title": NSLocalizedString(@"Tableview Subtitle Font", nil), @"font": [WPStyleGuide tableviewSubtitleFont], @"attributes": [NSNull null]},
              @{@"title": NSLocalizedString(@"Tableview Section Header Font", nil), @"font": [WPStyleGuide tableviewSectionHeaderFont], @"attributes": [NSNull null]},
