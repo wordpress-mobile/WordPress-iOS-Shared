@@ -87,6 +87,38 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
     return font;
 }
 
++ (UIFont *)openSansSemiBoldFontOfSize:(CGFloat)size
+{
+    NSString *resourceName = @"OpenSans-Semibold";
+    NSString *fontName = @"OpenSans-Semibold";
+    UIFont *font = [UIFont fontWithName:fontName size:size];
+    if (!font) {
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
+        font = [UIFont fontWithName:fontName size:size];
+        
+        // safe fallback
+        if (!font) font = [UIFont systemFontOfSize:size];
+    }
+    
+    return font;
+}
+
++ (UIFont *)openSansSemiBoldItalicFontOfSize:(CGFloat)size
+{
+    NSString *resourceName = @"OpenSans-SemiboldItalic";
+    NSString *fontName = @"OpenSans-SemiboldItalic";
+    UIFont *font = [UIFont fontWithName:fontName size:size];
+    if (!font) {
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
+        font = [UIFont fontWithName:fontName size:size];
+        
+        // safe fallback
+        if (!font) font = [UIFont systemFontOfSize:size];
+    }
+    
+    return font;
+}
+
 + (UIFont *)openSansRegularFontOfSize:(CGFloat)size
 {
     NSString *resourceName = @"OpenSans-Regular";
