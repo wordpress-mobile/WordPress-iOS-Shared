@@ -17,7 +17,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -33,7 +35,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -49,7 +53,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -65,7 +71,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -81,7 +89,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -97,7 +107,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -113,7 +125,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
@@ -129,7 +143,9 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
         font = [UIFont fontWithName:fontName size:size];
         
         // safe fallback
-        if (!font) font = [UIFont systemFontOfSize:size];
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
     }
     
     return font;
