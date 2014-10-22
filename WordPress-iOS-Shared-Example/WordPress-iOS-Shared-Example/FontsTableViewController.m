@@ -1,6 +1,7 @@
 #import "FontsTableViewController.h"
 #import "FontTableViewCell.h"
 #import <WordPress-iOS-Shared/WPStyleGuide.h>
+#import <WordPress-iOS-Shared/WPFontManager.h>
 
 @interface FontsTableViewController ()
 
@@ -94,6 +95,7 @@
              @{@"title": NSLocalizedString(@"Tableview Text Font", nil), @"font": [WPStyleGuide tableviewTextFont], @"attributes": [NSNull null]},
              @{@"title": NSLocalizedString(@"Tableview Subtitle Font", nil), @"font": [WPStyleGuide tableviewSubtitleFont], @"attributes": [NSNull null]},
              @{@"title": NSLocalizedString(@"Tableview Section Header Font", nil), @"font": [WPStyleGuide tableviewSectionHeaderFont], @"attributes": [NSNull null]},
+             @{@"title": NSLocalizedString(@"Merriweather Bold", nil), @"font": [WPFontManager merriweatherBoldFontOfSize:30.0], @"attributes": [NSNull null]},
              ];
 }
 
