@@ -42,17 +42,13 @@ PODS:
     - DTCoreText (= 1.6.13)
 
 DEPENDENCIES:
-  - WordPress-iOS-Shared (from `..`)
-
-EXTERNAL SOURCES:
-  WordPress-iOS-Shared:
-    :path: ..
+  - WordPress-iOS-Shared (~> 0.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   CocoaLumberjack: 9d198d6e19909b3b113a38c5f06f7bb8eedd0427
   DTCoreText: 84eb8ba2e70448fdd9d837540e371f9f587b65ba
   DTFoundation: 360bc65ab44f588611f47324b8cfb0f18e04b263
-  WordPress-iOS-Shared: 4df4d9eb7bdd0b326bdaa5edd71f086b31a14c56
+  WordPress-iOS-Shared: d3654b3eae4376ade1ea18d5ac54713afea39a69
 
 COCOAPODS: 0.34.4
