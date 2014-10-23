@@ -151,6 +151,24 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
     return font;
 }
 
++ (UIFont *)merriweatherBoldFontOfSize:(CGFloat)size
+{
+    NSString *resourceName = @"Merriweather-Bold";
+    NSString *fontName = @"Merriweather-Bold";
+    UIFont *font = [UIFont fontWithName:fontName size:size];
+    if (!font) {
+        [[self class] dynamicallyLoadFontResourceNamed:resourceName];
+        font = [UIFont fontWithName:fontName size:size];
+        
+        // safe fallback
+        if (!font) {
+            font = [UIFont systemFontOfSize:size];
+        }
+    }
+    
+    return font;
+}
+
 + (void)dynamicallyLoadFontResourceNamed:(NSString *)name
 {
     NSString *resourceName = [NSString stringWithFormat:@"%@/%@", kBundle, name];

@@ -11,4 +11,6 @@
 + (UIFont *)openSansSemiBoldItalicFontOfSize:(CGFloat)size;
 + (UIFont *)openSansRegularFontOfSize:(CGFloat)size;
 
++ (UIFont *)merriweatherBoldFontOfSize:(CGFloat)size;
+
 @end
