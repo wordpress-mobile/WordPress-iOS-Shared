@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency 'AFNetworking',	'~> 2.3.1'
-  s.dependency 'CocoaLumberjack', '~> 1.8.1'
+  s.dependency 'CocoaLumberjack', '~> 1.9'
   s.dependency 'DTCoreText',   '1.6.13'
 end
