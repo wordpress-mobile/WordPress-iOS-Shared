@@ -1,5 +1,4 @@
 #import "UIColor+Helpers.h"
-#import "NSString+HTML.h"
 
 @implementation UIColor (Helpers)
 
@@ -34,10 +33,16 @@
     
     NSUInteger digits = [hex length]/3;
     CGFloat maxValue = (digits==1)?15.0:255.0;
+
+    CGFloat (^hexStringToFloat)(NSString *string) = ^CGFloat(NSString *string) {
+        unsigned long result = 0;
+        sscanf([string UTF8String], "%lx", &result);
+        return result/maxValue;
+    };
     
-    CGFloat red = [[hex substringWithRange:NSMakeRange(0, digits)] integerValueFromHex]/maxValue;
-    CGFloat green = [[hex substringWithRange:NSMakeRange(digits, digits)] integerValueFromHex]/maxValue;
-    CGFloat blue = [[hex substringWithRange:NSMakeRange(2*digits, digits)] integerValueFromHex]/maxValue;
+    CGFloat red = hexStringToFloat([hex substringWithRange:NSMakeRange(0, digits)]);
+    CGFloat green = hexStringToFloat([hex substringWithRange:NSMakeRange(digits, digits)]);
+    CGFloat blue = hexStringToFloat([hex substringWithRange:NSMakeRange(2*digits, digits)]);
     
     return [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
 }
