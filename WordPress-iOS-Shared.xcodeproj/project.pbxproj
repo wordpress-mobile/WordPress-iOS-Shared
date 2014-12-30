@@ -32,7 +32,6 @@
 		931A1038192AA34300D3CC11 /* WPImageSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1037192AA34300D3CC11 /* WPImageSourceTest.m */; };
 		931A103B192AA35B00D3CC11 /* AsyncTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A103A192AA35B00D3CC11 /* AsyncTestHelper.m */; };
 		931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 931A103D192AA3DB00D3CC11 /* test-image.jpg */; };
-		E154809E1A43028300FA4EDD /* WPStyleGuide+DTCoreText.m in Sources */ = {isa = PBXBuildFile; fileRef = E154809D1A43028300FA4EDD /* WPStyleGuide+DTCoreText.m */; };
 		F45AF04D6E344F4CBD2A4B65 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B405468864FD7A0D16B74 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -106,8 +105,6 @@
 		98398B801DD76BC0326A4729 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-SharedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8B405468864FD7A0D16B74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E154809C1A43028300FA4EDD /* WPStyleGuide+DTCoreText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WPStyleGuide+DTCoreText.h"; sourceTree = "<group>"; };
-		E154809D1A43028300FA4EDD /* WPStyleGuide+DTCoreText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "WPStyleGuide+DTCoreText.m"; sourceTree = "<group>"; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,7 +168,6 @@
 		931A0FEF192A9CDD00D3CC11 /* WordPress-iOS-Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E15480A01A43035C00FA4EDD /* DTCoreText */,
 				E154809F1A43035700FA4EDD /* Core */,
 				931A0FF0192A9CDD00D3CC11 /* Supporting Files */,
 			);
@@ -276,15 +272,6 @@
 				931A1013192A9CEA00D3CC11 /* Utilility */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		E15480A01A43035C00FA4EDD /* DTCoreText */ = {
-			isa = PBXGroup;
-			children = (
-				E154809C1A43028300FA4EDD /* WPStyleGuide+DTCoreText.h */,
-				E154809D1A43028300FA4EDD /* WPStyleGuide+DTCoreText.m */,
-			);
-			path = DTCoreText;
 			sourceTree = "<group>";
 		};
 		E17299F8EC7CFF36CD4A166A /* Pods */ = {
@@ -455,7 +442,6 @@
 				931A102E192A9E3200D3CC11 /* WPTableViewSectionFooterView.m in Sources */,
 				744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */,
 				931A1020192A9DD500D3CC11 /* WPNoResultsView.m in Sources */,
-				E154809E1A43028300FA4EDD /* WPStyleGuide+DTCoreText.m in Sources */,
 				931A1032192A9F3500D3CC11 /* UITableViewTextFieldCell.m in Sources */,
 				931A1026192A9E0B00D3CC11 /* WPNUXUtility.m in Sources */,
 				9309B533192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m in Sources */,
