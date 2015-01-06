@@ -25,33 +25,19 @@ PODS:
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
-  - DTCoreText (1.6.13):
-    - DTFoundation/Core (~> 1.7.1)
-    - DTFoundation/DTAnimatedGIF (~> 1.7.1)
-    - DTFoundation/DTHTMLParser (~> 1.7.1)
-    - DTFoundation/UIKit (~> 1.7.1)
-  - DTFoundation/Core (1.7.3)
-  - DTFoundation/DTAnimatedGIF (1.7.3)
-  - DTFoundation/DTHTMLParser (1.7.3):
-    - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.3):
-    - DTFoundation/Core
-  - OCMock (3.0.1)
+  - OCMock (3.1.1)
   - OHHTTPStubs (3.1.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.3.1)
   - CocoaLumberjack (~> 1.9)
-  - DTCoreText (= 1.6.13)
   - OCMock
   - OHHTTPStubs (= 3.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  DTCoreText: 84eb8ba2e70448fdd9d837540e371f9f587b65ba
-  DTFoundation: 360bc65ab44f588611f47324b8cfb0f18e04b263
-  OCMock: bd152939402e75c7eb4b912d54ba27be33e57fc7
+  OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
   OHHTTPStubs: 58b42d245ad2416bac170ce18e1383913d17e315
 
 COCOAPODS: 0.35.0
