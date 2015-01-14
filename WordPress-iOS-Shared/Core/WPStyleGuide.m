@@ -141,10 +141,109 @@
 
 #pragma mark - Colors
 
+// wordpress.com/design-handbook/colors/
+
+// Blues
+
 + (UIColor *)wordPressBlue
 {
     return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
 }
+
++ (UIColor *)lightBlue
+{
+    return [UIColor colorWithRed:120/255.0f green:220/255.0f blue:250/255.0f alpha:1.0f];
+}
+
++ (UIColor *)mediumBlue
+{
+    return [UIColor colorWithRed:0/255.0f green:170/255.0f blue:220/255.0f alpha:1.0f];
+}
+
++ (UIColor *)darkBlue
+{
+    return [UIColor colorWithRed:0/255.0f green:80/255.0f blue:130/255.0f alpha:1.0f];
+}
+
+// Primary Greys
+
++ (UIColor *)grey
+{
+    return [UIColor colorWithRed:135/255.0f green:166/255.0f blue:188/255.0f alpha:1.0f];
+}
+
++ (UIColor *)lightGrey
+{
+    return [UIColor colorWithRed:243/255.0f green:246/255.0f blue:248/255.0f alpha:1.0f];
+}
+
++ (UIColor *)darkGrey
+{
+    return [UIColor colorWithRed:46/255.0f green:68/255.0f blue:83/255.0f alpha:1.0f];
+}
+
+// Secondary Greys
+
++ (UIColor *)lightenGrey30
+{
+    return [UIColor colorWithRed:233/255.0f green:239/255.0f blue:243/255.0f alpha:1.0f];
+}
+
++ (UIColor *)lightenGrey20
+{
+    return [UIColor colorWithRed:200/255.0f green:215/255.0f blue:225/255.0f alpha:1.0f];
+}
+
++ (UIColor *)lightenGrey10
+{
+    return [UIColor colorWithRed:168/255.0f green:190/255.0f blue:206/255.0f alpha:1.0f];
+}
+
++ (UIColor *)darkenGrey10
+{
+    return [UIColor colorWithRed:102/255.0f green:142/255.0f blue:170/255.0f alpha:1.0f];
+}
+
++ (UIColor *)darkenGrey20
+{
+    return [UIColor colorWithRed:79/255.0f green:116/255.0f blue:142/255.0f alpha:1.0f];
+}
+
++ (UIColor *)darkenGrey30
+{
+    return [UIColor colorWithRed:61/255.0f green:89/255.0f blue:109/255.0f alpha:1.0f];
+}
+
+// Oranges
+
++ (UIColor *)jazzyOrange
+{
+    return [UIColor colorWithRed:240/255.0f green:130/255.0f blue:30/255.0f alpha:1.0f];
+}
+
++ (UIColor *)fireOrange
+{
+    return [UIColor colorWithRed:213/255.0f green:78/255.0f blue:33/255.0f alpha:1.0f];
+}
+
+// Alerts
+
++ (UIColor *)alertYellow
+{
+    return [UIColor colorWithRed:240/255.0f green:184/255.0f blue:73/255.0f alpha:1.0f];
+}
+
++ (UIColor *)alertRed
+{
+    return [UIColor colorWithRed:217/255.0f green:79/255.0f blue:79/255.0f alpha:1.0f];
+}
+
++ (UIColor *)alertGreen
+{
+    return [UIColor colorWithRed:74/255.0f green:184/255.0f blue:102/255.0f alpha:1.0f];
+}
+
+// Depreciated Colors and Variables
 
 + (UIColor *)baseLighterBlue
 {
@@ -156,11 +255,6 @@
     return [UIColor colorWithRed:0/255.0f green:135/255.0f blue:190/255.0f alpha:1.0f];
 }
 
-+ (UIColor *)lightBlue
-{
-	return [UIColor colorWithRed:120/255.0f green:220/255.0f blue:250/255.0f alpha:1.0f];
-}
-
 + (UIColor *)newKidOnTheBlockBlue
 {
 	return [UIColor colorWithRed:0/255.0f green:170/255.0f blue:220/255.0f alpha:1.0f];
@@ -169,16 +263,6 @@
 + (UIColor *)midnightBlue
 {
 	return [UIColor colorWithRed:0/255.0f green:80/255.0f blue:130/255.0f alpha:1.0f];
-}
-
-+ (UIColor *)jazzyOrange
-{
-	return [UIColor colorWithRed:240/255.0f green:130/255.0f blue:30/255.0f alpha:1.0f];
-}
-
-+ (UIColor *)fireOrange
-{
-	return [UIColor colorWithRed:213/255.0f green:78/255.0f blue:33/255.0f alpha:1.0f];
 }
 
 + (UIColor *)bigEddieGrey
@@ -234,14 +318,26 @@
     return [UIColor colorWithRed:144.0f/255.0f green:174.0f/255.0f blue:194.0f/255.0f alpha:1.0f];
 }
 
++ (UIColor *)notificationsLightGrey
+{
+    return [UIColor colorWithRed:244/255.0f green:248/255.0f blue:250/255.0f alpha:1.0f];
+}
+
++ (UIColor *)notificationsDarkGrey
+{
+    return [UIColor colorWithRed:210/255.0f green:222/255.0f blue:230/255.0f alpha:1.0f];
+}
+
+// End Depreciated Colors and Variables
+
 + (UIColor *)tableViewActionColor
 {
-    return [WPStyleGuide baseLighterBlue];
+    return [WPStyleGuide wordPressBlue];
 }
 
 + (UIColor *)buttonActionColor
 {
-    return [WPStyleGuide baseLighterBlue];
+    return [WPStyleGuide wordPressBlue];
 }
 
 + (UIColor *)keyboardColor {
@@ -265,16 +361,6 @@
     } else {
         return [UIColor colorWithRed:204.0f/255.0f green:208.0f/255.0f blue:214.0f/255.0f alpha:1.0];
     }
-}
-
-+ (UIColor *)notificationsLightGrey
-{
-	return [UIColor colorWithRed:244/255.0f green:248/255.0f blue:250/255.0f alpha:1.0f];
-}
-
-+ (UIColor *)notificationsDarkGrey
-{
-	return [UIColor colorWithRed:210/255.0f green:222/255.0f blue:230/255.0f alpha:1.0f];
 }
 
 + (UIBarButtonItemStyle)barButtonStyleForDone
