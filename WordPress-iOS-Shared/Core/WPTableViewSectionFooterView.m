@@ -1,4 +1,5 @@
 #import "WPTableViewSectionFooterView.h"
+#import "WPTableViewCell.h"
 #import "WPStyleGuide.h"
 #import "NSString+Util.h"
 
@@ -28,6 +29,7 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 8.0;
         _titleLabel.textColor = [WPStyleGuide allTAllShadeGrey];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.shadowOffset = CGSizeMake(0.0, 0.0);
+        _fixedWidth = IS_IPAD ? WPTableViewFixedWidth : 0.0;
         [self addSubview:_titleLabel];
     }
     return self;
@@ -43,9 +45,14 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 8.0;
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+
+    CGFloat width = CGRectGetWidth(self.bounds);
+    if (self.fixedWidth > 0) {
+        width = MIN(self.fixedWidth, width);
+    }
     
     CGSize titleSize = [[self class] sizeForTitle:_titleLabel.text andWidth:CGRectGetWidth(self.bounds)];
-    _titleLabel.frame = CGRectMake(WPTableViewSectionFooterViewStandardOffset, WPTableViewSectionFooterViewTopVerticalPadding, titleSize.width, titleSize.height);
+    _titleLabel.frame = CGRectIntegral(CGRectMake(WPTableViewSectionFooterViewStandardOffset + (CGRectGetWidth(self.superview.frame) - width) / 2.0, WPTableViewSectionFooterViewTopVerticalPadding, width, titleSize.height));
 }
 
 + (CGFloat)heightForTitle:(NSString *)title andWidth:(CGFloat)width
