@@ -37,7 +37,7 @@ CGFloat const WPTableViewSectionHeaderViewBottomVerticalPadding = 8.0;
 
 - (void)setTitle:(NSString *)title
 {
-    _title = [title uppercaseString];
+    _title = [title uppercaseStringWithLocale:[NSLocale currentLocale]];
     self.titleLabel.text = _title;
     [self setNeedsLayout];
 }
@@ -74,7 +74,10 @@ CGFloat const WPTableViewSectionHeaderViewBottomVerticalPadding = 8.0;
 
 + (CGSize)sizeForTitle:(NSString *)title andTitleWidth:(CGFloat)titleWidth
 {
-    return [title suggestedSizeWithFont:[WPStyleGuide tableviewSectionHeaderFont] width:titleWidth];
+    // since we use uppercase title by default, it's important to override it here in case
+    // this method is called with a lowercase string which would cause a difference in the height calculation
+    NSString *upppercaseTitle = [title uppercaseStringWithLocale:[NSLocale currentLocale]];
+    return [upppercaseTitle suggestedSizeWithFont:[WPStyleGuide tableviewSectionHeaderFont] width:titleWidth];
 }
 
 + (CGFloat)titleLabelWidthFromSectionWidth:(CGFloat)sectionWidth fixedWidthEnabled:(BOOL)fixedWidthEnabled
