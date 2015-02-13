@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "WordPress-iOS-Shared"
-  s.version      = "0.1.8"
+  s.version      = "0.1.9"
   s.summary      = "Shared components used in building the WordPress iOS apps and other library components."
 
   s.description  = <<-DESC
@@ -21,6 +21,6 @@ Pod::Spec.new do |s|
   s.prefix_header_file = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch"
   s.requires_arc = true
 
-  s.dependency 'AFNetworking',	'~> 2.3.1'
+  s.dependency 'AFNetworking',	'~> 2.5.1'
   s.dependency 'CocoaLumberjack', '~> 1.9'
 end
