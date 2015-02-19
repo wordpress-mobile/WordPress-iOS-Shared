@@ -17,7 +17,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     self = [super initWithCoder:aDecoder];
     if (self) {
-        self.title = NSLocalizedString(@"Fonts", nil);
+        self.title = NSLocalizedString(@"Device Identification", nil);
         
         [self setupDeviceTests];
     }
