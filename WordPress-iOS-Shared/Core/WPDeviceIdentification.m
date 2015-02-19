@@ -82,7 +82,7 @@ static NSString* const WPDeviceNameSimulator = @"Simulator";
     
     struct utsname systemInfo = [self systemInfo];
     
-    NSString* deviceIdentifier = [NSString stringWithCString:&systemInfo.machine encoding:NSUTF8StringEncoding];
+    NSString* deviceIdentifier = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
     
     return devices[deviceIdentifier];
 }
