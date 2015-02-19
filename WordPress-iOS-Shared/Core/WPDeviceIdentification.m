@@ -101,7 +101,9 @@ static NSString* const WPDeviceNameSimulator = @"Simulator";
         //
         result = (IS_IPHONE
                   && [[UIScreen mainScreen] respondsToSelector:@selector(nativeScale)]
-                  && [[UIScreen mainScreen] nativeScale] == 2);
+                  && [[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]
+                  && [[UIScreen mainScreen] nativeScale] == 2
+                  && CGRectGetHeight([[UIScreen mainScreen] nativeBounds]) == 1334);
     } else {
         result = [deviceName isEqualToString:WPDeviceNameiPhone6];
     }
@@ -121,7 +123,9 @@ static NSString* const WPDeviceNameSimulator = @"Simulator";
         //
         result = (IS_IPHONE
                   && [[UIScreen mainScreen] respondsToSelector:@selector(nativeScale)]
-                  && [[UIScreen mainScreen] nativeScale] > 2.5);
+                  && [[UIScreen mainScreen] respondsToSelector:@selector(nativeBounds)]
+                  && [[UIScreen mainScreen] nativeScale] > 2.5
+                  && CGRectGetHeight([[UIScreen mainScreen] nativeBounds]) == 2208);
     } else {
         result = [deviceName isEqualToString:WPDeviceNameiPhone6Plus];
     }
