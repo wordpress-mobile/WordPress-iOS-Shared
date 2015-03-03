@@ -238,7 +238,7 @@
 
 + (UIColor *)validGreen
 {
-    return [self colorWithR:74 G:184 B:1.0 alpha:1.0];
+    return [self colorWithR:74 G:184 B:102 alpha:1.0];
 }
 
 + (UIColor *)warningYellow
@@ -248,7 +248,7 @@
 
 + (UIColor *)errorRed
 {
-    return [self colorWithR:271 G:79 B:79 alpha:1.0];
+    return [self colorWithR:217 G:79 B:79 alpha:1.0];
 }
 
 
