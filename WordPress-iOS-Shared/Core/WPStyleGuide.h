@@ -70,8 +70,6 @@
 + (UIColor *)buttonActionColor;
 + (UIColor *)nuxFormText;
 + (UIColor *)nuxFormPlaceholderText;
-+ (UIColor *)notificationsLightGrey;
-+ (UIColor *)notificationsDarkGrey;
 + (void)configureFollowButton:(UIButton *)followButton;
 
 // Deprecated Colors

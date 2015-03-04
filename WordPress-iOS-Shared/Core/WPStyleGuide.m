@@ -303,18 +303,6 @@
     return [self grey];
 }
 
-// TODO: Move to fetaure category
-+ (UIColor *)notificationsLightGrey
-{
-    return [self lightGrey];
-}
-
-// TODO: Move to fetaure category
-+ (UIColor *)notificationsDarkGrey
-{
-    return [self greyLighten20];
-}
-
 
 #pragma mark - Bar styles
 
