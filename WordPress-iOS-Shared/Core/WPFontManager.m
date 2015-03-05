@@ -172,7 +172,7 @@ static NSString * const kBundle = @"WordPress-iOS-Shared.bundle";
 + (void)dynamicallyLoadFontResourceNamed:(NSString *)name
 {
     NSString *resourceName = [NSString stringWithFormat:@"%@/%@", kBundle, name];
-    NSURL *url = [[NSBundle bundleForClass:[WPFontManager class]] URLForResource:resourceName withExtension:@"ttf"];
+    NSURL *url = [[NSBundle bundleForClass:self] URLForResource:resourceName withExtension:@"ttf"];
     NSData *fontData = [NSData dataWithContentsOfURL:url];
     
     if (fontData) {
