@@ -93,8 +93,8 @@
              @{@"title": @"Table View Action Color", @"color": [WPStyleGuide tableViewActionColor]},
              @{@"title": @"Button Action Color", @"color": [WPStyleGuide buttonActionColor]},
              @{@"title": @"Keyboard Color", @"color": [WPStyleGuide keyboardColor]},
-             @{@"title": @"Notifications Light Grey", @"color": [WPStyleGuide notificationsLightGrey]},
-             @{@"title": @"Notifications Dark Grey", @"color": [WPStyleGuide notificationsDarkGrey]},
+//             @{@"title": @"Notifications Light Grey", @"color": [WPStyleGuide notificationsLightGrey]},
+//             @{@"title": @"Notifications Dark Grey", @"color": [WPStyleGuide notificationsDarkGrey]},
              @{@"title": @"NUX Form Text", @"color": [WPStyleGuide nuxFormText]},
              @{@"title": @"NUX Form Placeholder Text", @"color": [WPStyleGuide nuxFormPlaceholderText]}
              ];
