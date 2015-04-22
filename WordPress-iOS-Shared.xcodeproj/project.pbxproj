@@ -208,7 +208,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		931A1013192A9CEA00D3CC11 /* Utilility */ = {
+		931A1013192A9CEA00D3CC11 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
 				744DA844194F3A76002CD6E9 /* UIImage+Util.h */,
@@ -226,7 +226,7 @@
 				74F535F61961F7E6002D4320 /* WPFontManager.h */,
 				74F535F71961F7E6002D4320 /* WPFontManager.m */,
 			);
-			name = Utilility;
+			name = Utility;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -274,7 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				931A101D192A9DC500D3CC11 /* Views */,
-				931A1013192A9CEA00D3CC11 /* Utilility */,
+				931A1013192A9CEA00D3CC11 /* Utility */,
 			);
 			path = Core;
 			sourceTree = "<group>";

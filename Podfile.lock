@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.5.1):
-    - AFNetworking/NSURLConnection (= 2.5.1)
-    - AFNetworking/NSURLSession (= 2.5.1)
-    - AFNetworking/Reachability (= 2.5.1)
-    - AFNetworking/Security (= 2.5.1)
-    - AFNetworking/Serialization (= 2.5.1)
-    - AFNetworking/UIKit (= 2.5.1)
-  - AFNetworking/NSURLConnection (2.5.1):
+  - AFNetworking (2.5.3):
+    - AFNetworking/NSURLConnection (= 2.5.3)
+    - AFNetworking/NSURLSession (= 2.5.3)
+    - AFNetworking/Reachability (= 2.5.3)
+    - AFNetworking/Security (= 2.5.3)
+    - AFNetworking/Serialization (= 2.5.3)
+    - AFNetworking/UIKit (= 2.5.3)
+  - AFNetworking/NSURLConnection (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.1):
+  - AFNetworking/NSURLSession (2.5.3):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.1)
-  - AFNetworking/Security (2.5.1)
-  - AFNetworking/Serialization (2.5.1)
-  - AFNetworking/UIKit (2.5.1):
+  - AFNetworking/Reachability (2.5.3)
+  - AFNetworking/Security (2.5.3)
+  - AFNetworking/Serialization (2.5.3)
+  - AFNetworking/UIKit (2.5.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CocoaLumberjack (1.9.2):
@@ -25,19 +25,19 @@ PODS:
   - CocoaLumberjack/Core (1.9.2)
   - CocoaLumberjack/Extensions (1.9.2):
     - CocoaLumberjack/Core
-  - OCMock (3.1.1)
+  - OCMock (3.1.2)
   - OHHTTPStubs (3.1.1)
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5.1)
+  - AFNetworking (~> 2.5)
   - CocoaLumberjack (~> 1.9)
   - OCMock
   - OHHTTPStubs (= 3.1.1)
 
 SPEC CHECKSUMS:
-  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
-  CocoaLumberjack: 205769c032b5fef85b92472046bcc8b7e7c8a817
-  OCMock: f6cb8c162ab9d5620dddf411282c7b2c0ee78854
-  OHHTTPStubs: 58b42d245ad2416bac170ce18e1383913d17e315
+  AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
+  CocoaLumberjack: 628fca2e88ef06f7cf6817309aa405f325d9a6fa
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
+  OHHTTPStubs: cc1b9cb45b963daf891aa736f35d29d74308f0c9
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.4
