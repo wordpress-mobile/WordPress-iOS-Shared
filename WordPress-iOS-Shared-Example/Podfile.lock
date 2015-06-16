@@ -37,11 +37,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   WordPress-iOS-Shared:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   AFNetworking: e1d86c2a96bb5d2e7408da36149806706ee122fe
   CocoaLumberjack: a6f77d987d65dc7ba86b0f84db7d0b9084f77bcb
-  WordPress-iOS-Shared: bd0506db9b824611246f35e774832ecbc18fc45e
+  WordPress-iOS-Shared: 0164a2cd656003e0e69c468a11d0bb8a5da43ab0
 
-COCOAPODS: 0.36.4
+COCOAPODS: 0.37.2

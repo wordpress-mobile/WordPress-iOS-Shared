@@ -3,6 +3,8 @@
 #import <WordPress-iOS-Shared/WPStyleGuide.h>
 #import <WordPress-iOS-Shared/WPFontManager.h>
 
+static const CGFloat FontSize = 20.0;
+
 @interface FontsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *fonts;
@@ -80,6 +82,21 @@
 
 - (NSArray *)fontDetails {
     return @[
+             @{@"title": NSLocalizedString(@"Merriweather",nil), @"font": [WPFontManager merriweatherRegularFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"Merriweather Bold",nil), @"font": [WPFontManager merriweatherBoldFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"Merriweather Bold Italic",nil), @"font": [WPFontManager merriweatherBoldItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"Merriweather Italic",nil), @"font": [WPFontManager merriweatherItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"Merriweather Light",nil), @"font": [WPFontManager merriweatherLightFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"Merriweather Italic",nil), @"font": [WPFontManager merriweatherLightItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans",nil), @"font": [WPFontManager openSansRegularFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Bold",nil), @"font": [WPFontManager openSansBoldFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Bold Italic",nil), @"font": [WPFontManager openSansBoldItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Italic",nil), @"font": [WPFontManager openSansItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Light",nil), @"font": [WPFontManager openSansLightFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Light Italic",nil), @"font": [WPFontManager openSansLightItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Semi-Bold",nil), @"font": [WPFontManager openSansSemiBoldFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"OpenSans Semi-Bold Italic",nil), @"font": [WPFontManager openSansSemiBoldItalicFontOfSize:FontSize]},
+             
              @{@"title": NSLocalizedString(@"Large Post Title Font", nil), @"font": [WPStyleGuide largePostTitleFont], @"attributes": [WPStyleGuide largePostTitleAttributes]},
              @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
              @{@"title": NSLocalizedString(@"Post Title Font Bold", nil), @"font": [WPStyleGuide postTitleFontBold], @"attributes": [WPStyleGuide postTitleAttributesBold]},
