@@ -9,14 +9,14 @@
 
 @end
 
-CGFloat const WPTableViewSectionFooterViewStandardOffset = 16.0;
-CGFloat const WPTableViewSectionFooterViewTopVerticalPadding = 21.0;
-CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 8.0;
+CGFloat const WPTableViewSectionFooterViewStandardOffset        = 16.0;
+CGFloat const WPTableViewSectionFooterViewTopVerticalPadding    = 6.0;
+CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 24.0;
 
 @implementation WPTableViewSectionFooterView
 
 
-- (id)initWithFrame:(CGRect)frame
+- (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -25,7 +25,7 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 8.0;
         _titleLabel.numberOfLines = 0;
         _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         _titleLabel.font = [WPStyleGuide subtitleFont];
-        _titleLabel.textColor = [WPStyleGuide allTAllShadeGrey];
+        _titleLabel.textColor = [WPStyleGuide greyDarken10];
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.shadowOffset = CGSizeMake(0.0, 0.0);
         [self addSubview:_titleLabel];
