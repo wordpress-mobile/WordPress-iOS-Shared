@@ -27,7 +27,7 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 24.0;
         _titleLabel.font = [WPStyleGuide subtitleFont];
         _titleLabel.textColor = [WPStyleGuide greyDarken10];
         _titleLabel.backgroundColor = [UIColor clearColor];
-        _titleLabel.shadowOffset = CGSizeMake(0.0, 0.0);
+        _titleLabel.shadowOffset = CGSizeZero;
         [self addSubview:_titleLabel];
 
         // fixed width should be enabled by default
@@ -55,7 +55,6 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 24.0;
     self.titleLabel.frame = CGRectIntegral(CGRectMake(padding, WPTableViewSectionFooterViewTopVerticalPadding, titleWidth, titleSize.height));
 }
 
-// fixedWidth is enabled by default
 + (CGFloat)heightForTitle:(NSString *)title andWidth:(CGFloat)width
 {
     return [self heightForTitle:title andWidth:width fixedWidthEnabled:YES];
@@ -75,7 +74,7 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 24.0;
 
 + (CGSize)sizeForTitle:(NSString *)title andTitleWidth:(CGFloat)titleWidth
 {
-    return [title suggestedSizeWithFont:[WPStyleGuide tableviewSectionHeaderFont] width:titleWidth];
+    return [title suggestedSizeWithFont:[WPStyleGuide subtitleFont] width:titleWidth];
 }
 
 + (CGFloat)titleLabelWidthFromSectionWidth:(CGFloat)sectionWidth fixedWidthEnabled:(BOOL)fixedWidthEnabled
