@@ -43,6 +43,16 @@ CGFloat const WPTableViewSectionFooterViewBottomVerticalPadding = 24.0;
     [self setNeedsLayout];
 }
 
+- (void)setTitleAlignment:(NSTextAlignment)textAlignment
+{
+    self.titleLabel.textAlignment = textAlignment;
+}
+
+- (NSTextAlignment)titleAlignment
+{
+    return self.titleLabel.textAlignment;
+}
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
