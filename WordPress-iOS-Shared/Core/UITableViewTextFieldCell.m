@@ -1,5 +1,11 @@
 #import "UITableViewTextFieldCell.h"
 
+CGFloat const AccessoryPadding = 15.0f;
+CGFloat const iPadLeftMargin = 60.0f;
+CGFloat const iPadRightMargin = 100.0f;
+CGFloat const iPhoneLeftMargin = 30.0f;
+CGFloat const iPhoneRightMargin = 50.0f;
+
 @interface UITableViewTextFieldCell () <UITextFieldDelegate>
 
 @end
@@ -37,22 +43,26 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     CGRect frame;
-
+    
     CGSize labelSize = [self.textLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
     labelSize.width = ceil(labelSize.width/5) * 5; // Round to upper 5
     labelSize.width = MAX(minimumLabelWidth, labelSize.width); // Impose alignment for shorter labels
-
-    if (IS_IPAD) {
-        frame = CGRectMake(labelSize.width + 60,
-                           self.textLabel.frame.origin.y,
-                           self.frame.size.width - labelSize.width - 100,
-                           self.textLabel.frame.size.height);
-    } else {
-        frame = CGRectMake(labelSize.width + 30,
-                           self.textLabel.frame.origin.y,
-                           self.frame.size.width - labelSize.width - 50,
-                           self.textLabel.frame.size.height);
+    CGFloat leftMargin = 0;
+    CGFloat rightMargin = self.accessoryView.frame.size.width;
+    if (!self.accessoryView && self.accessoryType != UITableViewCellAccessoryNone) {
+        rightMargin = AccessoryPadding;
     }
+    if (IS_IPAD) {
+        leftMargin  = iPadLeftMargin;
+        rightMargin += iPadRightMargin;
+    } else {
+        leftMargin  = iPhoneLeftMargin;
+        rightMargin += iPhoneRightMargin;
+    }
+    frame = CGRectMake(labelSize.width + leftMargin,
+                       self.textLabel.frame.origin.y,
+                       self.frame.size.width - labelSize.width - rightMargin,
+                       self.textLabel.frame.size.height);
     self.textField.frame = frame;
 }
 
