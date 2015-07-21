@@ -15,19 +15,19 @@ CGFloat const iPhoneRightMargin = 50.0f;
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.textField = [[UITextField alloc] initWithFrame:self.bounds];
-        self.textField.adjustsFontSizeToFitWidth = YES;
-        self.textField.textColor = [UIColor blackColor];
-        self.textField.backgroundColor = [UIColor clearColor];
-        self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        self.textField.textAlignment = NSTextAlignmentLeft;
-        self.textField.clearButtonMode = UITextFieldViewModeNever;
-        self.textField.enabled = YES;
-        self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.textField.delegate = self;
+        _textField = [[UITextField alloc] initWithFrame:self.bounds];
+        _textField.adjustsFontSizeToFitWidth = YES;
+        _textField.textColor = [UIColor blackColor];
+        _textField.backgroundColor = [UIColor clearColor];
+        _textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        _textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _textField.textAlignment = NSTextAlignmentLeft;
+        _textField.clearButtonMode = UITextFieldViewModeNever;
+        _textField.enabled = YES;
+        _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        _textField.delegate = self;
         
-        self.minimumLabelWidth = 90;
+        _minimumLabelWidth = 90;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.accessoryType = UITableViewCellAccessoryNone;
