@@ -40,7 +40,6 @@ CGFloat const iPhoneRightMargin = 50.0f;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGRect frame;
     
     CGSize labelSize = [self.textLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
     labelSize.width = ceil(labelSize.width/5) * 5; // Round to upper 5
@@ -57,10 +56,10 @@ CGFloat const iPhoneRightMargin = 50.0f;
         leftMargin  = iPhoneLeftMargin;
         rightMargin += iPhoneRightMargin;
     }
-    frame = CGRectMake(labelSize.width + leftMargin,
+    CGRect frame = CGRectMake(labelSize.width + leftMargin,
                        self.textLabel.frame.origin.y,
                        self.frame.size.width - labelSize.width - rightMargin,
-                       self.textLabel.frame.size.height);
+                       self.textField.frame.size.height);
     self.textField.frame = frame;
 }
 
