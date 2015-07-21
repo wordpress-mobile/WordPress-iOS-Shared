@@ -1,4 +1,4 @@
-#import "UITableViewTextFieldCell.h"
+#import "WPTextFieldTableViewCell.h"
 
 CGFloat const AccessoryPadding = 15.0f;
 CGFloat const iPadLeftMargin = 60.0f;
@@ -6,11 +6,11 @@ CGFloat const iPadRightMargin = 100.0f;
 CGFloat const iPhoneLeftMargin = 30.0f;
 CGFloat const iPhoneRightMargin = 50.0f;
 
-@interface UITableViewTextFieldCell () <UITextFieldDelegate>
+@interface WPTextFieldTableViewCell () <UITextFieldDelegate>
 
 @end
 
-@implementation UITableViewTextFieldCell
+@implementation WPTextFieldTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];

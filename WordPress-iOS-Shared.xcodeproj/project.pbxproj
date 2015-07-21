@@ -28,12 +28,12 @@
 		931A1029192A9E2400D3CC11 /* WPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1028192A9E2400D3CC11 /* WPTableViewCell.m */; };
 		931A102E192A9E3200D3CC11 /* WPTableViewSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A102B192A9E3200D3CC11 /* WPTableViewSectionFooterView.m */; };
 		931A102F192A9E3200D3CC11 /* WPTableViewSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A102D192A9E3200D3CC11 /* WPTableViewSectionHeaderView.m */; };
-		931A1032192A9F3500D3CC11 /* UITableViewTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1031192A9F3500D3CC11 /* UITableViewTextFieldCell.m */; };
 		931A1035192AA03600D3CC11 /* UIColor+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1034192AA03600D3CC11 /* UIColor+Helpers.m */; };
 		931A1038192AA34300D3CC11 /* WPImageSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1037192AA34300D3CC11 /* WPImageSourceTest.m */; };
 		931A103B192AA35B00D3CC11 /* AsyncTestHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A103A192AA35B00D3CC11 /* AsyncTestHelper.m */; };
 		931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 931A103D192AA3DB00D3CC11 /* test-image.jpg */; };
 		F45AF04D6E344F4CBD2A4B65 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B405468864FD7A0D16B74 /* libPods.a */; };
+		FF8DDCE11B5E91050098826F /* WPTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,8 +97,7 @@
 		931A102B192A9E3200D3CC11 /* WPTableViewSectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTableViewSectionFooterView.m; path = Core/WPTableViewSectionFooterView.m; sourceTree = "<group>"; };
 		931A102C192A9E3200D3CC11 /* WPTableViewSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPTableViewSectionHeaderView.h; path = Core/WPTableViewSectionHeaderView.h; sourceTree = "<group>"; };
 		931A102D192A9E3200D3CC11 /* WPTableViewSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTableViewSectionHeaderView.m; path = Core/WPTableViewSectionHeaderView.m; sourceTree = "<group>"; };
-		931A1030192A9F3500D3CC11 /* UITableViewTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UITableViewTextFieldCell.h; path = Core/UITableViewTextFieldCell.h; sourceTree = "<group>"; };
-		931A1031192A9F3500D3CC11 /* UITableViewTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UITableViewTextFieldCell.m; path = Core/UITableViewTextFieldCell.m; sourceTree = "<group>"; };
+		931A1030192A9F3500D3CC11 /* WPTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPTextFieldTableViewCell.h; path = Core/WPTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		931A1033192AA03600D3CC11 /* UIColor+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Helpers.h"; path = "Core/UIColor+Helpers.h"; sourceTree = "<group>"; };
 		931A1034192AA03600D3CC11 /* UIColor+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Helpers.m"; path = "Core/UIColor+Helpers.m"; sourceTree = "<group>"; };
 		931A1037192AA34300D3CC11 /* WPImageSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPImageSourceTest.m; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-SharedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8B405468864FD7A0D16B74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTextFieldTableViewCell.m; path = Core/WPTextFieldTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,8 +235,6 @@
 			children = (
 				931A1033192AA03600D3CC11 /* UIColor+Helpers.h */,
 				931A1034192AA03600D3CC11 /* UIColor+Helpers.m */,
-				931A1030192A9F3500D3CC11 /* UITableViewTextFieldCell.h */,
-				931A1031192A9F3500D3CC11 /* UITableViewTextFieldCell.m */,
 				931A101E192A9DD500D3CC11 /* WPNoResultsView.h */,
 				931A101F192A9DD500D3CC11 /* WPNoResultsView.m */,
 				931A1024192A9E0B00D3CC11 /* WPNUXUtility.h */,
@@ -249,6 +247,8 @@
 				931A102B192A9E3200D3CC11 /* WPTableViewSectionFooterView.m */,
 				931A102C192A9E3200D3CC11 /* WPTableViewSectionHeaderView.h */,
 				931A102D192A9E3200D3CC11 /* WPTableViewSectionHeaderView.m */,
+				931A1030192A9F3500D3CC11 /* WPTextFieldTableViewCell.h */,
+				FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */,
 			);
 			name = Views;
 			path = ..;
@@ -439,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF8DDCE11B5E91050098826F /* WPTextFieldTableViewCell.m in Sources */,
 				9309B52D192BEECC00B69F69 /* WordPressShared.m in Sources */,
 				931A1016192A9D5200D3CC11 /* NSString+Util.m in Sources */,
 				931A1023192A9DFC00D3CC11 /* WPStyleGuide.m in Sources */,
@@ -448,7 +449,6 @@
 				931A102E192A9E3200D3CC11 /* WPTableViewSectionFooterView.m in Sources */,
 				744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */,
 				931A1020192A9DD500D3CC11 /* WPNoResultsView.m in Sources */,
-				931A1032192A9F3500D3CC11 /* UITableViewTextFieldCell.m in Sources */,
 				931A1026192A9E0B00D3CC11 /* WPNUXUtility.m in Sources */,
 				9309B533192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m in Sources */,
 				931A1035192AA03600D3CC11 /* UIColor+Helpers.m in Sources */,

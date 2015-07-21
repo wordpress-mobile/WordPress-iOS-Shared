@@ -1,6 +1,6 @@
 #import <UIKit/UIKit.h>
 
-@class UITableViewTextFieldCell;
+@class WPTextFieldTableViewCell;
 @interface WPStyleGuide : NSObject
 
 // Fonts
@@ -63,7 +63,7 @@
 + (void)configureColorsForView:(UIView *)view collectionView:(UICollectionView *)collectionView;
 + (void)configureTableViewActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewCell:(UITableViewCell *)cell;
-+ (void)configureTableViewTextCell:(UITableViewTextFieldCell *)cell;
++ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
 + (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell;
 
 // Move to a feature category
