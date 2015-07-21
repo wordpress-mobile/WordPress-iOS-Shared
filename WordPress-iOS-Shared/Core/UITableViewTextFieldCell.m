@@ -11,8 +11,6 @@ CGFloat const iPhoneRightMargin = 50.0f;
 @end
 
 @implementation UITableViewTextFieldCell
-@synthesize textField;
-@synthesize minimumLabelWidth;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -46,7 +44,7 @@ CGFloat const iPhoneRightMargin = 50.0f;
     
     CGSize labelSize = [self.textLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
     labelSize.width = ceil(labelSize.width/5) * 5; // Round to upper 5
-    labelSize.width = MAX(minimumLabelWidth, labelSize.width); // Impose alignment for shorter labels
+    labelSize.width = MAX(self.minimumLabelWidth, labelSize.width); // Impose alignment for shorter labels
     CGFloat leftMargin = 0;
     CGFloat rightMargin = self.accessoryView.frame.size.width;
     if (!self.accessoryView && self.accessoryType != UITableViewCellAccessoryNone) {
