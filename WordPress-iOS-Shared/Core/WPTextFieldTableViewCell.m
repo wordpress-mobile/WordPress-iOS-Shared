@@ -1,29 +1,33 @@
-#import "UITableViewTextFieldCell.h"
+#import "WPTextFieldTableViewCell.h"
 
-@interface UITableViewTextFieldCell () <UITextFieldDelegate>
+CGFloat const AccessoryPadding = 15.0f;
+CGFloat const iPadLeftMargin = 60.0f;
+CGFloat const iPadRightMargin = 100.0f;
+CGFloat const iPhoneLeftMargin = 30.0f;
+CGFloat const iPhoneRightMargin = 50.0f;
+
+@interface WPTextFieldTableViewCell () <UITextFieldDelegate>
 
 @end
 
-@implementation UITableViewTextFieldCell
-@synthesize textField;
-@synthesize minimumLabelWidth;
+@implementation WPTextFieldTableViewCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.textField = [[UITextField alloc] initWithFrame:self.bounds];
-        self.textField.adjustsFontSizeToFitWidth = YES;
-        self.textField.textColor = [UIColor blackColor];
-        self.textField.backgroundColor = [UIColor clearColor];
-        self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
-        self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
-        self.textField.textAlignment = NSTextAlignmentLeft;
-        self.textField.clearButtonMode = UITextFieldViewModeNever;
-        self.textField.enabled = YES;
-        self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.textField.delegate = self;
+        _textField = [[UITextField alloc] initWithFrame:self.bounds];
+        _textField.adjustsFontSizeToFitWidth = YES;
+        _textField.textColor = [UIColor blackColor];
+        _textField.backgroundColor = [UIColor clearColor];
+        _textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        _textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+        _textField.textAlignment = NSTextAlignmentLeft;
+        _textField.clearButtonMode = UITextFieldViewModeNever;
+        _textField.enabled = YES;
+        _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        _textField.delegate = self;
         
-        self.minimumLabelWidth = 90;
+        _minimumLabelWidth = 90;
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.accessoryType = UITableViewCellAccessoryNone;
@@ -36,23 +40,26 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    CGRect frame;
-
+    
     CGSize labelSize = [self.textLabel.text sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:17]}];
     labelSize.width = ceil(labelSize.width/5) * 5; // Round to upper 5
-    labelSize.width = MAX(minimumLabelWidth, labelSize.width); // Impose alignment for shorter labels
-
-    if (IS_IPAD) {
-        frame = CGRectMake(labelSize.width + 60,
-                           self.textLabel.frame.origin.y,
-                           self.frame.size.width - labelSize.width - 100,
-                           self.textLabel.frame.size.height);
-    } else {
-        frame = CGRectMake(labelSize.width + 30,
-                           self.textLabel.frame.origin.y,
-                           self.frame.size.width - labelSize.width - 50,
-                           self.textLabel.frame.size.height);
+    labelSize.width = MAX(self.minimumLabelWidth, labelSize.width); // Impose alignment for shorter labels
+    CGFloat leftMargin = 0;
+    CGFloat rightMargin = self.accessoryView.frame.size.width;
+    if (!self.accessoryView && self.accessoryType != UITableViewCellAccessoryNone) {
+        rightMargin = AccessoryPadding;
     }
+    if (IS_IPAD) {
+        leftMargin  = iPadLeftMargin;
+        rightMargin += iPadRightMargin;
+    } else {
+        leftMargin  = iPhoneLeftMargin;
+        rightMargin += iPhoneRightMargin;
+    }
+    CGRect frame = CGRectMake(labelSize.width + leftMargin,
+                       self.textLabel.frame.origin.y,
+                       self.frame.size.width - labelSize.width - rightMargin,
+                       self.textField.frame.size.height);
     self.textField.frame = frame;
 }
 

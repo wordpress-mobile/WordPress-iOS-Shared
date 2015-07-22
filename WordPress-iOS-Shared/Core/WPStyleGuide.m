@@ -1,5 +1,5 @@
 #import "WPStyleGuide.h"
-#import "UITableViewTextFieldCell.h"
+#import "WPTextFieldTableViewCell.h"
 #import "UIColor+Helpers.h"
 #import "WPFontManager.h"
 
@@ -367,13 +367,13 @@
     
     cell.textLabel.textColor = [self whisperGrey];
     cell.detailTextLabel.textColor = [self whisperGrey];
-    if ([cell isKindOfClass:[UITableViewTextFieldCell class]]) {
-        UITableViewTextFieldCell *tfcell = (UITableViewTextFieldCell *)cell;
+    if ([cell isKindOfClass:[WPTextFieldTableViewCell class]]) {
+        WPTextFieldTableViewCell *tfcell = (WPTextFieldTableViewCell *)cell;
         [tfcell.textField setTextColor:[self whisperGrey]];
     }
 }
 
-+ (void)configureTableViewTextCell:(UITableViewTextFieldCell *)cell
++ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
 {
     [self configureTableViewCell:cell];
     cell.textField.font = [self tableviewSubtitleFont];
