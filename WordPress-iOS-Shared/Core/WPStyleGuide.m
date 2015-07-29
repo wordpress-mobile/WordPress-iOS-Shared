@@ -351,13 +351,6 @@
     view.backgroundColor = [WPStyleGuide greyLighten30];
 }
 
-+ (void)configureTableViewActionCell:(UITableViewCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.textLabel.font = [self tableviewTextFont];
-    cell.textLabel.textColor = [self tableViewActionColor];
-}
-
 + (void)configureTableViewCell:(UITableViewCell *)cell
 {
     cell.textLabel.font = [self tableviewTextFont];
@@ -368,6 +361,20 @@
     
     cell.textLabel.textColor = [self darkGrey];
     cell.detailTextLabel.textColor = [self grey];
+}
+
++ (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell
+{
+    [self configureTableViewCell:cell];
+    cell.detailTextLabel.font = [self subtitleFont];
+    cell.detailTextLabel.textColor = [self darkGrey];
+}
+
++ (void)configureTableViewActionCell:(UITableViewCell *)cell
+{
+    [self configureTableViewCell:cell];
+    cell.textLabel.font = [self tableviewTextFont];
+    cell.textLabel.textColor = [self tableViewActionColor];
 }
 
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
@@ -382,13 +389,6 @@
         cell.textField.textColor = [self grey];
         cell.textField.textAlignment = NSTextAlignmentRight;
     }
-}
-
-+ (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.detailTextLabel.font = [self subtitleFont];
-    cell.detailTextLabel.textColor = [self darkGrey];
 }
 
 // TODO: Move to fetaure category
