@@ -64,6 +64,7 @@
 + (void)configureTableViewCell:(UITableViewCell *)cell;
 + (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell;
 + (void)configureTableViewActionCell:(UITableViewCell *)cell;
++ (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
 
 // Move to a feature category

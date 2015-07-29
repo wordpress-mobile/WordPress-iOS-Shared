@@ -377,6 +377,13 @@
     cell.textLabel.textColor = [self tableViewActionColor];
 }
 
++ (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell
+{
+    [self configureTableViewActionCell:cell];
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textColor = [self errorRed];
+}
+
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
 {
     [self configureTableViewCell:cell];
