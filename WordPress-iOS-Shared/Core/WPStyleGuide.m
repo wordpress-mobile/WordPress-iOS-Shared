@@ -127,17 +127,17 @@
 
 + (UIFont *)tableviewTextFont
 {
-    return [WPFontManager openSansRegularFontOfSize:18.0];
+    return [WPFontManager openSansRegularFontOfSize:17.0];
 }
 
 + (UIFont *)tableviewSubtitleFont
 {
-    return [WPFontManager openSansLightFontOfSize:18.0];
+    return [WPFontManager openSansRegularFontOfSize:17.0];
 }
 
 + (UIFont *)tableviewSectionHeaderFont
 {
-    return [WPFontManager openSansBoldFontOfSize:12.0];
+    return [WPFontManager openSansRegularFontOfSize:13.0];
 }
 
 
@@ -287,18 +287,18 @@
     return [self wordPressBlue];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)buttonActionColor
 {
     return [self wordPressBlue];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)nuxFormText {
     return [self darkGrey];
 }
 
-// TODO: Move to fetaure category
+// TODO: Move to feature category
 + (UIColor *)nuxFormPlaceholderText {
     return [self grey];
 }
@@ -339,20 +339,21 @@
 + (void)configureColorsForView:(UIView *)view andTableView:(UITableView *)tableView
 {
     tableView.backgroundView = nil;
-    view.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    tableView.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    tableView.separatorColor = [WPStyleGuide readGrey];
+    view.backgroundColor = [WPStyleGuide greyLighten30];
+    tableView.backgroundColor = [WPStyleGuide greyLighten30];
+    tableView.separatorColor = [WPStyleGuide greyLighten20];
 }
 
 + (void)configureColorsForView:(UIView *)view collectionView:(UICollectionView *)collectionView
 {
     collectionView.backgroundView = nil;
-    collectionView.backgroundColor = [WPStyleGuide itsEverywhereGrey];
-    view.backgroundColor = [WPStyleGuide itsEverywhereGrey];
+    collectionView.backgroundColor = [WPStyleGuide greyLighten30];
+    view.backgroundColor = [WPStyleGuide greyLighten30];
 }
 
 + (void)configureTableViewActionCell:(UITableViewCell *)cell
 {
+    [self configureTableViewCell:cell];
     cell.textLabel.font = [self tableviewTextFont];
     cell.textLabel.textColor = [self tableViewActionColor];
 }
@@ -365,12 +366,8 @@
     cell.detailTextLabel.font = [self tableviewSubtitleFont];
     [cell.detailTextLabel sizeToFit];
     
-    cell.textLabel.textColor = [self whisperGrey];
-    cell.detailTextLabel.textColor = [self whisperGrey];
-    if ([cell isKindOfClass:[WPTextFieldTableViewCell class]]) {
-        WPTextFieldTableViewCell *tfcell = (WPTextFieldTableViewCell *)cell;
-        [tfcell.textField setTextColor:[self whisperGrey]];
-    }
+    cell.textLabel.textColor = [self darkGrey];
+    cell.detailTextLabel.textColor = [self grey];
 }
 
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
@@ -379,10 +376,10 @@
     cell.textField.font = [self tableviewSubtitleFont];
     
     if (cell.textField.enabled) {
-        cell.textField.textColor = [self darkAsNightGrey];
+        cell.textField.textColor = [self darkBlue];
         cell.textField.textAlignment = NSTextAlignmentLeft;
     } else {
-        cell.textField.textColor = [self textFieldPlaceholderGrey];
+        cell.textField.textColor = [self grey];
         cell.textField.textAlignment = NSTextAlignmentRight;
     }
 }
@@ -391,6 +388,7 @@
 {
     [self configureTableViewCell:cell];
     cell.detailTextLabel.font = [self subtitleFont];
+    cell.detailTextLabel.textColor = [self darkGrey];
 }
 
 // TODO: Move to fetaure category
