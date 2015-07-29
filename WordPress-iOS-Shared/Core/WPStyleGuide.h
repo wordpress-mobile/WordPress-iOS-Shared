@@ -61,10 +61,11 @@
 // View and TableView Helpers
 + (void)configureColorsForView:(UIView *)view andTableView:(UITableView *)tableView;
 + (void)configureColorsForView:(UIView *)view collectionView:(UICollectionView *)collectionView;
-+ (void)configureTableViewActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewCell:(UITableViewCell *)cell;
-+ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
 + (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell;
++ (void)configureTableViewActionCell:(UITableViewCell *)cell;
++ (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell;
++ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
 
 // Move to a feature category
 + (UIColor *)buttonActionColor;
