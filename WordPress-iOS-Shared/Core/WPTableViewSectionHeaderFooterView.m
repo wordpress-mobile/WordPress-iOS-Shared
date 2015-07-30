@@ -12,12 +12,10 @@
 
 @implementation WPTableViewSectionHeaderFooterView
 
-/*
-You should invoke the designated initializer of your base class here: initWithReuseIdentifier.
-If you aren't make the reuse identifier available for this class you can invoke with nil.
-
-On the same page you should override that default initializer to use this initializer with a default style set.
-*/
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
+{
+    return [self initWithReuseIdentifier:reuseIdentifier style:WPTableViewSectionStyleHeader];
+}
 
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier style:(WPTableViewSectionStyle)style
 {
