@@ -140,7 +140,7 @@
     CGSize titleSize        = [[self class] sizeForTitle:self.titleLabel.text titleWidth:titleWidth font:self.titleFont];
     CGFloat padding         = (sectionWidth - titleWidth) * 0.5;
 
-    self.titleLabel.frame   = CGRectIntegral(CGRectMake(padding, _titleInsets.top, titleWidth, titleSize.height));
+    self.titleLabel.frame   = CGRectIntegral(CGRectMake(padding, self.titleInsets.top, titleWidth, titleSize.height));
 }
 
 
