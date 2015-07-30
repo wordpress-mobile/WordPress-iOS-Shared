@@ -12,40 +12,56 @@
 
 @implementation WPTableViewSectionHeaderFooterView
 
-- (instancetype)initWithStyle:(WPTableViewSectionStyle)style
+/*
+You should invoke the designated initializer of your base class here: initWithReuseIdentifier.
+If you aren't make the reuse identifier available for this class you can invoke with nil.
+
+On the same page you should override that default initializer to use this initializer with a default style set.
+*/
+
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier style:(WPTableViewSectionStyle)style
 {
     NSParameterAssert(style == WPTableViewSectionStyleHeader || style == WPTableViewSectionStyleFooter);
     
-    self = [super init];
+    self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
-        // Defaults
-        BOOL isHeader = style == WPTableViewSectionStyleHeader;
-        UIEdgeInsets titleInsets = isHeader ? [[self class] headerTitleInsets] : [[self class] footerTitleInsets];
-        UIColor *titleColor = isHeader ? [[self class] headerTitleColor]  : [[self class] footerTitleColor];
-        UIFont *titleFont = isHeader ? [[self class] headerTitleFont]   : [[self class] footerTitleFont];
-        
-        // Title Label
-        UILabel *titleLabel = [UILabel new];
-        titleLabel.textAlignment = NSTextAlignmentLeft;
-        titleLabel.numberOfLines = 0;
-        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        titleLabel.font = titleFont;
-        titleLabel.textColor = titleColor;
-        titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.shadowOffset = CGSizeZero;
-        [self addSubview:titleLabel];
-
-        // Background
-        UIView *backgroundView = [UIView new];
-        backgroundView.backgroundColor = [UIColor clearColor];
-        
-        // Initialize Prperties
-        self.uppercase = isHeader;
-        self.titleLabel = titleLabel;
-        self.titleInsets = titleInsets;
-        self.backgroundView = backgroundView;
+        _style = style;
+        [self setupSubviews];
     }
     return self;
+}
+
+- (void)setupSubviews
+{
+    BOOL isHeader = self.style == WPTableViewSectionStyleHeader;
+    
+    UIEdgeInsets titleInsets = isHeader ? [[self class] headerTitleInsets] : [[self class] footerTitleInsets];
+    UIColor *titleColor = isHeader ? [[self class] headerTitleColor]  : [[self class] footerTitleColor];
+    UIFont *titleFont = isHeader ? [[self class] headerTitleFont]   : [[self class] footerTitleFont];
+    
+    // Title Label
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.textAlignment = NSTextAlignmentLeft;
+    titleLabel.numberOfLines = 0;
+    titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    titleLabel.font = titleFont;
+    titleLabel.textColor = titleColor;
+    titleLabel.backgroundColor = [UIColor clearColor];
+    titleLabel.shadowOffset = CGSizeZero;
+    [self addSubview:titleLabel];
+    
+    // Background
+    UIView *backgroundView = [UIView new];
+    backgroundView.backgroundColor = [UIColor clearColor];
+    
+    // Initialize Prperties
+    _uppercase = isHeader;
+    _titleLabel = titleLabel;
+    _titleInsets = titleInsets;
+    self.backgroundView = backgroundView;
+    
+    // Make sure this view is laid ut
+    [self setNeedsLayout];
 }
 
 
@@ -54,7 +70,7 @@
 
 /**
     Note:
-    The purpose of the following overrides are to prevent UI glitches, caused by users accessing the 
+    The purpose of the following overrides are to prevent UI glitches, caused by users accessing the
     default textLabel and detailTextLabel provided by the superclass.
     We're effectively disabling those fields!
  */

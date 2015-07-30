@@ -25,14 +25,15 @@ typedef NS_ENUM(NSInteger, WPTableViewSectionStyle)
 
 @interface WPTableViewSectionHeaderFooterView : UITableViewHeaderFooterView
 
-@property (nonatomic, strong) NSString          *title;
-@property (nonatomic, strong) UIColor           *titleColor;
-@property (nonatomic, strong) UIFont            *titleFont;
-@property (nonatomic, assign) NSTextAlignment   titleAlignment;
-@property (nonatomic, assign) UIEdgeInsets      titleInsets;
-@property (nonatomic, assign) BOOL              uppercase;
+@property (nonatomic, assign, readonly) WPTableViewSectionStyle style;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) UIColor *titleColor;
+@property (nonatomic, strong) UIFont *titleFont;
+@property (nonatomic, assign) NSTextAlignment titleAlignment;
+@property (nonatomic, assign) UIEdgeInsets titleInsets;
+@property (nonatomic, assign) BOOL uppercase;
 
-- (instancetype)initWithStyle:(WPTableViewSectionStyle)style;
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier style:(WPTableViewSectionStyle)style;
 
 
 /**
