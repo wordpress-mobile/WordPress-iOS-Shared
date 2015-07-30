@@ -19,31 +19,31 @@
     self = [super init];
     if (self) {
         // Defaults
-        BOOL isHeader                   = style == WPTableViewSectionStyleHeader;
-        UIEdgeInsets titleInsets        = isHeader ? [[self class] headerTitleInsets] : [[self class] footerTitleInsets];
-        UIColor *titleColor             = isHeader ? [[self class] headerTitleColor]  : [[self class] footerTitleColor];
-        UIFont *titleFont               = isHeader ? [[self class] headerTitleFont]   : [[self class] footerTitleFont];
+        BOOL isHeader = style == WPTableViewSectionStyleHeader;
+        UIEdgeInsets titleInsets = isHeader ? [[self class] headerTitleInsets] : [[self class] footerTitleInsets];
+        UIColor *titleColor = isHeader ? [[self class] headerTitleColor]  : [[self class] footerTitleColor];
+        UIFont *titleFont = isHeader ? [[self class] headerTitleFont]   : [[self class] footerTitleFont];
         
         // Title Label
-        UILabel *titleLabel             = [[UILabel alloc] init];
-        titleLabel.textAlignment        = NSTextAlignmentLeft;
-        titleLabel.numberOfLines        = 0;
-        titleLabel.lineBreakMode        = NSLineBreakByWordWrapping;
-        titleLabel.font                 = titleFont;
-        titleLabel.textColor            = titleColor;
-        titleLabel.backgroundColor      = [UIColor clearColor];
-        titleLabel.shadowOffset         = CGSizeZero;
+        UILabel *titleLabel = [UILabel new];
+        titleLabel.textAlignment = NSTextAlignmentLeft;
+        titleLabel.numberOfLines = 0;
+        titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        titleLabel.font = titleFont;
+        titleLabel.textColor = titleColor;
+        titleLabel.backgroundColor = [UIColor clearColor];
+        titleLabel.shadowOffset = CGSizeZero;
         [self addSubview:titleLabel];
 
         // Background
-        UIView *backgroundView          = [UIView new];
-        backgroundView.backgroundColor  = [UIColor clearColor];
+        UIView *backgroundView = [UIView new];
+        backgroundView.backgroundColor = [UIColor clearColor];
         
         // Initialize Prperties
-        self.uppercase                  = isHeader;
-        self.titleLabel                 = titleLabel;
-        self.titleInsets                = titleInsets;
-        self.backgroundView             = backgroundView;
+        self.uppercase = isHeader;
+        self.titleLabel = titleLabel;
+        self.titleInsets = titleInsets;
+        self.backgroundView = backgroundView;
     }
     return self;
 }
