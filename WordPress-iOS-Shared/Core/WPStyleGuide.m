@@ -251,6 +251,21 @@
     return [self colorWithR:217 G:79 B:79 alpha:1.0];
 }
 
++ (UIColor *)alertYellowDark
+{
+    return [self colorWithR:0xF0 G:0xB8 B:0x49 alpha:0xFF];
+}
+
++ (UIColor *)alertYellowLighter
+{
+    return [self colorWithR:0xFE G:0xF8 B:0xEE alpha:0xFF];
+}
+
++ (UIColor *)alertRedDarker
+{
+    return [self colorWithR:0x6D G:0x18 B:0x18 alpha:0xFF];
+}
+
 
 #pragma mark - Misc Colors
 

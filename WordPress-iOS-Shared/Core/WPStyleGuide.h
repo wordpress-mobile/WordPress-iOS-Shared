@@ -46,6 +46,9 @@
 + (UIColor *)validGreen;
 + (UIColor *)warningYellow;
 + (UIColor *)errorRed;
++ (UIColor *)alertYellowDark;
++ (UIColor *)alertYellowLighter;
++ (UIColor *)alertRedDarker;
 
 // Misc
 + (UIColor *)keyboardColor;
