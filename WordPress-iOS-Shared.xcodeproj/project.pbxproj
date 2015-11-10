@@ -68,8 +68,8 @@
 		897FA2B40A6E81DB4E7F0435 /* Pods-WordPress-iOS-SharedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9309B52B192BEECC00B69F69 /* WordPressShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressShared.h; path = Exclude/WordPressShared.h; sourceTree = "<group>"; };
 		9309B52C192BEECC00B69F69 /* WordPressShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressShared.m; path = Exclude/WordPressShared.m; sourceTree = "<group>"; };
-		9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPAnimatedImageResponseSerializer.h; path = Core/WPAnimatedImageResponseSerializer.h; sourceTree = "<group>"; };
-		9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPAnimatedImageResponseSerializer.m; path = Core/WPAnimatedImageResponseSerializer.m; sourceTree = "<group>"; };
+		9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAnimatedImageResponseSerializer.h; sourceTree = "<group>"; };
+		9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAnimatedImageResponseSerializer.m; sourceTree = "<group>"; };
 		931A0FEA192A9CDD00D3CC11 /* libWordPress-iOS-Shared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWordPress-iOS-Shared.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A0FED192A9CDD00D3CC11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		931A0FF1192A9CDD00D3CC11 /* WordPress-iOS-Shared-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Prefix.pch"; sourceTree = "<group>"; };
@@ -168,6 +168,7 @@
 		931A0FEF192A9CDD00D3CC11 /* WordPress-iOS-Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E13D93EF1BF235BA00CCBA7C /* Private */,
 				E154809F1A43035700FA4EDD /* Core */,
 				931A0FF0192A9CDD00D3CC11 /* Supporting Files */,
 			);
@@ -210,8 +211,6 @@
 			children = (
 				744DA844194F3A76002CD6E9 /* UIImage+Util.h */,
 				744DA845194F3A76002CD6E9 /* UIImage+Util.m */,
-				9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */,
-				9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */,
 				931A101A192A9DA500D3CC11 /* WPImageSource.h */,
 				931A101B192A9DA500D3CC11 /* WPImageSource.m */,
 				931A1014192A9D5200D3CC11 /* NSString+Util.h */,
@@ -265,6 +264,15 @@
 			name = "Test Data";
 			sourceTree = "<group>";
 		};
+		E13D93EF1BF235BA00CCBA7C /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */,
+				9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		E154809F1A43035700FA4EDD /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +324,7 @@
 				931A0FF7192A9CDD00D3CC11 /* Frameworks */,
 				931A0FF8192A9CDD00D3CC11 /* Resources */,
 				01EFB93CB9504D3780477772 /* Copy Pods Resources */,
+				0DD01DEF03ABC712BB9DEA89 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +404,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0DD01DEF03ABC712BB9DEA89 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2BBEB69E91E4B0798D536DF /* Copy Pods Resources */ = {
