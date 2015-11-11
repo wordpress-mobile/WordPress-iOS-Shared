@@ -1,7 +1,7 @@
 #import "FontsTableViewController.h"
 #import "FontTableViewCell.h"
-#import <WordPress-iOS-Shared/WPStyleGuide.h>
-#import <WordPress-iOS-Shared/WPFontManager.h>
+#import <WordPressShared/WPStyleGuide.h>
+#import <WordPressShared/WPFontManager.h>
 
 static const CGFloat FontSize = 20.0;
 

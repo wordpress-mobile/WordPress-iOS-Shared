@@ -1,5 +1,5 @@
 #import "ColorsTableViewController.h"
-#import <WordPress-iOS-Shared/WPStyleGuide.h>
+#import <WordPressShared/WPStyleGuide.h>
 
 @interface ColorsTableViewController ()
 

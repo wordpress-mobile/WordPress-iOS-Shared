@@ -2,9 +2,9 @@
 #import "DeviceTableViewCell.h"
 #import "DeviceTest.h"
 #import "FontTableViewCell.h"
-#import <WordPress-iOS-Shared/WPDeviceIdentification.h>
-#import <WordPress-iOS-Shared/WPStyleGuide.h>
-#import <WordPress-iOS-Shared/WPFontManager.h>
+#import <WordPressShared/WPDeviceIdentification.h>
+#import <WordPressShared/WPStyleGuide.h>
+#import <WordPressShared/WPFontManager.h>
 
 @interface DeviceTableViewController ()
 
