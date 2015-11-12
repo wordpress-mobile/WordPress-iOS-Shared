@@ -33,7 +33,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
-  - CocoaLumberjack (= 2.0.0)
+  - CocoaLumberjack (~> 2.0.0)
   - OCMock
   - OHHTTPStubs (= 3.1.1)
 
