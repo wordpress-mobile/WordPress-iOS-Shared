@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   s.header_dir = 'WordPressShared'
 
   s.dependency 'AFNetworking',	'~> 2.5'
-  s.dependency 'CocoaLumberjack', '= 2.0.0'
+  s.dependency 'CocoaLumberjack', '~> 2.2.0'
 end
