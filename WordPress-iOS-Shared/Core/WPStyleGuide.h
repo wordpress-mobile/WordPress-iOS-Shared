@@ -69,6 +69,8 @@
 + (void)configureTableViewActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
++ (void)configureTableViewSectionHeader:(UITableViewHeaderFooterView *)header;
++ (void)configureTableViewSectionFooter:(UITableViewHeaderFooterView *)footer;
 
 // Move to a feature category
 + (UIColor *)buttonActionColor;

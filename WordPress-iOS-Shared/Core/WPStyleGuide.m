@@ -413,6 +413,18 @@
     }
 }
 
++ (void)configureTableViewSectionHeader:(UITableViewHeaderFooterView *)header
+{
+    header.textLabel.font = [self tableviewSectionHeaderFont];
+    header.textLabel.textColor = [self whisperGrey];
+}
+
++ (void)configureTableViewSectionFooter:(UITableViewHeaderFooterView *)footer
+{
+    footer.textLabel.font = [self subtitleFont];
+    footer.textLabel.textColor = [self greyDarken10];
+}
+
 // TODO: Move to fetaure category
 + (void)configureFollowButton:(UIButton *)followButton {
     followButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
