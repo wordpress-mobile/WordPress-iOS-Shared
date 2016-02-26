@@ -74,7 +74,7 @@ static NSString * const FontTypeOTF = @"otf";
 
 + (UIFont *)systemItalicFontOfSize:(CGFloat)size
 {
-    return [self italicFontWithFont:[UIFont systemFontOfSize:size weight:UIFontWeightRegular]];
+    return [UIFont italicSystemFontOfSize:size];
 }
 
 + (UIFont *)systemBoldFontOfSize:(CGFloat)size
@@ -173,13 +173,6 @@ static NSString * const FontTypeOTF = @"otf";
         CFRelease(font);
         CFRelease(provider);
     }
-}
-
-+ (UIFont *)italicFontWithFont:(UIFont *)font
-{
-    UIFontDescriptor *fontDescriptor = font.fontDescriptor;
-    fontDescriptor = [fontDescriptor fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
-    return [UIFont fontWithDescriptor:fontDescriptor size:font.pointSize];
 }
 
 @end
