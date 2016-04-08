@@ -1,7 +1,7 @@
 #import "FontsTableViewController.h"
 #import "FontTableViewCell.h"
-#import <WordPress-iOS-Shared/WPStyleGuide.h>
-#import <WordPress-iOS-Shared/WPFontManager.h>
+#import <WordPressShared/WPStyleGuide.h>
+#import <WordPressShared/WPFontManager.h>
 
 static const CGFloat FontSize = 20.0;
 
@@ -96,7 +96,13 @@ static const CGFloat FontSize = 20.0;
              @{@"title": NSLocalizedString(@"OpenSans Light Italic",nil), @"font": [WPFontManager openSansLightItalicFontOfSize:FontSize]},
              @{@"title": NSLocalizedString(@"OpenSans Semi-Bold",nil), @"font": [WPFontManager openSansSemiBoldFontOfSize:FontSize]},
              @{@"title": NSLocalizedString(@"OpenSans Semi-Bold Italic",nil), @"font": [WPFontManager openSansSemiBoldItalicFontOfSize:FontSize]},
-             
+
+             @{@"title": NSLocalizedString(@"System",nil), @"font": [WPFontManager systemRegularFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"System Bold",nil), @"font": [WPFontManager systemBoldFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"System Italic",nil), @"font": [WPFontManager systemItalicFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"System Light",nil), @"font": [WPFontManager systemLightFontOfSize:FontSize]},
+             @{@"title": NSLocalizedString(@"System Semi-Bold",nil), @"font": [WPFontManager systemSemiBoldFontOfSize:FontSize]},
+
              @{@"title": NSLocalizedString(@"Large Post Title Font", nil), @"font": [WPStyleGuide largePostTitleFont], @"attributes": [WPStyleGuide largePostTitleAttributes]},
              @{@"title": NSLocalizedString(@"Post Title Font", nil), @"font": [WPStyleGuide postTitleFont], @"attributes": [WPStyleGuide postTitleAttributes]},
              @{@"title": NSLocalizedString(@"Post Title Font Bold", nil), @"font": [WPStyleGuide postTitleFontBold], @"attributes": [WPStyleGuide postTitleAttributesBold]},
