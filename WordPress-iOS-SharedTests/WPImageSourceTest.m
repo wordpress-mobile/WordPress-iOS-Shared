@@ -1,4 +1,5 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHPathHelpers.h>
 #import <XCTest/XCTest.h>
 
 #import "WPImageSource.h"
@@ -30,7 +31,7 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -59,7 +60,7 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -89,7 +90,7 @@
         return [[request.URL absoluteString] isEqualToString:requestUrl];
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         downloadCount++;
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -135,7 +136,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", nil) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
