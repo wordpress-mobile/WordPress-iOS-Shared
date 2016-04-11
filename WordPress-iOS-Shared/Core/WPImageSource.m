@@ -4,8 +4,7 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 @interface WPImageSource()
 
-@property (nonatomic, strong) NSURLSession *downloadingSession;
-@property (nonatomic, strong) NSOperationQueue *downloadingQueue;
+@property (nonatomic, strong) NSURLSession *downloadsSession;
 @property (nonatomic, strong) NSMutableSet *urlDownloadsInProgress;
 @property (nonatomic, strong) NSMutableDictionary *successBlocks;
 @property (nonatomic, strong) NSMutableDictionary *failureBlocks;
@@ -26,20 +25,19 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
 - (void)dealloc
 {
-    [_downloadingSession invalidateAndCancel];
+    [_downloadsSession invalidateAndCancel];
 }
 
 - (id)init
 {
     self = [super init];
     if (self) {
-        _downloadingQueue = [[NSOperationQueue alloc] init];
         _urlDownloadsInProgress = [[NSMutableSet alloc] init];
         _successBlocks = [[NSMutableDictionary alloc] init];
         _failureBlocks = [[NSMutableDictionary alloc] init];
 
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        _downloadingSession = [NSURLSession sessionWithConfiguration:configuration];
+        _downloadsSession = [NSURLSession sessionWithConfiguration:configuration];
     }
     return self;
 }
@@ -87,7 +85,7 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
             [request addValue:[NSString stringWithFormat:@"Bearer %@", token] forHTTPHeaderField:@"Authorization"];
         }
 
-        NSURLSessionDownloadTask *task = [self.downloadingSession downloadTaskWithRequest:request
+        NSURLSessionDownloadTask *task = [self.downloadsSession downloadTaskWithRequest:request
             completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
                 if (error) {
                     [self downloadFailedWithError:error forURL:url];
