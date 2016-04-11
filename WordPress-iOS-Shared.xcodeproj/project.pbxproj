@@ -32,6 +32,7 @@
 		931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 931A103D192AA3DB00D3CC11 /* test-image.jpg */; };
 		F45AF04D6E344F4CBD2A4B65 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB8B405468864FD7A0D16B74 /* libPods.a */; };
 		FF8DDCE11B5E91050098826F /* WPTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */; };
+		FFBC2B371CBBE10300B0379E /* anim-reader.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFBC2B361CBBE10300B0379E /* anim-reader.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		AB8B405468864FD7A0D16B74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTextFieldTableViewCell.m; path = Core/WPTextFieldTableViewCell.m; sourceTree = "<group>"; };
+		FFBC2B361CBBE10300B0379E /* anim-reader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anim-reader.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		931A103C192AA3B500D3CC11 /* Test Data */ = {
 			isa = PBXGroup;
 			children = (
+				FFBC2B361CBBE10300B0379E /* anim-reader.gif */,
 				931A103D192AA3DB00D3CC11 /* test-image.jpg */,
 			);
 			name = "Test Data";
@@ -364,6 +367,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				931A1008192A9CDD00D3CC11 /* InfoPlist.strings in Resources */,
+				FFBC2B371CBBE10300B0379E /* anim-reader.gif in Resources */,
 				931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -128,4 +128,30 @@
     XCTAssertEqual(downloadCount, 2, @"it should download the image");
 }
 
+- (void)testDownloadOfAnimatedGif
+{
+    NSString *requestUrl = @"http://test.blog/images/anim-reader.gif";
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", nil) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
+    }];
+
+    WPImageSource *source = [WPImageSource sharedSource];
+
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image without token"];
+    [source downloadImageForURL:url
+                      authToken:@"TOKEN"
+                    withSuccess:^(UIImage *image) {
+                        [expectation fulfill];
+                    } failure:^(NSError *error) {
+                        [expectation fulfill];
+                        XCTFail();
+                    }];
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
+
+}
+
 @end
