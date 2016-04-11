@@ -12,7 +12,6 @@
 		744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 744DA845194F3A76002CD6E9 /* UIImage+Util.m */; };
 		7462F3401961FAAB00CC8EED /* WPFontManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F535F71961F7E6002D4320 /* WPFontManager.m */; };
 		9309B52D192BEECC00B69F69 /* WordPressShared.m in Sources */ = {isa = PBXBuildFile; fileRef = 9309B52C192BEECC00B69F69 /* WordPressShared.m */; };
-		9309B533192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */; };
 		931A0FEE192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
 		931A0FFC192A9CDD00D3CC11 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FFB192A9CDD00D3CC11 /* XCTest.framework */; };
 		931A0FFD192A9CDD00D3CC11 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931A0FED192A9CDD00D3CC11 /* Foundation.framework */; };
@@ -68,8 +67,6 @@
 		897FA2B40A6E81DB4E7F0435 /* Pods-WordPress-iOS-SharedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9309B52B192BEECC00B69F69 /* WordPressShared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WordPressShared.h; path = Exclude/WordPressShared.h; sourceTree = "<group>"; };
 		9309B52C192BEECC00B69F69 /* WordPressShared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WordPressShared.m; path = Exclude/WordPressShared.m; sourceTree = "<group>"; };
-		9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAnimatedImageResponseSerializer.h; sourceTree = "<group>"; };
-		9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAnimatedImageResponseSerializer.m; sourceTree = "<group>"; };
 		931A0FEA192A9CDD00D3CC11 /* libWordPress-iOS-Shared.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libWordPress-iOS-Shared.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		931A0FED192A9CDD00D3CC11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		931A0FF1192A9CDD00D3CC11 /* WordPress-iOS-Shared-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Prefix.pch"; sourceTree = "<group>"; };
@@ -167,7 +164,6 @@
 		931A0FEF192A9CDD00D3CC11 /* WordPress-iOS-Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E13D93EF1BF235BA00CCBA7C /* Private */,
 				E154809F1A43035700FA4EDD /* Core */,
 				931A0FF0192A9CDD00D3CC11 /* Supporting Files */,
 			);
@@ -260,15 +256,6 @@
 				931A103D192AA3DB00D3CC11 /* test-image.jpg */,
 			);
 			name = "Test Data";
-			sourceTree = "<group>";
-		};
-		E13D93EF1BF235BA00CCBA7C /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				9309B531192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.h */,
-				9309B532192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m */,
-			);
-			path = Private;
 			sourceTree = "<group>";
 		};
 		E154809F1A43035700FA4EDD /* Core */ = {
@@ -467,7 +454,6 @@
 				744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */,
 				931A1020192A9DD500D3CC11 /* WPNoResultsView.m in Sources */,
 				931A1026192A9E0B00D3CC11 /* WPNUXUtility.m in Sources */,
-				9309B533192F9C2000B69F69 /* WPAnimatedImageResponseSerializer.m in Sources */,
 				931A1035192AA03600D3CC11 /* UIColor+Helpers.m in Sources */,
 				931A1019192A9D6E00D3CC11 /* NSString+XMLExtensions.m in Sources */,
 				931A101C192A9DA500D3CC11 /* WPImageSource.m in Sources */,
