@@ -1,6 +1,5 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <XCTest/XCTest.h>
-#import "AsyncTestHelper.h"
 
 #import "WPImageSource.h"
 
@@ -36,16 +35,17 @@
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image with token"];
+
     [source downloadImageForURL:url
                       authToken:@"TOKEN"
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [expectation fulfill];
                     } failure:^(NSError *error) {
+                        [expectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
 
     XCTAssertEqualObjects(lastAuthHeader, @"Bearer TOKEN");
 }
@@ -64,16 +64,18 @@
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image without token"];
     [source downloadImageForURL:url
                       authToken:@"TOKEN"
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [expectation fulfill];
                     } failure:^(NSError *error) {
+                        [expectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
+    
     XCTAssertNil(lastAuthHeader);
 }
 
@@ -92,35 +94,37 @@
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *originalDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [originalDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [originalDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
+
+    XCTestExpectation *duplicateDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [duplicateDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [duplicateDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHWait();
-    ATHEnd();
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
 
     XCTAssertEqual(downloadCount, 1, @"it should download the image once");
 
-    ATHStart();
+    XCTestExpectation *anotherDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [anotherDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [anotherDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
     XCTAssertEqual(downloadCount, 2, @"it should download the image");
 }
 
