@@ -28,7 +28,7 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
     [_downloadsSession invalidateAndCancel];
 }
 
-- (id)init
+- (instancetype)init
 {
     self = [super init];
     if (self) {
