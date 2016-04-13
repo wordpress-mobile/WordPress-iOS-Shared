@@ -100,6 +100,10 @@
 		A7CDA9068CC847B2AD67DE41 /* libPods-WordPress-iOS-SharedTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-SharedTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB8B405468864FD7A0D16B74 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
+		FF14587C1CBE6D37004A5A0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FF14587D1CBE6D37004A5A0B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		FF14587E1CBE6D37004A5A0B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FF1458801CBE6D59004A5A0B /* WordPress-iOS-Shared.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "WordPress-iOS-Shared.podspec"; sourceTree = "<group>"; };
 		FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTextFieldTableViewCell.m; path = Core/WPTextFieldTableViewCell.m; sourceTree = "<group>"; };
 		FFBC2B361CBBE10300B0379E /* anim-reader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "anim-reader.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 		931A0FE1192A9CDD00D3CC11 = {
 			isa = PBXGroup;
 			children = (
+				FF14587B1CBE6D24004A5A0B /* Podspec Metadata */,
 				931A0FEF192A9CDD00D3CC11 /* WordPress-iOS-Shared */,
 				931A1003192A9CDD00D3CC11 /* WordPress-iOS-SharedTests */,
 				931A0FEC192A9CDD00D3CC11 /* Frameworks */,
@@ -276,6 +281,17 @@
 				E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FF14587B1CBE6D24004A5A0B /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				FF1458801CBE6D59004A5A0B /* WordPress-iOS-Shared.podspec */,
+				FF14587C1CBE6D37004A5A0B /* README.md */,
+				FF14587D1CBE6D37004A5A0B /* Podfile */,
+				FF14587E1CBE6D37004A5A0B /* LICENSE */,
+			);
+			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
