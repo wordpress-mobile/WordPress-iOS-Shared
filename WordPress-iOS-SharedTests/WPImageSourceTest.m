@@ -1,6 +1,6 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHPathHelpers.h>
 #import <XCTest/XCTest.h>
-#import "AsyncTestHelper.h"
 
 #import "WPImageSource.h"
 
@@ -31,21 +31,22 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image with token"];
+
     [source downloadImageForURL:url
                       authToken:@"TOKEN"
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [expectation fulfill];
                     } failure:^(NSError *error) {
+                        [expectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+    [self waitForExpectationsWithTimeout:5.0 handler:nil];
 
     XCTAssertEqualObjects(lastAuthHeader, @"Bearer TOKEN");
 }
@@ -59,21 +60,23 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image without token"];
     [source downloadImageForURL:url
                       authToken:@"TOKEN"
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [expectation fulfill];
                     } failure:^(NSError *error) {
+                        [expectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
+    
     XCTAssertNil(lastAuthHeader);
 }
 
@@ -87,41 +90,69 @@
         return [[request.URL absoluteString] isEqualToString:requestUrl];
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         downloadCount++;
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", nil) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
 
-    ATHStart();
+    XCTestExpectation *originalDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [originalDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [originalDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
+
+    XCTestExpectation *duplicateDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [duplicateDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [duplicateDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHWait();
-    ATHEnd();
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
 
     XCTAssertEqual(downloadCount, 1, @"it should download the image once");
 
-    ATHStart();
+    XCTestExpectation *anotherDownloadExpectation = [self expectationWithDescription:@"Start 1st download"];
     [source downloadImageForURL:url
                     withSuccess:^(UIImage *image) {
-                        ATHNotify();
+                        [anotherDownloadExpectation fulfill];
                     } failure:^(NSError *error) {
+                        [anotherDownloadExpectation fulfill];
                         XCTFail();
-                        ATHNotify();
                     }];
-    ATHEnd();
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
     XCTAssertEqual(downloadCount, 2, @"it should download the image");
+}
+
+- (void)testDownloadOfAnimatedGif
+{
+    NSString *requestUrl = @"http://test.blog/images/anim-reader.gif";
+    NSURL *url = [NSURL URLWithString:requestUrl];
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
+    }];
+
+    WPImageSource *source = [WPImageSource sharedSource];
+
+    XCTestExpectation *expectation = [self expectationWithDescription:@"Download image without token"];
+    [source downloadImageForURL:url
+                      authToken:@"TOKEN"
+                    withSuccess:^(UIImage *image) {
+                        [expectation fulfill];
+                    } failure:^(NSError *error) {
+                        [expectation fulfill];
+                        XCTFail();
+                    }];
+
+    [self waitForExpectationsWithTimeout:5.0 handler: nil];
+
 }
 
 @end
