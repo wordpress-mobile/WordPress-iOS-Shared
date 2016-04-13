@@ -23,6 +23,5 @@ Pod::Spec.new do |s|
   s.requires_arc = true
   s.header_dir = 'WordPressShared'
 
-  s.dependency 'AFNetworking',	'~> 2.5'
   s.dependency 'CocoaLumberjack', '~> 2.2.0'
 end
