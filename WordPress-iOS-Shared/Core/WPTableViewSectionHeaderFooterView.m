@@ -98,6 +98,38 @@
     [self setNeedsLayout];
 }
 
+- (NSAttributedString *)attributedTitle
+{
+    return self.titleLabel.attributedText;
+}
+
+- (void)setAttributedTitle:(NSAttributedString *)attributedTitle
+{
+    if (self.uppercase) {
+        NSString *title = [[attributedTitle string] uppercaseStringWithLocale:[NSLocale currentLocale]];
+        
+        // If we're uppercasing the title then we'll need to copy any existing attributes...
+        NSMutableArray *attributes = [NSMutableArray new];
+        [attributedTitle enumerateAttributesInRange:NSMakeRange(0, [attributedTitle length])
+                                            options:0
+                                         usingBlock:^(NSDictionary *attr, NSRange range, BOOL *stop) {
+                                             [attributes addObject:@{ @"attr": attr, @"range": [NSValue valueWithRange:range] }];
+                                         }];
+        
+        NSMutableAttributedString *uppercaseTitle = [[NSMutableAttributedString alloc] initWithString:title];
+        
+        // And then apply them to a new uppercased string
+        for (NSDictionary *attribute in attributes) {
+            [uppercaseTitle setAttributes:attribute[@"attr"] range:[attribute[@"range"] rangeValue]];
+        }
+        
+        attributedTitle = uppercaseTitle;
+    }
+    
+    self.titleLabel.attributedText = attributedTitle;
+    [self setNeedsLayout];
+}
+
 - (UIColor *)titleColor
 {
     return self.titleLabel.textColor;
