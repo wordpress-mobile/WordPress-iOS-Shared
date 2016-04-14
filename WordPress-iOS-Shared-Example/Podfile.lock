@@ -15,10 +15,10 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   WordPress-iOS-Shared:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  WordPress-iOS-Shared: e9e81a6a3cc3b45de93c8a565422c11395813c49
+  WordPress-iOS-Shared: 99fd974e8831cc02edb48429fa689155c85de79f
 
 COCOAPODS: 0.39.0

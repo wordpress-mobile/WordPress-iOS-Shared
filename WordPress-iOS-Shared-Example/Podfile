@@ -1,4 +1,5 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
+use_frameworks!
 
 target "WordPress-iOS-Shared-Example" do
   pod "WordPress-iOS-Shared", :path => "../"
