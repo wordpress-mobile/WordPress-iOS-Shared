@@ -1,8 +1,8 @@
 #import "WPTableViewSectionHeaderFooterView.h"
 #import "WPTableViewCell.h"
 #import "WPStyleGuide.h"
+#import "WPDeviceIdentification.h"
 #import "NSString+Util.h"
-
 
 
 @interface WPTableViewSectionHeaderFooterView ()
@@ -202,7 +202,7 @@
 
 + (CGFloat)fixedWidth
 {
-    return IS_IPAD ? WPTableViewFixedWidth : 0.0;
+    return [WPDeviceIdentification isiPad] ? WPTableViewFixedWidth : 0.0;
 }
 
 

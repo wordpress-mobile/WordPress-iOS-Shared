@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3752D7BFA5FF869DAF7D6B /* Pods_WordPress_iOS_Shared_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A3B7F7FFC8895BF865DBE /* Pods_WordPress_iOS_Shared_Example.framework */; };
 		598E77111A8E4F2C0020DC05 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77101A8E4F2C0020DC05 /* DeviceTableViewController.m */; };
 		598E77141A8E535F0020DC05 /* DeviceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77131A8E535F0020DC05 /* DeviceTest.m */; };
 		598E77171A8E53EE0020DC05 /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77161A8E53EE0020DC05 /* DeviceTableViewCell.m */; };
@@ -21,19 +22,18 @@
 		85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A420C41977993100F0F603 /* FontTableViewCell.m */; };
 		85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73C1977891600480221 /* FontsTableViewController.m */; };
 		85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73F1977891F00480221 /* ColorsTableViewController.m */; };
-		EC81CE668DE94D458BA9910B /* libPods-WordPress-iOS-Shared-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2AE838413EB18EF1792640E7 /* Pods-WordPress-iOS-Shared-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-Shared-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.release.xcconfig"; sourceTree = "<group>"; };
 		2FEB7BA7F0B0C7DC85D5391A /* Pods-WordPress-iOS-Shared-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-Shared-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.debug.xcconfig"; sourceTree = "<group>"; };
-		37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WordPress-iOS-Shared-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		598E770F1A8E4F2C0020DC05 /* DeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
 		598E77101A8E4F2C0020DC05 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
 		598E77121A8E535F0020DC05 /* DeviceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTest.h; sourceTree = "<group>"; };
 		598E77131A8E535F0020DC05 /* DeviceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTest.m; sourceTree = "<group>"; };
 		598E77151A8E53EE0020DC05 /* DeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
 		598E77161A8E53EE0020DC05 /* DeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
+		849A3B7F7FFC8895BF865DBE /* Pods_WordPress_iOS_Shared_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordPress_iOS_Shared_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WordPress-iOS-Shared-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		852FBB48197755CC002C5249 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		852FBB4A197755CC002C5249 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,7 +63,7 @@
 				852FBB4B197755CC002C5249 /* CoreGraphics.framework in Frameworks */,
 				852FBB4D197755CC002C5249 /* UIKit.framework in Frameworks */,
 				852FBB49197755CC002C5249 /* Foundation.framework in Frameworks */,
-				EC81CE668DE94D458BA9910B /* libPods-WordPress-iOS-Shared-Example.a in Frameworks */,
+				0E3752D7BFA5FF869DAF7D6B /* Pods_WordPress_iOS_Shared_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 				852FBB4A197755CC002C5249 /* CoreGraphics.framework */,
 				852FBB4C197755CC002C5249 /* UIKit.framework */,
 				852FBB6A197755CC002C5249 /* XCTest.framework */,
-				37B298F8355D4CE69AA04521 /* libPods-WordPress-iOS-Shared-Example.a */,
+				849A3B7F7FFC8895BF865DBE /* Pods_WordPress_iOS_Shared_Example.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -374,6 +374,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
 				INFOPLIST_FILE = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -388,6 +389,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
 				INFOPLIST_FILE = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

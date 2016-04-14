@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.license      = "GPLv2"
   s.author             = { "Automattic" => "mobile@automattic.com", "Aaron Douglas" => "astralbodies@gmail.com", "Sergio Estevao" => "sergioestevao@gmail.com" }
   s.social_media_url   = "http://twitter.com/WordPressiOS"
-  s.platform     = :ios, "7.0"
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :tag => s.version.to_s }
   s.source_files = [ 'WordPress-iOS-Shared/Core', 'WordPress-iOS-Shared/Private' ]
   s.public_header_files = 'WordPress-iOS-Shared/Core/*.h'
