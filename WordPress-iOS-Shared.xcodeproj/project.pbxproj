@@ -59,6 +59,9 @@
 		E1016C381CBF794F00CE57D8 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1016C371CBF794F00CE57D8 /* Pods.framework */; };
 		E1016C391CBF7C5A00CE57D8 /* WordPressShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1016BF91CBF760F00CE57D8 /* WordPressShared.framework */; };
 		E1016C3E1CBF7E5800CE57D8 /* UIColorHelpersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1016C3D1CBF7E5800CE57D8 /* UIColorHelpersTests.swift */; };
+		E16B3CF31CBFCFFB0043A56A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CF21CBFCFFB0043A56A /* Result.swift */; };
+		E16B3CFB1CBFD0300043A56A /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CFA1CBFD0300043A56A /* ResultTests.swift */; };
+		E16B3CFC1CBFD0620043A56A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CF21CBFCFFB0043A56A /* Result.swift */; };
 		FF8DDCE11B5E91050098826F /* WPTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */; };
 		FFBC2B371CBBE10300B0379E /* anim-reader.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFBC2B361CBBE10300B0379E /* anim-reader.gif */; };
 /* End PBXBuildFile section */
@@ -133,6 +136,8 @@
 		E1016C371CBF794F00CE57D8 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../../Library/Developer/Xcode/DerivedData/WordPress-iOS-Shared-hfumuyfnkuhovufljfrgpelsvapk/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
 		E1016C3C1CBF7E5700CE57D8 /* WordPress-iOS-SharedTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-SharedTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		E1016C3D1CBF7E5800CE57D8 /* UIColorHelpersTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHelpersTests.swift; sourceTree = "<group>"; };
+		E16B3CF21CBFCFFB0043A56A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E16B3CFA1CBFD0300043A56A /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF14587C1CBE6D37004A5A0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FF14587D1CBE6D37004A5A0B /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 				931A1037192AA34300D3CC11 /* WPImageSourceTest.m */,
 				E1016C3D1CBF7E5800CE57D8 /* UIColorHelpersTests.swift */,
 				E1016C3C1CBF7E5700CE57D8 /* WordPress-iOS-SharedTests-Bridging-Header.h */,
+				E16B3CFA1CBFD0300043A56A /* ResultTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -323,11 +329,21 @@
 		E154809F1A43035700FA4EDD /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				E16B3CF11CBFCFFB0043A56A /* Internal */,
 				931A101D192A9DC500D3CC11 /* Views */,
 				931A1013192A9CEA00D3CC11 /* Utility */,
 			);
 			path = Core;
 			sourceTree = "<group>";
+		};
+		E16B3CF11CBFCFFB0043A56A /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				E16B3CF21CBFCFFB0043A56A /* Result.swift */,
+			);
+			name = Internal;
+			path = "WordPress-iOS-Shared/Internal";
+			sourceTree = SOURCE_ROOT;
 		};
 		E17299F8EC7CFF36CD4A166A /* Pods */ = {
 			isa = PBXGroup;
@@ -579,6 +595,7 @@
 				931A1023192A9DFC00D3CC11 /* WPStyleGuide.m in Sources */,
 				598E770E1A8E3D1A0020DC05 /* WPDeviceIdentification.m in Sources */,
 				7462F3401961FAAB00CC8EED /* WPFontManager.m in Sources */,
+				E16B3CF31CBFCFFB0043A56A /* Result.swift in Sources */,
 				931A102E192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.m in Sources */,
 				744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */,
 				931A1020192A9DD500D3CC11 /* WPNoResultsView.m in Sources */,
@@ -594,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16B3CFB1CBFD0300043A56A /* ResultTests.swift in Sources */,
 				931A1038192AA34300D3CC11 /* WPImageSourceTest.m in Sources */,
 				E1016C3E1CBF7E5800CE57D8 /* UIColorHelpersTests.swift in Sources */,
 			);
@@ -607,6 +625,7 @@
 				E1016C321CBF764600CE57D8 /* NSString+XMLExtensions.m in Sources */,
 				E1016C211CBF763D00CE57D8 /* WPTableViewCell.m in Sources */,
 				E1016C1D1CBF763D00CE57D8 /* UIColor+Helpers.m in Sources */,
+				E16B3CFC1CBFD0620043A56A /* Result.swift in Sources */,
 				E1016C341CBF764600CE57D8 /* WPDeviceIdentification.m in Sources */,
 				E1016C2C1CBF764600CE57D8 /* UIImage+Util.m in Sources */,
 				E1016C231CBF763D00CE57D8 /* WPTextFieldTableViewCell.m in Sources */,
