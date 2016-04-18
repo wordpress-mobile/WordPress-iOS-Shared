@@ -64,9 +64,9 @@
 		E13F104B1CC536C300799775 /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F104A1CC536C300799775 /* NSURLExtensions.swift */; };
 		E13F104C1CC536C300799775 /* NSURLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F104A1CC536C300799775 /* NSURLExtensions.swift */; };
 		E13F104E1CC5373000799775 /* NSURLExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F104D1CC5373000799775 /* NSURLExtensionTests.swift */; };
-		E16B3CF31CBFCFFB0043A56A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CF21CBFCFFB0043A56A /* Result.swift */; };
+		E13F10501CC5437600799775 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F104F1CC5437600799775 /* Result.swift */; };
+		E13F10511CC5437600799775 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F104F1CC5437600799775 /* Result.swift */; };
 		E16B3CFB1CBFD0300043A56A /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CFA1CBFD0300043A56A /* ResultTests.swift */; };
-		E16B3CFC1CBFD0620043A56A /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = E16B3CF21CBFCFFB0043A56A /* Result.swift */; };
 		FF8DDCE11B5E91050098826F /* WPTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */; };
 		FFBC2B371CBBE10300B0379E /* anim-reader.gif in Resources */ = {isa = PBXBuildFile; fileRef = FFBC2B361CBBE10300B0379E /* anim-reader.gif */; };
 /* End PBXBuildFile section */
@@ -144,7 +144,7 @@
 		E13F10471CC531C400799775 /* WPImageSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WPImageSource.swift; path = Core/WPImageSource.swift; sourceTree = "<group>"; };
 		E13F104A1CC536C300799775 /* NSURLExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSURLExtensions.swift; path = Core/NSURLExtensions.swift; sourceTree = "<group>"; };
 		E13F104D1CC5373000799775 /* NSURLExtensionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSURLExtensionTests.swift; sourceTree = "<group>"; };
-		E16B3CF21CBFCFFB0043A56A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		E13F104F1CC5437600799775 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Core/Result.swift; sourceTree = "<group>"; };
 		E16B3CFA1CBFD0300043A56A /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
 		E95607083C359C14B48BA503 /* Pods-WordPress-iOS-SharedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-SharedTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-SharedTests/Pods-WordPress-iOS-SharedTests.release.xcconfig"; sourceTree = "<group>"; };
 		FF14587C1CBE6D37004A5A0B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -266,19 +266,20 @@
 		931A1013192A9CEA00D3CC11 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				E13F10411CC4EB1100799775 /* OperationPools.swift */,
-				744DA844194F3A76002CD6E9 /* UIImage+Util.h */,
-				744DA845194F3A76002CD6E9 /* UIImage+Util.m */,
-				E13F10471CC531C400799775 /* WPImageSource.swift */,
 				931A1014192A9D5200D3CC11 /* NSString+Util.h */,
 				931A1015192A9D5200D3CC11 /* NSString+Util.m */,
 				931A1017192A9D6E00D3CC11 /* NSString+XMLExtensions.h */,
 				931A1018192A9D6E00D3CC11 /* NSString+XMLExtensions.m */,
 				E13F104A1CC536C300799775 /* NSURLExtensions.swift */,
+				E13F10411CC4EB1100799775 /* OperationPools.swift */,
+				E13F104F1CC5437600799775 /* Result.swift */,
+				744DA844194F3A76002CD6E9 /* UIImage+Util.h */,
+				744DA845194F3A76002CD6E9 /* UIImage+Util.m */,
 				598E770C1A8E3D1A0020DC05 /* WPDeviceIdentification.h */,
 				598E770D1A8E3D1A0020DC05 /* WPDeviceIdentification.m */,
 				74F535F61961F7E6002D4320 /* WPFontManager.h */,
 				74F535F71961F7E6002D4320 /* WPFontManager.m */,
+				E13F10471CC531C400799775 /* WPImageSource.swift */,
 			);
 			name = Utility;
 			path = ..;
@@ -340,21 +341,11 @@
 		E154809F1A43035700FA4EDD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E16B3CF11CBFCFFB0043A56A /* Internal */,
 				931A101D192A9DC500D3CC11 /* Views */,
 				931A1013192A9CEA00D3CC11 /* Utility */,
 			);
 			path = Core;
 			sourceTree = "<group>";
-		};
-		E16B3CF11CBFCFFB0043A56A /* Internal */ = {
-			isa = PBXGroup;
-			children = (
-				E16B3CF21CBFCFFB0043A56A /* Result.swift */,
-			);
-			name = Internal;
-			path = "WordPress-iOS-Shared/Internal";
-			sourceTree = SOURCE_ROOT;
 		};
 		E17299F8EC7CFF36CD4A166A /* Pods */ = {
 			isa = PBXGroup;
@@ -606,7 +597,6 @@
 				931A1023192A9DFC00D3CC11 /* WPStyleGuide.m in Sources */,
 				598E770E1A8E3D1A0020DC05 /* WPDeviceIdentification.m in Sources */,
 				7462F3401961FAAB00CC8EED /* WPFontManager.m in Sources */,
-				E16B3CF31CBFCFFB0043A56A /* Result.swift in Sources */,
 				931A102E192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.m in Sources */,
 				744DA846194F3A76002CD6E9 /* UIImage+Util.m in Sources */,
 				931A1020192A9DD500D3CC11 /* WPNoResultsView.m in Sources */,
@@ -614,6 +604,7 @@
 				931A1026192A9E0B00D3CC11 /* WPNUXUtility.m in Sources */,
 				931A1035192AA03600D3CC11 /* UIColor+Helpers.m in Sources */,
 				931A1019192A9D6E00D3CC11 /* NSString+XMLExtensions.m in Sources */,
+				E13F10501CC5437600799775 /* Result.swift in Sources */,
 				E13F10461CC4F25600799775 /* OperationPools.swift in Sources */,
 				931A1029192A9E2400D3CC11 /* WPTableViewCell.m in Sources */,
 			);
@@ -640,8 +631,8 @@
 				E1016C211CBF763D00CE57D8 /* WPTableViewCell.m in Sources */,
 				E1016C1D1CBF763D00CE57D8 /* UIColor+Helpers.m in Sources */,
 				E13F104C1CC536C300799775 /* NSURLExtensions.swift in Sources */,
-				E16B3CFC1CBFD0620043A56A /* Result.swift in Sources */,
 				E1016C341CBF764600CE57D8 /* WPDeviceIdentification.m in Sources */,
+				E13F10511CC5437600799775 /* Result.swift in Sources */,
 				E1016C2C1CBF764600CE57D8 /* UIImage+Util.m in Sources */,
 				E1016C231CBF763D00CE57D8 /* WPTextFieldTableViewCell.m in Sources */,
 				E13F10491CC531C400799775 /* WPImageSource.swift in Sources */,
