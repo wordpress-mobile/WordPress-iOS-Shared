@@ -162,7 +162,7 @@ public class NetworkRequestPool: OperationPool<NSURLRequest, NSData, NSError> {
     /// Optionally, you can specify the NSURLSession to use. By default, it uses
     /// the shared session.
     ///
-    /// - parameter session The NSURLSession to use for the network request. By
+    /// - parameter session: The NSURLSession to use for the network request. By
     /// default it uses `NSURLSession.sharedSession()`.
     ///
     public init(session: NSURLSession = NSURLSession.sharedSession()) {
@@ -190,12 +190,12 @@ public class NetworkDownloadPool<Value>: OperationPool<NSURLRequest, Value, NSEr
     /// Optionally, you can specify the NSURLSession to use. By default, it uses
     /// the shared session.
     ///
-    /// - parameter parser A function to be called to convert the downloaded
+    /// - parameter parser: A function to be called to convert the downloaded
     /// file to a `Value`. The `parser` function takes a file `NSURL` that
     /// points to the location of the downloaded file, and returns a `Result`
     /// with the processed `Value`, or a `NSError`.
     ///
-    /// - parameter session The NSURLSession to use for the network request. By
+    /// - parameter session: The NSURLSession to use for the network request. By
     /// default it uses `NSURLSession.sharedSession()`.
     ///
     public init(parser: Parser, session: NSURLSession = NSURLSession.sharedSession()) {
@@ -227,7 +227,7 @@ public class ImageDownloadPool: NetworkDownloadPool<UIImage> {
     /// Optionally, you can specify the NSURLSession to use. By default, it uses
     /// the shared session.
     ///
-    /// - parameter session The NSURLSession to use for the network request. By
+    /// - parameter session: The NSURLSession to use for the network request. By
     /// default it uses `NSURLSession.sharedSession()`.
     ///
     public init(session: NSURLSession = NSURLSession.sharedSession()) {
