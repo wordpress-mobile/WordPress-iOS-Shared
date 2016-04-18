@@ -1,7 +1,7 @@
 import XCTest
 import WordPressShared
 
-struct TestError: ErrorType {
+private struct TestError: ErrorType {
     let message: String
     init(_ message: String) {
         self.message = message
@@ -9,10 +9,10 @@ struct TestError: ErrorType {
 }
 
 class ResultTests: XCTestCase {
-    typealias TestResult = Result<String, TestError>
-    let success: TestResult = .success("Success")
-    let failure: TestResult = .failure(TestError("Failure"))
-    let secondFailure: TestResult = .failure(TestError("Second"))
+    private typealias TestResult = Result<String, TestError>
+    private let success: TestResult = .success("Success")
+    private let failure: TestResult = .failure(TestError("Failure"))
+    private let secondFailure: TestResult = .failure(TestError("Second"))
 
     func testMapTransformsSuccess() {
         XCTAssertEqual(success.map({ $0.uppercaseString }).value, "SUCCESS")
