@@ -39,7 +39,8 @@ public class WPImageSource : NSObject {
      @param failure the block to execute if the download failed.
      */
     public func downloadImageForURL(url: NSURL, withSuccess success: (UIImage -> Void)?, failure: (NSError -> Void)?) {
-        downloadImageForURL(url, authToken: nil, withSuccess: success, failure: failure)
+        let request = requestForURL(url)
+        downloadImageWithRequest(request, withSuccess: success, failure: failure)
     }
 
 
@@ -53,12 +54,16 @@ public class WPImageSource : NSObject {
      @param success the block to execute if the download was successful
      @param failure the block to execute if the download failed
      */
-    public func downloadImageForURL(url: NSURL, authToken: String?, withSuccess success: (UIImage -> Void)?, failure: (NSError -> Void)?) {
-        let request = requestWithURL(url, authToken: authToken)
+    public func downloadImageForURL(url: NSURL, authToken: String, withSuccess success: (UIImage -> Void)?, failure: (NSError -> Void)?) {
+        let request = authenticatedRequest(requestForURL(url), withAuthToken: authToken)
+        downloadImageWithRequest(request, withSuccess: success, failure: failure)
+    }
+
+    private func downloadImageWithRequest(request: NSURLRequest, withSuccess success: (UIImage -> Void)?, failure: (NSError -> Void)?) {
         pool.request(request) { result in
             switch result {
-            case .success(let image):
-                success?(image)
+            case .success(let value):
+                success?(value)
             case .failure(let error):
                 failure?(error)
             }
@@ -76,29 +81,22 @@ public class WPImageSource : NSObject {
         session.invalidateAndCancel()
     }
 
-    // @koke - 2016-04-18
-    // Copied this code from the Objective-C implementation
-    // This needs to be extracted into NSURL helpers, as we're duplicating this 
-    // logic in other places.
-    // For now, let's focus the refactor on using OperationPools
-    private func requestWithURL(url: NSURL, authToken: String?) -> NSURLRequest {
-        var url = url
-        var requestToken: String?
-        if let token = authToken,
+    private func requestForURL(url: NSURL) -> NSURLRequest {
+        return NSURLRequest(URL: url, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 60)
+    }
+
+    private func authenticatedRequest(request: NSURLRequest, withAuthToken token: String) -> NSURLRequest {
+        let securedUrl = request.URL.map({ $0.enforcingHTTPSForDomain("wordpress.com") })
+
+        guard let url = securedUrl,
             let host = url.host
-            where host.hasSuffix("wordpress.com") {
-            requestToken = token
-            if !url.absoluteString.hasPrefix("https") {
-                url = NSURL(string: url.absoluteString.stringByReplacingOccurrencesOfString("http://", withString: "https://"))!
-            }
+            where host.hasSuffix("wordpress.com") else {
+                return request
         }
 
-        let request = NSMutableURLRequest(URL: url, cachePolicy: .ReturnCacheDataElseLoad, timeoutInterval: 60)
-        if let token = requestToken {
-            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        }
-
-        return request
+        let request = request.mutableCopy() as! NSMutableURLRequest
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        return request.copy() as! NSURLRequest
     }
 
     private let pool: ImageDownloadPool
