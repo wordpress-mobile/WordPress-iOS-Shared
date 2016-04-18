@@ -20,15 +20,21 @@ class OperationPoolsTests: XCTestCase {
     func testRequestStartsAfterPreviousIsCompleted() {
         let (pool, control) = mockOperationPool({ .success($0.uppercaseString) })
 
-        control.lock.lock()
-        pool.request("test", completion: { _ in })
-        XCTAssertEqual(control.startCount, 1)
-        control.lock.unlock()
+        let first = expectationWithDescription("complete")
+        pool.request("test", completion: { _ in
+            first.fulfill()
+        })
+        waitForExpectationsWithTimeout(4, handler: nil)
 
-        control.lock.lock()
-        pool.request("test", completion: { _ in })
+        XCTAssertEqual(control.startCount, 1)
+
+        let second = expectationWithDescription("complete")
+        pool.request("test", completion: { _ in
+            second.fulfill()
+        })
+        waitForExpectationsWithTimeout(4, handler: nil)
+
         XCTAssertEqual(control.startCount, 2)
-        control.lock.unlock()
     }
 
     func testDifferentRequestsDoentPreventEachOther() {
@@ -46,12 +52,14 @@ class OperationPoolsTests: XCTestCase {
         let (pool, _) = mockOperationPool({ .success($0.uppercaseString) })
 
         var result: Result<String, TestError>? = nil
+        let expectation = expectationWithDescription("complete")
         pool.request("test", completion: {
             result = $0
+            expectation.fulfill()
         })
 
-        // Just wait for the operation to finish
-        dispatch_sync(testQueue, {})
+        waitForExpectationsWithTimeout(4, handler: nil)
+
         XCTAssertEqual(result?.value, "TEST")
     }
 
@@ -59,12 +67,14 @@ class OperationPoolsTests: XCTestCase {
         let (pool, _) = mockOperationPool({ _ in .failure(TestError.someError) })
 
         var result: Result<String, TestError>? = nil
+        let expectation = expectationWithDescription("complete")
         pool.request("test", completion: {
             result = $0
+            expectation.fulfill()
         })
 
-        // Just wait for the operation to finish
-        dispatch_sync(testQueue, {})
+        waitForExpectationsWithTimeout(4, handler: nil)
+
         XCTAssertEqual(result?.error, TestError.someError)
     }
     
