@@ -61,6 +61,10 @@ import UIKit
 /// add some caching of results, the recommended way is to handle storing the
 /// cached values from the `start` function to avoid duplicate operations.
 ///
+/// When a new `request` causes an operation to start, your `start` function
+/// will be called synchronously. It is your responsibility to ensure that your
+/// `start` function doesn't block the caller thread.
+///
 public class OperationPool<Key: Hashable, Value, Error: ErrorType> {
     public typealias Completion = Result<Value, Error> -> Void
 
