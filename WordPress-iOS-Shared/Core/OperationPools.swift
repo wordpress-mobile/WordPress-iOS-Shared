@@ -253,7 +253,7 @@ public class ImageDownloadPool: NetworkDownloadPool<UIImage> {
 
 /// Errors related to OperationPool.
 /// 
-public enum OperationPoolError: Int {
+public enum OperationPoolError: Int, ErrorType {
     /// The NSURLSession completion block was called and both `data` and `error`
     /// are `nil`. It doesn't seem like something that _should_ not happen, but
     /// it's not enforced by the compiler and the documentation doesn't confirm
