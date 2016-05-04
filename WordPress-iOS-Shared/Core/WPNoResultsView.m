@@ -29,6 +29,7 @@
 }
 
 - (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.delegate = nil;
 }
 
@@ -58,6 +59,10 @@
         [self addSubview:_titleLabel];
         [self addSubview:_messageLabel];
         [self addSubview:_button];
+        
+        // Listen for orientation changes
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
     
     return self;
@@ -225,6 +230,12 @@
     frame.origin.x = x;
     frame.origin.y = y;
     self.frame = frame;
+}
+
+#pragma mark - Notification Hanlders
+
+- (void)orientationDidChange:(NSNotification *)notification {
+    [self setNeedsLayout];
 }
 
 - (void)buttonAction:(id)sender
