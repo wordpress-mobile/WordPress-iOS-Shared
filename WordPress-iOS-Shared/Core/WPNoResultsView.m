@@ -29,7 +29,6 @@
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
     self.delegate = nil;
 }
 
@@ -59,10 +58,6 @@
         [self addSubview:_titleLabel];
         [self addSubview:_messageLabel];
         [self addSubview:_button];
-        
-        // Listen for orientation changes
-        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-        [nc addObserver:self selector:@selector(orientationDidChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     }
     
     return self;
@@ -75,6 +70,8 @@
 - (void)layoutSubviews {
     
     CGFloat width = 250.0f;
+    
+    [self hideAccessoryViewIfNecessary];
     
     // Layout views
     _accessoryView.frame = CGRectMake((width - CGRectGetWidth(_accessoryView.frame)) / 2, 0, CGRectGetWidth(_accessoryView.frame), CGRectGetHeight(_accessoryView.frame));
@@ -109,6 +106,16 @@
     if (self.superview) {
         [self centerInSuperview];
     }
+}
+
+#pragma mark - Accessory View
+
+/// Hide the accessory view in landscape orientation on iPhone to ensure entire view fits on screen
+///
+- (void)hideAccessoryViewIfNecessary
+{
+    UIDevice *device = [UIDevice currentDevice];
+    self.accessoryView.hidden = (UIDeviceOrientationIsLandscape(device.orientation) && [WPDeviceIdentification isiPhone]);
 }
 
 #pragma mark Helper Methods
@@ -218,18 +225,6 @@
     frame.origin.x = x;
     frame.origin.y = y;
     self.frame = frame;
-}
-
-
-#pragma mark - Notification Hanlders
-
-- (void)orientationDidChange:(NSNotification *)notification {
-    
-    // Hide the accessory view in landscape orientation on iPhone to ensure entire view fits on screen
-    UIDevice *device        = notification.object;
-    _accessoryView.hidden   = (UIDeviceOrientationIsLandscape(device.orientation) && [WPDeviceIdentification isiPhone]);
-    
-    [self setNeedsLayout];
 }
 
 - (void)buttonAction:(id)sender
