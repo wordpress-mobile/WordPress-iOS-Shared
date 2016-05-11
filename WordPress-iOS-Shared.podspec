@@ -16,6 +16,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :tag => s.version.to_s }
   s.source_files = 'WordPress-iOS-Shared/Core/*.{h,m,swift}', 'WordPress-iOS-Shared/Private/*.{h,m,swift}'
+  s.private_header_files = "WordPress-iOS-Shared/Private/*.h"
   s.ios.resource_bundle = { 'WordPress-iOS-Shared' => 'WordPress-iOS-Shared/Assets/*.{ttf,otf}' }
   s.exclude_files = 'WordPress-iOS-Shared/Exclude'
   s.prefix_header_file = "WordPress-iOS-Shared/WordPress-iOS-Shared-Prefix.pch"
