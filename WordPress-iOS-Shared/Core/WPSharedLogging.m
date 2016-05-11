@@ -1,5 +1,5 @@
 #import "WPSharedLogging.h"
-#import "Logging.h"
+#import "WPSharedLoggingPrivate.h"
 
 int WPSharedGetLoggingLevel() {
     return ddLogLevel;

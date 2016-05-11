@@ -15,9 +15,9 @@
 		931A1008192A9CDD00D3CC11 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 931A1006192A9CDD00D3CC11 /* InfoPlist.strings */; };
 		931A1038192AA34300D3CC11 /* WPImageSourceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1037192AA34300D3CC11 /* WPImageSourceTest.m */; };
 		931A103E192AA3DB00D3CC11 /* test-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 931A103D192AA3DB00D3CC11 /* test-image.jpg */; };
-		93BCF8B21CE37277005954A3 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCF8AD1CE37096005954A3 /* Logging.m */; };
+		93BCF8B21CE37277005954A3 /* WPSharedLoggingPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCF8AD1CE37096005954A3 /* WPSharedLoggingPrivate.m */; };
 		93BCF8B31CE3727A005954A3 /* WPSharedLogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BCF8B01CE370BA005954A3 /* WPSharedLogging.m */; };
-		93BCF8B41CE372A2005954A3 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 93BCF8AC1CE37096005954A3 /* Logging.h */; };
+		93BCF8B41CE372A2005954A3 /* WPSharedLoggingPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 93BCF8AC1CE37096005954A3 /* WPSharedLoggingPrivate.h */; };
 		93BCF8B51CE372A9005954A3 /* WPSharedLogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 93BCF8AF1CE370BA005954A3 /* WPSharedLogging.h */; };
 		E1016BFC1CBF760F00CE57D8 /* WordPressShared.h in Headers */ = {isa = PBXBuildFile; fileRef = E1016BFB1CBF760F00CE57D8 /* WordPressShared.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C1D1CBF763D00CE57D8 /* UIColor+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1034192AA03600D3CC11 /* UIColor+Helpers.m */; };
@@ -102,8 +102,8 @@
 		931A1034192AA03600D3CC11 /* UIColor+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Helpers.m"; path = "Core/UIColor+Helpers.m"; sourceTree = "<group>"; };
 		931A1037192AA34300D3CC11 /* WPImageSourceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPImageSourceTest.m; sourceTree = "<group>"; };
 		931A103D192AA3DB00D3CC11 /* test-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "test-image.jpg"; sourceTree = "<group>"; };
-		93BCF8AC1CE37096005954A3 /* Logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Logging.h; path = Private/Logging.h; sourceTree = "<group>"; };
-		93BCF8AD1CE37096005954A3 /* Logging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logging.m; path = Private/Logging.m; sourceTree = "<group>"; };
+		93BCF8AC1CE37096005954A3 /* WPSharedLoggingPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPSharedLoggingPrivate.h; path = ../Private/WPSharedLoggingPrivate.h; sourceTree = "<group>"; };
+		93BCF8AD1CE37096005954A3 /* WPSharedLoggingPrivate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPSharedLoggingPrivate.m; path = ../Private/WPSharedLoggingPrivate.m; sourceTree = "<group>"; };
 		93BCF8AF1CE370BA005954A3 /* WPSharedLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPSharedLogging.h; sourceTree = "<group>"; };
 		93BCF8B01CE370BA005954A3 /* WPSharedLogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPSharedLogging.m; sourceTree = "<group>"; };
 		A2FEA497CC6E0F27CDD12570 /* Pods-WordPressShared.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressShared.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared.release.xcconfig"; sourceTree = "<group>"; };
@@ -296,8 +296,8 @@
 		93BCF8AB1CE3707E005954A3 /* Logging */ = {
 			isa = PBXGroup;
 			children = (
-				93BCF8AC1CE37096005954A3 /* Logging.h */,
-				93BCF8AD1CE37096005954A3 /* Logging.m */,
+				93BCF8AC1CE37096005954A3 /* WPSharedLoggingPrivate.h */,
+				93BCF8AD1CE37096005954A3 /* WPSharedLoggingPrivate.m */,
 				93BCF8AF1CE370BA005954A3 /* WPSharedLogging.h */,
 				93BCF8B01CE370BA005954A3 /* WPSharedLogging.m */,
 			);
@@ -346,7 +346,7 @@
 				E1016C2D1CBF764600CE57D8 /* WPImageSource.h in Headers */,
 				E1016C2F1CBF764600CE57D8 /* NSString+Util.h in Headers */,
 				E1016C251CBF764100CE57D8 /* WPNoResultsView.h in Headers */,
-				93BCF8B41CE372A2005954A3 /* Logging.h in Headers */,
+				93BCF8B41CE372A2005954A3 /* WPSharedLoggingPrivate.h in Headers */,
 				E1016C2A1CBF764100CE57D8 /* WPTextFieldTableViewCell.h in Headers */,
 				E1016C351CBF764600CE57D8 /* WPFontManager.h in Headers */,
 				E1016C311CBF764600CE57D8 /* NSString+XMLExtensions.h in Headers */,
@@ -563,7 +563,7 @@
 				E1016C1E1CBF763D00CE57D8 /* WPNoResultsView.m in Sources */,
 				E1016C201CBF763D00CE57D8 /* WPStyleGuide.m in Sources */,
 				93BCF8B31CE3727A005954A3 /* WPSharedLogging.m in Sources */,
-				93BCF8B21CE37277005954A3 /* Logging.m in Sources */,
+				93BCF8B21CE37277005954A3 /* WPSharedLoggingPrivate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

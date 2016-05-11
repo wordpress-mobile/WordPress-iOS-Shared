@@ -1,5 +1,5 @@
 #import "WPImageSource.h"
-#import "Logging.h"
+#import "WPSharedLoggingPrivate.h"
 
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
