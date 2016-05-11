@@ -1,8 +1,7 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <XCTest/XCTest.h>
-
-#import "WPImageSource.h"
+@import WordPressShared;
 
 @interface WPImageSourceTest : XCTestCase
 
