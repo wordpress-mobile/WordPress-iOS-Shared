@@ -55,7 +55,7 @@
 
     size_t componentCount = CGColorGetNumberOfComponents(self.CGColor);
 
-    // RGB colors
+    // RGBA colors
     if (componentCount == 4)
     {
         // Get the red, green and blue components
