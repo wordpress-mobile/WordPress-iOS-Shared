@@ -1,4 +1,5 @@
 #import "WPFontManager.h"
+#import "Logging.h"
 #import <CoreText/CoreText.h>
 
 @implementation WPFontManager
