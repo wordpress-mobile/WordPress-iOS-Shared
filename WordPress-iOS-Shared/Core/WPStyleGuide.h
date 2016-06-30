@@ -26,6 +26,7 @@
 + (UIFont *)tableviewTextFont;
 + (UIFont *)tableviewSubtitleFont;
 + (UIFont *)tableviewSectionHeaderFont;
++ (UIFont *)tableviewSectionFooterFont;
 
 // Color
 + (UIColor *)wordPressBlue;
@@ -69,6 +70,8 @@
 + (void)configureTableViewActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell;
 + (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell;
++ (void)configureTableViewSectionHeader:(UIView *)header;
++ (void)configureTableViewSectionFooter:(UIView *)footer;
 
 // Move to a feature category
 + (UIColor *)buttonActionColor;

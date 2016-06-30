@@ -141,6 +141,11 @@
     return [WPFontManager systemRegularFontOfSize:13.0];
 }
 
++ (UIFont *)tableviewSectionFooterFont
+{
+	return [WPFontManager systemRegularFontOfSize:13.0];
+}
+
 
 #pragma mark - Colors
 // https://wordpress.com/design-handbook/colors/
@@ -414,6 +419,24 @@
         cell.textField.textColor = [self grey];
         cell.textField.textAlignment = NSTextAlignmentRight;
     }
+}
+
++ (void)configureTableViewSectionHeader:(UITableViewHeaderFooterView *)header
+{
+	if (![header isKindOfClass:[UITableViewHeaderFooterView class]]) {
+		return;
+	}
+	header.textLabel.font = [self tableviewSectionHeaderFont];
+	header.textLabel.textColor = [self whisperGrey];
+}
+
++ (void)configureTableViewSectionFooter:(UITableViewHeaderFooterView *)footer
+{
+	if (![footer isKindOfClass:[UITableViewHeaderFooterView class]]) {
+		return;
+	}
+	footer.textLabel.font = [self tableviewSectionFooterFont];
+	footer.textLabel.textColor = [self greyDarken10];
 }
 
 // TODO: Move to fetaure category
