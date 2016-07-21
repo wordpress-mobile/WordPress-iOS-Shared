@@ -49,7 +49,6 @@ CGFloat const TextFieldPadding = 15.0f;
 											  [textField.trailingAnchor constraintEqualToAnchor:layoutGuide.trailingAnchor],
 											  [textField.topAnchor constraintEqualToAnchor:self.contentView.topAnchor],
 											  [textField.bottomAnchor constraintEqualToAnchor:self.contentView.bottomAnchor],
-											  [textField.centerYAnchor constraintEqualToAnchor:self.contentView.centerYAnchor]
 											  ]];
 	_textField = textField;
 }
