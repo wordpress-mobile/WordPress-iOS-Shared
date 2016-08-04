@@ -220,8 +220,8 @@
 
         if ([self.superview isKindOfClass:[UITableView class]]) {
             UITableView *tableView = (UITableView *)self.superview;
-            CGFloat headerHeight = tableView.tableHeaderView.hidden ? 0 : tableView.tableHeaderView.bounds.size.height;
-            CGFloat footerHeight = tableView.tableFooterView.hidden ? 0 : tableView.tableFooterView.bounds.size.height;
+            CGFloat headerHeight = (tableView.tableHeaderView == nil || tableView.tableHeaderView.hidden) ? 0 : tableView.tableHeaderView.bounds.size.height;
+            CGFloat footerHeight = (tableView.tableFooterView == nil || tableView.tableFooterView.hidden) ? 0 : tableView.tableFooterView.bounds.size.height;
 
             verticalOffset += (headerHeight + footerHeight);
 
