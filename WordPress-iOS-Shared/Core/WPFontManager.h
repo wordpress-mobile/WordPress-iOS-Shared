@@ -2,6 +2,10 @@
 
 @interface WPFontManager : NSObject
 
+/// Loads the OpenSans font family for the life of the current process.
+/// This effectively makes it possible to look this font up using font descriptors.
+///
++ (void)loadOpenSansFontFamily;
 + (UIFont *)openSansLightFontOfSize:(CGFloat)size __deprecated_msg("Use systemLightFontOfSize instead");
 + (UIFont *)openSansItalicFontOfSize:(CGFloat)size __deprecated_msg("Use systemItalicFontOfSize instead");
 + (UIFont *)openSansLightItalicFontOfSize:(CGFloat)size __deprecated_msg("Use systemLightItalicFontOfSize instead");
@@ -17,6 +21,10 @@
 + (UIFont *)systemSemiBoldFontOfSize:(CGFloat)size;
 + (UIFont *)systemRegularFontOfSize:(CGFloat)size;
 
+/// Loads the Merriwheather font family for the life of the current process.
+/// This effectively makes it possible to look this font up using font descriptors.
+///
++ (void)loadMerriweatherFontFamily;
 + (UIFont *)merriweatherBoldFontOfSize:(CGFloat)size;
 + (UIFont *)merriweatherBoldItalicFontOfSize:(CGFloat)size;
 + (UIFont *)merriweatherItalicFontOfSize:(CGFloat)size;

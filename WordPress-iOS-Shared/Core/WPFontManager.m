@@ -126,9 +126,6 @@ static NSString* const MerriweatherLightFontName = @"Merriweather-Light";
 static NSString* const MerriweatherLightItalicFontName = @"Merriweather-LightItalic";
 static NSString* const MerriweatherRegularFontName = @"Merriweather-Regular";
 
-/// Loads the Merriwheather font family for the life of the current process.
-/// This effectively makes it possible to look this font up using font descriptors.
-///
 + (void)loadMerriweatherFontFamily
 {
     [self loadFontResourceNamed:MerriweatherBoldFontName withExtension:FontTypeTTF];
