@@ -10,6 +10,30 @@ static NSString * const FontTypeOTF = @"otf";
 
 #pragma mark - Open Sans Fonts
 
+static NSString* const OpenSansLightFontName = @"OpenSans-Light";
+static NSString* const OpenSansItalicFontName = @"OpenSans-Italic";
+static NSString* const OpenSansLightItalicFontName = @"OpenSans-LightItalic";
+static NSString* const OpenSansBoldFontName = @"OpenSans-Bold";
+static NSString* const OpenSansBoldItalicFontName = @"OpenSans-BoldItalic";
+static NSString* const OpenSansSemiBoldFontName = @"OpenSans-Semibold";
+static NSString* const OpenSansSemiboldItalicFontName = @"OpenSans-SemiboldItalic";
+static NSString* const OpenSansRegularFontName = @"OpenSans-Regular";
+
+/// Loads the OpenSans font family for the life of the current process.
+/// This effectively makes it possible to look this font up using font descriptors.
+///
++ (void)loadOpenSansFontFamily
+{
+    [self loadFontResourceNamed:OpenSansLightFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansLightItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansBoldFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansBoldItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansSemiBoldFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansSemiboldItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:OpenSansRegularFontName withExtension:FontTypeTTF];
+}
+
 + (UIFont *)openSansLightFontOfSize:(CGFloat)size
 {
     NSString *resourceName = @"OpenSans-Light";
@@ -95,6 +119,26 @@ static NSString * const FontTypeOTF = @"otf";
 
 #pragma mark - Merryweather Fonts
 
+static NSString* const MerriweatherBoldFontName = @"Merriweather-Bold";
+static NSString* const MerriweatherBoldItalicFontName = @"Merriweather-BoldItalic";
+static NSString* const MerriweatherItalicFontName = @"Merriweather-Italic";
+static NSString* const MerriweatherLightFontName = @"Merriweather-Light";
+static NSString* const MerriweatherLightItalicFontName = @"Merriweather-LightItalic";
+static NSString* const MerriweatherRegularFontName = @"Merriweather-Regular";
+
+/// Loads the Merriwheather font family for the life of the current process.
+/// This effectively makes it possible to look this font up using font descriptors.
+///
++ (void)loadMerriweatherFontFamily
+{
+    [self loadFontResourceNamed:MerriweatherBoldFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:MerriweatherBoldItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:MerriweatherItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:MerriweatherLightFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:MerriweatherLightItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:MerriweatherRegularFontName withExtension:FontTypeTTF];
+}
+
 + (UIFont *)merriweatherBoldFontOfSize:(CGFloat)size
 {
     NSString *resourceName = @"Merriweather-Bold";
@@ -144,7 +188,7 @@ static NSString * const FontTypeOTF = @"otf";
 {
     UIFont *font = [UIFont fontWithName:fontName size:size];
     if (!font) {
-        [[self class] dynamicallyLoadFontResourceNamed:resourceName withExtension:fontType];
+        [[self class] loadFontResourceNamed:resourceName withExtension:fontType];
         font = [UIFont fontWithName:fontName size:size];
 
         // safe fallback
@@ -156,24 +200,19 @@ static NSString * const FontTypeOTF = @"otf";
     return font;
 }
 
-+ (void)dynamicallyLoadFontResourceNamed:(NSString *)name withExtension:(NSString *)extension
++ (void)loadFontResourceNamed:(NSString *)name withExtension:(NSString *)extension
 {
     NSString *resourceName = [NSString stringWithFormat:@"%@/%@", SharedBundle, name];
     NSURL *url = [[NSBundle bundleForClass:self] URLForResource:resourceName withExtension:extension];
-    NSData *fontData = [NSData dataWithContentsOfURL:url];
-    
-    if (fontData) {
-        CFErrorRef error;
-        CGDataProviderRef provider = CGDataProviderCreateWithCFData((CFDataRef)fontData);
-        CGFontRef font = CGFontCreateWithDataProvider(provider);
-        if (!CTFontManagerRegisterGraphicsFont(font, &error)) {
-            CFStringRef errorDescription = CFErrorCopyDescription(error);
-            DDLogError(@"Failed to load font: %@", errorDescription);
-            CFRelease(errorDescription);
-        }
-        CFRelease(font);
-        CFRelease(provider);
+
+    CFErrorRef error;
+    if (!CTFontManagerRegisterFontsForURL((CFURLRef)url, kCTFontManagerScopeProcess, &error)) {
+        CFStringRef errorDescription = CFErrorCopyDescription(error);
+        DDLogError(@"Failed to load font: %@", errorDescription);
+        CFRelease(errorDescription);
     }
+
+    return;
 }
 
 @end
