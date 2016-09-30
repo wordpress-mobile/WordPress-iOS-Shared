@@ -1,425 +1,1050 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		598E77111A8E4F2C0020DC05 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77101A8E4F2C0020DC05 /* DeviceTableViewController.m */; };
-		598E77141A8E535F0020DC05 /* DeviceTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77131A8E535F0020DC05 /* DeviceTest.m */; };
-		598E77171A8E53EE0020DC05 /* DeviceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 598E77161A8E53EE0020DC05 /* DeviceTableViewCell.m */; };
-		5D9819858C3F5902F3F6E99B /* Pods_WordPress_iOS_Shared_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330B6C51F3A7E5602C8365ED /* Pods_WordPress_iOS_Shared_Example.framework */; };
-		852FBB49197755CC002C5249 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB48197755CC002C5249 /* Foundation.framework */; };
-		852FBB4B197755CC002C5249 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB4A197755CC002C5249 /* CoreGraphics.framework */; };
-		852FBB4D197755CC002C5249 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852FBB4C197755CC002C5249 /* UIKit.framework */; };
-		852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB51197755CC002C5249 /* InfoPlist.strings */; };
-		852FBB55197755CC002C5249 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB54197755CC002C5249 /* main.m */; };
-		852FBB59197755CC002C5249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 852FBB58197755CC002C5249 /* AppDelegate.m */; };
-		852FBB5C197755CC002C5249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB5A197755CC002C5249 /* Main.storyboard */; };
-		852FBB64197755CC002C5249 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 852FBB63197755CC002C5249 /* Images.xcassets */; };
-		85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A420C41977993100F0F603 /* FontTableViewCell.m */; };
-		85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73C1977891600480221 /* FontsTableViewController.m */; };
-		85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 85D9A73F1977891F00480221 /* ColorsTableViewController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXFileReference section */
-		330B6C51F3A7E5602C8365ED /* Pods_WordPress_iOS_Shared_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordPress_iOS_Shared_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4741CD7E49F48716FE588053 /* Pods-WordPress-iOS-Shared-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-Shared-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.release.xcconfig"; sourceTree = "<group>"; };
-		598E770F1A8E4F2C0020DC05 /* DeviceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
-		598E77101A8E4F2C0020DC05 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
-		598E77121A8E535F0020DC05 /* DeviceTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTest.h; sourceTree = "<group>"; };
-		598E77131A8E535F0020DC05 /* DeviceTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTest.m; sourceTree = "<group>"; };
-		598E77151A8E53EE0020DC05 /* DeviceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewCell.h; sourceTree = "<group>"; };
-		598E77161A8E53EE0020DC05 /* DeviceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewCell.m; sourceTree = "<group>"; };
-		852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WordPress-iOS-Shared-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		852FBB48197755CC002C5249 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		852FBB4A197755CC002C5249 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		852FBB4C197755CC002C5249 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		852FBB50197755CC002C5249 /* WordPress-iOS-Shared-Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordPress-iOS-Shared-Example-Info.plist"; sourceTree = "<group>"; };
-		852FBB52197755CC002C5249 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		852FBB54197755CC002C5249 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		852FBB56197755CC002C5249 /* WordPress-iOS-Shared-Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordPress-iOS-Shared-Example-Prefix.pch"; sourceTree = "<group>"; };
-		852FBB57197755CC002C5249 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		852FBB58197755CC002C5249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		852FBB5B197755CC002C5249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		852FBB63197755CC002C5249 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		852FBB6A197755CC002C5249 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		85A420C31977993100F0F603 /* FontTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontTableViewCell.h; sourceTree = "<group>"; };
-		85A420C41977993100F0F603 /* FontTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontTableViewCell.m; sourceTree = "<group>"; };
-		85D9A73B1977891600480221 /* FontsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontsTableViewController.h; sourceTree = "<group>"; };
-		85D9A73C1977891600480221 /* FontsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FontsTableViewController.m; sourceTree = "<group>"; };
-		85D9A73E1977891F00480221 /* ColorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorsTableViewController.h; sourceTree = "<group>"; };
-		85D9A73F1977891F00480221 /* ColorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorsTableViewController.m; sourceTree = "<group>"; };
-		85F80D342A3A5C1B22FABC9F /* Pods-WordPress-iOS-Shared-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPress-iOS-Shared-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.debug.xcconfig"; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		852FBB42197755CC002C5249 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				852FBB4B197755CC002C5249 /* CoreGraphics.framework in Frameworks */,
-				852FBB4D197755CC002C5249 /* UIKit.framework in Frameworks */,
-				852FBB49197755CC002C5249 /* Foundation.framework in Frameworks */,
-				5D9819858C3F5902F3F6E99B /* Pods_WordPress_iOS_Shared_Example.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		5EEEB135F690F152DC2C1636 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				85F80D342A3A5C1B22FABC9F /* Pods-WordPress-iOS-Shared-Example.debug.xcconfig */,
-				4741CD7E49F48716FE588053 /* Pods-WordPress-iOS-Shared-Example.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		852FBB3C197755CC002C5249 = {
-			isa = PBXGroup;
-			children = (
-				852FBB4E197755CC002C5249 /* WordPress-iOS-Shared-Example */,
-				852FBB47197755CC002C5249 /* Frameworks */,
-				852FBB46197755CC002C5249 /* Products */,
-				5EEEB135F690F152DC2C1636 /* Pods */,
-			);
-			sourceTree = "<group>";
-		};
-		852FBB46197755CC002C5249 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		852FBB47197755CC002C5249 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB48197755CC002C5249 /* Foundation.framework */,
-				852FBB4A197755CC002C5249 /* CoreGraphics.framework */,
-				852FBB4C197755CC002C5249 /* UIKit.framework */,
-				852FBB6A197755CC002C5249 /* XCTest.framework */,
-				330B6C51F3A7E5602C8365ED /* Pods_WordPress_iOS_Shared_Example.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		852FBB4E197755CC002C5249 /* WordPress-iOS-Shared-Example */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB57197755CC002C5249 /* AppDelegate.h */,
-				852FBB58197755CC002C5249 /* AppDelegate.m */,
-				852FBB5A197755CC002C5249 /* Main.storyboard */,
-				852FBB63197755CC002C5249 /* Images.xcassets */,
-				852FBB4F197755CC002C5249 /* Supporting Files */,
-				598E770F1A8E4F2C0020DC05 /* DeviceTableViewController.h */,
-				598E77101A8E4F2C0020DC05 /* DeviceTableViewController.m */,
-				598E77151A8E53EE0020DC05 /* DeviceTableViewCell.h */,
-				598E77161A8E53EE0020DC05 /* DeviceTableViewCell.m */,
-				598E77121A8E535F0020DC05 /* DeviceTest.h */,
-				598E77131A8E535F0020DC05 /* DeviceTest.m */,
-				85D9A73B1977891600480221 /* FontsTableViewController.h */,
-				85D9A73C1977891600480221 /* FontsTableViewController.m */,
-				85D9A73E1977891F00480221 /* ColorsTableViewController.h */,
-				85D9A73F1977891F00480221 /* ColorsTableViewController.m */,
-				85A420C31977993100F0F603 /* FontTableViewCell.h */,
-				85A420C41977993100F0F603 /* FontTableViewCell.m */,
-			);
-			path = "WordPress-iOS-Shared-Example";
-			sourceTree = "<group>";
-		};
-		852FBB4F197755CC002C5249 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				852FBB50197755CC002C5249 /* WordPress-iOS-Shared-Example-Info.plist */,
-				852FBB51197755CC002C5249 /* InfoPlist.strings */,
-				852FBB54197755CC002C5249 /* main.m */,
-				852FBB56197755CC002C5249 /* WordPress-iOS-Shared-Example-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		852FBB44197755CC002C5249 /* WordPress-iOS-Shared-Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 852FBB7A197755CC002C5249 /* Build configuration list for PBXNativeTarget "WordPress-iOS-Shared-Example" */;
-			buildPhases = (
-				8B2F67DF1CD5CBFD280F03D3 /* 📦 Check Pods Manifest.lock */,
-				852FBB41197755CC002C5249 /* Sources */,
-				852FBB42197755CC002C5249 /* Frameworks */,
-				852FBB43197755CC002C5249 /* Resources */,
-				D34B1D5A1AEE5DC5AEF91385 /* 📦 Embed Pods Frameworks */,
-				93127E5FCA11326F2A280601 /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "WordPress-iOS-Shared-Example";
-			productName = "WordPress-iOS-Shared-Example";
-			productReference = 852FBB45197755CC002C5249 /* WordPress-iOS-Shared-Example.app */;
-			productType = "com.apple.product-type.application";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		852FBB3D197755CC002C5249 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = WordPress;
-			};
-			buildConfigurationList = 852FBB40197755CC002C5249 /* Build configuration list for PBXProject "WordPress-iOS-Shared-Example" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 852FBB3C197755CC002C5249;
-			productRefGroup = 852FBB46197755CC002C5249 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				852FBB44197755CC002C5249 /* WordPress-iOS-Shared-Example */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		852FBB43197755CC002C5249 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				852FBB64197755CC002C5249 /* Images.xcassets in Resources */,
-				852FBB5C197755CC002C5249 /* Main.storyboard in Resources */,
-				852FBB53197755CC002C5249 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8B2F67DF1CD5CBFD280F03D3 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		93127E5FCA11326F2A280601 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D34B1D5A1AEE5DC5AEF91385 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		852FBB41197755CC002C5249 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				85A420C51977993100F0F603 /* FontTableViewCell.m in Sources */,
-				85D9A7401977891F00480221 /* ColorsTableViewController.m in Sources */,
-				852FBB59197755CC002C5249 /* AppDelegate.m in Sources */,
-				598E77171A8E53EE0020DC05 /* DeviceTableViewCell.m in Sources */,
-				85D9A73D1977891600480221 /* FontsTableViewController.m in Sources */,
-				852FBB55197755CC002C5249 /* main.m in Sources */,
-				598E77111A8E4F2C0020DC05 /* DeviceTableViewController.m in Sources */,
-				598E77141A8E535F0020DC05 /* DeviceTest.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		852FBB51197755CC002C5249 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				852FBB52197755CC002C5249 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		852FBB5A197755CC002C5249 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				852FBB5B197755CC002C5249 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		852FBB78197755CC002C5249 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		852FBB79197755CC002C5249 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		852FBB7B197755CC002C5249 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85F80D342A3A5C1B22FABC9F /* Pods-WordPress-iOS-Shared-Example.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
-				INFOPLIST_FILE = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.wordpress.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		852FBB7C197755CC002C5249 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4741CD7E49F48716FE588053 /* Pods-WordPress-iOS-Shared-Example.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch";
-				INFOPLIST_FILE = "WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.wordpress.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		852FBB40197755CC002C5249 /* Build configuration list for PBXProject "WordPress-iOS-Shared-Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				852FBB78197755CC002C5249 /* Debug */,
-				852FBB79197755CC002C5249 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		852FBB7A197755CC002C5249 /* Build configuration list for PBXNativeTarget "WordPress-iOS-Shared-Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				852FBB7B197755CC002C5249 /* Debug */,
-				852FBB7C197755CC002C5249 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 852FBB3D197755CC002C5249 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>330B6C51F3A7E5602C8365ED</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_WordPress_iOS_Shared_Example.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>4741CD7E49F48716FE588053</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-WordPress-iOS-Shared-Example.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E770F1A8E4F2C0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DeviceTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77101A8E4F2C0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DeviceTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77111A8E4F2C0020DC05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>598E77101A8E4F2C0020DC05</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>598E77121A8E535F0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DeviceTest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77131A8E535F0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DeviceTest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77141A8E535F0020DC05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>598E77131A8E535F0020DC05</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>598E77151A8E53EE0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DeviceTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77161A8E53EE0020DC05</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DeviceTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>598E77171A8E53EE0020DC05</key>
+		<dict>
+			<key>fileRef</key>
+			<string>598E77161A8E53EE0020DC05</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5D9819858C3F5902F3F6E99B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>330B6C51F3A7E5602C8365ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5EEEB135F690F152DC2C1636</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>85F80D342A3A5C1B22FABC9F</string>
+				<string>4741CD7E49F48716FE588053</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB3C197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB4E197755CC002C5249</string>
+				<string>852FBB47197755CC002C5249</string>
+				<string>852FBB46197755CC002C5249</string>
+				<string>5EEEB135F690F152DC2C1636</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB3D197755CC002C5249</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0800</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>WordPress</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>852FBB40197755CC002C5249</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>852FBB3C197755CC002C5249</string>
+			<key>productRefGroup</key>
+			<string>852FBB46197755CC002C5249</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>852FBB44197755CC002C5249</string>
+			</array>
+		</dict>
+		<key>852FBB40197755CC002C5249</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>852FBB78197755CC002C5249</string>
+				<string>852FBB79197755CC002C5249</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>852FBB41197755CC002C5249</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>85A420C51977993100F0F603</string>
+				<string>85D9A7401977891F00480221</string>
+				<string>852FBB59197755CC002C5249</string>
+				<string>598E77171A8E53EE0020DC05</string>
+				<string>85D9A73D1977891600480221</string>
+				<string>852FBB55197755CC002C5249</string>
+				<string>598E77111A8E4F2C0020DC05</string>
+				<string>598E77141A8E535F0020DC05</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>852FBB42197755CC002C5249</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>852FBB4B197755CC002C5249</string>
+				<string>852FBB4D197755CC002C5249</string>
+				<string>852FBB49197755CC002C5249</string>
+				<string>5D9819858C3F5902F3F6E99B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>852FBB43197755CC002C5249</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>852FBB64197755CC002C5249</string>
+				<string>852FBB5C197755CC002C5249</string>
+				<string>852FBB53197755CC002C5249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>852FBB44197755CC002C5249</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>852FBB7A197755CC002C5249</string>
+			<key>buildPhases</key>
+			<array>
+				<string>8B2F67DF1CD5CBFD280F03D3</string>
+				<string>852FBB41197755CC002C5249</string>
+				<string>852FBB42197755CC002C5249</string>
+				<string>852FBB43197755CC002C5249</string>
+				<string>D34B1D5A1AEE5DC5AEF91385</string>
+				<string>93127E5FCA11326F2A280601</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>WordPress-iOS-Shared-Example</string>
+			<key>productName</key>
+			<string>WordPress-iOS-Shared-Example</string>
+			<key>productReference</key>
+			<string>852FBB45197755CC002C5249</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>852FBB45197755CC002C5249</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>WordPress-iOS-Shared-Example.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>852FBB46197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB45197755CC002C5249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB47197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB48197755CC002C5249</string>
+				<string>852FBB4A197755CC002C5249</string>
+				<string>852FBB4C197755CC002C5249</string>
+				<string>852FBB6A197755CC002C5249</string>
+				<string>330B6C51F3A7E5602C8365ED</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB48197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>852FBB49197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB48197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB4A197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>852FBB4B197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB4A197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB4C197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>852FBB4D197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB4C197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB4E197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB57197755CC002C5249</string>
+				<string>852FBB58197755CC002C5249</string>
+				<string>852FBB5A197755CC002C5249</string>
+				<string>852FBB63197755CC002C5249</string>
+				<string>852FBB4F197755CC002C5249</string>
+				<string>598E770F1A8E4F2C0020DC05</string>
+				<string>598E77101A8E4F2C0020DC05</string>
+				<string>598E77151A8E53EE0020DC05</string>
+				<string>598E77161A8E53EE0020DC05</string>
+				<string>598E77121A8E535F0020DC05</string>
+				<string>598E77131A8E535F0020DC05</string>
+				<string>85D9A73B1977891600480221</string>
+				<string>85D9A73C1977891600480221</string>
+				<string>85D9A73E1977891F00480221</string>
+				<string>85D9A73F1977891F00480221</string>
+				<string>85A420C31977993100F0F603</string>
+				<string>85A420C41977993100F0F603</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>WordPress-iOS-Shared-Example</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB4F197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB50197755CC002C5249</string>
+				<string>852FBB51197755CC002C5249</string>
+				<string>852FBB54197755CC002C5249</string>
+				<string>852FBB56197755CC002C5249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB50197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>WordPress-iOS-Shared-Example-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB51197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB52197755CC002C5249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB52197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB53197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB51197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB54197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB55197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB54197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB56197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>WordPress-iOS-Shared-Example-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB57197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB58197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB59197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB58197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB5A197755CC002C5249</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>852FBB5B197755CC002C5249</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB5B197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB5C197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB5A197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB63197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>852FBB64197755CC002C5249</key>
+		<dict>
+			<key>fileRef</key>
+			<string>852FBB63197755CC002C5249</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>852FBB6A197755CC002C5249</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>852FBB78197755CC002C5249</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>852FBB79197755CC002C5249</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INFINITE_RECURSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_SUSPICIOUS_MOVE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>852FBB7A197755CC002C5249</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>852FBB7B197755CC002C5249</string>
+				<string>852FBB7C197755CC002C5249</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>852FBB7B197755CC002C5249</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>85F80D342A3A5C1B22FABC9F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.wordpress.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>852FBB7C197755CC002C5249</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>4741CD7E49F48716FE588053</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>WordPress-iOS-Shared-Example/WordPress-iOS-Shared-Example-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>org.wordpress.${PRODUCT_NAME:rfc1034identifier}</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>85A420C31977993100F0F603</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FontTableViewCell.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85A420C41977993100F0F603</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FontTableViewCell.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85A420C51977993100F0F603</key>
+		<dict>
+			<key>fileRef</key>
+			<string>85A420C41977993100F0F603</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>85D9A73B1977891600480221</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FontsTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85D9A73C1977891600480221</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FontsTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85D9A73D1977891600480221</key>
+		<dict>
+			<key>fileRef</key>
+			<string>85D9A73C1977891600480221</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>85D9A73E1977891F00480221</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ColorsTableViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85D9A73F1977891F00480221</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ColorsTableViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>85D9A7401977891F00480221</key>
+		<dict>
+			<key>fileRef</key>
+			<string>85D9A73F1977891F00480221</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>85F80D342A3A5C1B22FABC9F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-WordPress-iOS-Shared-Example.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B2F67DF1CD5CBFD280F03D3</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>93127E5FCA11326F2A280601</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D34B1D5A1AEE5DC5AEF91385</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-WordPress-iOS-Shared-Example/Pods-WordPress-iOS-Shared-Example-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>852FBB3D197755CC002C5249</string>
+</dict>
+</plist>

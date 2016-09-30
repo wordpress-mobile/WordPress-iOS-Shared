@@ -43,10 +43,17 @@
 + (BOOL)isiPhoneSixPlus;
 
 /**
- *  @brief      Call this method to know if the current device is running iOS version older than 8.
+ *  @brief      Call this method to know if the current device is running iOS version older than 9.
  *
- *  @returns    YES if the device is running iOS version older than 8.  NO otherwise.
+ *  @returns    YES if the device is running iOS version older than 9.  NO otherwise.
  */
-+ (BOOL)isiOSVersionEarlierThan8;
++ (BOOL)isiOSVersionEarlierThan9;
+
+/**
+ *  @brief      Call this method to know if the current device is running iOS version older than 10.
+ *
+ *  @returns    YES if the device is running iOS version older than 10.  NO otherwise.
+ */
++ (BOOL)isiOSVersionEarlierThan10;
 
 @end

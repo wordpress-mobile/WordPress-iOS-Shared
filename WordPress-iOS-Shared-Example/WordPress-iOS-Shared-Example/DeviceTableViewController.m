@@ -41,14 +41,14 @@
                                                         return [WPDeviceIdentification isiPhoneSixPlus];
                                                     }];
     
-    DeviceTest* iOSEarlierThan8Test = [[DeviceTest alloc] initWithTitle:@"iOS < 8"
+    DeviceTest* iOSEarlierThan9Test = [[DeviceTest alloc] initWithTitle:@"iOS < 9"
                                                         andVerification:^BOOL{
-                                                            return [WPDeviceIdentification isiOSVersionEarlierThan8];
+                                                            return [WPDeviceIdentification isiOSVersionEarlierThan9];
                                                         }];
     
     [_deviceTests addObject:iPhone6Test];
     [_deviceTests addObject:iPhone6PlusTest];
-    [_deviceTests addObject:iOSEarlierThan8Test];
+    [_deviceTests addObject:iOSEarlierThan9Test];
 }
 
 - (void)viewDidLoad

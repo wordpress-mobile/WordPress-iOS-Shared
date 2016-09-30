@@ -146,9 +146,14 @@ static NSString* const WPDeviceNameSimulator = @"Simulator";
     return result;
 }
 
-+ (BOOL)isiOSVersionEarlierThan8
++ (BOOL)isiOSVersionEarlierThan9
 {
-    return [[[UIDevice currentDevice] systemVersion] floatValue] < 8.0;
+    return [[[UIDevice currentDevice] systemVersion] floatValue] < 9.0;
+}
+
++ (BOOL)isiOSVersionEarlierThan10
+{
+    return [[[UIDevice currentDevice] systemVersion] floatValue] < 10.0;
 }
 
 @end
