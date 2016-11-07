@@ -426,7 +426,6 @@
 	if (![header isKindOfClass:[UITableViewHeaderFooterView class]]) {
 		return;
 	}
-	header.textLabel.font = [self tableviewSectionHeaderFont];
 	header.textLabel.textColor = [self whisperGrey];
 }
 
@@ -435,7 +434,6 @@
 	if (![footer isKindOfClass:[UITableViewHeaderFooterView class]]) {
 		return;
 	}
-	footer.textLabel.font = [self tableviewSectionFooterFont];
 	footer.textLabel.textColor = [self greyDarken10];
 }
 
