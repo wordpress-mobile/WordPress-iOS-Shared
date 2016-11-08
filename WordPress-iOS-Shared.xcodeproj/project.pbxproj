@@ -25,14 +25,12 @@
 		E1016C1F1CBF763D00CE57D8 /* WPNUXUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1025192A9E0B00D3CC11 /* WPNUXUtility.m */; };
 		E1016C201CBF763D00CE57D8 /* WPStyleGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1022192A9DFC00D3CC11 /* WPStyleGuide.m */; };
 		E1016C211CBF763D00CE57D8 /* WPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A1028192A9E2400D3CC11 /* WPTableViewCell.m */; };
-		E1016C221CBF763D00CE57D8 /* WPTableViewSectionHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 931A102B192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.m */; };
 		E1016C231CBF763D00CE57D8 /* WPTextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */; };
 		E1016C241CBF764100CE57D8 /* UIColor+Helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A1033192AA03600D3CC11 /* UIColor+Helpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C251CBF764100CE57D8 /* WPNoResultsView.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A101E192A9DD500D3CC11 /* WPNoResultsView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C261CBF764100CE57D8 /* WPNUXUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A1024192A9E0B00D3CC11 /* WPNUXUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C271CBF764100CE57D8 /* WPStyleGuide.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A1021192A9DFC00D3CC11 /* WPStyleGuide.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C281CBF764100CE57D8 /* WPTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A1027192A9E2400D3CC11 /* WPTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E1016C291CBF764100CE57D8 /* WPTableViewSectionHeaderFooterView.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A102A192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C2A1CBF764100CE57D8 /* WPTextFieldTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 931A1030192A9F3500D3CC11 /* WPTextFieldTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C2B1CBF764600CE57D8 /* UIImage+Util.h in Headers */ = {isa = PBXBuildFile; fileRef = 744DA844194F3A76002CD6E9 /* UIImage+Util.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1016C2C1CBF764600CE57D8 /* UIImage+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 744DA845194F3A76002CD6E9 /* UIImage+Util.m */; };
@@ -95,8 +93,6 @@
 		931A1025192A9E0B00D3CC11 /* WPNUXUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPNUXUtility.m; path = Core/WPNUXUtility.m; sourceTree = "<group>"; };
 		931A1027192A9E2400D3CC11 /* WPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPTableViewCell.h; path = Core/WPTableViewCell.h; sourceTree = "<group>"; };
 		931A1028192A9E2400D3CC11 /* WPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTableViewCell.m; path = Core/WPTableViewCell.m; sourceTree = "<group>"; };
-		931A102A192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPTableViewSectionHeaderFooterView.h; path = Core/WPTableViewSectionHeaderFooterView.h; sourceTree = "<group>"; };
-		931A102B192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPTableViewSectionHeaderFooterView.m; path = Core/WPTableViewSectionHeaderFooterView.m; sourceTree = "<group>"; };
 		931A1030192A9F3500D3CC11 /* WPTextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPTextFieldTableViewCell.h; path = Core/WPTextFieldTableViewCell.h; sourceTree = "<group>"; };
 		931A1033192AA03600D3CC11 /* UIColor+Helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Helpers.h"; path = "Core/UIColor+Helpers.h"; sourceTree = "<group>"; };
 		931A1034192AA03600D3CC11 /* UIColor+Helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Helpers.m"; path = "Core/UIColor+Helpers.m"; sourceTree = "<group>"; };
@@ -265,8 +261,6 @@
 				931A1022192A9DFC00D3CC11 /* WPStyleGuide.m */,
 				931A1027192A9E2400D3CC11 /* WPTableViewCell.h */,
 				931A1028192A9E2400D3CC11 /* WPTableViewCell.m */,
-				931A102A192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.h */,
-				931A102B192A9E3200D3CC11 /* WPTableViewSectionHeaderFooterView.m */,
 				931A1030192A9F3500D3CC11 /* WPTextFieldTableViewCell.h */,
 				FF8DDCE01B5E91050098826F /* WPTextFieldTableViewCell.m */,
 			);
@@ -355,7 +349,6 @@
 				E1016C281CBF764100CE57D8 /* WPTableViewCell.h in Headers */,
 				93BCF8B51CE372A9005954A3 /* WPSharedLogging.h in Headers */,
 				E1016C261CBF764100CE57D8 /* WPNUXUtility.h in Headers */,
-				E1016C291CBF764100CE57D8 /* WPTableViewSectionHeaderFooterView.h in Headers */,
 				E1016BFC1CBF760F00CE57D8 /* WordPressShared.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,7 +478,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		7F5C73EF3AEE512678A4C3FD /* [CP] Embed Pods Frameworks */ = {
@@ -515,7 +508,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DB87001A33C367CF193D979D /* [CP] Copy Pods Resources */ = {
@@ -557,7 +550,6 @@
 				E1016C2C1CBF764600CE57D8 /* UIImage+Util.m in Sources */,
 				E1016C231CBF763D00CE57D8 /* WPTextFieldTableViewCell.m in Sources */,
 				E1016C2E1CBF764600CE57D8 /* WPImageSource.m in Sources */,
-				E1016C221CBF763D00CE57D8 /* WPTableViewSectionHeaderFooterView.m in Sources */,
 				E1016C361CBF764600CE57D8 /* WPFontManager.m in Sources */,
 				E1016C301CBF764600CE57D8 /* NSString+Util.m in Sources */,
 				E1016C1E1CBF763D00CE57D8 /* WPNoResultsView.m in Sources */,

@@ -19,5 +19,4 @@ FOUNDATION_EXPORT const unsigned char WordPressSharedVersionString[];
 #import <WordPressShared/WPNoResultsView.h>
 #import <WordPressShared/WPStyleGuide.h>
 #import <WordPressShared/WPTableViewCell.h>
-#import <WordPressShared/WPTableViewSectionHeaderFooterView.h>
 #import <WordPressShared/WPTextFieldTableViewCell.h>
