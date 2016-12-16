@@ -407,8 +407,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = WordPress.org;
 				TargetAttributes = {
+					931A0FF9192A9CDD00D3CC11 = {
+						LastSwiftMigration = 0810;
+					};
 					E1016BF81CBF760F00CE57D8 = {
 						CreatedOnToolsVersion = 7.3;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -683,6 +687,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPress-iOS-SharedTests/WordPress-iOS-SharedTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -704,6 +709,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.wordpress.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPress-iOS-SharedTests/WordPress-iOS-SharedTests-Bridging-Header.h";
+				SWIFT_VERSION = 3.0.1;
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -734,6 +740,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -766,6 +773,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
