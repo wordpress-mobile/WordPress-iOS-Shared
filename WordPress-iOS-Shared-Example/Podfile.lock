@@ -7,7 +7,7 @@ PODS:
     - CocoaLumberjack/Core
   - CocoaLumberjack/Extensions (2.2.0):
     - CocoaLumberjack/Default
-  - WordPress-iOS-Shared (0.6.3):
+  - WordPress-iOS-Shared (0.7.1):
     - CocoaLumberjack (~> 2.2.0)
 
 DEPENDENCIES:
@@ -15,12 +15,12 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   WordPress-iOS-Shared:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  WordPress-iOS-Shared: 2496fba282efcdcb8182f8f282ca0eb56dc4eb32
+  WordPress-iOS-Shared: 30e179fda968f8eb023761cc99382b6a511b6f04
 
 PODFILE CHECKSUM: 8196d0bef0b4757ec5d593c176fec8a0ebac8e4f
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1

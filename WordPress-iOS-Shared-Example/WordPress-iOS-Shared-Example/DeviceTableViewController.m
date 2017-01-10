@@ -40,7 +40,12 @@
                                                     andVerification:^BOOL{
                                                         return [WPDeviceIdentification isiPhoneSixPlus];
                                                     }];
-    
+
+    DeviceTest* iPhonePlusTest = [[DeviceTest alloc] initWithTitle:@"iPhone Plus (Any)"
+                                                    andVerification:^BOOL{
+                                                        return [WPDeviceIdentification isUnzoomediPhonePlus];
+                                                    }];
+
     DeviceTest* iOSEarlierThan9Test = [[DeviceTest alloc] initWithTitle:@"iOS < 9"
                                                         andVerification:^BOOL{
                                                             return [WPDeviceIdentification isiOSVersionEarlierThan9];
@@ -48,6 +53,7 @@
     
     [_deviceTests addObject:iPhone6Test];
     [_deviceTests addObject:iPhone6PlusTest];
+    [_deviceTests addObject:iPhonePlusTest];
     [_deviceTests addObject:iOSEarlierThan9Test];
 }
 
