@@ -43,6 +43,14 @@
 + (BOOL)isiPhoneSixPlus;
 
 /**
+ *  @brief      Call this method to know if the current device is a Plus sized
+ *              phone (6+, 6s+, 7+) , at its native scale.
+ *
+ *  @returns    YES if the device is a Plus phone. NO otherwise.
+ */
++ (BOOL)isUnzoomediPhonePlus;
+
+/**
  *  @brief      Call this method to know if the current device is running iOS version older than 9.
  *
  *  @returns    YES if the device is running iOS version older than 9.  NO otherwise.
