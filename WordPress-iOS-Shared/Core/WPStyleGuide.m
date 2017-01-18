@@ -10,7 +10,7 @@
 
 + (UIFont *)largePostTitleFont
 {
-    return [WPFontManager systemLightFontOfSize:32.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
 }
 
 + (NSDictionary *)largePostTitleAttributes
@@ -23,12 +23,12 @@
 
 + (UIFont *)postTitleFont
 {
-    return [WPFontManager systemRegularFontOfSize:16.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 + (UIFont *)postTitleFontBold
 {
-    return [WPFontManager systemBoldFontOfSize:16.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
 }
 
 + (NSDictionary *)postTitleAttributes
@@ -48,7 +48,7 @@
 
 + (UIFont *)subtitleFont
 {
-    return [WPFontManager systemRegularFontOfSize:12.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
 }
 
 + (NSDictionary *)subtitleAttributes
@@ -61,7 +61,7 @@
 
 + (UIFont *)subtitleFontItalic
 {
-    return [WPFontManager systemItalicFontOfSize:12.0];
+    return [UIFont italicSystemFontOfSize:[[self subtitleFont] pointSize]];
 }
 
 + (NSDictionary *)subtitleItalicAttributes
@@ -74,7 +74,7 @@
 
 + (UIFont *)subtitleFontBold
 {
-    return [WPFontManager systemBoldFontOfSize:12.0];
+    return [UIFont systemFontOfSize:[[self subtitleFont] pointSize] weight:UIFontWeightBold];
 }
 
 + (NSDictionary *)subtitleAttributesBold
@@ -87,12 +87,12 @@
 
 + (UIFont *)labelFont
 {
-    return [WPFontManager systemBoldFontOfSize:10.0];
+    return [UIFont systemFontOfSize:[[self labelFontNormal] pointSize] weight:UIFontWeightBold];
 }
 
 + (UIFont *)labelFontNormal
 {
-    return [WPFontManager systemRegularFontOfSize:10.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleCaption2];
 }
 
 + (NSDictionary *)labelAttributes
@@ -105,17 +105,17 @@
 
 + (UIFont *)regularTextFont
 {
-    return [WPFontManager systemRegularFontOfSize:16.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 + (UIFont *)regularTextFontSemiBold
 {
-    return [WPFontManager systemSemiBoldFontOfSize:16.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
 }
 
 + (UIFont *)regularTextFontBold
 {
-    return [WPFontManager systemBoldFontOfSize:16.0];
+    return [UIFont systemFontOfSize:[[self regularTextFont] pointSize] weight:UIFontWeightBold];
 }
 
 + (NSDictionary *)regularTextAttributes
@@ -128,22 +128,22 @@
 
 + (UIFont *)tableviewTextFont
 {
-    return [WPFontManager systemRegularFontOfSize:17.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 + (UIFont *)tableviewSubtitleFont
 {
-    return [WPFontManager systemRegularFontOfSize:17.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 + (UIFont *)tableviewSectionHeaderFont
 {
-    return [WPFontManager systemRegularFontOfSize:13.0];
+    return [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
 }
 
 + (UIFont *)tableviewSectionFooterFont
 {
-	return [WPFontManager systemRegularFontOfSize:13.0];
+	return [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
 }
 
 
