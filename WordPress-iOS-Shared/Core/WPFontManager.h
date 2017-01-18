@@ -1,5 +1,8 @@
 #import <UIKit/UIKit.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface WPFontManager : NSObject
 
 /// Loads the OpenSans font family for the life of the current process.
@@ -33,3 +36,5 @@
 + (UIFont *)merriweatherRegularFontOfSize:(CGFloat)size;
 
 @end
+
+NS_ASSUME_NONNULL_END
