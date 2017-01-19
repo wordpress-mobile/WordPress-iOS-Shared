@@ -4,12 +4,6 @@
 @interface WPStyleGuide : NSObject
 
 // Fonts
-+ (UIFont *)largePostTitleFont;
-+ (NSDictionary *)largePostTitleAttributes;
-+ (UIFont *)postTitleFont;
-+ (UIFont *)postTitleFontBold;
-+ (NSDictionary *)postTitleAttributes;
-+ (NSDictionary *)postTitleAttributesBold;
 + (UIFont *)subtitleFont;
 + (NSDictionary *)subtitleAttributes;
 + (UIFont *)subtitleFontItalic;
@@ -21,7 +15,6 @@
 + (NSDictionary *)labelAttributes;
 + (UIFont *)regularTextFont;
 + (UIFont *)regularTextFontSemiBold;
-+ (UIFont *)regularTextFontBold;
 + (NSDictionary *)regularTextAttributes;
 + (UIFont *)tableviewTextFont;
 + (UIFont *)tableviewSubtitleFont;

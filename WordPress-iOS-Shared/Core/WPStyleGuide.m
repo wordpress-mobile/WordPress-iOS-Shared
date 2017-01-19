@@ -8,44 +8,6 @@
 
 #pragma mark - Fonts and Text
 
-+ (UIFont *)largePostTitleFont
-{
-    return [UIFont preferredFontForTextStyle:UIFontTextStyleTitle1];
-}
-
-+ (NSDictionary *)largePostTitleAttributes
-{
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.minimumLineHeight = 35;
-    paragraphStyle.maximumLineHeight = 35;
-    return @{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName : [self largePostTitleFont]};
-}
-
-+ (UIFont *)postTitleFont
-{
-    return [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-}
-
-+ (UIFont *)postTitleFontBold
-{
-    return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-}
-
-+ (NSDictionary *)postTitleAttributes
-{
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.minimumLineHeight = 19;
-    paragraphStyle.maximumLineHeight = 19;
-    return @{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName : [self postTitleFont]};
-}
-
-+ (NSDictionary *)postTitleAttributesBold {
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.minimumLineHeight = 19;
-    paragraphStyle.maximumLineHeight = 19;
-    return @{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName : [self postTitleFontBold]};
-}
-
 + (UIFont *)subtitleFont
 {
     return [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1];
@@ -111,11 +73,6 @@
 + (UIFont *)regularTextFontSemiBold
 {
     return [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
-}
-
-+ (UIFont *)regularTextFontBold
-{
-    return [UIFont systemFontOfSize:[[self regularTextFont] pointSize] weight:UIFontWeightBold];
 }
 
 + (NSDictionary *)regularTextAttributes
