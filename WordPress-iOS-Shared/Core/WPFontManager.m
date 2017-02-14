@@ -35,12 +35,16 @@ static NSString * const FontTypeOTF = @"otf";
     return [UIFont systemFontOfSize:size weight:UIFontWeightRegular];
 }
 
-#pragma mark - Merryweather Fonts
+#pragma mark - Noto Fonts
 
 static NSString* const NotoBoldFontName = @"NotoSerif-Bold";
+static NSString* const NotoBoldFileName = @"NotoSerif-Bold";
 static NSString* const NotoBoldItalicFontName = @"NotoSerif-BoldItalic";
+static NSString* const NotoBoldItalicFileName = @"NotoSerif-BoldItalic";
 static NSString* const NotoItalicFontName = @"NotoSerif-Italic";
-static NSString* const NotoRegularFontName = @"NotoSerif-Regular";
+static NSString* const NotoItalicFileName = @"NotoSerif-Italic";
+static NSString* const NotoRegularFontName = @"NotoSerif";
+static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
 
 + (void)loadNotoFontFamily
 {
@@ -52,22 +56,22 @@ static NSString* const NotoRegularFontName = @"NotoSerif-Regular";
 
 + (UIFont *)notoBoldFontOfSize:(CGFloat)size
 {
-    return [self fontNamed:NotoBoldFontName resourceName:NotoBoldFontName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoBoldFontName resourceName:NotoBoldFileName fontType:FontTypeTTF size:size];
 }
 
 + (UIFont *)notoBoldItalicFontOfSize:(CGFloat)size;
 {
-    return [self fontNamed:NotoBoldItalicFontName resourceName:NotoBoldItalicFontName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoBoldItalicFontName resourceName:NotoBoldItalicFileName fontType:FontTypeTTF size:size];
 }
 
 + (UIFont *)notoItalicFontOfSize:(CGFloat)size;
 {
-    return [self fontNamed:NotoItalicFontName resourceName:NotoItalicFontName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoItalicFontName resourceName:NotoItalicFileName fontType:FontTypeTTF size:size];
 }
 
 + (UIFont *)notoRegularFontOfSize:(CGFloat)size
 {
-    return [self fontNamed:NotoRegularFontName resourceName:NotoRegularFontName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoRegularFontName resourceName:NotoRegularFileName fontType:FontTypeTTF size:size];
 }
 
 
