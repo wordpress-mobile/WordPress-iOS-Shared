@@ -8,88 +8,6 @@ static NSString * const SharedBundle = @"WordPress-iOS-Shared.bundle";
 static NSString * const FontTypeTTF = @"ttf";
 static NSString * const FontTypeOTF = @"otf";
 
-#pragma mark - Open Sans Fonts
-
-static NSString* const OpenSansLightFontName = @"OpenSans-Light";
-static NSString* const OpenSansItalicFontName = @"OpenSans-Italic";
-static NSString* const OpenSansLightItalicFontName = @"OpenSans-LightItalic";
-static NSString* const OpenSansBoldFontName = @"OpenSans-Bold";
-static NSString* const OpenSansBoldItalicFontName = @"OpenSans-BoldItalic";
-static NSString* const OpenSansSemiBoldFontName = @"OpenSans-Semibold";
-static NSString* const OpenSansSemiboldItalicFontName = @"OpenSans-SemiboldItalic";
-static NSString* const OpenSansRegularFontName = @"OpenSans-Regular";
-
-/// Loads the OpenSans font family for the life of the current process.
-/// This effectively makes it possible to look this font up using font descriptors.
-///
-+ (void)loadOpenSansFontFamily
-{
-    [self loadFontResourceNamed:OpenSansLightFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansLightItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansBoldFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansBoldItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansSemiBoldFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansSemiboldItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:OpenSansRegularFontName withExtension:FontTypeTTF];
-}
-
-+ (UIFont *)openSansLightFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-Light";
-    NSString *fontName = @"OpenSans-Light";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansItalicFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-Italic";
-    NSString *fontName = @"OpenSans-Italic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansLightItalicFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-LightItalic";
-    NSString *fontName = @"OpenSans-LightItalic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansBoldFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-Bold";
-    NSString *fontName = @"OpenSans-Bold";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansBoldItalicFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-BoldItalic";
-    NSString *fontName = @"OpenSans-BoldItalic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansSemiBoldFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-Semibold";
-    NSString *fontName = @"OpenSans-Semibold";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansSemiBoldItalicFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-SemiboldItalic";
-    NSString *fontName = @"OpenSans-SemiboldItalic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)openSansRegularFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"OpenSans-Regular";
-    NSString *fontName = @"OpenSans";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
 #pragma mark - System Fonts
 
 + (UIFont *)systemLightFontOfSize:(CGFloat)size
@@ -117,65 +35,43 @@ static NSString* const OpenSansRegularFontName = @"OpenSans-Regular";
     return [UIFont systemFontOfSize:size weight:UIFontWeightRegular];
 }
 
-#pragma mark - Merryweather Fonts
+#pragma mark - Noto Fonts
 
-static NSString* const MerriweatherBoldFontName = @"Merriweather-Bold";
-static NSString* const MerriweatherBoldItalicFontName = @"Merriweather-BoldItalic";
-static NSString* const MerriweatherItalicFontName = @"Merriweather-Italic";
-static NSString* const MerriweatherLightFontName = @"Merriweather-Light";
-static NSString* const MerriweatherLightItalicFontName = @"Merriweather-LightItalic";
-static NSString* const MerriweatherRegularFontName = @"Merriweather-Regular";
+static NSString* const NotoBoldFontName = @"NotoSerif-Bold";
+static NSString* const NotoBoldFileName = @"NotoSerif-Bold";
+static NSString* const NotoBoldItalicFontName = @"NotoSerif-BoldItalic";
+static NSString* const NotoBoldItalicFileName = @"NotoSerif-BoldItalic";
+static NSString* const NotoItalicFontName = @"NotoSerif-Italic";
+static NSString* const NotoItalicFileName = @"NotoSerif-Italic";
+static NSString* const NotoRegularFontName = @"NotoSerif";
+static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
 
-+ (void)loadMerriweatherFontFamily
++ (void)loadNotoFontFamily
 {
-    [self loadFontResourceNamed:MerriweatherBoldFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:MerriweatherBoldItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:MerriweatherItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:MerriweatherLightFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:MerriweatherLightItalicFontName withExtension:FontTypeTTF];
-    [self loadFontResourceNamed:MerriweatherRegularFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:NotoBoldFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:NotoBoldItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:NotoItalicFontName withExtension:FontTypeTTF];
+    [self loadFontResourceNamed:NotoRegularFontName withExtension:FontTypeTTF];
 }
 
-+ (UIFont *)merriweatherBoldFontOfSize:(CGFloat)size
++ (UIFont *)notoBoldFontOfSize:(CGFloat)size
 {
-    NSString *resourceName = @"Merriweather-Bold";
-    NSString *fontName = @"Merriweather-Bold";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoBoldFontName resourceName:NotoBoldFileName fontType:FontTypeTTF size:size];
 }
 
-+ (UIFont *)merriweatherBoldItalicFontOfSize:(CGFloat)size;
++ (UIFont *)notoBoldItalicFontOfSize:(CGFloat)size;
 {
-    NSString *resourceName = @"Merriweather-BoldItalic";
-    NSString *fontName = @"Merriweather-BoldItalic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoBoldItalicFontName resourceName:NotoBoldItalicFileName fontType:FontTypeTTF size:size];
 }
 
-+ (UIFont *)merriweatherItalicFontOfSize:(CGFloat)size;
++ (UIFont *)notoItalicFontOfSize:(CGFloat)size;
 {
-    NSString *resourceName = @"Merriweather-Italic";
-    NSString *fontName = @"Merriweather-Italic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoItalicFontName resourceName:NotoItalicFileName fontType:FontTypeTTF size:size];
 }
 
-+ (UIFont *)merriweatherLightFontOfSize:(CGFloat)size;
++ (UIFont *)notoRegularFontOfSize:(CGFloat)size
 {
-    NSString *resourceName = @"Merriweather-Light";
-    NSString *fontName = @"Merriweather-Light";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)merriweatherLightItalicFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"Merriweather-LightItalic";
-    NSString *fontName = @"Merriweather-LightItalic";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
-}
-
-+ (UIFont *)merriweatherRegularFontOfSize:(CGFloat)size
-{
-    NSString *resourceName = @"Merriweather-Regular";
-    NSString *fontName = @"Merriweather";
-    return [self fontNamed:fontName resourceName:resourceName fontType:FontTypeTTF size:size];
+    return [self fontNamed:NotoRegularFontName resourceName:NotoRegularFileName fontType:FontTypeTTF size:size];
 }
 
 
