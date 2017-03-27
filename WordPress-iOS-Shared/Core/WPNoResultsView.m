@@ -22,7 +22,7 @@
     noResultsView.accessoryView     = accessoryView;
     noResultsView.titleText         = titleText;
     noResultsView.messageText       = messageText;
-    noResultsView.buttonTitle       = buttonTitle;
+    noResultsView.buttonTitle       = [buttonTitle uppercaseStringWithLocale:[NSLocale currentLocale]];
     
     return noResultsView;
 }
@@ -188,6 +188,7 @@
 - (void)setButtonTitle:(NSString *)title {
     self.button.hidden = (title.length == 0);
     
+    title = [title uppercaseStringWithLocale:[NSLocale currentLocale]];
     if (title.length) {
         [self.button setTitle:title forState:UIControlStateNormal];
     }
