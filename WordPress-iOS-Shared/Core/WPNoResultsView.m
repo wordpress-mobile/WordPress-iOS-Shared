@@ -48,10 +48,10 @@
         
         // Button
         _button                     = [UIButton buttonWithType:UIButtonTypeCustom];
-        _button.titleLabel.font     = [WPStyleGuide regularTextFont];
+        _button.titleLabel.font     = [WPStyleGuide subtitleFontBold];
         _button.hidden              = YES;
         [_button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_button setTitleColor:[WPStyleGuide allTAllShadeGrey] forState:UIControlStateNormal];
+        [_button setTitleColor:[WPStyleGuide wordPressBlue] forState:UIControlStateNormal];
         [_button setBackgroundImage:[self newButtonBackgroundImage] forState:UIControlStateNormal];
         
         // Insert Subviews
@@ -73,7 +73,7 @@
 
 - (void)layoutSubviews {
     
-    CGFloat width = 250.0f;
+    CGFloat width = 280.0f;
     
     [self hideAccessoryViewIfNecessary];
     
@@ -131,8 +131,9 @@
     UIGraphicsBeginImageContextWithOptions(fillRect.size, NO, [[UIScreen mainScreen] scale]);
     CGContextRef context    = UIGraphicsGetCurrentContext();
     
-    CGContextSetStrokeColorWithColor(context, [WPStyleGuide allTAllShadeGrey].CGColor);
-    CGContextAddPath(context, [UIBezierPath bezierPathWithRoundedRect:CGRectInset(fillRect, 1, 1) cornerRadius:2.0].CGPath);
+    CGContextSetStrokeColorWithColor(context, [WPStyleGuide wordPressBlue].CGColor);
+    CGContextAddPath(context, [UIBezierPath bezierPathWithRoundedRect:CGRectInset(fillRect, 1, 1)
+                                                         cornerRadius:2.0].CGPath);
     CGContextStrokePath(context);
     
     UIImage *mainImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -219,8 +220,12 @@
 
         if ([self.superview isKindOfClass:[UITableView class]]) {
             UITableView *tableView = (UITableView *)self.superview;
-            CGFloat headerHeight = (tableView.tableHeaderView == nil || tableView.tableHeaderView.hidden) ? 0 : tableView.tableHeaderView.bounds.size.height;
-            CGFloat footerHeight = (tableView.tableFooterView == nil || tableView.tableFooterView.hidden) ? 0 : tableView.tableFooterView.bounds.size.height;
+            CGFloat headerHeight = (tableView.tableHeaderView == nil
+                                    || tableView.tableHeaderView.hidden
+                                    || tableView.tableHeaderView.alpha == 0.0) ? 0 : tableView.tableHeaderView.bounds.size.height;
+            CGFloat footerHeight = (tableView.tableFooterView == nil
+                                    || tableView.tableFooterView.hidden
+                                    || tableView.tableFooterView.alpha == 0.0) ? 0 : tableView.tableFooterView.bounds.size.height;
 
             verticalOffset += (headerHeight + footerHeight);
 
