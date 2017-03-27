@@ -188,6 +188,7 @@
 - (void)setButtonTitle:(NSString *)title {
     self.button.hidden = (title.length == 0);
     
+    title = [title uppercaseStringWithLocale:[NSLocale currentLocale]];
     if (title.length) {
         [self.button setTitle:title forState:UIControlStateNormal];
     }
