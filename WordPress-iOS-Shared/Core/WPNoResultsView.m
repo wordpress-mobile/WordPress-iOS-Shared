@@ -22,7 +22,7 @@
     noResultsView.accessoryView     = accessoryView;
     noResultsView.titleText         = titleText;
     noResultsView.messageText       = messageText;
-    noResultsView.buttonTitle       = [buttonTitle uppercaseStringWithLocale:[NSLocale currentLocale]];
+    noResultsView.buttonTitle       = buttonTitle;
     
     return noResultsView;
 }
