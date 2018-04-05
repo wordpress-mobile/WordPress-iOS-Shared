@@ -14,9 +14,9 @@ Pod::Spec.new do |s|
   s.author        = { "Aaron Douglas" => "astralbodies@gmail.com" }
   s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :tag => s.version.to_s }
-  s.source_files  = 'WordPressShared/**/*.{h,m,swift}'
-  s.resources     = [ 'WordPressShared/Resources/*.{ttf,otf}' ]
-  s.exclude_files = 'WordPressShared/Exclude'
+  s.source_files  = '**/*.{h,m,swift}'
+  s.resources     = [ 'Resources/*.{ttf,otf}' ]
+  s.exclude_files = 'Exclude'
   s.requires_arc  = true
   s.header_dir    = 'WordPressShared'
 
