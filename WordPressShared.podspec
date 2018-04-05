@@ -20,9 +20,8 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
   s.header_dir    = 'WordPressShared'
 
-  s.dependency 'CocoaLumberjack', '~> 3.4.1'
+  s.dependency 'CocoaLumberjack', '~> 3.4'
   s.dependency 'FormatterKit/TimeIntervalFormatter', '1.8.2'
   s.dependency 'NSObject-SafeExpectations', '0.0.2'
-  s.dependency 'UIDeviceIdentifier', '~> 0.4'
 end
 
