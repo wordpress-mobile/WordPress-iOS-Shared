@@ -9,8 +9,8 @@
 /**
  Get the url path of the image to display for a post.
 
- @param dict A dictionary representing a posts attachments from the REST API.
- @param string The post content. The attachment url must exist in the content.
+ @param attachmentsDict A dictionary representing a posts attachments from the REST API.
+ @param content The post content. The attachment url must exist in the content.
  @return The url path for the featured image or nil
  */
 + (NSString *)searchPostAttachmentsForImageToDisplay:(NSDictionary *)attachmentsDict existingInContent:(NSString *)content;
