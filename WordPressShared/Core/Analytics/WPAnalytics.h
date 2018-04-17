@@ -276,6 +276,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatSignupMagicLinkSucceeded,
     WPAnalyticsStatSignupSocialSuccess,
     WPAnalyticsStatSignupSocialFailure,
+    WPAnalyticsStatSignupSocialButtonFailure,
     WPAnalyticsStatSignupMagicLinkRequested,
     WPAnalyticsStatSiteSettingsDeleteSiteAccessed,
     WPAnalyticsStatSiteSettingsDeleteSitePurchasesRequested,
