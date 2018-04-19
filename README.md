@@ -1,3 +1,5 @@
+[![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=5ad8806febf49400016c87cc&branch=develop&build=latest)](https://dashboard.buddybuild.com/apps/5ad8806febf49400016c87cc/build/latest?branch=develop)
+
 WordPress-iOS-Shared
 ======================
 
