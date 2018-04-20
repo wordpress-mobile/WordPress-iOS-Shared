@@ -317,6 +317,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatSpotlightSearchOpenedPost,
     WPAnalyticsStatSpotlightSearchOpenedPage,
     WPAnalyticsStatSpotlightSearchOpenedReaderPost,
+    WPAnalyticsStatSpotlightSearchOpenedApp,
     WPAnalyticsStatSkippedConnectingToJetpack,
     WPAnalyticsStatStatsAccessed,
     WPAnalyticsStatStatsInsightsAccessed,
