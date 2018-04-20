@@ -123,6 +123,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatMediaLibraryEditedItemMetadata,
     WPAnalyticsStatMediaLibraryPreviewedItem,
     WPAnalyticsStatMediaLibrarySharedItemLink,
+    WPAnalyticsStatMediaLibraryAddedPhoto,
+    WPAnalyticsStatMediaLibraryAddedVideo,
     WPAnalyticsStatMediaLibraryAddedPhotoViaDeviceLibrary,
     WPAnalyticsStatMediaLibraryAddedPhotoViaOtherApps,
     WPAnalyticsStatMediaLibraryAddedPhotoViaStockPhotos,
