@@ -90,4 +90,13 @@ NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo = @"with_videos"
     }
 }
 
++ (void)clearQueuedEvents
+{
+    for (id<WPAnalyticsTracker>tracker in [self trackers]) {
+        if ([tracker respondsToSelector:@selector(clearQueuedEvents)]) {
+            [tracker clearQueuedEvents];
+        }
+    }
+}
+
 @end
