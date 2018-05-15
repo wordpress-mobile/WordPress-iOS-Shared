@@ -1,37 +1,52 @@
 PODS:
-  - CocoaLumberjack (2.2.0):
-    - CocoaLumberjack/Default (= 2.2.0)
-    - CocoaLumberjack/Extensions (= 2.2.0)
-  - CocoaLumberjack/Core (2.2.0)
-  - CocoaLumberjack/Default (2.2.0):
-    - CocoaLumberjack/Core
-  - CocoaLumberjack/Extensions (2.2.0):
+  - CocoaLumberjack (3.4.1):
+    - CocoaLumberjack/Default (= 3.4.1)
+    - CocoaLumberjack/Extensions (= 3.4.1)
+  - CocoaLumberjack/Default (3.4.1)
+  - CocoaLumberjack/Extensions (3.4.1):
     - CocoaLumberjack/Default
-  - OCMock (3.2.2)
-  - OHHTTPStubs (5.0.0):
-    - OHHTTPStubs/Default (= 5.0.0)
-  - OHHTTPStubs/Core (5.0.0)
-  - OHHTTPStubs/Default (5.0.0):
+  - Expecta (1.0.6)
+  - FormatterKit/Resources (1.8.2)
+  - FormatterKit/TimeIntervalFormatter (1.8.2):
+    - FormatterKit/Resources
+  - NSObject-SafeExpectations (0.0.2)
+  - OCMock (3.4.1)
+  - OHHTTPStubs (6.1.0):
+    - OHHTTPStubs/Default (= 6.1.0)
+  - OHHTTPStubs/Core (6.1.0)
+  - OHHTTPStubs/Default (6.1.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.0.0):
+  - OHHTTPStubs/JSON (6.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.0.0):
+  - OHHTTPStubs/NSURLSession (6.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.0.0)
+  - OHHTTPStubs/OHPathHelpers (6.1.0)
+  - OHHTTPStubs/Swift (6.1.0):
+    - OHHTTPStubs/Default
+  - Specta (1.0.7)
 
 DEPENDENCIES:
-  - CocoaLumberjack (~> 2.2.0)
-  - OCMock
-  - OHHTTPStubs
+  - CocoaLumberjack (~> 3.4)
+  - Expecta (= 1.0.6)
+  - FormatterKit/TimeIntervalFormatter (= 1.8.2)
+  - NSObject-SafeExpectations (= 0.0.2)
+  - OCMock (~> 3.4)
+  - OHHTTPStubs (= 6.1.0)
+  - OHHTTPStubs/Swift (= 6.1.0)
+  - Specta (= 1.0.7)
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 17fe8581f84914d5d7e6360f7c70022b173c3ae0
-  OCMock: 18c9b7e67d4c2770e95bb77a9cc1ae0c91fe3835
-  OHHTTPStubs: a5d2e9eea07869d42ec03338325f398bc520e159
+  CocoaLumberjack: 2e258a064cacc8eb9a2aca318e24d02a0a7fd56d
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
+  NSObject-SafeExpectations: 7d7f48df90df4e11da7cfe86b64f45eff7a7f521
+  OCMock: 2cd0716969bab32a2283ff3a46fd26a8c8b4c5e3
+  OHHTTPStubs: 1e21c7d2c084b8153fc53d48400d8919d2d432d0
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 46d460b6eed2ea3cb4fb765997567d00287217de
+PODFILE CHECKSUM: fb04b51263031cd65a961f5ee979454a7e1ab41e
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.4.0
