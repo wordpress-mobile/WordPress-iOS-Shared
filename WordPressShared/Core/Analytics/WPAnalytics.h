@@ -397,6 +397,7 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 + (void)track:(WPAnalyticsStat)stat;
 + (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
 + (void)endSession;
++ (void)clearQueuedEvents;
 
 @end
 
@@ -411,5 +412,6 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 - (void)refreshMetadata;
 - (void)beginTimerForStat:(WPAnalyticsStat)stat;
 - (void)endTimerForStat:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
+- (void)clearQueuedEvents;
 
 @end
