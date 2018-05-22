@@ -1,6 +1,5 @@
 #import "DisplayableImageHelper.h"
 #import "NSString+Util.h"
-@import NSObject_SafeExpectations;
 
 static const NSInteger FeaturedImageMinimumWidth = 150;
 
@@ -9,6 +8,21 @@ static NSString * const AttachmentsDictionaryKeyURL = @"URL";
 static NSString * const AttachmentsDictionaryKeyMimeType = @"mime_type";
 
 @implementation DisplayableImageHelper
+
++ (NSInteger)widthOfAttachment:(NSDictionary *)attachment {
+    NSInteger result = 0;
+    id obj = [attachment objectForKey:AttachmentsDictionaryKeyWidth];
+    if ([obj isKindOfClass:NSNumber.class]) {
+        NSNumber *number = (NSNumber *)obj;
+        result = [number integerValue];
+    } else if ([obj isKindOfClass:NSString.class]) {
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        numberFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        NSNumber *number= [numberFormatter numberFromString:(NSString *)obj];
+        result = [number integerValue];
+    }
+    return result;
+}
 
 + (NSString *)searchPostAttachmentsForImageToDisplay:(NSDictionary *)attachmentsDict existingInContent:(NSString *)content
 {
@@ -22,15 +36,18 @@ static NSString * const AttachmentsDictionaryKeyMimeType = @"mime_type";
     attachments = [self filteredAttachmentsArray:attachments];
 
     for (NSDictionary *attachment in attachments) {
-        NSInteger width = [[attachment numberForKey:AttachmentsDictionaryKeyWidth] integerValue];
+        NSInteger width = [self widthOfAttachment:attachment];
         if (width < FeaturedImageMinimumWidth) {
             // The remaining images are too small so just stop now.
             break;
         }
-        NSString *maybeImage = [attachment stringForKey:AttachmentsDictionaryKeyURL];
-        if ([content containsString:maybeImage]) {
-            imageToDisplay = maybeImage;
-            break;
+        id obj = attachment[AttachmentsDictionaryKeyURL];
+        if ([obj isKindOfClass:NSString.class]) {
+            NSString *maybeImage = (NSString *)obj;
+            if ([content containsString:maybeImage]) {
+                imageToDisplay = maybeImage;
+                break;
+            }
         }
     }
 
@@ -48,14 +65,13 @@ static NSString * const AttachmentsDictionaryKeyMimeType = @"mime_type";
 
 + (NSArray *)sortAttachmentsArray:(NSArray *)attachments
 {
-    return [attachments sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *attachmentA, NSDictionary *attachmentB) {
-        NSString *key = AttachmentsDictionaryKeyWidth;
-        NSNumber *widthA = [attachmentA numberForKey:key] ?: @(0);
-        NSNumber *widthB = [attachmentB numberForKey:key] ?: @(0);
+    return [attachments sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *attachmentA, NSDictionary *attachmentB) {        
+        NSInteger widthA = [self widthOfAttachment:attachmentA];
+        NSInteger widthB = [self widthOfAttachment:attachmentB];
 
-        if ([widthA integerValue] < [widthB integerValue]) {
+        if (widthA < widthB) {
             return NSOrderedDescending;
-        } else if ([widthA integerValue] > [widthB integerValue]) {
+        } else if (widthA > widthB) {
             return NSOrderedAscending;
         } else {
             return NSOrderedSame;
