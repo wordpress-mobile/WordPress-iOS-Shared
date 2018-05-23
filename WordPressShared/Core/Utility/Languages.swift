@@ -1,5 +1,4 @@
 import Foundation
-import NSObject_SafeExpectations
 
 /// This helper class allows us to map WordPress.com LanguageID's into human readable language strings.
 ///
@@ -30,8 +29,8 @@ public class WordPressComLanguageDatabase: NSObject {
         let parsed = try! JSONSerialization.jsonObject(with: raw, options: [.mutableContainers, .mutableLeaves]) as? NSDictionary
 
         // Parse All + Popular: All doesn't contain Popular. Otherwise the json would have dupe data. Right?
-        let parsedAll = Language.fromArray(parsed!.array(forKey: Keys.all) as! [NSDictionary])
-        let parsedPopular = Language.fromArray(parsed!.array(forKey: Keys.popular) as! [NSDictionary])
+        let parsedAll = Language.fromArray(parsed![Keys.all] as! [[String: Any]])
+        let parsedPopular = Language.fromArray(parsed![Keys.popular] as! [[String: Any]])
         let merged = parsedAll + parsedPopular
 
         // Done!
@@ -136,10 +135,10 @@ public class WordPressComLanguageDatabase: NSObject {
 
         /// Designated initializer. Will fail if any of the required properties is missing
         ///
-        init?(dict: NSDictionary) {
-            guard let unwrappedId = dict.number(forKey: Keys.identifier)?.intValue,
-                        let unwrappedSlug = dict.string(forKey: Keys.slug),
-                        let unwrappedName = dict.string(forKey: Keys.name) else {
+        init?(dict: [String: Any]) {
+            guard let unwrappedId = (dict[Keys.identifier] as? NSNumber)?.intValue,
+                        let unwrappedSlug = dict[Keys.slug] as? String,
+                        let unwrappedName = dict[Keys.name] as? String else {
                 id = Int.min
                 name = String()
                 slug = String()
@@ -154,7 +153,7 @@ public class WordPressComLanguageDatabase: NSObject {
 
         /// Given an array of raw languages, will return a parsed array.
         ///
-        public static func fromArray(_ array: [NSDictionary]) -> [Language] {
+        public static func fromArray(_ array: [[String:Any]] ) -> [Language] {
             return array.compactMap {
                 return Language(dict: $0)
             }

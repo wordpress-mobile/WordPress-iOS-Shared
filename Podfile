@@ -9,8 +9,7 @@ target 'WordPressShared' do
   project 'WordPressShared.xcodeproj'
 
   pod 'CocoaLumberjack', '~> 3.4'
-  pod 'FormatterKit/TimeIntervalFormatter', '1.8.2'
-  pod 'NSObject-SafeExpectations', '0.0.2'
+  pod 'FormatterKit/TimeIntervalFormatter', '1.8.2'  
 
   target 'WordPressSharedTests' do
     inherit! :search_paths
