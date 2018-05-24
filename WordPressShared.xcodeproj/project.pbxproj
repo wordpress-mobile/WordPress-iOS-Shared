@@ -460,7 +460,6 @@
 				829DD13A1EC9EED200AB8C12 /* Frameworks */,
 				829DD13B1EC9EED200AB8C12 /* Headers */,
 				829DD13C1EC9EED200AB8C12 /* Resources */,
-				E3FF3E6A15093B9CFF57DB95 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -480,7 +479,6 @@
 				829DD1441EC9EED200AB8C12 /* Frameworks */,
 				829DD1451EC9EED200AB8C12 /* Resources */,
 				F47EB302F575BA168C0E7DB8 /* [CP] Embed Pods Frameworks */,
-				09EE7ACDD61CC21C126750FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -555,21 +553,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		09EE7ACDD61CC21C126750FF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8C446B5942DC8541369A811F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -606,21 +589,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3FF3E6A15093B9CFF57DB95 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F47EB302F575BA168C0E7DB8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,7 +602,6 @@
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FormatterKit/FormatterKit.framework",
-				"${BUILT_PRODUCTS_DIR}/NSObject-SafeExpectations/NSObject_SafeExpectations.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -644,7 +611,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormatterKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_SafeExpectations.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
