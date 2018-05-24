@@ -208,6 +208,14 @@
 
 #pragma mark - Properties
 
+- (void)setAccessibilityLabel:(NSString *)accessibilityLabel {
+    [super setAccessibilityLabel:accessibilityLabel];
+
+    // If an accessibility label is set, use it to override the displayed
+    // title and message.
+    self.isAccessibilityElement = (accessibilityLabel) ? YES : NO;
+}
+
 - (NSString *)titleText {
     return _titleLabel.text;
 }
