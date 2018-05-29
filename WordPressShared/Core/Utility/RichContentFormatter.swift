@@ -11,6 +11,7 @@ import Foundation
         static let styleTags = try! NSRegularExpression(pattern: "<style[^>]*?>[\\s\\S]*?</style>", options: .caseInsensitive)
         static let scriptTags = try! NSRegularExpression(pattern: "<script[^>]*?>[\\s\\S]*?</script>", options: .caseInsensitive)
         static let tableTags = try! NSRegularExpression(pattern: "<table[^>]*?>[\\s\\S]*?</table>", options: .caseInsensitive)
+        static let gutenbergComments = try! NSRegularExpression(pattern: "<p><!-- /?wp:\\S+? --></p>", options: .caseInsensitive)
 
         // Normalizaing Paragraphs
         static let divTagsStart = try! NSRegularExpression(pattern: "<div[^>]*>", options: .caseInsensitive)
@@ -80,6 +81,11 @@ import Foundation
                                                                     withTemplate: "")
 
         content = RegEx.tableTags.stringByReplacingMatches(in: content,
+                                                                   options: .reportCompletion,
+                                                                   range: NSRange(location: 0, length: content.count),
+                                                                   withTemplate: "")
+
+        content = RegEx.gutenbergComments.stringByReplacingMatches(in: content,
                                                                    options: .reportCompletion,
                                                                    range: NSRange(location: 0, length: content.count),
                                                                    withTemplate: "")
