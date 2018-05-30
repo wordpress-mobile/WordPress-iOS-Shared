@@ -13,7 +13,7 @@ class RichContentFormatterTests: XCTestCase {
 
     func testRemoveForbiddenTags() {
         let str = "<p>test</p><p>test</p><img>"
-        let styleStr = "<script>alert();</script><style>body{color:#000;}</style><p>test</p><script>alert();</script><style>body{color:#000;}</style><p>test</p><p><!-- wp:paragraph {\"fontSize\":\"large\"}--></p><p><!-- /wp:paragraph --></p>\n<img><script>alert();</script><style>body{color:#000;}</style>"
+        let styleStr = "<script>alert();</script><style>body{color:#000;}</style><p>test</p><script>alert();</script><style>body{color:#000;}</style><p>test</p><p><!-- wp:paragraph {\"fontSize\":\"large\"}--></p><p><!-- /wp:paragraph --></p>\n<img><p><!-- wp:self-closing-tag /--></p><script>alert();</script><style>body{color:#000;}</style>"
         let sanitizedStr = RichContentFormatter.removeForbiddenTags(styleStr)
         XCTAssertTrue(str == sanitizedStr, "The forbidden tags were not removed.")
     }
