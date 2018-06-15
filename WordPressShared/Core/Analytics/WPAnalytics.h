@@ -243,7 +243,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatPushNotificationWinbackShown,
     WPAnalyticsStatPushNotificationWinbackNoTapped,
     WPAnalyticsStatPushNotificationWinbackSettingsTapped,
-    WPAnalyticsStatPushNotificationOSAlertShow,
+    WPAnalyticsStatPushNotificationOSAlertShown,
     WPAnalyticsStatPushNotificationOSAlertAllowed,
     WPAnalyticsStatPushNotificationOSAlertDenied,
     WPAnalyticsStatReaderAccessed,
