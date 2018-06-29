@@ -369,6 +369,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatSupportReceivedResponseFromSupport,
     WPAnalyticsStatSupportHelpCenterUserSearched,
     WPAnalyticsStatSupportHelpCenterViewed,
+    WPAnalyticsStatSupportIdentityFormViewed,
+    WPAnalyticsStatSupportIdentitySet,
     WPAnalyticsStatSupportNewRequestViewed,
     WPAnalyticsStatSupportTicketListViewed,
     WPAnalyticsStatSupportNewRequestCreated,
