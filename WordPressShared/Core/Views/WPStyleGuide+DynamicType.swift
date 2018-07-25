@@ -146,7 +146,7 @@ extension WPStyleGuide {
     /// This font will never change its size.
     ///
     /// - Parameters:
-    ///   - for: The base UIFontTextStyle to take the size from.
+    ///   - style: The base UIFontTextStyle to take the size from.
     ///   - weight: The desired font weight
     /// - Returns: The created font.
     ///
