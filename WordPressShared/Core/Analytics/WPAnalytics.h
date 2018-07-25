@@ -34,6 +34,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatCreateSiteSetTaglineFailed,
     WPAnalyticsStatCreateSiteSetThemeFailed,
     WPAnalyticsStatDefaultAccountChanged,
+    WPAnalyticsStatDeepLinked,
+    WPAnalyticsStatDeepLinkFailed,
     WPAnalyticsStatEditorAddedPhotoViaLocalLibrary,
     WPAnalyticsStatEditorAddedVideoViaLocalLibrary,
     WPAnalyticsStatEditorAddedPhotoViaWPMediaLibrary,
