@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
 
   s.homepage      = "http://apps.wordpress.com"
   s.license       = "GPLv2"
-  s.author        = { "Aaron Douglas" => "astralbodies@gmail.com" }
+  s.author        = { "WordPress-Mobile" => "mobile@automattic.com" }
   s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :tag => s.version.to_s }
   s.source_files  = 'WordPressShared/**/*.{h,m,swift}'
