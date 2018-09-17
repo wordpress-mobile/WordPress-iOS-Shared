@@ -53,7 +53,7 @@ open class EmailTypoChecker: NSObject {
     /// If it doesn't detect any typo, it returns the given email.
     ///
     @objc(guessCorrectionForEmail:)
-    open static func guessCorrection(email: String) -> String {
+    public static func guessCorrection(email: String) -> String {
         let components = email.components(separatedBy: "@")
         guard components.count == 2 else {
             return email

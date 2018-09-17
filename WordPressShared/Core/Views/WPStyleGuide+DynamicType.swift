@@ -13,7 +13,7 @@ extension WPStyleGuide {
     ///     - tableView: The tableView to configure.
     ///
     @objc public class func configureAutomaticHeightRows(for tableView: UITableView) {
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = defaultTableViewRowHeight
     }
 
@@ -23,7 +23,7 @@ extension WPStyleGuide {
     ///     - label: The label to configure.
     ///     - style: The desired UIFontTextStyle.
     ///
-    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFontTextStyle) {
+    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFont.TextStyle) {
         label.font = fontForTextStyle(style)
         label.adjustsFontForContentSizeCategory = true
     }
@@ -35,7 +35,7 @@ extension WPStyleGuide {
     ///     - style: The desired UIFontTextStyle.
     ///     - traits: The desired UIFontDescriptorSymbolicTraits.
     ///
-    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFontTextStyle, symbolicTraits traits: UIFontDescriptorSymbolicTraits) {
+    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFont.TextStyle, symbolicTraits traits: UIFontDescriptor.SymbolicTraits) {
         label.font = fontForTextStyle(style, symbolicTraits: traits)
         label.adjustsFontForContentSizeCategory = true
     }
@@ -49,7 +49,7 @@ extension WPStyleGuide {
     ///       UIFontWeightRegular, UIFontWeightMedium, UIFontWeightSemibold, UIFontWeightBold,
     ///       UIFontWeightHeavy, UIFontWeightBlack).
     ///
-    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFontTextStyle, fontWeight weight: UIFont.Weight) {
+    @objc public class func configureLabel(_ label: UILabel, textStyle style: UIFont.TextStyle, fontWeight weight: UIFont.Weight) {
         label.font = fontForTextStyle(style, fontWeight: weight)
         label.adjustsFontForContentSizeCategory = true
     }
@@ -60,7 +60,7 @@ extension WPStyleGuide {
     ///     - label: The label to configure.
     ///     - style: The desired UIFontTextStyle.
     ///
-    @objc public class func configureLabelForNotoFont(_ label: UILabel, textStyle style: UIFontTextStyle) {
+    @objc public class func configureLabelForNotoFont(_ label: UILabel, textStyle style: UIFont.TextStyle) {
         label.font = notoFontForTextStyle(style)
         label.adjustsFontForContentSizeCategory = true
     }
@@ -73,7 +73,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func fontForTextStyle(_ style: UIFontTextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
+    @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
         if #available(iOS 11, *) {
             let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
             let fontToGetSize = UIFont(descriptor: fontDescriptor, size: CGFloat(0.0))
@@ -92,13 +92,13 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func fontForTextStyle(_ style: UIFontTextStyle, symbolicTraits traits: UIFontDescriptorSymbolicTraits, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
+    @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, symbolicTraits traits: UIFontDescriptor.SymbolicTraits, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
         var descriptor = fontDescriptor(style, maximumPointSize: maximumPointSize)
         descriptor = descriptor.withSymbolicTraits(traits) ?? descriptor
         return UIFont(descriptor: descriptor, size: CGFloat(0.0))
     }
 
-    private class func fontDescriptor(_ style: UIFontTextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFontDescriptor {
+    private class func fontDescriptor(_ style: UIFont.TextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFontDescriptor {
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
         let fontToGetSize = UIFont(descriptor: fontDescriptor, size: CGFloat(0.0))
         let scaledFontSize = CGFloat.minimum(fontToGetSize.pointSize, maximumPointSize)
@@ -115,7 +115,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func fontForTextStyle(_ style: UIFontTextStyle, fontWeight weight: UIFont.Weight) -> UIFont {
+    @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, fontWeight weight: UIFont.Weight) -> UIFont {
         var fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
 
 #if swift(>=4.0)
@@ -136,7 +136,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font point size.
     ///
-    @objc public class func fontSizeForTextStyle(_ style: UIFontTextStyle) -> CGFloat {
+    @objc public class func fontSizeForTextStyle(_ style: UIFont.TextStyle) -> CGFloat {
         let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
         let font = UIFont(descriptor: fontDescriptor, size: CGFloat(0.0))
         return font.pointSize
@@ -150,7 +150,7 @@ extension WPStyleGuide {
     ///   - weight: The desired font weight
     /// - Returns: The created font.
     ///
-    @objc public class func fixedFont(for style: UIFontTextStyle, weight: UIFont.Weight = .regular) -> UIFont {
+    @objc public class func fixedFont(for style: UIFont.TextStyle, weight: UIFont.Weight = .regular) -> UIFont {
         let defaultContentSizeCategory = UITraitCollection(preferredContentSizeCategory: .large) // .large is the default
         let fontSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: defaultContentSizeCategory).pointSize
         return UIFont.systemFont(ofSize: fontSize, weight: weight)
@@ -163,7 +163,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func notoFontForTextStyle(_ style: UIFontTextStyle) -> UIFont {
+    @objc public class func notoFontForTextStyle(_ style: UIFont.TextStyle) -> UIFont {
         return customNotoFontNamed("NotoSerif", forTextStyle: style)
     }
 
@@ -174,7 +174,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func notoBoldFontForTextStyle(_ style: UIFontTextStyle) -> UIFont {
+    @objc public class func notoBoldFontForTextStyle(_ style: UIFont.TextStyle) -> UIFont {
         return customNotoFontNamed("NotoSerif-Bold", forTextStyle: style)
     }
 
@@ -185,7 +185,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func notoItalicFontForTextStyle(_ style: UIFontTextStyle) -> UIFont {
+    @objc public class func notoItalicFontForTextStyle(_ style: UIFont.TextStyle) -> UIFont {
         return customNotoFontNamed("NotoSerif-Italic", forTextStyle: style)
     }
 
@@ -196,7 +196,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font.
     ///
-    @objc public class func notoBoldItalicFontForTextStyle(_ style: UIFontTextStyle) -> UIFont {
+    @objc public class func notoBoldItalicFontForTextStyle(_ style: UIFont.TextStyle) -> UIFont {
         return customNotoFontNamed("NotoSerif-BoldItalic", forTextStyle: style)
     }
 
@@ -208,7 +208,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: The created font point size.
     ///
-    private class func customNotoFontNamed(_ fontName: String, forTextStyle style: UIFontTextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
+    private class func customNotoFontNamed(_ fontName: String, forTextStyle style: UIFont.TextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
         WPFontManager.loadNotoFontFamily()
         let descriptor = fontDescriptor(style, maximumPointSize: maximumPointSize)
 
