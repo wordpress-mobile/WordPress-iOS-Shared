@@ -37,7 +37,7 @@ DEPENDENCIES:
   - Specta (= 1.0.7)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - CocoaLumberjack
     - Expecta
     - FormatterKit
@@ -55,4 +55,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: eb829a687e5e6f6e8da92abc9dbeb35b90e32550
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
