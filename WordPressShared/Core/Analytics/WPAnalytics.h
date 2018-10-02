@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatNoStat, // Since we can't have a nil enum we'll use this to act as the nil
@@ -39,10 +39,16 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatCreateAccountEmailExists,
     WPAnalyticsStatCreateAccountUsernameExists,
     WPAnalyticsStatCreateAccountFailed,
-    WPAnalyticsStatCreateSiteValidationFailed,
+    WPAnalyticsStatCreateSiteProcessBegun,
+    WPAnalyticsStatCreateSiteCategoryViewed,
+    WPAnalyticsStatCreateSiteDetailsViewed,
+    WPAnalyticsStatCreateSiteDomainViewed,
+    WPAnalyticsStatCreateSiteThemeViewed,
+    WPAnalyticsStatCreateSiteRequestInitiated,
     WPAnalyticsStatCreateSiteCreationFailed,
     WPAnalyticsStatCreateSiteSetTaglineFailed,
     WPAnalyticsStatCreateSiteSetThemeFailed,
+    WPAnalyticsStatCreateSiteValidationFailed,
     WPAnalyticsStatDefaultAccountChanged,
     WPAnalyticsStatDeepLinked,
     WPAnalyticsStatDeepLinkFailed,
