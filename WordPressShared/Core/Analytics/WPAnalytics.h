@@ -267,6 +267,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatPushAuthenticationIgnored,
     WPAnalyticsStatPushNotificationAlertPressed,
     WPAnalyticsStatPushNotificationReceived,
+    WPAnalyticsStatPushNotificationQuickActionCompleted,
     WPAnalyticsStatPushNotificationPrimerSeen,
     WPAnalyticsStatPushNotificationPrimerAllowTapped,
     WPAnalyticsStatPushNotificationPrimerNoTapped,
