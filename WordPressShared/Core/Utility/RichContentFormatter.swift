@@ -28,6 +28,10 @@ import Foundation
 
         // Trailing BR Tags
         static let trailingBRTags = try! NSRegularExpression(pattern: "(\\s*<br\\s*(/?)\\s*>\\s*)+$", options: .caseInsensitive)
+
+        // Gutenberg Galleries
+        static let gutenbergGalleryList = try! NSRegularExpression(pattern: "(<ul[^>]+>)<li[^>]+gallery-item[^>]+><figure><img .+?</figure></li>", options: .caseInsensitive)
+        static let gutenbergGalleryListItem = try! NSRegularExpression(pattern: "<li[^>]+gallery-item[^>]+>(<figure><img .+?</figure>)</li>", options: .caseInsensitive)
     }
 
 
@@ -50,6 +54,7 @@ import Foundation
         content = normalizeParagraphs(content)
         content = removeInlineStyles(content)
         content = (content as NSString).replacingHTMLEmoticonsWithEmoji() as String
+        content = formatGutenbergGallery(content)
         content = resizeGalleryImageURL(content, isPrivateSite: isPrivate)
 
         return content
@@ -299,5 +304,37 @@ import Foundation
         }
 
         return content
+    }
+
+    /// Removes unordered list markup from Gutenberg gallery images.
+    ///
+    /// - Parameters:
+    ///     - string: The content string to format.
+    ///
+    /// - Returns: The formatted string.
+    ///
+    @objc public class func formatGutenbergGallery(_ string: String) -> String {
+        let mString = NSMutableString(string: string)
+
+        // First, remove the gallery UL tags.
+        var matches = RegEx.gutenbergGalleryList.matches(in: mString as String, options: [], range: NSRange(location: 0, length: mString.length))
+        for match in matches.reversed() {
+            if match.numberOfRanges < 2 {
+                continue
+            }
+            mString.replaceCharacters(in: match.range(at: 1), with: "")
+        }
+
+        // Now discard the list item markup
+        matches = RegEx.gutenbergGalleryListItem.matches(in: mString as String, options: [], range: NSRange(location: 0, length: mString.length))
+        for match in matches.reversed() {
+            if match.numberOfRanges < 2 {
+                continue
+            }
+            let image = mString.substring(with: match.range(at: 1))
+            mString.replaceCharacters(in: match.range, with: image)
+        }
+
+        return mString as String
     }
 }
