@@ -10,7 +10,6 @@ import Foundation
         // Forbidden tags
         static let styleTags = try! NSRegularExpression(pattern: "<style[^>]*?>[\\s\\S]*?</style>", options: .caseInsensitive)
         static let scriptTags = try! NSRegularExpression(pattern: "<script[^>]*?>[\\s\\S]*?</script>", options: .caseInsensitive)
-        static let tableTags = try! NSRegularExpression(pattern: "<table[^>]*?>[\\s\\S]*?</table>", options: .caseInsensitive)
         static let gutenbergComments = try! NSRegularExpression(pattern: "<p><!-- /?wp:.+? /?--></p>[\\n]?", options: .caseInsensitive)
 
         // Normalizaing Paragraphs
@@ -29,6 +28,10 @@ import Foundation
 
         // Trailing BR Tags
         static let trailingBRTags = try! NSRegularExpression(pattern: "(\\s*<br\\s*(/?)\\s*>\\s*)+$", options: .caseInsensitive)
+
+        // Gutenberg Galleries
+        static let gutenbergGalleryList = try! NSRegularExpression(pattern: "(<ul[^>]+>)<li[^>]+gallery-item[^>]+><figure><img .+?</figure></li>", options: .caseInsensitive)
+        static let gutenbergGalleryListItem = try! NSRegularExpression(pattern: "<li[^>]+gallery-item[^>]+>(<figure><img .+?</figure>)</li>", options: .caseInsensitive)
     }
 
 
@@ -51,6 +54,7 @@ import Foundation
         content = normalizeParagraphs(content)
         content = removeInlineStyles(content)
         content = (content as NSString).replacingHTMLEmoticonsWithEmoji() as String
+        content = formatGutenbergGallery(content)
         content = resizeGalleryImageURL(content, isPrivateSite: isPrivate)
 
         return content
@@ -79,11 +83,6 @@ import Foundation
                                                                     options: .reportCompletion,
                                                                     range: NSRange(location: 0, length: content.count),
                                                                     withTemplate: "")
-
-        content = RegEx.tableTags.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: "")
 
         content = RegEx.gutenbergComments.stringByReplacingMatches(in: content,
                                                                    options: .reportCompletion,
@@ -305,5 +304,37 @@ import Foundation
         }
 
         return content
+    }
+
+    /// Removes unordered list markup from Gutenberg gallery images.
+    ///
+    /// - Parameters:
+    ///     - string: The content string to format.
+    ///
+    /// - Returns: The formatted string.
+    ///
+    @objc public class func formatGutenbergGallery(_ string: String) -> String {
+        let mString = NSMutableString(string: string)
+
+        // First, remove the gallery UL tags.
+        var matches = RegEx.gutenbergGalleryList.matches(in: mString as String, options: [], range: NSRange(location: 0, length: mString.length))
+        for match in matches.reversed() {
+            if match.numberOfRanges < 2 {
+                continue
+            }
+            mString.replaceCharacters(in: match.range(at: 1), with: "")
+        }
+
+        // Now discard the list item markup
+        matches = RegEx.gutenbergGalleryListItem.matches(in: mString as String, options: [], range: NSRange(location: 0, length: mString.length))
+        for match in matches.reversed() {
+            if match.numberOfRanges < 2 {
+                continue
+            }
+            let image = mString.substring(with: match.range(at: 1))
+            mString.replaceCharacters(in: match.range, with: image)
+        }
+
+        return mString as String
     }
 }

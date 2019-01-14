@@ -26,9 +26,26 @@ extension String {
         copy.remove(at: index)
         return copy
     }
+
+    /// Returns a count of valid text characters.
+    /// - Note : This implementation is influenced by `-wordCount` in `NSString+Helpers`.
+    public var characterCount: Int {
+        var charCount = 0
+
+        if isEmpty == false {
+            let textRange = startIndex..<endIndex
+            enumerateSubstrings(in: textRange, options: [.byWords, .localized]) { word, _, _, _ in
+                let wordLength = word?.count ?? 0
+                charCount += wordLength
+            }
+        }
+
+        return charCount
+    }
 }
 
 // MARK: - Prefix removal
+
 public extension String {
     /// Removes the given prefix from the string, if exists.
     ///
@@ -89,6 +106,7 @@ public extension String {
 }
 
 // MARK: - Suffix removal
+
 public extension String {
     /// Removes the given suffix from the string, if exists.
     ///
