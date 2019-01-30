@@ -109,20 +109,18 @@ extension Date {
     /// Formats the current date as relative date if it's within a week of
     /// today, or with DateFormatter.Style.medium otherwise.
     ///
-    /// - Example: 22 hours from now
     /// - Example: 5 minutes ago
     /// - Example: 8 hours ago
     /// - Example: 2 days ago
     /// - Example: Jan 22, 2017
     ///
+    
     public func mediumString() -> String {
-        let relativeFormatter = DateComponentsFormatter()
         let absoluteFormatter = DateFormatters.mediumDate
+        let dayComponent = Calendar.current.dateComponents([.day], from: self, to: Date()).day
 
-        let components = Calendar.current.dateComponents([.day], from: self, to: Date())
-        if let days = components.day, abs(days) < 7,
-            let stringForTimeInterval = relativeFormatter.string(from: timeIntervalSinceNow) {
-            return stringForTimeInterval
+        if let days = dayComponent, abs(days) < 7 {
+            return self.relativeStringDate()
         } else {
             return absoluteFormatter.string(from: self)
         }
@@ -209,5 +207,35 @@ extension NSDate {
     ///
     @objc public func shortStringWithTime() -> String {
         return (self as Date).shortStringWithTime()
+    }
+}
+
+extension Date {
+    /// Helper method for date formatting.
+    /// Returns a string representing the relative date in days, hours, minutes or seconds.
+    /// - Example: 25 seconds ago
+    /// - Example: 5 minutes ago
+    /// - Example: 8 hours ago
+    /// - Example: 2 days ago
+
+    private func relativeStringDate() -> String {
+        let components = Calendar.current.dateComponents([.second, .minute, .hour, .day], from: self, to: Date())
+        if let days = components.day, days > 0 {
+            return "\(days) day\(days == 1 ? "" : "s") ago"
+        }
+        
+        if let hours = components.hour, hours > 0 {
+            return "\(hours) hour\(hours == 1 ? "" : "s") ago"
+        }
+        
+        if let minutes = components.minute, minutes > 0 {
+            return "\(minutes) minute\(minutes == 1 ? "" : "s") ago"
+        }
+
+        if let seconds = components.second, seconds > 0 {
+            return "\(seconds) second\(seconds == 1 ? "" : "s") ago"
+        }
+        
+        return "just now"
     }
 }
