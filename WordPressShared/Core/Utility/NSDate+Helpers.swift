@@ -1,5 +1,4 @@
 import Foundation
-import FormatterKit
 
 extension Date {
     /// Private Date Formatters
@@ -67,16 +66,6 @@ extension Date {
             formatter.timeStyle = .short
             return formatter
         }()
-
-        static let pageSectionFormatter: TTTTimeIntervalFormatter = {
-            let formatter = TTTTimeIntervalFormatter()
-
-            formatter.leastSignificantUnit = .day
-            formatter.usesIdiomaticDeicticExpressions = true
-            formatter.presentDeicticExpression = NSLocalizedString("today", comment: "Today")
-
-            return formatter
-        }()
     }
 
     /// Returns a NSDate Instance, given it's ISO8601 String Representation
@@ -127,12 +116,13 @@ extension Date {
     /// - Example: Jan 22, 2017
     ///
     public func mediumString() -> String {
-        let relativeFormatter = TTTTimeIntervalFormatter()
+        let relativeFormatter = DateComponentsFormatter()
         let absoluteFormatter = DateFormatters.mediumDate
 
         let components = Calendar.current.dateComponents([.day], from: self, to: Date())
-        if let days = components.day, abs(days) < 7 {
-            return relativeFormatter.string(forTimeInterval: timeIntervalSinceNow)
+        if let days = components.day, abs(days) < 7,
+            let stringForTimeInterval = relativeFormatter.string(from: timeIntervalSinceNow) {
+            return stringForTimeInterval
         } else {
             return absoluteFormatter.string(from: self)
         }
@@ -177,16 +167,6 @@ extension Date {
     public func shortStringWithTime() -> String {
         return DateFormatters.shortDateTime.string(from: self)
     }
-
-    public func toStringForPageSections() -> String {
-        let interval = timeIntervalSinceNow
-
-        if interval > 0 && interval < 86400 {
-            return NSLocalizedString("later today", comment: "Later today")
-        } else {
-            return DateFormatters.pageSectionFormatter.string(forTimeInterval: interval)
-        }
-    }
 }
 
 extension NSDate {
@@ -229,9 +209,5 @@ extension NSDate {
     ///
     @objc public func shortStringWithTime() -> String {
         return (self as Date).shortStringWithTime()
-    }
-
-    @objc public func toStringForPageSections() -> String {
-        return (self as Date).toStringForPageSections()
     }
 }
