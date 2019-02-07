@@ -60,4 +60,18 @@ class RichContentFormatterTests: XCTestCase {
         range = sanitizedString.range(of: "figcaption")
         XCTAssertTrue(range.location != NSNotFound)
     }
+
+    func testFormatVideoTags() {
+        let str1 = "<p>Some text.</p><video></video><p>Some text.</p>"
+        let sanitizedStr1 = RichContentFormatter.formatVideoTags(str1) as NSString
+        XCTAssert(sanitizedStr1.contains("controls"))
+
+        let str2 = "<p>Some text.</p><video autoplay></video><p>Some text.</p>"
+        let sanitizedStr2 = RichContentFormatter.formatVideoTags(str2) as NSString
+        XCTAssert(sanitizedStr2.contains(" controls "))
+
+        let str3 = "<p>Some text.</p><video controls></video><p>Some text.</p>"
+        let sanitizedStr3 = RichContentFormatter.formatVideoTags(str3) as NSString
+        XCTAssert(!sanitizedStr3.contains("controls controls"))
+    }
 }
