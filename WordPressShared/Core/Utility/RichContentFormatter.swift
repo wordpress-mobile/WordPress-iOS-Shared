@@ -19,6 +19,7 @@ import Foundation
         static let pTagsEnd = try! NSRegularExpression(pattern: "</p>\\s*</p>", options: .caseInsensitive)
         static let newLines = try! NSRegularExpression(pattern: "\\n", options: .caseInsensitive)
         static let preTags = try! NSRegularExpression(pattern: "<pre[^>]*>[\\s\\S]*?</pre>", options: .caseInsensitive)
+        static let videoTags = try! NSRegularExpression(pattern: "<video[^>]*>", options: .caseInsensitive)
 
         // Inline Styles
         static let styleAttr = try! NSRegularExpression(pattern: "\\s*style=\"[^\"]*\"", options: .caseInsensitive)
@@ -56,7 +57,7 @@ import Foundation
         content = (content as NSString).replacingHTMLEmoticonsWithEmoji() as String
         content = formatGutenbergGallery(content)
         content = resizeGalleryImageURL(content, isPrivateSite: isPrivate)
-
+        content = formatVideoTags(content)
         return content
     }
 
@@ -333,6 +334,32 @@ import Foundation
             }
             let image = mString.substring(with: match.range(at: 1))
             mString.replaceCharacters(in: match.range, with: image)
+        }
+
+        return mString as String
+    }
+
+    /// Format video tags to ensure they have the desired markup.
+    ///
+    /// - Parameters:
+    ///     - string: The content string to format.
+    ///
+    /// - Returns: The formatted string.
+    ///
+    @objc public class func formatVideoTags(_ string: String) -> String {
+        let mString = NSMutableString(string: string)
+
+        // Find video tags.
+        let matches = RegEx.videoTags.matches(in: mString as String, options: [], range: NSRange(location: 0, length: mString.length))
+
+        // For each video tag, check for controls attribute
+        for match in matches.reversed() {
+            let tag = mString.substring(with: match.range) as NSString
+            if !tag.contains("controls") {
+                // Add the controls attribute.
+                let range = NSRange(location: match.range.location, length: 6)
+                mString.replaceCharacters(in: range, with: "<video controls")
+            }
         }
 
         return mString as String
