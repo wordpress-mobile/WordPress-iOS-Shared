@@ -187,6 +187,13 @@ extension Date {
             return DateFormatters.pageSectionFormatter.string(forTimeInterval: interval)
         }
     }
+
+    /// Returns the date components object.
+    ///
+    public func components() -> DateComponents {
+        return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
+                                               from: self)
+    }
 }
 
 extension NSDate {
@@ -233,5 +240,11 @@ extension NSDate {
 
     @objc public func toStringForPageSections() -> String {
         return (self as Date).toStringForPageSections()
+    }
+
+    /// Returns the date components object.
+    ///
+    @objc public func components() -> NSDateComponents {
+        return (self as Date).components() as NSDateComponents
     }
 }
