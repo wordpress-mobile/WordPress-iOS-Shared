@@ -336,7 +336,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatQuickStartTypeDismissed,
     WPAnalyticsStatQuickStartListCollapsed,
     WPAnalyticsStatQuickStartListExpanded,
-    WPAnalyticsStatQuickStartItemSkipped,
+    WPAnalyticsStatQuickStartListItemSkipped,
     WPAnalyticsStatQuickStartNotificationStarted,
     WPAnalyticsStatQuickStartNotificationTapped,
     WPAnalyticsStatReaderAccessed,
