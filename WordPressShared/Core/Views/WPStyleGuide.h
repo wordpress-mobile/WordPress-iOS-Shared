@@ -38,6 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIColor *)greyDarken20;
 + (UIColor *)greyDarken30;
 + (UIColor *)darkGrey;
+
+/**
+ * Grey color with hex value #3d4145
+ */
++ (UIColor *)grey700;
 + (UIColor *)jazzyOrange;
 + (UIColor *)fireOrange;
 + (UIColor *)validGreen;

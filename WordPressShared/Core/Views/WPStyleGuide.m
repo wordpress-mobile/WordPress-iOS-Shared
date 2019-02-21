@@ -185,6 +185,10 @@
     return [self colorWithR:46 G:68 B:83 alpha:1.0];
 }
 
++ (UIColor *)grey700
+{
+    return [self colorWithR:61 G:65 B:69 alpha:1.0];
+}
 
 #pragma mark - Oranges
 
