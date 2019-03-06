@@ -25,10 +25,10 @@ class NSDateHelperTest: XCTestCase {
         date = dateFormatter.date(from: data.dateString)
     }
     
-    func testDateComponents() {
+    func testDateAndTimeComponents() {
         XCTAssertNotNil(date)
 
-        let components = date!.components()
+        let components = date!.dateAndTimeComponents()
         XCTAssertEqual(components.year, data.year)
         XCTAssertEqual(components.month, data.month)
         XCTAssertEqual(components.day, data.day)
