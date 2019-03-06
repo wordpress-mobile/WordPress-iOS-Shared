@@ -190,7 +190,7 @@ extension Date {
 
     /// Returns the date components object.
     ///
-    public func components() -> DateComponents {
+    public func dateAndTimeComponents() -> DateComponents {
         return Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second],
                                                from: self)
     }
@@ -244,7 +244,7 @@ extension NSDate {
 
     /// Returns the date components object.
     ///
-    @objc public func components() -> NSDateComponents {
-        return (self as Date).components() as NSDateComponents
+    @objc public func dateAndTimeComponents() -> NSDateComponents {
+        return (self as Date).dateAndTimeComponents() as NSDateComponents
     }
 }
