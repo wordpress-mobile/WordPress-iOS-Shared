@@ -287,6 +287,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatPostListAuthorFilterChanged,
     WPAnalyticsStatPostListDraftAction,
     WPAnalyticsStatPostListEditAction,
+    WPAnalyticsStatPostListExcessiveLoadMoreDetected, // For research into https://github.com/wordpress-mobile/WordPress-iOS/issues/6819
     WPAnalyticsStatPostListLoadedMore,
     WPAnalyticsStatPostListNoResultsButtonPressed,
     WPAnalyticsStatPostListOpenedCellMenu,
@@ -332,7 +333,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatQuickStartTourCompleted,
     WPAnalyticsStatQuickStartMigrationDialogViewed,
     WPAnalyticsStatQuickStartMigrationDialogPositiveTapped,
-    WPAnalyticsStatQuickStartRemoveDialogButtonTapped,
+    WPAnalyticsStatQuickStartRemoveDialogButtonRemoveTapped,
+    WPAnalyticsStatQuickStartRemoveDialogButtonCancelTapped,
     WPAnalyticsStatQuickStartTypeDismissed,
     WPAnalyticsStatQuickStartListCollapsed,
     WPAnalyticsStatQuickStartListExpanded,
