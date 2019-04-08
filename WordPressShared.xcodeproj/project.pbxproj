@@ -59,6 +59,7 @@
 		93AB05FF1EE840A100EF8764 /* Languages.json in Resources */ = {isa = PBXBuildFile; fileRef = 93AB05FE1EE840A100EF8764 /* Languages.json */; };
 		93C674F51EE83D4B00BFAF05 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C674F41EE83D4B00BFAF05 /* Languages.swift */; };
 		93C882AD1EEB1E2F00227A59 /* NSDate+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93C882AC1EEB1E2F00227A59 /* NSDate+Helpers.swift */; };
+		9A1329DF22170BE2009EE02A /* NSDateHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1329DE22170BE2009EE02A /* NSDateHelperTest.swift */; };
 		B5393FD8206D608F007BF9D4 /* EmailFormatValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393FD6206D608E007BF9D4 /* EmailFormatValidator.swift */; };
 		B5393FD9206D608F007BF9D4 /* EmailTypoChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393FD7206D608F007BF9D4 /* EmailTypoChecker.swift */; };
 		B5393FDC206D6169007BF9D4 /* EmailFormatValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5393FDA206D6169007BF9D4 /* EmailFormatValidatorTests.swift */; };
@@ -156,6 +157,7 @@
 		93AB05FE1EE840A100EF8764 /* Languages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Languages.json; sourceTree = "<group>"; };
 		93C674F41EE83D4B00BFAF05 /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		93C882AC1EEB1E2F00227A59 /* NSDate+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helpers.swift"; sourceTree = "<group>"; };
+		9A1329DE22170BE2009EE02A /* NSDateHelperTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDateHelperTest.swift; sourceTree = "<group>"; };
 		AE15A6EE80D7766A21B83BF5 /* Pods_WordPressShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordPressShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5393FD6206D608E007BF9D4 /* EmailFormatValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailFormatValidator.swift; sourceTree = "<group>"; };
 		B5393FD7206D608F007BF9D4 /* EmailTypoChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailTypoChecker.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				7414BD511F13CB90005759F8 /* DictionaryHelpersTests.swift */,
+				9A1329DE22170BE2009EE02A /* NSDateHelperTest.swift */,
 				740B23CE1F17F28E00067A2A /* DisplayableImageHelperTest.m */,
 				B5393FDA206D6169007BF9D4 /* EmailFormatValidatorTests.swift */,
 				B5393FDB206D6169007BF9D4 /* EmailTypoCheckerTests.swift */,
@@ -592,26 +595,26 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/FormatterKit/FormatterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/FormatterKit/FormatterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormatterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Expecta.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Specta.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormatterKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -673,6 +676,7 @@
 				7430C9DD1F1934190051B8E6 /* RichContentFormatterTests.swift in Sources */,
 				B5393FDC206D6169007BF9D4 /* EmailFormatValidatorTests.swift in Sources */,
 				748710AC1F06C465008095AB /* StringHelperTests.swift in Sources */,
+				9A1329DF22170BE2009EE02A /* NSDateHelperTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
