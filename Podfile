@@ -14,8 +14,8 @@ target 'WordPressShared' do
   target 'WordPressSharedTests' do
     inherit! :search_paths
 
-    pod 'OHHTTPStubs', '~> 7'
-    pod 'OHHTTPStubs/Swift', '~> 7'
+    pod 'OHHTTPStubs', '~> 8'
+    pod 'OHHTTPStubs/Swift', '~> 8'
     pod 'OCMock', '~> 3.4'
     pod 'Specta', '1.0.7'
     pod 'Expecta', '1.0.6'
