@@ -9,11 +9,11 @@ class StringURLValidationTests: XCTestCase {
         let urls = [
             "invalidurl",
             "123123",
-            "www.wordpress.comm"]
+            "wwwwordpresscom"]
         
         for url in urls {
             guard !url.isValidURL() else {
-                XCTFail("\(url) is valid (expected invalid)).")
+                XCTFail("\(url) is valid (expected invalid).")
                 continue
             }
         }
