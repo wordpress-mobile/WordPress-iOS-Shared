@@ -83,8 +83,6 @@
 		E18EABEB1F0E2C6800BFCB0B /* WPAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18EABE91F0E2C6800BFCB0B /* WPAnalyticsTests.m */; };
 		E1A444281F063CAB00F6AA8A /* WPAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A444261F063CAB00F6AA8A /* WPAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1A444291F063CAB00F6AA8A /* WPAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A444271F063CAB00F6AA8A /* WPAnalytics.m */; };
-		F19847DC226F92420004A8BC /* String+URLValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DB226F92420004A8BC /* String+URLValidation.swift */; };
-		F19847DE226F92EA0004A8BC /* StringURLValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */; };
 		FF20AD1D20B83EDB00082398 /* WordPressShared.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */; };
 /* End PBXBuildFile section */
 
@@ -602,11 +600,13 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/FormatterKit/FormatterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
