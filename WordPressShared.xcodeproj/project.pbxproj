@@ -83,6 +83,8 @@
 		E18EABEB1F0E2C6800BFCB0B /* WPAnalyticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E18EABE91F0E2C6800BFCB0B /* WPAnalyticsTests.m */; };
 		E1A444281F063CAB00F6AA8A /* WPAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = E1A444261F063CAB00F6AA8A /* WPAnalytics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E1A444291F063CAB00F6AA8A /* WPAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A444271F063CAB00F6AA8A /* WPAnalytics.m */; };
+		F19847DC226F92420004A8BC /* String+URLValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DB226F92420004A8BC /* String+URLValidation.swift */; };
+		F19847DE226F92EA0004A8BC /* StringURLValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */; };
 		FF20AD1D20B83EDB00082398 /* WordPressShared.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */; };
 /* End PBXBuildFile section */
 
@@ -189,6 +191,8 @@
 		E1A444261F063CAB00F6AA8A /* WPAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAnalytics.h; sourceTree = "<group>"; };
 		E1A444271F063CAB00F6AA8A /* WPAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAnalytics.m; sourceTree = "<group>"; };
 		E5A4545AEF641B125A2ABA89 /* Pods-WordPressShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared.debug.xcconfig"; sourceTree = "<group>"; };
+		F19847DB226F92420004A8BC /* String+URLValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLValidation.swift"; sourceTree = "<group>"; };
+		F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringURLValidationTests.swift; sourceTree = "<group>"; };
 		FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordPressShared.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -278,6 +282,7 @@
 				7430C9D11F19302D0051B8E6 /* PhotonImageURLHelper.m */,
 				7430C9DA1F1933F40051B8E6 /* RichContentFormatter.swift */,
 				7414BD541F13CBE0005759F8 /* String+Helpers.swift */,
+				F19847DB226F92420004A8BC /* String+URLValidation.swift */,
 				7414BD5F1F13D084005759F8 /* UIDevice+Helpers.h */,
 				7414BD601F13D084005759F8 /* UIDevice+Helpers.m */,
 				B5A787E4202B2BD2007874FB /* WPDeviceIdentification.h */,
@@ -322,6 +327,7 @@
 				827070911ECA4E1D00155CBF /* WPImageSourceTest.m */,
 				93A73ABE1EE9DDB000C0F2F9 /* WPMapFilterReduceTest.m */,
 				8270708F1ECA4E1C00155CBF /* WordPressSharedTests-Bridging-Header.h */,
+				F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 829DD1341EC9EED200AB8C12;
@@ -595,13 +602,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-WordPressSharedTests/Pods-WordPressSharedTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Expecta/Expecta.framework",
 				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/Specta/Specta.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
-				"${BUILT_PRODUCTS_DIR}/FormatterKit/FormatterKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
