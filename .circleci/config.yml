@@ -9,9 +9,11 @@ workflows:
     jobs:
       - ios/test:
           name: Test
+          xcode-version: "10.2.0"
           workspace: WordPressShared.xcworkspace
           scheme: WordPressShared
           destination: "platform=iOS Simulator,name=iPhone XS,OS=latest"
       - ios/validate-podspec:
           name: Validate Podspec
+          xcode-version: "10.2.0"
           podspec-path: WordPressShared.podspec
