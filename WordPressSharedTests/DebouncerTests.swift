@@ -42,4 +42,22 @@ class DebouncerTests: XCTestCase {
 
         wait(for: [debouncerHasRun], timeout: 0)
     }
+    
+    /// Tests that we can cancel the debouncer's operation.
+    ///
+    func testDebouncerCanBeCancelled() {
+        let debouncerDelay = 0.2
+        let testTimeout = debouncerDelay * 2
+        let debouncerHasRun = XCTestExpectation(description: "The debouncer's operation should be cancellable.")
+        debouncerHasRun.isInverted = true
+        
+        let debouncer = Debouncer(delay: debouncerDelay) {
+            debouncerHasRun.fulfill()
+        }
+        
+        debouncer.call()
+        debouncer.cancel()
+        
+        wait(for: [debouncerHasRun], timeout: testTimeout)
+    }
 }
