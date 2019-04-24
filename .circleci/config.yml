@@ -12,7 +12,8 @@ workflows:
           xcode-version: "10.2.0"
           workspace: WordPressShared.xcworkspace
           scheme: WordPressShared
-          destination: "platform=iOS Simulator,name=iPhone XS,OS=latest"
+          device: iPhone XS
+          ios-version: "12.2"
       - ios/validate-podspec:
           name: Validate Podspec
           xcode-version: "10.2.0"
