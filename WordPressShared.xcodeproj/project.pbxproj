@@ -85,6 +85,8 @@
 		E1A444291F063CAB00F6AA8A /* WPAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = E1A444271F063CAB00F6AA8A /* WPAnalytics.m */; };
 		F106FA61226FA72E00706DE4 /* StringURLValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */; };
 		F106FA62226FA82E00706DE4 /* String+URLValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DB226F92420004A8BC /* String+URLValidation.swift */; };
+		F1134A272270C15E00B8F75F /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A262270C15E00B8F75F /* Debouncer.swift */; };
+		F1134A292270C19200B8F75F /* DebouncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A282270C19200B8F75F /* DebouncerTests.swift */; };
 		FF20AD1D20B83EDB00082398 /* WordPressShared.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +193,8 @@
 		E1A444261F063CAB00F6AA8A /* WPAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAnalytics.h; sourceTree = "<group>"; };
 		E1A444271F063CAB00F6AA8A /* WPAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAnalytics.m; sourceTree = "<group>"; };
 		E5A4545AEF641B125A2ABA89 /* Pods-WordPressShared.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressShared.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared.debug.xcconfig"; sourceTree = "<group>"; };
+		F1134A262270C15E00B8F75F /* Debouncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
+		F1134A282270C19200B8F75F /* DebouncerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncerTests.swift; sourceTree = "<group>"; };
 		F19847DB226F92420004A8BC /* String+URLValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLValidation.swift"; sourceTree = "<group>"; };
 		F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringURLValidationTests.swift; sourceTree = "<group>"; };
 		FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordPressShared.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -261,6 +265,7 @@
 			children = (
 				74FA25F21F1FD9640044BC54 /* DateUtils.h */,
 				74FA25F31F1FD9640044BC54 /* DateUtils.m */,
+				F1134A262270C15E00B8F75F /* Debouncer.swift */,
 				7414BD531F13CBE0005759F8 /* Dictionary+Helpers.swift */,
 				740B23CA1F17F1FF00067A2A /* DisplayableImageHelper.h */,
 				740B23CB1F17F1FF00067A2A /* DisplayableImageHelper.m */,
@@ -310,6 +315,7 @@
 		827070851ECA4C9B00155CBF /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F1134A282270C19200B8F75F /* DebouncerTests.swift */,
 				7414BD511F13CB90005759F8 /* DictionaryHelpersTests.swift */,
 				9A1329DE22170BE2009EE02A /* NSDateHelperTest.swift */,
 				740B23CE1F17F28E00067A2A /* DisplayableImageHelperTest.m */,
@@ -651,6 +657,7 @@
 				7414BD5A1F13CEA5005759F8 /* NSBundle+VersionNumberHelper.m in Sources */,
 				827070061ECA43AA00155CBF /* NSString+XMLExtensions.m in Sources */,
 				82706FF31ECA438500155CBF /* WPSharedLogging.m in Sources */,
+				F1134A272270C15E00B8F75F /* Debouncer.swift in Sources */,
 				B5393FD8206D608F007BF9D4 /* EmailFormatValidator.swift in Sources */,
 				F106FA62226FA82E00706DE4 /* String+URLValidation.swift in Sources */,
 				93C882AD1EEB1E2F00227A59 /* NSDate+Helpers.swift in Sources */,
@@ -679,6 +686,7 @@
 				E18EABEA1F0E2C6800BFCB0B /* TestAnalyticsTracker.m in Sources */,
 				93AB05FD1EE8405A00EF8764 /* LanguagesTests.swift in Sources */,
 				B5393FDD206D6169007BF9D4 /* EmailTypoCheckerTests.swift in Sources */,
+				F1134A292270C19200B8F75F /* DebouncerTests.swift in Sources */,
 				7430C9D51F1930460051B8E6 /* PhotonImageURLHelperTest.m in Sources */,
 				740B23CF1F17F28E00067A2A /* DisplayableImageHelperTest.m in Sources */,
 				E18EABEB1F0E2C6800BFCB0B /* WPAnalyticsTests.m in Sources */,
