@@ -8,7 +8,7 @@ platform :ios, '10.0'
 target 'WordPressShared' do
   project 'WordPressShared.xcodeproj'
 
-  pod 'CocoaLumberjack', '~> 3.5'
+  pod 'CocoaLumberjack', '~> 3.4'
   pod 'FormatterKit/TimeIntervalFormatter', '1.8.2'  
 
   target 'WordPressSharedTests' do
