@@ -10,14 +10,12 @@ target 'WordPressShared' do
 
   pod 'CocoaLumberjack', '~> 3.4'
   pod 'FormatterKit/TimeIntervalFormatter', '1.8.2'  
+end
 
-  target 'WordPressSharedTests' do
-    inherit! :search_paths
-
+target 'WordPressSharedTests' do
     pod 'OHHTTPStubs', '~> 8'
     pod 'OHHTTPStubs/Swift', '~> 8'
     pod 'OCMock', '~> 3.4'
     pod 'Specta', '1.0.7'
     pod 'Expecta', '1.0.6'
   end
-end
