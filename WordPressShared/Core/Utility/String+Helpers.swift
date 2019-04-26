@@ -54,7 +54,7 @@ public extension String {
     /// - Parameters:
     ///     - prefix: A possible prefix to remove from this string.
     ///
-    public mutating func removePrefix(_ prefix: String) {
+    mutating func removePrefix(_ prefix: String) {
         if let prefixRange = range(of: prefix), prefixRange.lowerBound == startIndex {
             removeSubrange(prefixRange)
         }
@@ -65,7 +65,7 @@ public extension String {
     /// - Parameters:
     ///     - prefix: A possible prefix to remove from this string.
     ///
-    public func removingPrefix(_ prefix: String) -> String {
+    func removingPrefix(_ prefix: String) -> String {
         var copy = self
         copy.removePrefix(prefix)
         return copy
@@ -81,7 +81,7 @@ public extension String {
     ///
     /// - Throws: an error if it the pattern is not a valid regular expression.
     ///
-    public mutating func removePrefix(pattern: String, options: NSRegularExpression.Options = []) throws {
+    mutating func removePrefix(pattern: String, options: NSRegularExpression.Options = []) throws {
         let regexp = try NSRegularExpression(pattern: "^\(pattern)", options: options)
         let fullRange = NSRange(location: 0, length: (self as NSString).length)
         if let match = regexp.firstMatch(in: self, options: [], range: fullRange) {
@@ -98,7 +98,7 @@ public extension String {
     ///
     /// - Throws: an error if it the pattern is not a valid regular expression.
     ///
-    public func removingPrefix(pattern: String, options: NSRegularExpression.Options = []) throws -> String {
+    func removingPrefix(pattern: String, options: NSRegularExpression.Options = []) throws -> String {
         var copy = self
         try copy.removePrefix(pattern: pattern, options: options)
         return copy
@@ -115,7 +115,7 @@ public extension String {
     /// - Parameters:
     ///     - suffix: A possible suffix to remove from this string.
     ///
-    public mutating func removeSuffix(_ suffix: String) {
+    mutating func removeSuffix(_ suffix: String) {
         if let suffixRange = range(of: suffix, options: [.backwards]), suffixRange.upperBound == endIndex {
             removeSubrange(suffixRange)
         }
@@ -126,7 +126,7 @@ public extension String {
     /// - Parameters:
     ///     - suffix: A possible suffix to remove from this string.
     ///
-    public func removingSuffix(_ suffix: String) -> String {
+    func removingSuffix(_ suffix: String) -> String {
         var copy = self
         copy.removeSuffix(suffix)
         return copy
@@ -142,7 +142,7 @@ public extension String {
     ///
     /// - Throws: an error if it the pattern is not a valid regular expression.
     ///
-    public mutating func removeSuffix(pattern: String, options: NSRegularExpression.Options = []) throws {
+    mutating func removeSuffix(pattern: String, options: NSRegularExpression.Options = []) throws {
         let regexp = try NSRegularExpression(pattern: "\(pattern)$", options: options)
         let fullRange = NSRange(location: 0, length: (self as NSString).length)
         if let match = regexp.firstMatch(in: self, options: [], range: fullRange) {
@@ -159,7 +159,7 @@ public extension String {
     ///
     /// - Throws: an error if it the pattern is not a valid regular expression.
     ///
-    public func removingSuffix(pattern: String, options: NSRegularExpression.Options = []) throws -> String {
+    func removingSuffix(pattern: String, options: NSRegularExpression.Options = []) throws -> String {
         var copy = self
         try copy.removeSuffix(pattern: pattern, options: options)
         return copy

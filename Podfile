@@ -21,8 +21,8 @@ target 'WordPressSharedTests' do
 
   wordpress_shared_pods
 
-  pod 'OHHTTPStubs', '6.1.0'
-  pod 'OHHTTPStubs/Swift', '6.1.0'
+    pod 'OHHTTPStubs', '~> 8'
+    pod 'OHHTTPStubs/Swift', '~> 8'
   pod 'OCMock', '~> 3.4'
   pod 'Specta', '1.0.7'
   pod 'Expecta', '1.0.6'
