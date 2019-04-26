@@ -8,18 +8,29 @@ import Foundation
 public final class Debouncer {
     private let callback: (() -> Void)
     private let delay: Double
-    private var timer: Timer?
+    private var timer: WPTimer
 
     // MARK: - Init & deinit
 
     public init(delay: Double, callback: @escaping (() -> Void)) {
+        
+        // We could pass seconds to the timer, but since the Debouncer users doubles for the delay
+        // we definitely want higher precision than seconds.
+        //
+        let millisecondsDelay = Int(delay * 1000)
+        
+        self.timer = WPTimer(delay: WPTimer.Interval.milliseconds(millisecondsDelay)) { () -> (Bool) in
+            callback()
+            return false
+        }
+        
         self.delay = delay
         self.callback = callback
     }
 
     deinit {
-        if let timer = timer, timer.fireDate >= Date() {
-            timer.invalidate()
+        if timer.isRunning() {
+            timer.stop()
             callback()
         }
     }
@@ -27,11 +38,11 @@ public final class Debouncer {
     // MARK: - Debounce Request
     
     public func cancel() {
-        timer?.invalidate()
+        timer.stop()
     }
 
     public func call(immediate: Bool = false) {
-        timer?.invalidate()
+        timer.stop()
 
         if immediate {
             immediateCallback()
@@ -43,13 +54,10 @@ public final class Debouncer {
     // MARK: - Callback interaction
 
     private func immediateCallback() {
-        timer = nil
         callback()
     }
 
     private func scheduleCallback() {
-        timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { [callback] timer in
-            callback()
-        }
+        timer.start()
     }
 }

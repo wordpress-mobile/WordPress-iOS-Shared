@@ -87,6 +87,8 @@
 		F106FA62226FA82E00706DE4 /* String+URLValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19847DB226F92420004A8BC /* String+URLValidation.swift */; };
 		F1134A272270C15E00B8F75F /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A262270C15E00B8F75F /* Debouncer.swift */; };
 		F1134A292270C19200B8F75F /* DebouncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A282270C19200B8F75F /* DebouncerTests.swift */; };
+		F1C6E3B2227280BD000F6E12 /* WPTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6E3B1227280BD000F6E12 /* WPTimerTests.swift */; };
+		F1C6E3B4227280D4000F6E12 /* WPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C6E3B3227280D4000F6E12 /* WPTimer.swift */; };
 		FF20AD1D20B83EDB00082398 /* WordPressShared.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		F1134A282270C19200B8F75F /* DebouncerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncerTests.swift; sourceTree = "<group>"; };
 		F19847DB226F92420004A8BC /* String+URLValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLValidation.swift"; sourceTree = "<group>"; };
 		F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringURLValidationTests.swift; sourceTree = "<group>"; };
+		F1C6E3B1227280BD000F6E12 /* WPTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WPTimerTests.swift; path = ../../../Desktop/WPTimerTests.swift; sourceTree = "<group>"; };
+		F1C6E3B3227280D4000F6E12 /* WPTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WPTimer.swift; sourceTree = "<group>"; };
 		FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordPressShared.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -288,6 +292,7 @@
 				7430C9DA1F1933F40051B8E6 /* RichContentFormatter.swift */,
 				7414BD541F13CBE0005759F8 /* String+Helpers.swift */,
 				F19847DB226F92420004A8BC /* String+URLValidation.swift */,
+				F1C6E3B3227280D4000F6E12 /* WPTimer.swift */,
 				7414BD5F1F13D084005759F8 /* UIDevice+Helpers.h */,
 				7414BD601F13D084005759F8 /* UIDevice+Helpers.m */,
 				B5A787E4202B2BD2007874FB /* WPDeviceIdentification.h */,
@@ -334,6 +339,7 @@
 				93A73ABE1EE9DDB000C0F2F9 /* WPMapFilterReduceTest.m */,
 				8270708F1ECA4E1C00155CBF /* WordPressSharedTests-Bridging-Header.h */,
 				F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */,
+				F1C6E3B1227280BD000F6E12 /* WPTimerTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -670,6 +676,7 @@
 				7430C9DB1F1933F40051B8E6 /* RichContentFormatter.swift in Sources */,
 				937BA5881EF1DAC100D301B2 /* CocoaLumberjack.swift in Sources */,
 				7414BD551F13CBE0005759F8 /* Dictionary+Helpers.swift in Sources */,
+				F1C6E3B4227280D4000F6E12 /* WPTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +701,7 @@
 				B5393FDC206D6169007BF9D4 /* EmailFormatValidatorTests.swift in Sources */,
 				748710AC1F06C465008095AB /* StringHelperTests.swift in Sources */,
 				9A1329DF22170BE2009EE02A /* NSDateHelperTest.swift in Sources */,
+				F1C6E3B2227280BD000F6E12 /* WPTimerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
