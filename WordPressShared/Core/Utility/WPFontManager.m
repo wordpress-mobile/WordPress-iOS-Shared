@@ -1,4 +1,5 @@
 #import "WPFontManager.h"
+#import "WPShared-Swift.h"
 #import <CoreText/CoreText.h>
 
 
@@ -109,7 +110,7 @@ static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
 
 + (void)loadFontResourceNamed:(NSString *)name withExtension:(NSString *)extension
 {
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSBundle *bundle = [NSBundle wordPressSharedBundle];
     NSURL *url = [bundle URLForResource:name withExtension:extension];
 
     CFErrorRef error;

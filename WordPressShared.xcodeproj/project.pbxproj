@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		195DA2403DED9F0420316608 /* Pods_WordPressSharedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47629DF6D2C813279CBF93C4 /* Pods_WordPressSharedTests.framework */; };
+		1A4094D52270A75E009AA86D /* NSBundle+WordPressShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4094D42270A75E009AA86D /* NSBundle+WordPressShared.swift */; };
+		1A4095102271AA9E009AA86D /* WPShared-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A40950D2271AA9E009AA86D /* WPShared-Swift.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		2EB9C57E3BFEDA1676FE857C /* Pods_WordPressShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE15A6EE80D7766A21B83BF5 /* Pods_WordPressShared.framework */; };
 		740B23CC1F17F1FF00067A2A /* DisplayableImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 740B23CA1F17F1FF00067A2A /* DisplayableImageHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		740B23CD1F17F1FF00067A2A /* DisplayableImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 740B23CB1F17F1FF00067A2A /* DisplayableImageHelper.m */; };
@@ -101,6 +103,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A4094D42270A75E009AA86D /* NSBundle+WordPressShared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSBundle+WordPressShared.swift"; sourceTree = "<group>"; };
+		1A40950D2271AA9E009AA86D /* WPShared-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WPShared-Swift.h"; sourceTree = "<group>"; };
 		405129D7901B7D4AD3B46442 /* Pods-WordPressShared.release-internal.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressShared.release-internal.xcconfig"; path = "Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared.release-internal.xcconfig"; sourceTree = "<group>"; };
 		47629DF6D2C813279CBF93C4 /* Pods_WordPressSharedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WordPressSharedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AC1280B7CDCD44A2F3A20AC /* Pods-WordPressShared.release-alpha.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WordPressShared.release-alpha.xcconfig"; path = "Pods/Target Support Files/Pods-WordPressShared/Pods-WordPressShared.release-alpha.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +240,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1A40950A2271AA9E009AA86D /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				1A40950D2271AA9E009AA86D /* WPShared-Swift.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
 		64A3D9E533CC416278F7A0B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +286,7 @@
 				93C674F41EE83D4B00BFAF05 /* Languages.swift */,
 				7414BD571F13CEA5005759F8 /* NSBundle+VersionNumberHelper.h */,
 				7414BD581F13CEA5005759F8 /* NSBundle+VersionNumberHelper.m */,
+				1A4094D42270A75E009AA86D /* NSBundle+WordPressShared.swift */,
 				93C882AC1EEB1E2F00227A59 /* NSDate+Helpers.swift */,
 				74650F7F1F0EA4BD00188EDB /* NSMutableData+Helpers.swift */,
 				74650F791F0EA2FA00188EDB /* NSString+Helpers.h */,
@@ -374,6 +387,7 @@
 		829DD1401EC9EED200AB8C12 /* WordPressShared */ = {
 			isa = PBXGroup;
 			children = (
+				1A40950A2271AA9E009AA86D /* Private */,
 				829DD22A1ECA064100AB8C12 /* Core */,
 				8270709C1ECA5A7C00155CBF /* Resources */,
 				827070981ECA4EBC00155CBF /* Info.plist */,
@@ -444,6 +458,7 @@
 				93A73ABC1EE9DD7D00C0F2F9 /* WPMapFilterReduce.h in Headers */,
 				E1A444281F063CAB00F6AA8A /* WPAnalytics.h in Headers */,
 				7414BD591F13CEA5005759F8 /* NSBundle+VersionNumberHelper.h in Headers */,
+				1A4095102271AA9E009AA86D /* WPShared-Swift.h in Headers */,
 				7414BD611F13D084005759F8 /* UIDevice+Helpers.h in Headers */,
 				740B23CC1F17F1FF00067A2A /* DisplayableImageHelper.h in Headers */,
 				7430C9D21F19302D0051B8E6 /* PhotonImageURLHelper.h in Headers */,
@@ -645,6 +660,7 @@
 				B5A7881E202B3A92007874FB /* WPTableViewCell.m in Sources */,
 				74650F7C1F0EA2FA00188EDB /* NSString+Helpers.m in Sources */,
 				B5A78820202B3A92007874FB /* WPTextFieldTableViewCell.m in Sources */,
+				1A4094D52270A75E009AA86D /* NSBundle+WordPressShared.swift in Sources */,
 				B5A78816202B3A55007874FB /* WPStyleGuide+DynamicType.swift in Sources */,
 				7414BD561F13CBE0005759F8 /* String+Helpers.swift in Sources */,
 				827070031ECA43AA00155CBF /* NSString+Util.m in Sources */,

@@ -2,7 +2,7 @@
 #import "WPTextFieldTableViewCell.h"
 #import "WPFontManager.h"
 #import "WPDeviceIdentification.h"
-#import <WordPressShared/WordPressShared-Swift.h>
+#import "WPShared-Swift.h"
 
 
 @implementation WPStyleGuide

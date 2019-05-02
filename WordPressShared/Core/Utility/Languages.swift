@@ -24,7 +24,7 @@ public class WordPressComLanguageDatabase: NSObject {
     ///
     public override init() {
         // Parse the json file
-        let path = Bundle(for: WordPressComLanguageDatabase.self).path(forResource: filename, ofType: "json")
+        let path = Bundle.wordPressSharedBundle.path(forResource: filename, ofType: "json")
         let raw = try! Data(contentsOf: URL(fileURLWithPath: path!))
         let parsed = try! JSONSerialization.jsonObject(with: raw, options: [.mutableContainers, .mutableLeaves]) as? NSDictionary
 
