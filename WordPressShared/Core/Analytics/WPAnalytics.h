@@ -134,6 +134,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatEnhancedSiteCreationSuccessLoading,
     WPAnalyticsStatEnhancedSiteCreationSuccessPreviewViewed,
     WPAnalyticsStatEnhancedSiteCreationSuccessPreviewLoaded,
+    WPAnalyticsStatEnhancedSiteCreationSuccessPreviewOkButtonTapped,
     WPAnalyticsStatEnhancedSiteCreationErrorShown,
     WPAnalyticsStatGiphyAccessed,
     WPAnalyticsStatGiphySearched,
