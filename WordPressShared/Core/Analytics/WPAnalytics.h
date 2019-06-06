@@ -314,6 +314,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatPostListStatusFilterChanged,
     WPAnalyticsStatPostListTrashAction,
     WPAnalyticsStatPostListViewAction,
+    WPAnalyticsStatPostListToggleButtonPressed,
     WPAnalyticsStatPostRevisionsListViewed,
     WPAnalyticsStatPostRevisionsDetailViewed,
     WPAnalyticsStatPostRevisionsDetailCancelled,
