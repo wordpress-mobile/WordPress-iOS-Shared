@@ -116,6 +116,15 @@ extension WPStyleGuide {
     /// - Returns: The created font.
     ///
     @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, fontWeight weight: UIFont.Weight) -> UIFont {
+        /// WORKAROUND: Some font weights scale up well initially but they don't scale up well if dynamic type
+        ///     is changed in real time.  Creating a scaled font offers an alternative solution that works well
+        ///     even in real time.
+        let weightsThatNeedScaledFont: [UIFont.Weight] = [.black, .bold, .heavy, .semibold]
+        
+        guard !weightsThatNeedScaledFont.contains(weight) else {
+            return scaledFont(for: style, weight: weight)
+        }
+        
         var fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
 
 #if swift(>=4.0)
@@ -170,7 +179,7 @@ extension WPStyleGuide {
     ///
     /// - Returns: the requested scaled font.
     ///
-    @objc public class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight = .regular) -> UIFont {
+    private class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont {
         let traitCollection = UITraitCollection(preferredContentSizeCategory: .large)
         let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: traitCollection)
         
