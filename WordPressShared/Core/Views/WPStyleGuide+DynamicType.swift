@@ -155,6 +155,31 @@ extension WPStyleGuide {
         let fontSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: defaultContentSizeCategory).pointSize
         return UIFont.systemFont(ofSize: fontSize, weight: weight)
     }
+    
+    /// Created a scaled UIFont for the specified style and weight.  A scaled font will be resized Automatically
+    /// by iOS to respond to dynamic type changes.
+    ///
+    /// - Important: The size of a scaled font built with this method may not match exactly the size for the built
+    /// in fonts at the same dynamic type configuration, but this is currently a limitation with iOS rather than
+    /// a limitation with this method.  For more info check:
+    ///     https://stackoverflow.com/questions/51243804/uifontmetrics-scaled-font-size-calculation
+    ///
+    /// - Parameters:
+    ///     - style: the style for the font.
+    ///     - weight: the weight for the font.
+    ///
+    /// - Returns: the requested scaled font.
+    ///
+    @objc public class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight = .regular) -> UIFont {
+        let traitCollection = UITraitCollection(preferredContentSizeCategory: .large)
+        let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: traitCollection)
+        
+        let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.semibold]
+        let descriptorWithTraits = descriptor.addingAttributes([.traits: traits])
+        let baseFontWithTraits = UIFont(descriptor: descriptorWithTraits, size: 0)
+        
+        return UIFontMetrics(forTextStyle: style).scaledFont(for: baseFontWithTraits)
+    }
 
     /// Creates a NotoSerif UIFont for the user current text size settings.
     ///
