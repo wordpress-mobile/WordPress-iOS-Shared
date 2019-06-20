@@ -50,7 +50,6 @@ NS_ASSUME_NONNULL_BEGIN
 // Misc
 + (UIColor *)keyboardColor;
 + (UIColor *)textFieldPlaceholderGrey;
-+ (UIColor *)tableViewActionColor;
 
 // Bar Button Styles
 + (UIBarButtonItemStyle)barButtonStyleForDone;
@@ -59,17 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setRightBarButtonItemWithCorrectSpacing:(UIBarButtonItem *)barButtonItem forNavigationItem:(UINavigationItem *)navigationItem;
 + (void)configureNavigationBarAppearance;
 + (void)configureDocumentPickerNavBarAppearance;
-
-// View and TableView Helpers
-+ (void)configureColorsForView:(nullable UIView *)view andTableView:(nullable UITableView *)tableView;
-+ (void)configureColorsForView:(nullable UIView *)view collectionView:(nullable UICollectionView *)collectionView;
-+ (void)configureTableViewCell:(nullable UITableViewCell *)cell;
-+ (void)configureTableViewSmallSubtitleCell:(nullable UITableViewCell *)cell;
-+ (void)configureTableViewActionCell:(nullable UITableViewCell *)cell;
-+ (void)configureTableViewDestructiveActionCell:(nullable UITableViewCell *)cell;
-+ (void)configureTableViewTextCell:(nullable WPTextFieldTableViewCell *)cell;
-+ (void)configureTableViewSectionHeader:(nullable UIView *)header;
-+ (void)configureTableViewSectionFooter:(nullable UIView *)footer;
 
 // Move to a feature category
 + (UIColor *)buttonActionColor;

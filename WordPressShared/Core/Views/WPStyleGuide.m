@@ -262,11 +262,6 @@
     return [self grey];
 }
 
-+ (UIColor *)tableViewActionColor
-{
-    return [self wordPressBlue];
-}
-
 // TODO: Move to feature category
 + (UIColor *)buttonActionColor
 {
@@ -332,93 +327,6 @@
     [[UINavigationBar appearance] setTintColor:[WPStyleGuide mediumBlue]];
     [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: [WPStyleGuide mediumBlue]} forState:UIControlStateNormal];
 }
-
-#pragma mark - View and TableView Styles
-
-+ (void)configureColorsForView:(UIView *)view andTableView:(UITableView *)tableView
-{
-    tableView.backgroundView = nil;
-    view.backgroundColor = [WPStyleGuide greyLighten30];
-    tableView.backgroundColor = [WPStyleGuide greyLighten30];
-    tableView.separatorColor = [WPStyleGuide greyLighten20];
-}
-
-+ (void)configureColorsForView:(UIView *)view collectionView:(UICollectionView *)collectionView
-{
-    collectionView.backgroundView = nil;
-    collectionView.backgroundColor = [WPStyleGuide greyLighten30];
-    view.backgroundColor = [WPStyleGuide greyLighten30];
-}
-
-+ (void)configureTableViewCell:(UITableViewCell *)cell
-{
-    cell.textLabel.font = [self tableviewTextFont];
-    [cell.textLabel sizeToFit];
-
-    cell.detailTextLabel.font = [self tableviewSubtitleFont];
-    [cell.detailTextLabel sizeToFit];
-    
-    cell.textLabel.textColor = [self darkGrey];
-    cell.detailTextLabel.textColor = [self grey];
-    
-    cell.imageView.tintColor = [self greyLighten10];
-}
-
-+ (void)configureTableViewSmallSubtitleCell:(UITableViewCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.detailTextLabel.font = [self subtitleFont];
-    cell.detailTextLabel.textColor = [self darkGrey];
-}
-
-+ (void)configureTableViewActionCell:(UITableViewCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.textLabel.font = [self tableviewTextFont];
-    cell.textLabel.textColor = [self tableViewActionColor];
-}
-
-+ (void)configureTableViewDestructiveActionCell:(UITableViewCell *)cell
-{
-    [self configureTableViewActionCell:cell];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    cell.textLabel.textColor = [self errorRed];
-}
-
-+ (void)configureTableViewTextCell:(WPTextFieldTableViewCell *)cell
-{
-    [self configureTableViewCell:cell];
-    cell.textField.font = [self tableviewSubtitleFont];
-    
-    if (cell.textField.enabled) {
-        cell.textField.textColor = [self darkBlue];
-        cell.textField.textAlignment = NSTextAlignmentLeft;
-    } else {
-        cell.textField.textColor = [self grey];
-        cell.textField.textAlignment = NSTextAlignmentRight;
-    }
-}
-
-+ (void)configureTableViewSectionHeader:(UITableViewHeaderFooterView *)header
-{
-	if (![header isKindOfClass:[UITableViewHeaderFooterView class]]) {
-		return;
-	}
-	header.textLabel.textColor = [self whisperGrey];
-}
-
-+ (void)configureTableViewSectionFooter:(UITableViewHeaderFooterView *)footer
-{
-	if (![footer isKindOfClass:[UITableViewHeaderFooterView class]]) {
-		return;
-	}
-    if (footer.textLabel.userInteractionEnabled) {
-        footer.textLabel.textColor = [self wordPressBlue];
-    } else {
-        footer.textLabel.textColor = [self greyDarken10];
-    }
-}
-
 
 #pragma mark - Deprecated Colors
 
