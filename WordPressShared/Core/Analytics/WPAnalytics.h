@@ -8,6 +8,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatActivityLogViewed,
     WPAnalyticsStatActivityLogDetailViewed,
     WPAnalyticsStatActivityLogRewindStarted,
+    WPAnalyticsStatAppIconChanged,
+    WPAnalyticsStatAppIconReset,
     WPAnalyticsStatAppInstalled,
     WPAnalyticsStatAppReviewsCanceledFeedbackScreen,
     WPAnalyticsStatAppReviewsDeclinedToRateApp,
