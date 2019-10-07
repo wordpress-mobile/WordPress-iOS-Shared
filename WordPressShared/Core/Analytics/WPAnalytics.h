@@ -27,6 +27,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatAppUpgraded,
     WPAnalyticsStatApplicationClosed,
     WPAnalyticsStatApplicationOpened,
+    WPAnalyticsStatAutoUploadPostInvoked,
     WPAnalyticsStatAutomatedTransferCustomDomainDialogShown,
     WPAnalyticsStatAutomatedTransferCustomDomainDialogCancelled,
     WPAnalyticsStatAutomatedTransferCustomDomainSuggestionQueried,
