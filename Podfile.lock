@@ -34,7 +34,7 @@ DEPENDENCIES:
   - Specta (= 1.0.7)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - CocoaLumberjack
     - Expecta
     - FormatterKit
@@ -50,6 +50,6 @@ SPEC CHECKSUMS:
   OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 55afbed6130408cd4c9f1a07c4c6c6f0e7241262
+PODFILE CHECKSUM: 67eadfaf0746636eac9749cc8f835112af82f302
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4
