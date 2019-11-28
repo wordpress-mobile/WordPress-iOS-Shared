@@ -569,8 +569,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     ///
     /// Event Properties:
     ///
-    /// - entityName: String. The Core Data entity name.
-    /// - deletedCount: Int. The number of deleted entities.
+    /// - entity_name: String. The Core Data entity name.
+    /// - deleted_count: Int. The number of deleted entities.
     ///
     /// This event is not logged when there are no entities to delete.
     WPAnalyticsStatDebugDeletedOrphanedEntities
