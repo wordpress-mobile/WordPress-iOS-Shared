@@ -6,7 +6,7 @@ import Foundation
 ///
 /// ```
 /// let password = Secret("my secret password")
-/// print(password)             // Prints "--redacted"
+/// print(password)             // Prints "--redacted--"
 /// print(password.secretValue) // Prints "my secret password"
 /// ```
 ///
