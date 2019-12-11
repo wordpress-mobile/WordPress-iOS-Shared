@@ -1,10 +1,10 @@
 #import "WPSharedLogging.h"
 #import "WPSharedLoggingPrivate.h"
 
-int WPSharedGetLoggingLevel() {
+DDLogLevel WPSharedGetLoggingLevel() {
     return ddLogLevel;
 }
 
-void WPSharedSetLoggingLevel(int level) {
+void WPSharedSetLoggingLevel(DDLogLevel level) {
     ddLogLevel = level;
 }

@@ -1,2 +1,2 @@
 #import "WPSharedLoggingPrivate.h"
-int ddLogLevel = DDLogLevelWarning;
+DDLogLevel ddLogLevel = DDLogLevelWarning;
