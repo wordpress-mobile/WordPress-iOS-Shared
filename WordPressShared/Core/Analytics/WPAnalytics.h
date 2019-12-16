@@ -77,6 +77,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatEditorAddedPhotoViaGiphy,
     WPAnalyticsStatEditorAddedPhotoViaOtherApps,
     WPAnalyticsStatEditorAddedPhotoViaStockPhotos,
+    WPAnalyticsStatEditorAddedPhotoViaMediaEditor,
     WPAnalyticsStatEditorAddedVideoViaOtherApps,
     WPAnalyticsStatEditorAztecBetaLink,
     WPAnalyticsStatEditorAztecPromoLink,
@@ -198,6 +199,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatLoginSocialErrorUnknownUser,
     WPAnalyticsStatLogout,
     WPAnalyticsStatLowMemoryWarning,
+    WPAnalyticsStatMediaEditorShown,
+    WPAnalyticsStatMediaEditorUsed,
     WPAnalyticsStatMediaLibraryDeletedItems,
     WPAnalyticsStatMediaLibraryEditedItemMetadata,
     WPAnalyticsStatMediaLibraryPreviewedItem,
@@ -559,7 +562,18 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatTwoFactorSentSMS,
     WPAnalyticsStatShareExtensionError,
     WPAnalyticsStatSearchAdsAttribution,
-    WPAnalyticsStatMaxValue
+    WPAnalyticsStatMaxValue,
+    /// Logged when there are orphaned entities (e.g. has NULL blog values).
+    ///
+    /// These are invalid rows in the database and will cause a crash in Core Data during saving.
+    ///
+    /// Event Properties:
+    ///
+    /// - entity_name: String. The Core Data entity name.
+    /// - deleted_count: Int. The number of deleted entities.
+    ///
+    /// This event is not logged when there are no entities to delete.
+    WPAnalyticsStatDebugDeletedOrphanedEntities
 };
 
 extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyCategory;

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "WordPressShared"
-  s.version       = "1.8.9"
+  s.version       = "1.8.10"
   s.summary       = "Shared components used in building the WordPress iOS apps and other library components."
 
   s.description   = <<-DESC
@@ -27,4 +27,3 @@ Pod::Spec.new do |s|
   s.dependency 'CocoaLumberjack', '~> 3.4'
   s.dependency 'FormatterKit/TimeIntervalFormatter', '1.8.2'
 end
-
