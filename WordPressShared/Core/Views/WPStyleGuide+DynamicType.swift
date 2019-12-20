@@ -182,12 +182,12 @@ extension WPStyleGuide {
     private class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont {
         let traitCollection = UITraitCollection(preferredContentSizeCategory: .large)
         let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: traitCollection)
-        
-        let traits = [UIFontDescriptor.TraitKey.weight: UIFont.Weight.semibold]
+
+        let traits = [UIFontDescriptor.TraitKey.weight: weight]
         let descriptorWithTraits = descriptor.addingAttributes([.traits: traits])
-        let baseFontWithTraits = UIFont(descriptor: descriptorWithTraits, size: 0)
-        
-        return UIFontMetrics(forTextStyle: style).scaledFont(for: baseFontWithTraits)
+        let size = UIFontMetrics(forTextStyle: style).scaledValue(for: 0, compatibleWith: traitCollection)
+
+        return UIFont(descriptor: descriptorWithTraits, size: size)
     }
 
     /// Creates a NotoSerif UIFont for the user current text size settings.
