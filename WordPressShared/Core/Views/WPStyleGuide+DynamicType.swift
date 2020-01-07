@@ -180,12 +180,11 @@ extension WPStyleGuide {
     /// - Returns: the requested scaled font.
     ///
     private class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont {
-        let traitCollection = UITraitCollection(preferredContentSizeCategory: .large)
-        let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: traitCollection)
-
+        let font = UIFont.preferredFont(forTextStyle: style)
         let traits = [UIFontDescriptor.TraitKey.weight: weight]
-        let descriptorWithTraits = descriptor.addingAttributes([.traits: traits])
-        let size = UIFontMetrics(forTextStyle: style).scaledValue(for: 0, compatibleWith: traitCollection)
+
+        let descriptorWithTraits = font.fontDescriptor.addingAttributes([.traits: traits])
+        let size = UIFontMetrics(forTextStyle: style).scaledValue(for: font.pointSize)
 
         return UIFont(descriptor: descriptorWithTraits, size: size)
     }
