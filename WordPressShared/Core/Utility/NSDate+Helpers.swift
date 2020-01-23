@@ -119,6 +119,7 @@ extension Date {
 
     /// Formats the current date as relative date if it's within a week of
     /// today, or with DateFormatter.Style.medium otherwise.
+    /// - Parameter timeZone: An optional time zone used to adjust the date formatters. **NOTE**: This has no affect on relative time stamps.
     ///
     /// - Example: 22 hours from now
     /// - Example: 5 minutes ago
@@ -126,9 +127,13 @@ extension Date {
     /// - Example: 2 days ago
     /// - Example: Jan 22, 2017
     ///
-    public func mediumString() -> String {
+    public func mediumString(timeZone: TimeZone? = nil) -> String {
         let relativeFormatter = TTTTimeIntervalFormatter()
         let absoluteFormatter = DateFormatters.mediumDate
+        
+        if let timeZone = timeZone {
+            absoluteFormatter.timeZone = timeZone
+        }
 
         let components = Calendar.current.dateComponents([.day], from: self, to: Date())
         if let days = components.day, abs(days) < 7 {
@@ -139,6 +144,7 @@ extension Date {
     }
 
     /// Formats the current date as a medium relative date/time.
+    /// - Parameter timeZone: An optional time zone used to adjust the date formatters.
     ///
     /// - Example: Tomorrow, 6:45 AM
     /// - Example: Today, 8:09 AM
@@ -146,8 +152,12 @@ extension Date {
     /// - Example: Jan 28, 2017, 1:51 PM
     /// - Example: Jan 22, 2017, 2:18 AM
     ///
-    public func mediumStringWithTime() -> String {
-        return DateFormatters.mediumDateTime.string(from: self)
+    public func mediumStringWithTime(timeZone: TimeZone? = nil) -> String {
+        let formatter = DateFormatters.mediumDateTime
+        if let timeZone = timeZone {
+            formatter.timeZone = timeZone
+        }
+        return formatter.string(from: self)
     }
 
     /// Formats the current date as (non relative) long date (no time) in UTC.
