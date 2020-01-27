@@ -33,4 +33,33 @@ class NSDateHelperTest: XCTestCase {
         XCTAssertEqual(components.month, data.month)
         XCTAssertEqual(components.day, data.day)
     }
+    
+    /// Verifies that `mediumString` produces relative format strings when less than 7 days have elapsed.
+    func testMediumStringRelativeString() {
+        let date = Date()
+        XCTAssertEqual(date.mediumString(), "just now")
+        XCTAssertEqual(date.addingTimeInterval(-60*5).mediumString(), "5 minutes ago")
+        XCTAssertEqual(date.addingTimeInterval(-60*60*2).mediumString(), "2 hours ago")
+        XCTAssertEqual(date.addingTimeInterval(-60*60*24).mediumString(), "1 day ago")
+        XCTAssertEqual(date.addingTimeInterval(-60*60*24*6).mediumString(), "6 days ago")
+    }
+    
+    /// Verifies that  `mediumStringWithTime` takes into account the time zone adjustment
+    func testMediumStringTimeZoneAdjust() {
+        let date = Date()
+        let timeZone = TimeZone(secondsFromGMT: Calendar.current.timeZone.secondsFromGMT() - (60 * 60))
+        XCTAssertEqual(date.mediumString(timeZone: timeZone), "just now")
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateStyle = .none
+        timeFormatter.timeStyle = .short
+        let withoutTimeZoneAdjust = timeFormatter.string(from: date)
+        
+        XCTAssertEqual(date.mediumStringWithTime(), "Today at \(withoutTimeZoneAdjust)")
+                
+        timeFormatter.timeZone = timeZone
+        let withTimeZoneAdjust = timeFormatter.string(from: date)
+        
+        XCTAssertEqual(date.mediumStringWithTime(timeZone: timeZone), "Today at \(withTimeZoneAdjust)")
+    }
 }
