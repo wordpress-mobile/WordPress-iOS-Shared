@@ -7,7 +7,9 @@ extension NSString {
     
     static let PostDerivedSummaryLength = 150
     
-    /// Summarizes HTML content.
+    /// Create a summary for the post based on the post's content.
+    ///
+    /// - Returns: A summary for the post.
     ///
     @objc
     public func summarized() -> String {
@@ -21,6 +23,10 @@ extension NSString {
     }
     
     /// Converts HTML content into plain text by stripping HTML tags and decodinig XML chars.
+    /// Transforms the specified string to plain text.  HTML markup is removed and HTML entities are decoded.
+    ///
+    /// - Returns: The transformed string.
+    ///
     @objc
     public func makePlainText() -> String {
         let characterSet = NSCharacterSet.whitespacesAndNewlines
