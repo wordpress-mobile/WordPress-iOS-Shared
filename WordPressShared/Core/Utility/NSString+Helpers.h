@@ -8,7 +8,7 @@
  @param string The string to transform.
  @return The transformed string.
  */
-+ (NSString *)makePlainText:(NSString *)string;
+//+ (NSString *)makePlainText:(NSString *)string;
 
 /**
  Removes shortcodes from the passed string.
@@ -24,7 +24,7 @@
  @param string The post's content string. This should be the formatted content string.
  @return A summary for the post.
  */
-+ (NSString *)summaryFromContent:(NSString *)string;
+//+ (NSString *)summaryFromContent:(NSString *)string;
 
 - (NSString *)stringByUrlEncoding;
 - (NSMutableDictionary *)dictionaryFromQueryString;

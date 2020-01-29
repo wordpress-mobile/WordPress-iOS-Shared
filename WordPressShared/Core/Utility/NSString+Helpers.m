@@ -3,7 +3,7 @@
 #import "WPSharedLoggingPrivate.h"
 #import "NSString+XMLExtensions.h"
 
-static const NSUInteger PostDerivedSummaryLength = 150;
+//static const NSUInteger PostDerivedSummaryLength = 150;
 static NSString *const Ellipsis =  @"\u2026";
 
 @implementation NSString (Helpers)
@@ -84,11 +84,13 @@ static NSString *const Ellipsis =  @"\u2026";
     return [[NSString alloc] initWithBytes:&hex length:4 encoding:NSUTF32LittleEndianStringEncoding];
 }
 
+/*
 + (NSString *)makePlainText:(NSString *)string
 {
     NSCharacterSet *charSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     return [[[string stringByStrippingHTML] stringByDecodingXMLCharacters] stringByTrimmingCharactersInSet:charSet];
 }
+ */
 
 + (NSString *)stripShortcodesFromString:(NSString *)string
 {
@@ -111,7 +113,7 @@ static NSString *const Ellipsis =  @"\u2026";
                                              range:range
                                       withTemplate:@""];
 }
-
+/*
 + (NSString *)summaryFromContent:(NSString *)string
 {
     string = [NSString makePlainText:string];
@@ -119,6 +121,7 @@ static NSString *const Ellipsis =  @"\u2026";
     string = [string stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"]];
     return [string stringByEllipsizingWithMaxLength:PostDerivedSummaryLength preserveWords:YES];
 }
+ */
 
 // Taken from AFNetworking's AFPercentEscapedQueryStringPairMemberFromStringWithEncoding
 - (NSString *)stringByUrlEncoding
