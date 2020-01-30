@@ -2,6 +2,8 @@ import Foundation
 
 extension String {
     
+    /// Creates a new string by stripping all shortcodes from this string.
+    ///
     func strippingShortcodes() -> String {
         let pattern = "\\[[^\\]]+\\]"
         let regex: NSRegularExpression
@@ -13,6 +15,6 @@ extension String {
             return self
         }
         
-        return replacingMatches(regex)
+        return removingMatches(regex)
     }
 }

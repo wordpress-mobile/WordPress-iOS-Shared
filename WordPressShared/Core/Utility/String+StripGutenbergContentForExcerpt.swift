@@ -24,6 +24,6 @@ extension String {
             return self
         }
         
-        return replacingMatches(regex)
+        return removingMatches(regex)
     }
 }
