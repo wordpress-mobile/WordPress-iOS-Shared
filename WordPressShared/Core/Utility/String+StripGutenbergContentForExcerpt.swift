@@ -16,6 +16,6 @@ extension String {
     private func strippingGutenbergGalleries() -> String {
         let pattern = "(?s)<!--\\swp:gallery?(.*?)wp:gallery\\s-->"
         
-        return removingMatches(pattern: pattern)
+        return removingMatches(pattern: pattern, options: .caseInsensitive)
     }
 }

@@ -7,6 +7,6 @@ extension String {
     func strippingShortcodes() -> String {
         let pattern = "\\[[^\\]]+\\]"
         
-        return removingMatches(pattern: pattern)
+        return removingMatches(pattern: pattern, options: .caseInsensitive)
     }
 }
