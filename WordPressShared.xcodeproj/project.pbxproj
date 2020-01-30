@@ -97,6 +97,7 @@
 		F1C83C0E23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C0D23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift */; };
 		F1C83C1023E20EF200A8CCF1 /* String+RemovingMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C0F23E20EF200A8CCF1 /* String+RemovingMatches.swift */; };
 		F1C83C1223E20F7000A8CCF1 /* StringStripGutenbergContentForExcerptTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C1123E20F7000A8CCF1 /* StringStripGutenbergContentForExcerptTests.swift */; };
+		F1E214C123E3690E00A2CA73 /* StringRemovingMatchesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E214C023E3690E00A2CA73 /* StringRemovingMatchesTests.swift */; };
 		FF20AD1D20B83EDB00082398 /* WordPressShared.podspec in Resources */ = {isa = PBXBuildFile; fileRef = FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */; };
 /* End PBXBuildFile section */
 
@@ -217,6 +218,7 @@
 		F1C83C0D23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+StripGutenbergContentForExcerpt.swift"; sourceTree = "<group>"; };
 		F1C83C0F23E20EF200A8CCF1 /* String+RemovingMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+RemovingMatches.swift"; sourceTree = "<group>"; };
 		F1C83C1123E20F7000A8CCF1 /* StringStripGutenbergContentForExcerptTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringStripGutenbergContentForExcerptTests.swift; sourceTree = "<group>"; };
+		F1E214C023E3690E00A2CA73 /* StringRemovingMatchesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringRemovingMatchesTests.swift; sourceTree = "<group>"; };
 		FF20AD1C20B83EDB00082398 /* WordPressShared.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WordPressShared.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
@@ -362,6 +364,7 @@
 				7430C9D41F1930460051B8E6 /* PhotonImageURLHelperTest.m */,
 				7430C9DC1F1934190051B8E6 /* RichContentFormatterTests.swift */,
 				748710AB1F06C465008095AB /* StringHelperTests.swift */,
+				F1E214C023E3690E00A2CA73 /* StringRemovingMatchesTests.swift */,
 				F1C83C1123E20F7000A8CCF1 /* StringStripGutenbergContentForExcerptTests.swift */,
 				E18EABE71F0E2C6800BFCB0B /* TestAnalyticsTracker.h */,
 				E18EABE81F0E2C6800BFCB0B /* TestAnalyticsTracker.m */,
@@ -732,6 +735,7 @@
 				F1C83C1223E20F7000A8CCF1 /* StringStripGutenbergContentForExcerptTests.swift in Sources */,
 				93AB05FD1EE8405A00EF8764 /* LanguagesTests.swift in Sources */,
 				B5393FDD206D6169007BF9D4 /* EmailTypoCheckerTests.swift in Sources */,
+				F1E214C123E3690E00A2CA73 /* StringRemovingMatchesTests.swift in Sources */,
 				F1134A292270C19200B8F75F /* DebouncerTests.swift in Sources */,
 				7430C9D51F1930460051B8E6 /* PhotonImageURLHelperTest.m in Sources */,
 				E157E128239527AD0051AE41 /* SecretTests.swift in Sources */,
