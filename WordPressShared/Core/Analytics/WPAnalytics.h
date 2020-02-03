@@ -564,6 +564,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatTwoFactorSentSMS,
     WPAnalyticsStatShareExtensionError,
     WPAnalyticsStatSearchAdsAttribution,
+    WPAnalyticsStatWidgetActiveSiteChanged,
     WPAnalyticsStatMaxValue,
     /// Logged when there are orphaned entities (e.g. has NULL blog values).
     ///
