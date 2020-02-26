@@ -110,6 +110,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatEditorSessionStart,
     WPAnalyticsStatEditorSessionSwitchEditor,
     WPAnalyticsStatEditorSessionEnd,
+    WPAnalyticsStatEditorSessionTemplateApply,
+    WPAnalyticsStatEditorSessionTemplatePreview,
     WPAnalyticsStatEditorTappedItalic,
     WPAnalyticsStatEditorTappedLink,
     WPAnalyticsStatEditorTappedMore,
