@@ -63,6 +63,21 @@ NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo = @"with_videos"
     }
 }
 
++ (void)trackEvent:(NSString *)event
+{
+    for (id<WPAnalyticsTracker> tracker in [self trackers]) {
+        [tracker trackEvent:event];
+    }
+}
+
++ (void)trackEvent:(NSString *)event withProperties:(NSDictionary *)properties
+{
+    NSParameterAssert(properties != nil);
+    for (id<WPAnalyticsTracker> tracker in [self trackers]) {
+        [tracker trackEvent:event withProperties:properties];
+    }
+}
+
 + (void)beginSession
 {
     for (id<WPAnalyticsTracker> tracker in [self trackers]) {

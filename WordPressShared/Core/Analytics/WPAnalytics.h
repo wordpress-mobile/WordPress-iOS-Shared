@@ -1,5 +1,7 @@
 @import Foundation;
 
+@class WPAnalyticsEvent;
+
 typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatNoStat, // Since we can't have a nil enum we'll use this to act as the nil
     WPAnalyticsStatABTestStart,
@@ -603,6 +605,8 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 + (void)endTimerForStat:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
 + (void)track:(WPAnalyticsStat)stat;
 + (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
++ (void)trackEvent:(NSString *)event;
++ (void)trackEvent:(NSString *)event withProperties:(NSDictionary *)properties;
 + (void)endSession;
 + (void)clearQueuedEvents;
 
@@ -612,6 +616,8 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 
 - (void)track:(WPAnalyticsStat)stat;
 - (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
+- (void)trackEvent:(NSString *)event;
+- (void)trackEvent:(NSString *)event withProperties:(NSDictionary *)properties;
 
 @optional
 - (void)beginSession;
