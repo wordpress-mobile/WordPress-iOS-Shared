@@ -203,8 +203,6 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatLoginSocialErrorUnknownUser,
     WPAnalyticsStatLogout,
     WPAnalyticsStatLowMemoryWarning,
-    WPAnalyticsStatMediaEditorShown,
-    WPAnalyticsStatMediaEditorUsed,
     WPAnalyticsStatMediaLibraryDeletedItems,
     WPAnalyticsStatMediaLibraryEditedItemMetadata,
     WPAnalyticsStatMediaLibraryPreviewedItem,
