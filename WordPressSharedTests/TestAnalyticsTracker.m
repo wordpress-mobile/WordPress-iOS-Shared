@@ -27,4 +27,14 @@
     // No-op
 }
 
+- (void)trackString:(NSString *)event {
+    // No-op
+}
+
+
+- (void)trackString:(NSString *)event withProperties:(NSDictionary *)properties {
+    // No-op
+}
+
+
 @end
