@@ -201,8 +201,6 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatLoginSocialErrorUnknownUser,
     WPAnalyticsStatLogout,
     WPAnalyticsStatLowMemoryWarning,
-    WPAnalyticsStatMediaEditorShown,
-    WPAnalyticsStatMediaEditorUsed,
     WPAnalyticsStatMediaLibraryDeletedItems,
     WPAnalyticsStatMediaLibraryEditedItemMetadata,
     WPAnalyticsStatMediaLibraryPreviewedItem,
@@ -603,6 +601,8 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 + (void)endTimerForStat:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
 + (void)track:(WPAnalyticsStat)stat;
 + (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
++ (void)trackString:(NSString *)event;
++ (void)trackString:(NSString *)event withProperties:(NSDictionary *)properties;
 + (void)endSession;
 + (void)clearQueuedEvents;
 
@@ -612,6 +612,8 @@ extern NSString *const WPAnalyticsStatEditorPublishedPostPropertyVideo;
 
 - (void)track:(WPAnalyticsStat)stat;
 - (void)track:(WPAnalyticsStat)stat withProperties:(NSDictionary *)properties;
+- (void)trackString:(NSString *)event;
+- (void)trackString:(NSString *)event withProperties:(NSDictionary *)properties;
 
 @optional
 - (void)beginSession;

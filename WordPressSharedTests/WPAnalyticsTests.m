@@ -117,4 +117,27 @@ describe(@"track:withProperties:", ^{
     itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
 });
 
+describe(@"trackString:", ^{
+    NSMethodSignature *signature = [TestAnalyticsTracker instanceMethodSignatureForSelector:@selector(trackString:)];
+    NSInvocation *invocation  = [NSInvocation invocationWithMethodSignature:signature];
+    [invocation setSelector:@selector(trackString:)];
+    NSString *event = @"my_event";
+    [invocation setArgument:&event atIndex:2];
+
+    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+});
+
+describe(@"trackString:withProperties:", ^{
+    NSMethodSignature *signature = [TestAnalyticsTracker instanceMethodSignatureForSelector:@selector(trackString:withProperties:)];
+    NSInvocation *invocation  = [NSInvocation invocationWithMethodSignature:signature];
+    [invocation setSelector:@selector(trackString:withProperties:)];
+
+    NSString *event = @"my_event";
+    NSDictionary *dict = @{};
+    [invocation setArgument:&event atIndex:2];
+    [invocation setArgument:&dict atIndex:3];
+
+    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+});
+
 SpecEnd
