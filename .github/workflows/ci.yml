@@ -1,10 +1,10 @@
-name: Run Swift Lint
+name: Run SwiftLint
 on:
   pull_request:
     types: [opened, reopened, synchronize]
 
 jobs:
-  danger:
+  lint:
     runs-on: macos-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
