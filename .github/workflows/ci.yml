@@ -24,5 +24,11 @@ jobs:
       # behaves here. I wouldn't be surprised if it had some internal caching
       # built in already
 
+      - name: Build SwiftLint
+        run: |
+          pushd ./Pods/SwiftLint
+          make installables
+          popd
+
       - name: Lint
-        run: ./Pods/SwiftLint/swiftlint
+        run: ./Pods/SwiftLint/.build/x86_64-apple-macosx/release/swiftlint
