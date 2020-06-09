@@ -1,0 +1,28 @@
+name: Run Swift Lint
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  danger:
+    runs-on: macos-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+
+      # This action reads the Ruby version from .ruby-version
+      - uses: ruby/setup-ruby@v1
+
+      - name: Install Gems
+        run: bundle install
+
+      - name: Install Pods
+        run: bundle exec pod install
+
+      # I've left out caching intentionally, just to see how GitHub actions
+      # behaves here. I wouldn't be surprised if it had some internal caching
+      # built in already
+
+      - name: Lint
+        run: ./Pods/SwiftLint/swiftlint
