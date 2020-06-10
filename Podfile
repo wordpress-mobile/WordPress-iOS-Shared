@@ -33,5 +33,5 @@ abstract_target 'CLI' do
   # of the cache when using remote configs
   pod 'SwiftLint',
     git: 'https://github.com/mokagio/SwiftLint',
-    branch: 'feature/remote-child-parent-configs'
+    branch: 'feature/remote-child-parent-configs-no-rebase'
 end
