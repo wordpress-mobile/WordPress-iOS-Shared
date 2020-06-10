@@ -32,3 +32,6 @@ jobs:
 
       - name: Lint
         run: ./Pods/SwiftLint/.build/x86_64-apple-macosx/release/swiftlint
+
+      - name: SwiftLint via Danger
+        run: bundle exec danger ci
