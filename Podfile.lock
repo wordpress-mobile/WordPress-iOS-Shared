@@ -33,7 +33,7 @@ DEPENDENCIES:
   - OHHTTPStubs (~> 8)
   - OHHTTPStubs/Swift (~> 8)
   - Specta (= 1.0.7)
-  - SwiftLint (from `https://github.com/realm/SwiftLint`, branch `feature/remote-child-parent-configs`)
+  - SwiftLint (from `https://github.com/mokagio/SwiftLint`, branch `feature/remote-child-parent-configs`)
 
 SPEC REPOS:
   trunk:
@@ -47,12 +47,12 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   SwiftLint:
     :branch: feature/remote-child-parent-configs
-    :git: https://github.com/realm/SwiftLint
+    :git: https://github.com/mokagio/SwiftLint
 
 CHECKOUT OPTIONS:
   SwiftLint:
-    :commit: 707ccf3b38e301339b8272f2026cfbe946be9973
-    :git: https://github.com/realm/SwiftLint
+    :commit: 5f7125ee9b68223002714889c838808bd026f951
+    :git: https://github.com/mokagio/SwiftLint
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
@@ -63,6 +63,6 @@ SPEC CHECKSUMS:
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
   SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 1845e2c8dd039c3ac14af80a2081eb9dd60a5a8c
+PODFILE CHECKSUM: 70b7612709d112cbc10abf49eb536f9cdfa5bd88
 
 COCOAPODS: 1.9.3

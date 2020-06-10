@@ -29,7 +29,9 @@ target 'WordPressSharedTests' do
 end
 
 abstract_target 'CLI' do
+  # Fork of https://github.com/realm/SwiftLint/pull/3058 with fix for the path
+  # of the cache when using remote configs
   pod 'SwiftLint',
-    git: 'https://github.com/realm/SwiftLint',
+    git: 'https://github.com/mokagio/SwiftLint',
     branch: 'feature/remote-child-parent-configs'
 end
