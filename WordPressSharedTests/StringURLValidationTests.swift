@@ -36,3 +36,7 @@ class StringURLValidationTests: XCTestCase {
         }
     }
 }
+// Expecting a SwiftLint warning here because of the extra new lines
+
+
+
