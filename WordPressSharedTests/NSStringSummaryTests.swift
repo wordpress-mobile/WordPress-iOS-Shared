@@ -30,3 +30,11 @@ class NSStringSummaryTests: XCTestCase {
         XCTAssertEqual(summary, expectedSummary)
     }
 }
+// swiftlint should give a warning here
+
+
+
+
+
+
+
