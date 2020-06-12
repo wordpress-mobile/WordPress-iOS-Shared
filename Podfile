@@ -27,3 +27,11 @@ target 'WordPressSharedTests' do
   pod 'Specta', '1.0.7'
   pod 'Expecta', '1.0.6'
 end
+
+abstract_target 'CLI' do
+  # This branch supports remote configurations.
+  # See https://github.com/realm/SwiftLint/pull/3058
+  pod 'SwiftLint',
+    git: 'https://github.com/realm/SwiftLint',
+    branch: 'feature/remote-child-parent-configs'
+end
