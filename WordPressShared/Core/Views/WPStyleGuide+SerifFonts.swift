@@ -22,7 +22,7 @@ extension WPStyleGuide {
 
         switch weight {
         // Map all the bold weights to the bold font
-        case .bold, .heavy, .black:
+        case .bold, .semibold, .heavy, .black:
             font = WPStyleGuide.notoBoldFontForTextStyle(style)
         default:
             font = WPStyleGuide.notoFontForTextStyle(style)
