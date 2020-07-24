@@ -48,10 +48,6 @@ public final class AnalyticsEvent {
     }
 }
 
-extension AnalyticsEvent {
-    static let loginStart = AnalyticsEvent(name: "login", properties: ["step": "start"])
-}
-
 extension WPAnalytics {
     public static func track(_ event: AnalyticsEvent) {
         WPAnalytics.trackString(event.name, withProperties: event.properties)
