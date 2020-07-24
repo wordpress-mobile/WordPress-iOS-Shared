@@ -2,9 +2,9 @@ import Foundation
 
 /// This struct represents an analytics event.
 /// Declaring this class as final is a design choice to promote a simpler usage and implement events
-/// through parametrization of the `name` and `properties`.
+/// through parametrization of the `name` and `properties` properties.
 ///
-/// An example of a static event definition (in the client App or Pod)::
+/// An example of a static event definition (in the client App or Pod):
 ///
 /// ~~~
 /// extension AnalyticsEvent {
