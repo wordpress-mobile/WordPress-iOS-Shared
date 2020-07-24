@@ -4,7 +4,7 @@ import Foundation
 /// Declaring this class as final is a design choice to promote a simpler usage and implement events
 /// through parametrization of the `name` and `properties`.
 ///
-/// An example of a static event definition:
+/// An example of a static event definition (in the client App or Pod)::
 ///
 /// ~~~
 /// extension AnalyticsEvent {
@@ -12,7 +12,7 @@ import Foundation
 /// }
 /// ~~~
 ///
-/// An example of a dynamic / parametrized event definition:
+/// An example of a dynamic / parametrized event definition (in the client App or Pod):
 ///
 /// ~~~
 /// extension AnalyticsEvent {
@@ -31,7 +31,7 @@ import Foundation
 /// }
 /// ~~~
 ///
-/// Examples of tracking calls:
+/// Examples of tracking calls (in the client App or Pod):
 ///
 /// ~~~
 /// WPAnalytics.track(.login(step: .start))
