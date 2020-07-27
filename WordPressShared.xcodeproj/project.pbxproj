@@ -94,6 +94,7 @@
 		F10A569223E1FE7700B184F4 /* NSString+Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10A569123E1FE7700B184F4 /* NSString+Summary.swift */; };
 		F1134A272270C15E00B8F75F /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A262270C15E00B8F75F /* Debouncer.swift */; };
 		F1134A292270C19200B8F75F /* DebouncerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1134A282270C19200B8F75F /* DebouncerTests.swift */; };
+		F193585624CA3F4E00942507 /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F193585524CA3F4E00942507 /* AnalyticsEvent.swift */; };
 		F1C83C0C23E205D900A8CCF1 /* NSStringSummaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C0B23E205D900A8CCF1 /* NSStringSummaryTests.swift */; };
 		F1C83C0E23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C0D23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift */; };
 		F1C83C1023E20EF200A8CCF1 /* String+RemovingMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C83C0F23E20EF200A8CCF1 /* String+RemovingMatches.swift */; };
@@ -214,6 +215,7 @@
 		F10A569123E1FE7700B184F4 /* NSString+Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Summary.swift"; sourceTree = "<group>"; };
 		F1134A262270C15E00B8F75F /* Debouncer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		F1134A282270C19200B8F75F /* DebouncerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebouncerTests.swift; sourceTree = "<group>"; };
+		F193585524CA3F4E00942507 /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		F19847DB226F92420004A8BC /* String+URLValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLValidation.swift"; sourceTree = "<group>"; };
 		F19847DD226F92EA0004A8BC /* StringURLValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringURLValidationTests.swift; sourceTree = "<group>"; };
 		F1C83C0B23E205D900A8CCF1 /* NSStringSummaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStringSummaryTests.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 		E1A444251F063CAB00F6AA8A /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
+				F193585524CA3F4E00942507 /* AnalyticsEvent.swift */,
 				E1A444261F063CAB00F6AA8A /* WPAnalytics.h */,
 				E1A444271F063CAB00F6AA8A /* WPAnalytics.m */,
 			);
@@ -706,6 +709,7 @@
 				827070061ECA43AA00155CBF /* NSString+XMLExtensions.m in Sources */,
 				F1C83C0E23E20D9400A8CCF1 /* String+StripGutenbergContentForExcerpt.swift in Sources */,
 				82706FF31ECA438500155CBF /* WPSharedLogging.m in Sources */,
+				F193585624CA3F4E00942507 /* AnalyticsEvent.swift in Sources */,
 				F1134A272270C15E00B8F75F /* Debouncer.swift in Sources */,
 				B5393FD8206D608F007BF9D4 /* EmailFormatValidator.swift in Sources */,
 				F106FA62226FA82E00706DE4 /* String+URLValidation.swift in Sources */,
