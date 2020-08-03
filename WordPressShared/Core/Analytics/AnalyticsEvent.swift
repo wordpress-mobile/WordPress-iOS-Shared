@@ -39,8 +39,8 @@ import Foundation
 /// ~~~
 ///
 public final class AnalyticsEvent {
-    let name: String
-    let properties: [String: String]
+    public let name: String
+    public let properties: [String: String]
 
     public init(name: String, properties: [String: String]) {
         self.name = name
