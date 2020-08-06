@@ -571,11 +571,11 @@
 			};
 			buildConfigurationList = 829DD1381EC9EED200AB8C12 /* Build configuration list for PBXProject "WordPressShared" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = 829DD1341EC9EED200AB8C12;
 			productRefGroup = 829DD13F1EC9EED200AB8C12 /* Products */;
