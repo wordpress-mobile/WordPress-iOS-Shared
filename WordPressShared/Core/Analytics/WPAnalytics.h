@@ -400,6 +400,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatReaderTagLoaded,
     WPAnalyticsStatReaderTagPreviewed,
     WPAnalyticsStatReaderTagUnfollowed,
+    WPAnalyticsStatReaderToggleFollowConversation,
     WPAnalyticsStatSelectedInstallJetpack,
     WPAnalyticsStatSentItemToGooglePlus,
     WPAnalyticsStatSentItemToInstapaper,
