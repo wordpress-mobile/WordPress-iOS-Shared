@@ -23,7 +23,7 @@ PODS:
   - OHHTTPStubs/Swift (8.0.0):
     - OHHTTPStubs/Default
   - Specta (1.0.7)
-  - SwiftLint (0.39.2)
+  - SwiftLint (0.41.0)
 
 DEPENDENCIES:
   - CocoaLumberjack (~> 3.4)
@@ -51,7 +51,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   SwiftLint:
-    :commit: d95c3ac28376efd423111a18ebfd9410a1feae20
+    :commit: ed50938bb955f224bf9146eb0b89e1368e4aca67
     :git: https://github.com/realm/SwiftLint
 
 SPEC CHECKSUMS:
@@ -61,7 +61,7 @@ SPEC CHECKSUMS:
   OCMock: 43565190abc78977ad44a61c0d20d7f0784d35ab
   OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
-  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
+  SwiftLint: c585ebd615d9520d7fbdbe151f527977b0534f1e
 
 PODFILE CHECKSUM: 3d1d0b131967b61bd2445fec04184d0f7ee3caac
 
