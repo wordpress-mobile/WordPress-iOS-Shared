@@ -27,3 +27,7 @@ target 'WordPressSharedTests' do
   pod 'Specta', '1.0.7'
   pod 'Expecta', '1.0.6'
 end
+
+abstract_target 'CLI' do
+  pod 'SwiftLint'
+end
