@@ -31,4 +31,9 @@ jobs:
           popd
 
       - name: Lint
-        run: ./Pods/SwiftLint/.build/apple/Products/Release/swiftlint
+        # The local path at which `make installables` generates the binary can
+        # vary. Luckily, it also creates a symlink to a fixed path.
+        #
+        # All this will be unnecessary when the PR lands and a new version
+        # including remote configurations gets shipped.
+        run: /tmp/SwiftLint.dst/usr/local/bin/swiftlint
