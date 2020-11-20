@@ -29,5 +29,9 @@ target 'WordPressSharedTests' do
 end
 
 abstract_target 'CLI' do
-  pod 'SwiftLint'
+  # This branch supports remote configurations.
+  # See https://github.com/realm/SwiftLint/pull/3058
+  pod 'SwiftLint',
+    git: 'https://github.com/realm/SwiftLint',
+    branch: 'feature/remote-child-parent-configs'
 end
