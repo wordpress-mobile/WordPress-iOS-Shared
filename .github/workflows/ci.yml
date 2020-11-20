@@ -31,4 +31,4 @@ jobs:
           popd
 
       - name: Lint
-        run: ./Pods/SwiftLint/.build/x86_64-apple-macosx/release/swiftlint
+        run: ./Pods/SwiftLint/.build/apple/Products/Release/swiftlint
