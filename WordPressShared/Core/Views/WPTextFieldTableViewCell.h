@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import "WPTableViewCell.h"
+#import <WPTableViewCell.h>
 
 @class WPTextFieldTableViewCell;
 
