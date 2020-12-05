@@ -1,7 +1,7 @@
 PODS:
-  - CocoaLumberjack (3.5.3):
-    - CocoaLumberjack/Core (= 3.5.3)
-  - CocoaLumberjack/Core (3.5.3)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
   - Expecta (1.0.6)
   - FormatterKit/Resources (1.8.2)
   - FormatterKit/TimeIntervalFormatter (1.8.2):
@@ -43,7 +43,7 @@ SPEC REPOS:
     - Specta
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
   OCMock: 43565190abc78977ad44a61c0d20d7f0784d35ab
