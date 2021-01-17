@@ -68,6 +68,7 @@ extension Date {
             return formatter
         }()
 
+        @available(*, deprecated, message: "Not used as far as I can tell -@jkmassel Mar 2021")
         static let pageSectionFormatter: TTTTimeIntervalFormatter = {
             let formatter = TTTTimeIntervalFormatter()
 
@@ -117,6 +118,23 @@ extension Date {
         return DateFormatters.rfc1123.string(from: self)
     }
 
+    @available(*, deprecated, renamed: "toMediumString", message: "Removed to help drop the deprecated `FormatterKit` dependency – @jkmassel, Mar 2021")
+    public func mediumString(timeZone: TimeZone? = nil) -> String {
+        let relativeFormatter = TTTTimeIntervalFormatter()
+        let absoluteFormatter = DateFormatters.mediumDate
+
+        if let timeZone = timeZone {
+            absoluteFormatter.timeZone = timeZone
+        }
+
+        let components = Calendar.current.dateComponents([.day], from: self, to: Date())
+        if let days = components.day, abs(days) < 7 {
+            return relativeFormatter.string(forTimeInterval: timeIntervalSinceNow)
+        } else {
+            return absoluteFormatter.string(from: self)
+        }
+    }
+
     /// Formats the current date as relative date if it's within a week of
     /// today, or with DateFormatter.Style.medium otherwise.
     /// - Parameter timeZone: An optional time zone used to adjust the date formatters. **NOTE**: This has no affect on relative time stamps.
@@ -127,17 +145,19 @@ extension Date {
     /// - Example: 2 days ago
     /// - Example: Jan 22, 2017
     ///
-    public func mediumString(timeZone: TimeZone? = nil) -> String {
-        let relativeFormatter = TTTTimeIntervalFormatter()
+    public func toMediumString(inTimeZone timeZone: TimeZone? = nil) -> String {
+        let relativeFormatter = RelativeDateTimeFormatter()
+        relativeFormatter.dateTimeStyle = .named
+
         let absoluteFormatter = DateFormatters.mediumDate
-        
+
         if let timeZone = timeZone {
             absoluteFormatter.timeZone = timeZone
         }
 
         let components = Calendar.current.dateComponents([.day], from: self, to: Date())
         if let days = components.day, abs(days) < 7 {
-            return relativeFormatter.string(forTimeInterval: timeIntervalSinceNow)
+            return relativeFormatter.localizedString(fromTimeInterval: timeIntervalSinceNow)
         } else {
             return absoluteFormatter.string(from: self)
         }
@@ -188,13 +208,18 @@ extension Date {
         return DateFormatters.shortDateTime.string(from: self)
     }
 
-    public func toStringForPageSections() -> String {
+    @available(*, deprecated, message: "Not used, as far as I can tell – @jkmassel, Jan 2021")
+    fileprivate func toStringForPageSections() -> String {
         let interval = timeIntervalSinceNow
 
         if interval > 0 && interval < 86400 {
             return NSLocalizedString("later today", comment: "Later today")
         } else {
-            return DateFormatters.pageSectionFormatter.string(forTimeInterval: interval)
+            let formatter = RelativeDateTimeFormatter()
+            formatter.unitsStyle = .short
+            formatter.dateTimeStyle = .named
+
+            return formatter.localizedString(fromTimeInterval: interval)
         }
     }
 
@@ -221,7 +246,7 @@ extension NSDate {
     /// - Example: Jan 22, 2017
     ///
     @objc public func mediumString() -> String {
-        return (self as Date).mediumString()
+        return (self as Date).toMediumString()
     }
 
     /// Formats the current date as a medium relative date/time.
@@ -248,6 +273,7 @@ extension NSDate {
         return (self as Date).shortStringWithTime()
     }
 
+    @available(*, deprecated, message: "Scheduled for removal with FormatterKit – if it's still used, we'll rewrite it with modern APIs")
     @objc public func toStringForPageSections() -> String {
         return (self as Date).toStringForPageSections()
     }
