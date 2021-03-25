@@ -1,0 +1,26 @@
+{
+  "configurations" : [
+    {
+      "id" : "32BCD943-F7E3-459F-93A4-EE06670AD57E",
+      "name" : "en-US",
+      "options" : {
+        "language" : "en",
+        "region" : "US"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WordPressShared.xcodeproj",
+        "identifier" : "829DD1461EC9EED200AB8C12",
+        "name" : "WordPressSharedTests"
+      }
+    }
+  ],
+  "version" : 1
+}

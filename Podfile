@@ -3,7 +3,7 @@ source 'https://cdn.cocoapods.org/'
 inhibit_all_warnings!
 use_frameworks!
 
-platform :ios, '11.0'
+platform :ios, '13.0'
 
 def wordpress_shared_pods
   pod 'CocoaLumberjack', '~> 3.4'
@@ -21,8 +21,8 @@ target 'WordPressSharedTests' do
 
   wordpress_shared_pods
 
-    pod 'OHHTTPStubs', '~> 8'
-    pod 'OHHTTPStubs/Swift', '~> 8'
+  pod 'OHHTTPStubs', '~> 9.0'
+  pod 'OHHTTPStubs/Swift', '~> 9.0'
   pod 'OCMock', '~> 3.4'
   pod 'Specta', '1.0.7'
   pod 'Expecta', '1.0.6'

@@ -1,5 +1,4 @@
-#import <OHHTTPStubs/OHHTTPStubs.h>
-#import <OHHTTPStubs/OHPathHelpers.h>
+@import OHHTTPStubs;
 #import <XCTest/XCTest.h>
 
 #import "WPImageSource.h"
@@ -27,11 +26,11 @@
     NSString *requestUrl = @"http://test.wordpress.com/images/test-image.jpg";
     NSURL *url = [NSURL URLWithString:requestUrl];
     __block NSString *lastAuthHeader = nil;
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+    } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -56,11 +55,11 @@
     NSString *requestUrl = @"http://test.blog/images/test-image.jpg";
     NSURL *url = [NSURL URLWithString:requestUrl];
     __block NSString *lastAuthHeader = nil;
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+    } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -86,11 +85,11 @@
     NSURL *url = [NSURL URLWithString:requestUrl];
 
     __block int downloadCount = 0;
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return [[request.URL absoluteString] isEqualToString:requestUrl];
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+    } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
         downloadCount++;
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -133,10 +132,10 @@
 {
     NSString *requestUrl = @"http://test.blog/images/anim-reader.gif";
     NSURL *url = [NSURL URLWithString:requestUrl];
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+    [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
+    } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
