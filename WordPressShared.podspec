@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author        = { "Automattic" => "mobile@automattic.com" }
   s.social_media_url = "https://twitter.com/automattic"
 
-  s.platform      = :ios, "11.0"
+  s.platform      = :ios, "13.0"
   s.swift_version = '5.0'
 
   s.source        = { :git => "https://github.com/wordpress-mobile/WordPress-iOS-Shared.git", :tag => s.version.to_s }
