@@ -1,26 +1,26 @@
 PODS:
-  - CocoaLumberjack (3.5.3):
-    - CocoaLumberjack/Core (= 3.5.3)
-  - CocoaLumberjack/Core (3.5.3)
+  - CocoaLumberjack (3.7.0):
+    - CocoaLumberjack/Core (= 3.7.0)
+  - CocoaLumberjack/Core (3.7.0)
   - Expecta (1.0.6)
   - FormatterKit/Resources (1.8.2)
   - FormatterKit/TimeIntervalFormatter (1.8.2):
     - FormatterKit/Resources
-  - OCMock (3.4.3)
-  - OHHTTPStubs (8.0.0):
-    - OHHTTPStubs/Default (= 8.0.0)
-  - OHHTTPStubs/Core (8.0.0)
-  - OHHTTPStubs/Default (8.0.0):
+  - OCMock (3.8.1)
+  - OHHTTPStubs (9.1.0):
+    - OHHTTPStubs/Default (= 9.1.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (8.0.0):
+  - OHHTTPStubs/JSON (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (8.0.0):
+  - OHHTTPStubs/NSURLSession (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (8.0.0)
-  - OHHTTPStubs/Swift (8.0.0):
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
+  - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
   - Specta (1.0.7)
 
@@ -29,8 +29,8 @@ DEPENDENCIES:
   - Expecta (= 1.0.6)
   - FormatterKit/TimeIntervalFormatter (= 1.8.2)
   - OCMock (~> 3.4)
-  - OHHTTPStubs (~> 8)
-  - OHHTTPStubs/Swift (~> 8)
+  - OHHTTPStubs (~> 9.0)
+  - OHHTTPStubs/Swift (~> 9.0)
   - Specta (= 1.0.7)
 
 SPEC REPOS:
@@ -43,13 +43,13 @@ SPEC REPOS:
     - Specta
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
+  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
-  OCMock: 43565190abc78977ad44a61c0d20d7f0784d35ab
-  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
+  OCMock: 29f6e52085b4e7d9b075cbf03ed7c3112f82f934
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
 
-PODFILE CHECKSUM: 67eadfaf0746636eac9749cc8f835112af82f302
+PODFILE CHECKSUM: a405e2a6078d8938448e1ae95ad17738abfa59fe
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
