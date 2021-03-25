@@ -36,6 +36,7 @@ class NSDateHelperTest: XCTestCase {
     }
 
     /// Verifies that `mediumString` produces relative format strings when less than 7 days have elapsed.
+    /// If this test is failing, check that the Test Plan is still using en-US as its language
     func testToMediumStringRelativeString() {
         let date = Date()
 
@@ -55,6 +56,7 @@ class NSDateHelperTest: XCTestCase {
     }
 
     /// Verifies that  `mediumStringWithTime` takes into account the time zone adjustment
+    /// If this test is failing, check that the Test Plan is still using en-US as its language
     func testMediumStringTimeZoneAdjust() {
         let date = Date()
         let timeZone = TimeZone(secondsFromGMT: Calendar.current.timeZone.secondsFromGMT() - (60 * 60))
