@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
                     Shared components used in building the WordPress iOS apps and other library components.
 
                     This is the first step required to build WordPress-iOS with UI components.
-                    DESC
+                  DESC
 
   s.homepage      = "https://github.com/wordpress-mobile/WordPress-iOS-Shared"
   s.license       = { :type => "GPLv2", :file => "LICENSE" }
