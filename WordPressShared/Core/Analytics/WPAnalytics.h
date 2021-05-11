@@ -230,7 +230,6 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatMediaServiceUploadFailed,
     WPAnalyticsStatMediaServiceUploadSuccessful,
     WPAnalyticsStatMediaServiceUploadCanceled,
-    WPAnalyticsStatMenusAccessed,
     WPAnalyticsStatMenusCreatedItem,
     WPAnalyticsStatMenusCreatedMenu,
     WPAnalyticsStatMenusDeletedMenu,
