@@ -74,13 +74,8 @@ extension WPStyleGuide {
     /// - Returns: The created font.
     ///
     @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
-        if #available(iOS 11, *) {
-            let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
-            return UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize)
-        }
-
-        let scaledFontDescriptor = fontDescriptor(style, maximumPointSize: maximumPointSize)
-        return UIFont(descriptor: scaledFontDescriptor, size: CGFloat(0.0))
+        let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
+        return UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize)
     }
 
     /// Creates a UIFont for the user current text size settings.
