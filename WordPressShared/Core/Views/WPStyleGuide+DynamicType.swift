@@ -76,8 +76,7 @@ extension WPStyleGuide {
     @objc public class func fontForTextStyle(_ style: UIFont.TextStyle, maximumPointSize: CGFloat = maxFontSize) -> UIFont {
         if #available(iOS 11, *) {
             let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
-            let fontToGetSize = UIFont(descriptor: fontDescriptor, size: CGFloat(0.0))
-            return UIFontMetrics(forTextStyle: style).scaledFont(for: fontToGetSize, maximumPointSize: maximumPointSize)
+            return UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize)
         }
 
         let scaledFontDescriptor = fontDescriptor(style, maximumPointSize: maximumPointSize)
@@ -176,17 +175,17 @@ extension WPStyleGuide {
     /// - Parameters:
     ///     - style: the style for the font.
     ///     - weight: the weight for the font.
+    ///     - design: the design for the font.  The default value is `.default`.
     ///
     /// - Returns: the requested scaled font.
     ///
-    private class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight) -> UIFont {
-        let font = UIFont.preferredFont(forTextStyle: style)
+    class func scaledFont(for style: UIFont.TextStyle, weight: UIFont.Weight, design: UIFontDescriptor.SystemDesign = .default) -> UIFont {
+        let fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
+        let fontDescriptorWithDesign = fontDescriptor.withDesign(design) ?? fontDescriptor
         let traits = [UIFontDescriptor.TraitKey.weight: weight]
-
-        let descriptorWithTraits = font.fontDescriptor.addingAttributes([.traits: traits])
-        let size = UIFontMetrics(forTextStyle: style).scaledValue(for: font.pointSize)
-
-        return UIFont(descriptor: descriptorWithTraits, size: size)
+        let finalDescriptor = fontDescriptorWithDesign.addingAttributes([.traits: traits])
+        
+        return UIFont(descriptor: finalDescriptor, size: finalDescriptor.pointSize)
     }
 
     /// Creates a NotoSerif UIFont at the specified size.
