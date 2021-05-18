@@ -184,7 +184,7 @@ extension WPStyleGuide {
         let fontDescriptorWithDesign = fontDescriptor.withDesign(design) ?? fontDescriptor
         let traits = [UIFontDescriptor.TraitKey.weight: weight]
         let finalDescriptor = fontDescriptorWithDesign.addingAttributes([.traits: traits])
-        
+
         return UIFont(descriptor: finalDescriptor, size: finalDescriptor.pointSize)
     }
 
