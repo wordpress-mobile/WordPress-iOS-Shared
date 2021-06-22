@@ -22,8 +22,8 @@ class NSDateHelperTest: XCTestCase {
     }
     
     override func setUp() {
-        date = dateFormatter.date(from: data.dateString)
         NSTimeZone.default = TimeZone(secondsFromGMT: 0)!
+        date = dateFormatter.date(from: data.dateString)
     }
 
     func testDateAndTimeComponents() {
