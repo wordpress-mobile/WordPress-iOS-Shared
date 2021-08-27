@@ -2,6 +2,7 @@
 
 # Xcode
 #
+.build/
 build/
 *.pbxuser
 !default.pbxuser
@@ -29,3 +30,6 @@ Pods/
 
 vendor/
 
+fastlane/test_output
+fastlane/README.md
+fastlane/report.xml
