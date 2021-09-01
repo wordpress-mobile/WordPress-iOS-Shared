@@ -1,5 +1,3 @@
-[![Build status](https://badge.buildkite.com/cbe321dd23ff6e5296ff24159934b0c7bc32c49dc5a2fa04c8.svg)](https://buildkite.com/wordpress-mobile/wordpress-shared-ios)
-
 WordPress-iOS-Shared
 ======================
 
