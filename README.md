@@ -1,5 +1,3 @@
-[![CircleCI](https://circleci.com/gh/wordpress-mobile/WordPress-iOS-Shared.svg?style=svg)](https://circleci.com/gh/wordpress-mobile/WordPress-iOS-Shared)
-
 WordPress-iOS-Shared
 ======================
 
