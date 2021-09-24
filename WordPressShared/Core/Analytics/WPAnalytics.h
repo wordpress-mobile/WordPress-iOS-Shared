@@ -385,6 +385,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatReaderArticleCommentsOpened,
     WPAnalyticsStatReaderArticleLiked,
     WPAnalyticsStatReaderArticleOpened,
+    WPAnalyticsStatReaderArticleRendered,
     WPAnalyticsStatReaderArticleReblogged,
     WPAnalyticsStatReaderArticleDetailReblogged,
     WPAnalyticsStatReaderArticleUnliked,
