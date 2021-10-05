@@ -34,7 +34,7 @@ public final class Debouncer {
         timer?.invalidate()
 
         if let newCallback = callback {
-            self.callback = callback
+            self.callback = newCallback
         }
 
         if immediate {
