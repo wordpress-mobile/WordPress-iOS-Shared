@@ -6,13 +6,13 @@ import Foundation
 /// It also offers a mechanism to immediately trigger the scheduled call if necessary.
 ///
 public final class Debouncer {
-    private let callback: (() -> Void)
+    private var callback: (() -> Void)?
     private let delay: Double
     private var timer: Timer?
 
     // MARK: - Init & deinit
 
-    public init(delay: Double, callback: @escaping (() -> Void)) {
+    public init(delay: Double, callback: (() -> Void)? = nil) {
         self.delay = delay
         self.callback = callback
     }
@@ -20,7 +20,7 @@ public final class Debouncer {
     deinit {
         if let timer = timer, timer.fireDate >= Date() {
             timer.invalidate()
-            callback()
+            callback?()
         }
     }
 
@@ -30,8 +30,12 @@ public final class Debouncer {
         timer?.invalidate()
     }
 
-    public func call(immediate: Bool = false) {
+    public func call(immediate: Bool = false, callback: (() -> Void)? = nil) {
         timer?.invalidate()
+
+        if let newCallback = callback {
+            self.callback = callback
+        }
 
         if immediate {
             immediateCallback()
@@ -44,12 +48,12 @@ public final class Debouncer {
 
     private func immediateCallback() {
         timer = nil
-        callback()
+        callback?()
     }
 
     private func scheduleCallback() {
         timer = Timer.scheduledTimer(withTimeInterval: delay, repeats: false) { [callback] timer in
-            callback()
+            callback?()
         }
     }
 }
