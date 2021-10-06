@@ -60,4 +60,32 @@ class DebouncerTests: XCTestCase {
         
         wait(for: [debouncerHasRun], timeout: testTimeout)
     }
+
+    /// Tests that the debouncer works fine when used with an ad hoc callback.
+    ///
+    func testDebouncerWithAdHocCallback() {
+        let timerDelay = 0.5
+        let allowedError = 0.5
+        let minDelay = timerDelay * (1 - allowedError)
+        let maxDelay = timerDelay * (1 + allowedError)
+        let testTimeout = maxDelay + 0.01
+
+        let startDate = Date()
+        let debouncerHasRunAccurately = XCTestExpectation(description: "The debouncer should run within an accurate time range normally.")
+
+        let debouncer = Debouncer(delay: timerDelay)
+        debouncer.call() {
+            let actualDelay = Date().timeIntervalSince(startDate)
+
+            if actualDelay >= minDelay
+                && actualDelay <= maxDelay {
+
+                debouncerHasRunAccurately.fulfill()
+            } else {
+                XCTFail("Actual delay was: \(actualDelay))")
+            }
+        }
+
+        wait(for: [debouncerHasRunAccurately], timeout: testTimeout)
+    }
 }
