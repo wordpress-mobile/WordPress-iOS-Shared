@@ -515,6 +515,8 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatStatsItemTappedSearchTerms,
     WPAnalyticsStatStatsItemTappedTagsAndCategories,
     WPAnalyticsStatStatsItemTappedVideoTapped,
+    WPAnalyticsStatStatsItemTappedPostStatsMonthsYears,
+    WPAnalyticsStatStatsItemTappedPostStatsRecentWeeks,
     WPAnalyticsStatStatsOverviewBarChartTapped,
     WPAnalyticsStatStatsOverviewTypeTappedComments,
     WPAnalyticsStatStatsOverviewTypeTappedLikes,
