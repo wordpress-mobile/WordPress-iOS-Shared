@@ -172,6 +172,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatInstallJetpackRemoteStartManualFlow,
     WPAnalyticsStatInstallJetpackWebviewSelect,
     WPAnalyticsStatInstallJetpackWebviewFailed,
+    WPAnalyticsStatLandingEditorShown,
     WPAnalyticsStatLayoutPickerPreviewErrorShown,
     WPAnalyticsStatLayoutPickerPreviewLoaded,
     WPAnalyticsStatLayoutPickerPreviewLoading,
