@@ -17,4 +17,5 @@ steps:
     plugins: *common_plugins
     artifact_paths:
       - ".build/logs/*.log"
-      - .build/derived-data
+      # 🙄 – Upload the whole build folder and see what happens...
+      - .build
