@@ -17,7 +17,7 @@ steps:
     plugins: *common_plugins
     artifact_paths:
       - ".build/logs/*.log"
-      - DerivedData
+      - .build/derived-data
 
   #################
   # Validate Podspec
