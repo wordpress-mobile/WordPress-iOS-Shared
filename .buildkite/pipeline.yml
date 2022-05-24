@@ -12,10 +12,9 @@ steps:
   ################
   - label: "🧪 Build and Test iOS"
     key: "test"
-    command: "build_and_test_pod"
+    command: build_and_test_pod && zip -rq build-folder.zip .build
     env: *common_env
     plugins: *common_plugins
     artifact_paths:
       - ".build/logs/*.log"
-      # 🙄 – Upload the whole build folder and see what happens...
-      - .build
+      - build-folder.zip
