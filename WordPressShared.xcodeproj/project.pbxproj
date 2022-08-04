@@ -520,9 +520,9 @@
 			buildConfigurationList = 829DD1521EC9EED200AB8C12 /* Build configuration list for PBXNativeTarget "WordPressShared" */;
 			buildPhases = (
 				9CBE6ADF7B788BBD784D8187 /* [CP] Check Pods Manifest.lock */,
+				829DD13B1EC9EED200AB8C12 /* Headers */,
 				829DD1391EC9EED200AB8C12 /* Sources */,
 				829DD13A1EC9EED200AB8C12 /* Frameworks */,
-				829DD13B1EC9EED200AB8C12 /* Headers */,
 				829DD13C1EC9EED200AB8C12 /* Resources */,
 			);
 			buildRules = (
