@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		1A4095102271AA9E009AA86D /* WPShared-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A40950D2271AA9E009AA86D /* WPShared-Swift.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		2EB9C57E3BFEDA1676FE857C /* Pods_WordPressShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE15A6EE80D7766A21B83BF5 /* Pods_WordPressShared.framework */; };
 		32E1BFD524A63DE6007A08F0 /* WPStyleGuide+SerifFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E1BFD424A63DE6007A08F0 /* WPStyleGuide+SerifFonts.swift */; };
+		3F338B76289BE0F90014ADC5 /* BuildkiteTestCollector in Frameworks */ = {isa = PBXBuildFile; productRef = 3F338B75289BE0F90014ADC5 /* BuildkiteTestCollector */; };
 		740B23CC1F17F1FF00067A2A /* DisplayableImageHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 740B23CA1F17F1FF00067A2A /* DisplayableImageHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		740B23CD1F17F1FF00067A2A /* DisplayableImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 740B23CB1F17F1FF00067A2A /* DisplayableImageHelper.m */; };
 		740B23CF1F17F28E00067A2A /* DisplayableImageHelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 740B23CE1F17F28E00067A2A /* DisplayableImageHelperTest.m */; };
@@ -242,6 +243,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F338B76289BE0F90014ADC5 /* BuildkiteTestCollector in Frameworks */,
 				829DD1481EC9EED200AB8C12 /* WordPressShared.framework in Frameworks */,
 				195DA2403DED9F0420316608 /* Pods_WordPressSharedTests.framework in Frameworks */,
 			);
@@ -550,6 +552,9 @@
 				829DD14A1EC9EED200AB8C12 /* PBXTargetDependency */,
 			);
 			name = WordPressSharedTests;
+			packageProductDependencies = (
+				3F338B75289BE0F90014ADC5 /* BuildkiteTestCollector */,
+			);
 			productName = WordPressSharedTests;
 			productReference = 829DD1471EC9EED200AB8C12 /* WordPressSharedTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -583,6 +588,9 @@
 				Base,
 			);
 			mainGroup = 829DD1341EC9EED200AB8C12;
+			packageReferences = (
+				3F338B74289BE0F90014ADC5 /* XCRemoteSwiftPackageReference "test-collector-swift" */,
+			);
 			productRefGroup = 829DD13F1EC9EED200AB8C12 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -822,7 +830,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -847,7 +856,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WordPressShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -864,7 +877,11 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = WordPressSharedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressSharedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPressSharedTests/WordPressSharedTests-Bridging-Header.h";
@@ -920,7 +937,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -945,7 +963,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WordPressShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -962,7 +984,11 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = WordPressSharedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressSharedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPressSharedTests/WordPressSharedTests-Bridging-Header.h";
@@ -1080,7 +1106,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1105,7 +1132,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WordPressShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1130,7 +1161,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = WordPressShared/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressShared;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1147,7 +1182,11 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = WordPressSharedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressSharedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPressSharedTests/WordPressSharedTests-Bridging-Header.h";
@@ -1165,7 +1204,11 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				INFOPLIST_FILE = WordPressSharedTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.wordpress.WordPressSharedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WordPressSharedTests/WordPressSharedTests-Bridging-Header.h";
@@ -1210,6 +1253,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F338B74289BE0F90014ADC5 /* XCRemoteSwiftPackageReference "test-collector-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/buildkite/test-collector-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F338B75289BE0F90014ADC5 /* BuildkiteTestCollector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F338B74289BE0F90014ADC5 /* XCRemoteSwiftPackageReference "test-collector-swift" */;
+			productName = BuildkiteTestCollector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 829DD1351EC9EED200AB8C12 /* Project object */;
 }
