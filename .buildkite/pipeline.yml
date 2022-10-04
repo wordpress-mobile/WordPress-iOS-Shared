@@ -1,9 +1,9 @@
 # Nodes with values to reuse in the pipeline.
 common_params:
   plugins: &common_plugins
-  - &bash_cache automattic/bash-cache#2.7.0: ~
+  - &bash_cache automattic/bash-cache#2.8.0
   env: &common_env
-    IMAGE_ID: xcode-13.4.1
+    IMAGE_ID: xcode-14
 
 # This is the default pipeline – it will build and test the pod
 steps:
@@ -13,9 +13,6 @@ steps:
   - label: "🧪 Build and Test iOS"
     key: "test"
     command: |
-      # Workaround for https://github.com/Automattic/bash-cache-buildkite-plugin/issues/16
-      gem install bundler
-
       build_and_test_pod
     env: *common_env
     plugins: *common_plugins
@@ -27,9 +24,6 @@ steps:
   - label: "🔬 Validate Podspec"
     key: "validate"
     command: |
-      # Workaround for https://github.com/Automattic/bash-cache-buildkite-plugin/issues/16
-      gem install bundler
-
       validate_podspec
     env: *common_env
     plugins: *common_plugins
@@ -41,9 +35,6 @@ steps:
   - label: "🧹 Lint"
     key: "lint"
     command: |
-      # Workaround for https://github.com/Automattic/bash-cache-buildkite-plugin/issues/16
-      gem install bundler
-
       lint_pod
     env: *common_env
     plugins: *common_plugins
@@ -54,9 +45,6 @@ steps:
   - label: "⬆️ Publish Podspec"
     key: "publish"
     command: |
-      # Workaround for https://github.com/Automattic/bash-cache-buildkite-plugin/issues/16
-      gem install bundler
-
       .buildkite/publish-pod.sh
     env: *common_env
     plugins: *common_plugins
