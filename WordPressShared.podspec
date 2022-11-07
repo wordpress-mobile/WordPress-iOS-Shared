@@ -28,4 +28,15 @@ Pod::Spec.new do |s|
   s.header_dir    = 'WordPressShared'
 
   s.dependency 'CocoaLumberjack', '~> 3.4'
+
+  s.test_spec do |test|
+    test.source_files = 'WordPressSharedTests/**/*.{h,m,swift}'
+    test.resources = 'WordPressSharedTests/*.{jpg,gif}'
+
+    test.dependency 'OHHTTPStubs', '~> 9.0'
+    test.dependency 'OHHTTPStubs/Swift', '~> 9.0'
+    test.dependency 'OCMock', '~> 3.4'
+    test.dependency 'Specta', '1.0.7'
+    test.dependency 'Expecta', '1.0.6'
+  end
 end
