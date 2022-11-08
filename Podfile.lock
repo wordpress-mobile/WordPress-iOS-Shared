@@ -22,7 +22,7 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (9.1.0)
   - OHHTTPStubs/Swift (9.1.0):
     - OHHTTPStubs/Default
-  - Specta (1.0.7)
+  - Quick (6.0.0)
 
 DEPENDENCIES:
   - CocoaLumberjack (~> 3.4)
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - OCMock (~> 3.4)
   - OHHTTPStubs (~> 9.0)
   - OHHTTPStubs/Swift (~> 9.0)
-  - Specta (= 1.0.7)
+  - Quick (~> 6.0)
 
 SPEC REPOS:
   trunk:
@@ -40,7 +40,7 @@ SPEC REPOS:
     - FormatterKit
     - OCMock
     - OHHTTPStubs
-    - Specta
+    - Quick
 
 SPEC CHECKSUMS:
   CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
@@ -48,8 +48,8 @@ SPEC CHECKSUMS:
   FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
   OCMock: 29f6e52085b4e7d9b075cbf03ed7c3112f82f934
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
-  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  Quick: 4d5ab9e81f0a632cbf9bc4f3069b55e5eeb175df
 
-PODFILE CHECKSUM: ace859cfebf0a7a9ce551e216483b641cd360251
+PODFILE CHECKSUM: ada0d4ed55a22efd07f3eb930484d8c31a5efcd4
 
 COCOAPODS: 1.11.3

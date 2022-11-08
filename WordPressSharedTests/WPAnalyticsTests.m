@@ -1,47 +1,48 @@
-#import <Specta/Specta.h>
-#define EXP_SHORTHAND
-#import <Expecta/Expecta.h>
+#import <Quick/Quick.h>
 #import <OCMock/OCMock.h>
 #import "TestAnalyticsTracker.h"
 
 // Rather than duplicate these tests for each method, we abstracted them into a set of
 // shared examples and use an NSInvocation object to tell us what to call.
-SharedExampleGroupsBegin(WPAnalyticsMethodBehavior)
+QuickConfigurationBegin(WPAnalyticsMethodBehavior)
 
-sharedExamplesFor(@"a WPAnalyticsTracker method", ^(NSDictionary *data) {
-    NSInvocation *invocation = data[@"invocation"];
-    it(@"should not be called if tracker isn't registered", ^{
-        id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
-        id expectation = [trackerMock reject];
-        [invocation invokeWithTarget:expectation];
-        [trackerMock verify];
-    });
-    
-    it(@"should be called if tracker is registered", ^{
-        id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
-        id expectation = [trackerMock expect];
-        [invocation invokeWithTarget:expectation];
-        [invocation invokeWithTarget:trackerMock];
-        [trackerMock verify];
-    });
-    
-    it(@"should be called on multiple trackers if registered", ^{
-        id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
-        id trackerMock2 = OCMStrictClassMock([TestAnalyticsTracker class]);
-        id expectation = [trackerMock expect];
-        id expectation2 = [trackerMock2 expect];
-        [invocation invokeWithTarget:expectation];
-        [invocation invokeWithTarget:expectation2];
-        [invocation invokeWithTarget:trackerMock];
-        [invocation invokeWithTarget:trackerMock2];
-        [trackerMock verify];
-        [trackerMock2 verify];
-    });
-});
++ (void)configure:(QCKConfiguration *)configuration
+{
+    sharedExamples(@"a WPAnalyticsTracker method", ^(QCKDSLSharedExampleContext context) {
+        NSInvocation *invocation = context()[@"invocation"];
+        it(@"should not be called if tracker isn't registered", ^{
+            id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
+            id expectation = [trackerMock reject];
+            [invocation invokeWithTarget:expectation];
+            [trackerMock verify];
+        });
 
-SharedExampleGroupsEnd
+        it(@"should be called if tracker is registered", ^{
+            id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
+            id expectation = [trackerMock expect];
+            [invocation invokeWithTarget:expectation];
+            [invocation invokeWithTarget:trackerMock];
+            [trackerMock verify];
+        });
 
-SpecBegin(WPAnalyticsSpecs)
+        it(@"should be called on multiple trackers if registered", ^{
+            id trackerMock = OCMStrictClassMock([TestAnalyticsTracker class]);
+            id trackerMock2 = OCMStrictClassMock([TestAnalyticsTracker class]);
+            id expectation = [trackerMock expect];
+            id expectation2 = [trackerMock2 expect];
+            [invocation invokeWithTarget:expectation];
+            [invocation invokeWithTarget:expectation2];
+            [invocation invokeWithTarget:trackerMock];
+            [invocation invokeWithTarget:trackerMock2];
+            [trackerMock verify];
+            [trackerMock2 verify];
+        });
+    });
+}
+
+QuickConfigurationEnd
+
+QuickSpecBegin(WPAnalyticsSpecs)
 
 beforeEach(^{
     [WPAnalytics clearTrackers];
@@ -51,8 +52,8 @@ describe(@"beginSession", ^{
     NSMethodSignature *signature = [TestAnalyticsTracker instanceMethodSignatureForSelector:@selector(beginSession)];
     NSInvocation *invocation  = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setSelector:@selector(beginSession)];
-    
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"endSession", ^{
@@ -60,7 +61,7 @@ describe(@"endSession", ^{
     NSInvocation *invocation  = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setSelector:@selector(endSession)];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"refreshMetadata", ^{
@@ -68,7 +69,7 @@ describe(@"refreshMetadata", ^{
     NSInvocation *invocation  = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setSelector:@selector(refreshMetadata)];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"beginTimerForStat:", ^{
@@ -78,7 +79,7 @@ describe(@"beginTimerForStat:", ^{
     WPAnalyticsStat stat = WPAnalyticsStatApplicationOpened;
     [invocation setArgument:&stat atIndex:2];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"endTimerForStat:withProperties", ^{
@@ -91,7 +92,7 @@ describe(@"endTimerForStat:withProperties", ^{
     [invocation setArgument:&stat atIndex:2];
     [invocation setArgument:&dict atIndex:3];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"track:", ^{
@@ -101,7 +102,7 @@ describe(@"track:", ^{
     WPAnalyticsStat stat = WPAnalyticsStatApplicationOpened;
     [invocation setArgument:&stat atIndex:2];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"track:withProperties:", ^{
@@ -114,7 +115,7 @@ describe(@"track:withProperties:", ^{
     [invocation setArgument:&stat atIndex:2];
     [invocation setArgument:&dict atIndex:3];
     
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"trackString:", ^{
@@ -124,7 +125,7 @@ describe(@"trackString:", ^{
     NSString *event = @"my_event";
     [invocation setArgument:&event atIndex:2];
 
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
 describe(@"trackString:withProperties:", ^{
@@ -137,7 +138,7 @@ describe(@"trackString:withProperties:", ^{
     [invocation setArgument:&event atIndex:2];
     [invocation setArgument:&dict atIndex:3];
 
-    itShouldBehaveLike(@"a WPAnalyticsTracker method", @{@"invocation": invocation});
+    itBehavesLike(@"a WPAnalyticsTracker method", ^{ return @{@"invocation": invocation}; });
 });
 
-SpecEnd
+QuickSpecEnd
