@@ -1,5 +1,4 @@
 import Foundation
-import FormatterKit
 
 extension Date {
     /// Private Date Formatters
@@ -67,17 +66,6 @@ extension Date {
             formatter.timeStyle = .short
             return formatter
         }()
-
-        @available(*, deprecated, message: "Not used as far as I can tell -@jkmassel Mar 2021")
-        static let pageSectionFormatter: TTTTimeIntervalFormatter = {
-            let formatter = TTTTimeIntervalFormatter()
-
-            formatter.leastSignificantUnit = .day
-            formatter.usesIdiomaticDeicticExpressions = true
-            formatter.presentDeicticExpression = NSLocalizedString("today", comment: "Today")
-
-            return formatter
-        }()
     }
 
     /// Returns a NSDate Instance, given it's ISO8601 String Representation
@@ -120,19 +108,7 @@ extension Date {
 
     @available(*, deprecated, renamed: "toMediumString", message: "Removed to help drop the deprecated `FormatterKit` dependency – @jkmassel, Mar 2021")
     public func mediumString(timeZone: TimeZone? = nil) -> String {
-        let relativeFormatter = TTTTimeIntervalFormatter()
-        let absoluteFormatter = DateFormatters.mediumDate
-
-        if let timeZone = timeZone {
-            absoluteFormatter.timeZone = timeZone
-        }
-
-        let components = Calendar.current.dateComponents([.day], from: self, to: Date())
-        if let days = components.day, abs(days) < 7 {
-            return relativeFormatter.string(forTimeInterval: timeIntervalSinceNow)
-        } else {
-            return absoluteFormatter.string(from: self)
-        }
+        toMediumString(inTimeZone: timeZone)
     }
 
     /// Formats the current date as relative date if it's within a week of

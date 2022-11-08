@@ -28,5 +28,4 @@ Pod::Spec.new do |s|
   s.header_dir    = 'WordPressShared'
 
   s.dependency 'CocoaLumberjack', '~> 3.4'
-  s.dependency 'FormatterKit/TimeIntervalFormatter', ' ~> 1.8'
 end
