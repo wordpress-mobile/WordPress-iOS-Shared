@@ -1,4 +1,8 @@
+#if SWIFT_PACKAGE
+#import "NSString+Util.h"
+#else
 #import <WordPressShared/NSString+Util.h>
+#endif
 
 
 @implementation NSString (Util)

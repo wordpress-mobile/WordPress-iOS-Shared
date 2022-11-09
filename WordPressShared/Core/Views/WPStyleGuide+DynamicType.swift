@@ -1,4 +1,10 @@
 import Foundation
+import UIKit
+
+#if SWIFT_PACKAGE
+import WordPressSharedViewObjC
+import WordPressSharedUtlityObjC
+#endif
 
 /// Extension on WPStyleGuide to use Dynamic Type fonts.
 ///

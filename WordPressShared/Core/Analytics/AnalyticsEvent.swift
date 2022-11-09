@@ -1,5 +1,9 @@
 import Foundation
 
+#if SWIFT_PACKAGE
+import WordPressSharedAnalyticsObjC
+#endif
+
 /// This struct represents an analytics event.
 /// Declaring this class as final is a design choice to promote a simpler usage and implement events
 /// through parametrization of the `name` and `properties` properties.

@@ -1,5 +1,9 @@
 import Foundation
 
+#if SWIFT_PACKAGE
+import WordPressSharedUtlityObjC
+#endif
+
 extension String {
     public func stringByDecodingXMLCharacters() -> String {
         return NSString.decodeXMLCharacters(in: self)

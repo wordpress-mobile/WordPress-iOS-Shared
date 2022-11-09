@@ -1,5 +1,9 @@
 import Foundation
 
+#if SWIFT_PACKAGE
+import CocoaLumberjackSwift
+#endif
+
 extension String {
     
     /// Creates a new string by removing all matches of the specified regex.

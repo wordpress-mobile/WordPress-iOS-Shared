@@ -30,7 +30,7 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
-        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [self resourceBundle]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -59,7 +59,7 @@
         lastAuthHeader = [request valueForHTTPHeaderField:@"Authorization"];
         return YES;
     } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
-        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [self resourceBundle]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -89,7 +89,7 @@
         return [[request.URL absoluteString] isEqualToString:requestUrl];
     } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
         downloadCount++;
-        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"test-image.jpg", [self resourceBundle]) statusCode:200 headers:@{@"Content-Type" : @"image/jpeg"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -135,7 +135,7 @@
     [HTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^HTTPStubsResponse *(NSURLRequest *request) {
-        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [NSBundle bundleForClass:[self class]]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
+        return [HTTPStubsResponse responseWithFileAtPath:OHPathForFileInBundle(@"anim-reader.gif", [self resourceBundle]) statusCode:200 headers:@{@"Content-Type" : @"image/gif"}];
     }];
 
     WPImageSource *source = [WPImageSource sharedSource];
@@ -152,6 +152,15 @@
 
     [self waitForExpectationsWithTimeout:5.0 handler: nil];
 
+}
+
+- (NSBundle *)resourceBundle
+{
+#if SWIFT_PACKAGE
+    return SWIFTPM_MODULE_BUNDLE;
+#else
+    return [NSBundle bundleForClass:[self class]];
+#endif
 }
 
 @end

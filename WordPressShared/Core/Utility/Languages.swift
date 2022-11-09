@@ -1,5 +1,9 @@
 import Foundation
 
+#if SWIFT_PACKAGE
+import WordPressSharedResources
+#endif
+
 /// This helper class allows us to map WordPress.com LanguageID's into human readable language strings.
 ///
 public class WordPressComLanguageDatabase: NSObject {

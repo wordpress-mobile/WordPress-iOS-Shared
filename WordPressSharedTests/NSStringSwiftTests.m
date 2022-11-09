@@ -1,6 +1,10 @@
 #import <XCTest/XCTest.h>
 @import WordPressShared;
 
+#if SWIFT_PACKAGE
+@import WordPressSharedUtlity;
+#endif
+
 @interface NSStringSwiftTest : XCTestCase
 
 @end

@@ -1,7 +1,11 @@
 #import "WPFontManager.h"
-#import "WPShared-Swift.h"
 #import <CoreText/CoreText.h>
 
+#if SWIFT_PACKAGE
+@import WordPressSharedResources;
+#else
+#import "WPShared-Swift.h"
+#endif
 
 @implementation WPFontManager
 

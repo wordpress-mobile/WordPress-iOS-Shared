@@ -1,7 +1,12 @@
 #import "NSString+Helpers.h"
 #import <CommonCrypto/CommonDigest.h>
-#import "WPSharedLoggingPrivate.h"
 #import "NSString+XMLExtensions.h"
+
+#if SWIFT_PACKAGE
+@import WordPressSharedLoggingObjCPrivate;
+#else
+#import "WPSharedLoggingPrivate.h"
+#endif
 
 static NSString *const Ellipsis =  @"\u2026";
 

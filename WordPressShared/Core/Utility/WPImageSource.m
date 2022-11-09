@@ -1,5 +1,10 @@
 #import "WPImageSource.h"
+
+#if SWIFT_PACKAGE
+@import WordPressSharedLoggingObjCPrivate;
+#else
 #import "WPSharedLoggingPrivate.h"
+#endif
 
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 

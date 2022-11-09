@@ -4,6 +4,17 @@
 #import "WPDeviceIdentification.h"
 #import "WPShared-Swift.h"
 
+#if SWIFT_PACKAGE
+
+// A workaround to make the Swift extension definied in WordPressSharedView target visible to this file here.
+@interface WPStyleGuide (SwiftExtension)
+
++ (CGFloat)maxFontSize;
++ (UIFont *)fontForTextStyle:(UIFontTextStyle)style maximumPointSize:(CGFloat)pointSize;
+
+@end
+
+#endif
 
 @implementation WPStyleGuide
 
