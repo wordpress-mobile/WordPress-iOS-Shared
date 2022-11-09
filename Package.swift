@@ -149,6 +149,7 @@ let package = Package(
             dependencies: [
                 .target(name: "WordPressShared"),
                 .product(name: "OCMock", package: "ocmock"),
+                .product(name: "BuildkiteTestCollector", package: "test-collector-swift"),
                 "Quick",
                 "OHHTTPStubs",
             ],
