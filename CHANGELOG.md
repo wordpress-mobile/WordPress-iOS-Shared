@@ -47,3 +47,4 @@ _None._
 ### Internal Changes
 
 - Add this changelog entry about changelog itself [#317]
+- Remove FormatterKit [#320]
