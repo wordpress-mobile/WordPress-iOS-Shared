@@ -26,6 +26,5 @@ target 'WordPressSharedTests' do
   pod 'OHHTTPStubs', '~> 9.0'
   pod 'OHHTTPStubs/Swift', '~> 9.0'
   pod 'OCMock', '~> 3.4'
-  pod 'Specta', '1.0.7'
-  pod 'Expecta', '1.0.6'
+  pod 'Quick', '~> 6.0'
 end

@@ -48,3 +48,4 @@ _None._
 
 - Add this changelog entry about changelog itself [#317]
 - Remove FormatterKit [#320]
+- Move away from Specta, use Quick instead [#319]
