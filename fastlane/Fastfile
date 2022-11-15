@@ -5,10 +5,6 @@ default_platform(:ios)
 platform :ios do
   desc 'Builds the project and runs tests'
   lane :test do
-    xcodebuild(
-      scheme: 'WordPressShared',
-      xcargs: '-resolvePackageDependencies'
-    )
     run_tests(
       package_path: '.',
       scheme: 'WordPressShared',
