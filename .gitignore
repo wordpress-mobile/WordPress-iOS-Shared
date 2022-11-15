@@ -33,3 +33,5 @@ vendor/
 fastlane/test_output
 fastlane/README.md
 fastlane/report.xml
+
+.swiftpm
