@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
+
 Pod::Spec.new do |s|
   s.name          = 'WordPressShared'
   s.version       = '1.18.0'
@@ -24,8 +26,8 @@ Pod::Spec.new do |s|
   s.private_header_files = 'Sources/WordPressSharedObjC/Private/*.h'
   s.resource_bundles = {
     WordPressShared: [
-        'Sources/WordPressShared/Resources/*.{ttf,otf,json}',
-        'Sources/WordPressSharedObjC/Resources/*.{ttf,otf,json}',
+      'Sources/WordPressShared/Resources/*.{ttf,otf,json}',
+      'Sources/WordPressSharedObjC/Resources/*.{ttf,otf,json}'
     ]
   }
 
@@ -34,7 +36,7 @@ Pod::Spec.new do |s|
   s.test_spec do |test|
     test.source_files = [
       'Tests/WordPressSharedTests/**/*.{swift}',
-      'Tests/WordPressSharedTestsObjC/**/*.{h,m}',
+      'Tests/WordPressSharedTestsObjC/**/*.{h,m}'
     ]
     test.resources = 'Tests/WordPressSharedObjCTests/Resources/*.{jpg,gif}'
 
@@ -44,3 +46,5 @@ Pod::Spec.new do |s|
     test.dependency 'Quick', '~> 6.0'
   end
 end
+
+# rubocop:enable Metrics/BlockLength
