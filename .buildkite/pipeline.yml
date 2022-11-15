@@ -40,6 +40,15 @@ steps:
     plugins: *common_plugins
 
   #################
+  # Check Regex
+  #################
+  - label: ":face_with_monocle: Check Regular Expressions"
+    key: "check-regex"
+    command: ".buildkite/check_regex.sh"
+    env: *common_env
+    plugins: *common_plugins
+
+  #################
   # Publish the Podspec (if we're building a tag)
   #################
   - label: "⬆️ Publish Podspec"
@@ -52,4 +61,5 @@ steps:
       - "test"
       - "validate"
       - "lint"
+      - "check-regex"
     if: build.tag != null
