@@ -32,13 +32,15 @@ Pod::Spec.new do |s|
   s.dependency 'CocoaLumberjack', '~> 3.4'
 
   s.test_spec do |test|
-    test.source_files = 'Tests/WordPressSharedTests/**/*.{swift}', 'Tests/WordPressSharedTestsObjC/**/*.{h,m}'
+    test.source_files = [
+      'Tests/WordPressSharedTests/**/*.{swift}',
+      'Tests/WordPressSharedTestsObjC/**/*.{h,m}',
+    ]
     test.resources = 'Tests/WordPressSharedObjCTests/Resources/*.{jpg,gif}'
 
     test.dependency 'OHHTTPStubs', '~> 9.0'
     test.dependency 'OHHTTPStubs/Swift', '~> 9.0'
     test.dependency 'OCMock', '~> 3.4'
-    test.dependency 'Specta', '1.0.7'
-    test.dependency 'Expecta', '1.0.6'
+    test.dependency 'Quick', '~> 6.0'
   end
 end
