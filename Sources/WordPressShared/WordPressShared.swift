@@ -2,4 +2,4 @@
 
 @_exported import WordPressSharedObjC
 
-#endif /* SWIFT_PACKAGE */
+#endif
