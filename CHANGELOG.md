@@ -38,7 +38,7 @@ _None._
 
 ### New Features
 
-_None._
+- Add Swift Package Manager support [#321]
 
 ### Bug Fixes
 
