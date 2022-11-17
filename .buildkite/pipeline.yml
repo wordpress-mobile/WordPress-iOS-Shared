@@ -10,7 +10,7 @@ steps:
   ########################
   # Validate Swift Package
   ########################
-  - label: "🧪 Build and Test iOS"
+  - label: "🔬 Validate Swift Package"
     key: "test"
     command: |
       validate_swift_package
