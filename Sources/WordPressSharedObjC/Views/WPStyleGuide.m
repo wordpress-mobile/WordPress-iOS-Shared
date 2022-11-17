@@ -5,7 +5,7 @@
 
 #if SWIFT_PACKAGE
 
-// A workaround to make the Swift extension definied in WordPressSharedView target visible to this file here.
+// A workaround to make the Swift extension defined in WordPressSharedView target visible to this file here.
 @interface WPStyleGuide (SwiftExtension)
 
 + (CGFloat)maxFontSize;
