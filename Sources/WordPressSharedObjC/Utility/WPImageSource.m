@@ -1,10 +1,5 @@
 #import "WPImageSource.h"
-
-#if SWIFT_PACKAGE
-#import "../Private/WPSharedLoggingPrivate.h"
-#else
-#import "WPSharedLoggingPrivate.h"
-#endif
+#import "WPSharedLogging.h"
 
 NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 
@@ -137,7 +132,7 @@ NSString * const WPImageSourceErrorDomain = @"WPImageSourceErrorDomain";
 {
     if ([response isKindOfClass:[NSHTTPURLResponse class]]){
         NSHTTPURLResponse *httpURLResponse = (NSHTTPURLResponse *)response;
-        DDLogError(@"WPImageSource download completed sucessfully but the image was nil. Headers: %@", [httpURLResponse allHeaderFields]);
+        WPSharedLogError([NSString stringWithFormat:@"WPImageSource download completed sucessfully but the image was nil. Headers: %@", [httpURLResponse allHeaderFields]]);
     }
     NSString *description = [NSString stringWithFormat:@"A download request ended successfully but the image was nil. URL: %@", [url absoluteString]];
     NSError *error = [NSError errorWithDomain:WPImageSourceErrorDomain

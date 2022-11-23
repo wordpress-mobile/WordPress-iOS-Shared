@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "CocoaLumberjack",
-        "repositoryURL": "https://github.com/CocoaLumberjack/CocoaLumberjack.git",
-        "state": {
-          "branch": null,
-          "revision": "0188d31089b5881a269e01777be74c7316924346",
-          "version": "3.8.0"
-        }
-      },
-      {
         "package": "OCMock",
         "repositoryURL": "https://github.com/erikdoe/ocmock",
         "state": {
@@ -35,15 +26,6 @@
           "branch": null,
           "revision": "863d53a2cae240accf016bdc45739d1108e13ea1",
           "version": "6.0.0"
-        }
-      },
-      {
-        "package": "swift-log",
-        "repositoryURL": "https://github.com/apple/swift-log.git",
-        "state": {
-          "branch": null,
-          "revision": "6fe203dc33195667ce1759bf0182975e4653ba1c",
-          "version": "1.4.4"
         }
       },
       {

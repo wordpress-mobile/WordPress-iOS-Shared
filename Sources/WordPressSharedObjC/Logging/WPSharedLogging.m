@@ -1,15 +1,23 @@
 #import "WPSharedLogging.h"
 
-#if SWIFT_PACKAGE
-#import "../Private/WPSharedLoggingPrivate.h"
-#else
-#import "WPSharedLoggingPrivate.h"
-#endif
+static WPSharedErrorLogger wordPressSharedLogger = nil;
 
-DDLogLevel WPSharedGetLoggingLevel() {
-    return ddLogLevel;
+WPSharedErrorLogger _Nullable WPSharedGetErrorLogger(void)
+{
+    return wordPressSharedLogger;
 }
 
-void WPSharedSetLoggingLevel(DDLogLevel level) {
-    ddLogLevel = level;
+void WPSharedSetErrorLogger(WPSharedErrorLogger _Nullable logger)
+{
+    wordPressSharedLogger = logger;
+}
+
+void WPSharedLogError(NSString *msg)
+{
+    WPSharedErrorLogger logger = WPSharedGetErrorLogger();
+    if (logger != NULL) {
+        logger(msg);
+    } else {
+        NSLog(@"[WordPress-Shared] Warning: please call `WPSharedSetErrorLogger` to set a error logger.");
+    }
 }
