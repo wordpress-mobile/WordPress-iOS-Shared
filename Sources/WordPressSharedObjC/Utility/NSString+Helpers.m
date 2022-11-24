@@ -95,7 +95,7 @@ static NSString *const Ellipsis =  @"\u2026";
         NSString *pattern = @"\\[[^\\]]+\\]";
         regex = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:&error];
         if (error) {
-            WPSharedLogError([NSString stringWithFormat:@"Error parsing regex: %@", error]);
+            WPSharedLogError(@"Error parsing regex: %@", error);
         }
     });
     NSRange range = NSMakeRange(0, [string length]);
