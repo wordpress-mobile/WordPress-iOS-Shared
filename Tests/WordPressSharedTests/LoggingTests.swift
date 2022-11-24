@@ -62,9 +62,9 @@ class LoggingTest: XCTestCase {
     }
 
     func testNoLogging() {
-        WPSharedSetLoggingDelegate(nil);
-        XCTAssertNoThrow(WPSharedLogInfo("this log should not be printed"));
-        XCTAssertEqual(self.logger.infoLogs.count, 0);
+        WPSharedSetLoggingDelegate(nil)
+        XCTAssertNoThrow(WPSharedLogInfo("this log should not be printed"))
+        XCTAssertEqual(self.logger.infoLogs.count, 0)
     }
 
 }
