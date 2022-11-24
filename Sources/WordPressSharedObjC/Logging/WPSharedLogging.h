@@ -3,8 +3,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-id<WordPressLoggingDelegate> _Nullable WPSharedGetLoggingDelegate(void);
-void WPSharedSetLoggingDelegate(id<WordPressLoggingDelegate> _Nullable logger);
+FOUNDATION_EXTERN id<WordPressLoggingDelegate> _Nullable WPSharedGetLoggingDelegate(void);
+FOUNDATION_EXTERN void WPSharedSetLoggingDelegate(id<WordPressLoggingDelegate> _Nullable logger);
 
 FOUNDATION_EXTERN void WPSharedLogError(NSString *str, ...)     NS_FORMAT_FUNCTION(1, 2);
 FOUNDATION_EXTERN void WPSharedLogWarning(NSString *str, ...)   NS_FORMAT_FUNCTION(1, 2);
