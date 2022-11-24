@@ -2,21 +2,21 @@
 
 static id<WordPressLoggingDelegate> wordPressSharedLogger = nil;
 
-id<WordPressLoggingDelegate> _Nullable WPSharedGetErrorLogger(void)
+id<WordPressLoggingDelegate> _Nullable WPSharedGetLoggingDelegate(void)
 {
     return wordPressSharedLogger;
 }
 
-void WPSharedSetErrorLogger(id<WordPressLoggingDelegate> _Nullable logger)
+void WPSharedSetLoggingDelegate(id<WordPressLoggingDelegate> _Nullable logger)
 {
     wordPressSharedLogger = logger;
 }
 
 #define WPSharedLogv(logFunc) \
     ({ \
-        id<WordPressLoggingDelegate> logger = WPSharedGetErrorLogger(); \
+        id<WordPressLoggingDelegate> logger = WPSharedGetLoggingDelegate(); \
         if (logger == NULL) { \
-            NSLog(@"[WordPress-Shared] Warning: please call `WPSharedSetErrorLogger` to set a error logger."); \
+            NSLog(@"[WordPress-Shared] Warning: please call `WPSharedSetLoggingDelegate` to set a error logger."); \
             return; \
         } \
         if (![logger respondsToSelector:@selector(logFunc)]) { \
