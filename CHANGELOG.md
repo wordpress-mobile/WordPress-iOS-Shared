@@ -39,6 +39,7 @@ _None._
 ### New Features
 
 - Add Swift Package Manager support [#321]
+- Remove CocoaLumberjack. The app needs to provide a `WordPressLoggingDelegate` implementation [#325]
 
 ### Bug Fixes
 

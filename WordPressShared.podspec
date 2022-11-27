@@ -31,8 +31,6 @@ Pod::Spec.new do |s|
     ]
   }
 
-  s.dependency 'CocoaLumberjack', '~> 3.4'
-
   s.test_spec do |test|
     test.source_files = [
       'Tests/WordPressSharedTests/**/*.{swift}',
