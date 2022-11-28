@@ -38,12 +38,25 @@ _None._
 
 ### New Features
 
-- Add Swift Package Manager support [#321]
-- Remove CocoaLumberjack. The app needs to provide a `WordPressLoggingDelegate` implementation [#325]
+_None._
 
 ### Bug Fixes
 
 _None._
+
+### Internal Changes
+
+_None._
+
+## [2.0.0-beta.1](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0-beta.1)
+
+### Breaking Changes
+
+- Remove CocoaLumberjack. The app needs to provide a `WordPressLoggingDelegate` implementation [#325]
+
+### New Features
+
+- Add Swift Package Manager support [#321]
 
 ### Internal Changes
 
