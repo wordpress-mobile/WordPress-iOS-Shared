@@ -1,21 +1,8 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength
+require 'rake'
 
-# Helper to lookup ObjC source files
-module Lookup
-  def self.objc_files
-    directory = Pathname.new('Sources/WordPressSharedObjC')
-    include_dir = directory.join('include')
-    public_header_files = include_dir.glob('*.h')
-                                     .map { |link| link.realpath.relative_path_from(Dir.pwd) }
-    source_files = directory.glob('**/*.{h,m}').reject { |file| (file <=> include_dir) == 1 }
-    {
-      source_files: source_files.map(&:to_s),
-      public_header_files: public_header_files.map(&:to_s)
-    }
-  end
-end
+# rubocop:disable Metrics/BlockLength
 
 Pod::Spec.new do |s|
   s.name          = 'WordPressShared'
@@ -36,8 +23,9 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source        = { git: 'https://github.com/wordpress-mobile/WordPress-iOS-Shared.git', tag: s.version.to_s }
-  s.source_files  = ['Sources/WordPressShared/**/*.swift'] + Lookup.objc_files[:source_files]
-  s.public_header_files = ['Sources/WordPressSharedObjC/WordPressShared.h'] + Lookup.objc_files[:public_header_files]
+  s.source_files  = ['Sources/WordPressShared/**/*.swift'] \
+    + FileList['Sources/WordPressSharedObjC/**/*.{h,m}'].exclude('Sources/WordPressSharedObjC/include')
+  s.public_header_files = 'Sources/WordPressSharedObjC/include', 'Sources/WordPressSharedObjC/WordPressShared.h'
   s.resource_bundles = {
     WordPressShared: [
       'Sources/WordPressShared/Resources/*.{ttf,otf,json}',
