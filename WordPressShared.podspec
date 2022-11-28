@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
   s.source_files  = ['Sources/WordPressShared/**/*.swift'] \
     + FileList['Sources/WordPressSharedObjC/**/*.{h,m}'].exclude('Sources/WordPressSharedObjC/include')
   s.public_header_files = 'Sources/WordPressSharedObjC/include', 'Sources/WordPressSharedObjC/WordPressShared.h'
+  s.private_header_files = 'Sources/WordPressSharedObjC/Private/*.h'
   s.resource_bundles = {
     WordPressShared: [
       'Sources/WordPressShared/Resources/*.{ttf,otf,json}',
