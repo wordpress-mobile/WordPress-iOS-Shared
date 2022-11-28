@@ -52,7 +52,7 @@ _None._
 
 ### Bug Fixes
 
-- Fix an issue where 'pod install' produces a 'duplicate UUID' warning.
+- Fix an issue where 'pod install' produces a 'duplicate UUID' warning. [#327]
 
 ## [2.0.0-beta.1](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0-beta.1)
 
