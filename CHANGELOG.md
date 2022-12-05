@@ -46,7 +46,7 @@ _None._
 
 ### Internal Changes
 
-- Fix an occasional crash caused by `performSelector:withObject:`
+- Fix an occasional crash caused by `performSelector:withObject:` [#328]
 
 ## [2.0.0-beta.2](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0-beta.2)
 
