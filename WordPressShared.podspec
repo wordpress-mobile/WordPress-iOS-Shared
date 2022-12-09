@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'rake'
-
 # rubocop:disable Metrics/BlockLength
 
 Pod::Spec.new do |s|
@@ -23,8 +21,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
 
   s.source        = { git: 'https://github.com/wordpress-mobile/WordPress-iOS-Shared.git', tag: s.version.to_s }
-  s.source_files  = ['Sources/WordPressShared/**/*.swift'] \
-    + FileList['Sources/WordPressSharedObjC/**/*.{h,m}'].exclude('Sources/WordPressSharedObjC/include')
+  s.source_files  = ['Sources/**/*.{h,m,swift}']
   s.public_header_files = 'Sources/WordPressSharedObjC/include', 'Sources/WordPressSharedObjC/WordPressShared.h'
   s.private_header_files = 'Sources/WordPressSharedObjC/Private/*.h'
   s.resource_bundles = {
