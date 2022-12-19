@@ -49,13 +49,7 @@ _None._
 - Fix an occasional crash caused by `performSelector:withObject:` [#328]
 - Replace the symbolic links in the include directory with real header files [#329]
 
-## [2.0.0-beta.2](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0-beta.2)
-
-### Bug Fixes
-
-- Fix an issue where 'pod install' produces a 'duplicate UUID' warning. [#327]
-
-## [2.0.0-beta.1](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0-beta.1)
+## [2.0.0](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0)
 
 ### Breaking Changes
 
@@ -65,8 +59,13 @@ _None._
 
 - Add Swift Package Manager support [#321]
 
+### Bug Fixes
+
+- Fix an issue where 'pod install' produces a 'duplicate UUID' warning. [#327]
+
 ### Internal Changes
 
 - Add this changelog entry about changelog itself [#317]
 - Remove FormatterKit [#320]
 - Move away from Specta, use Quick instead [#319]
+- Fix an occasional crash caused by `performSelector:withObject:` [#328]

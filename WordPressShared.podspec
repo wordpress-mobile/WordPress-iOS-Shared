@@ -4,7 +4,7 @@
 
 Pod::Spec.new do |s|
   s.name          = 'WordPressShared'
-  s.version       = '2.0.0-beta.2'
+  s.version       = '2.0.0'
 
   s.summary       = 'Shared components used in building the WordPress iOS apps and other library components.'
   s.description   = <<-DESC
