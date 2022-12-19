@@ -46,7 +46,8 @@ _None._
 
 ### Internal Changes
 
-_None._
+- Fix an occasional crash caused by `performSelector:withObject:` [#328]
+- Replace the symbolic links in the include directory with real header files [#329]
 
 ## [2.0.0](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0)
 
