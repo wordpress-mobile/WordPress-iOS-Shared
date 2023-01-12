@@ -108,12 +108,7 @@ static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
 
 + (void)loadFontResourceNamed:(NSString *)name withExtension:(NSString *)extension
 {
-#if SWIFT_PACKAGE
-    NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
-#else
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-#endif
-    NSURL *url = [bundle URLForResource:name withExtension:extension];
+    NSURL *url = [[self resourceBundle] URLForResource:name withExtension:extension];
 
     CFErrorRef error;
     if (!CTFontManagerRegisterFontsForURL((CFURLRef)url, kCTFontManagerScopeProcess, &error)) {
@@ -123,6 +118,22 @@ static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
     }
 
     return;
+}
+
++ (NSBundle *)resourceBundle {
+#if SWIFT_PACKAGE
+    return SWIFTPM_MODULE_BUNDLE;
+#else
+    // When installed via CocoaPods, the resources will be bundled under `WordPressShared.bundle`.
+    // This follows the implementation from `NSBundle+WordPressShared`.
+    NSBundle *defaultBundle = [NSBundle bundleForClass:[self class]];
+    NSURL *sharedBundleURL = [defaultBundle.bundleURL URLByAppendingPathComponent:@"WordPressShared.bundle"];
+    NSBundle *sharedBundle = [NSBundle bundleWithURL:sharedBundleURL];
+    if (sharedBundle) {
+        return sharedBundle;
+    }
+    return defaultBundle;
+#endif
 }
 
 @end
