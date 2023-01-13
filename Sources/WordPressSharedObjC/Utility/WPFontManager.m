@@ -127,7 +127,7 @@ static NSString* const NotoRegularFileName = @"NotoSerif-Regular";
     // When installed via CocoaPods, the resources will be bundled under `WordPressShared.bundle`.
     // This follows the implementation from `NSBundle+WordPressShared`.
     NSBundle *defaultBundle = [NSBundle bundleForClass:[self class]];
-    NSURL *sharedBundleURL = [defaultBundle.bundleURL URLByAppendingPathComponent:@"WordPressShared.bundle"];
+    NSURL *sharedBundleURL = [defaultBundle.resourceURL URLByAppendingPathComponent:@"WordPressShared.bundle"];
     NSBundle *sharedBundle = [NSBundle bundleWithURL:sharedBundleURL];
     if (sharedBundle) {
         return sharedBundle;
