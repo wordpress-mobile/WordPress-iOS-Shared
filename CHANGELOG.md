@@ -38,7 +38,7 @@ _None._
 
 ### New Features
 
-_None._
+- Add `ConsoleLogger`, a `WordPressLoggingDelegate` implementation that can be used during development and debugging [#335]
 
 ### Bug Fixes
 
