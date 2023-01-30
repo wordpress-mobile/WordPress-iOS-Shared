@@ -3,22 +3,22 @@
 public class ConsoleLogger: NSObject, WordPressLoggingDelegate {
 
     public func logError(_ str: String) {
-        print("❌ – Error: \(str)")
+        NSLog("❌ – Error: \(str)")
     }
 
     public func logWarning(_ str: String) {
-        print("⚠️ – Warning: \(str)")
+        NSLog("⚠️ – Warning: \(str)")
     }
 
     public func logInfo(_ str: String) {
-        print("ℹ️ – Info: \(str)")
+        NSLog("ℹ️ – Info: \(str)")
     }
 
     public func logDebug(_ str: String) {
-        print("🔎 – Debug: \(str)")
+        NSLog("🔎 – Debug: \(str)")
     }
 
     public func logVerbose(_ str: String) {
-        print("📃 – Verbose: \(str)")
+        NSLog("📃 – Verbose: \(str)")
     }
 }
