@@ -38,11 +38,23 @@ _None._
 
 ### New Features
 
-- Add `ConsoleLogger`, a `WordPressLoggingDelegate` implementation that can be used during development and debugging [#335]
+_None._
 
 ### Bug Fixes
 
 _None._
+
+### Internal Changes
+
+_None._
+
+## [2.1.0](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.1.0)
+
+### New Features
+
+- Add `ConsoleLogger`, a `WordPressLoggingDelegate` implementation that can be used during development and debugging [#335]
+
+## [2.0.1](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.1)
 
 ### Internal Changes
 
