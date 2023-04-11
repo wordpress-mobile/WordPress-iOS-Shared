@@ -29,4 +29,13 @@ class StringStripGutenbergContentForExcerptTests: XCTestCase {
         
         XCTAssertEqual(summary, expectedSummary)
     }
+    
+    func testStrippingGutenbergContentForExcerptWithVideoPress() {
+        let content = "<p>Before</p>\n<!-- wp:videopress/video {\"title\":\"demo\",\"description\":\"\",\"id\":5297,\"guid\":\"AbCDe\",\"videoRatio\":56.333333333333336,\"privacySetting\":2,\"allowDownload\":false,\"rating\":\"G\",\"isPrivate\":true,\"duration\":1673} -->\n<figure class=\"wp-block-videopress-video wp-block-jetpack-videopress jetpack-videopress-player\"><div class=\"jetpack-videopress-player__wrapper\">\nhttps://videopress.com/v/AbCDe?resizeToParent=true&amp;cover=true&amp;preloadContent=metadata&amp;useAverageColor=true\n</div></figure>\n<!-- /wp:videopress/video -->\n<p>After</p>"
+        let expectedSummary = "<p>Before</p>\n<p>After</p>"
+        
+        let summary = content.strippingGutenbergContentForExcerpt()
+        
+        XCTAssertEqual(summary, expectedSummary)
+    }
 }
