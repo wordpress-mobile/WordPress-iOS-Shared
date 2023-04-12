@@ -38,7 +38,7 @@ _None._
 
 ### New Features
 
-_None._
+- Strip Gutenberg VideoPress block for excerpt [#339]
 
 ### Bug Fixes
 
