@@ -7,7 +7,7 @@ The format of this document is inspired by [Keep a Changelog](https://keepachang
 When releasing a new version:
 
 1. Remove any empty section (those with `_None._`)
-2. Update the `## Unreleased` header to `## [<version_number>](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/<version_number>)`
+2. Update the `## Unreleased` header to `## <version_number>`
 3. Add a new "Unreleased" section for the next iteration, by copy/pasting the following template:
 
 ## Unreleased
@@ -38,7 +38,7 @@ _None._
 
 ### New Features
 
-- Strip Gutenberg VideoPress block for excerpt [#339]
+_None._
 
 ### Bug Fixes
 
@@ -48,20 +48,26 @@ _None._
 
 _None._
 
-## [2.1.0](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.1.0)
+## 2.2.0
+
+### New Features
+
+- Strip Gutenberg VideoPress block for excerpt [#339]
+
+## 2.1.0
 
 ### New Features
 
 - Add `ConsoleLogger`, a `WordPressLoggingDelegate` implementation that can be used during development and debugging [#335]
 
-## [2.0.1](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.1)
+## 2.0.1
 
 ### Internal Changes
 
 - Fix an occasional crash caused by `performSelector:withObject:` [#328]
 - Replace the symbolic links in the include directory with real header files [#329]
 
-## [2.0.0](https://github.com/wordpress-mobile/WordPress-iOS-Shared/releases/tag/2.0.0)
+## 2.0.0
 
 ### Breaking Changes
 
