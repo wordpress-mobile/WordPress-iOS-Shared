@@ -67,11 +67,11 @@ class NSDateHelperTest: XCTestCase {
         timeFormatter.timeStyle = .short
         let withoutTimeZoneAdjust = timeFormatter.string(from: date)
         
-        XCTAssertEqual(date.mediumStringWithTime(), "Today at \(withoutTimeZoneAdjust)")
-                
+        XCTAssertEqual(date.mediumStringWithTime(), "Today, \(withoutTimeZoneAdjust)")
+
         timeFormatter.timeZone = timeZone
         let withTimeZoneAdjust = timeFormatter.string(from: date)
         
-        XCTAssertEqual(date.mediumStringWithTime(timeZone: timeZone), "Today at \(withTimeZoneAdjust)")
+        XCTAssertEqual(date.mediumStringWithTime(timeZone: timeZone), "Today, \(withTimeZoneAdjust)")
     }
 }
