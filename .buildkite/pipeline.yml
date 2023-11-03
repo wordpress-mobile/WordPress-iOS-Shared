@@ -16,7 +16,9 @@ steps:
       validate_swift_package
     env: *common_env
     plugins: *common_plugins
-    artifact_paths: ".build/logs/*.log"
+    artifact_paths: 
+      - .build/logs/*.log
+      - .build/derived-data/Logs/**/*.xcactivitylog
 
   #################
   # Validate Podspec
