@@ -126,6 +126,7 @@ typedef NS_ENUM(NSUInteger, WPAnalyticsStat) {
     WPAnalyticsStatEditorToggledOn,
     WPAnalyticsStatEditorUpdatedPost,
     WPAnalyticsStatEditorUploadMediaFailed,
+    WPAnalyticsStatEditorUploadMediaPaused,
     WPAnalyticsStatEditorUploadMediaRetried,
     WPAnalyticsStatEnhancedSiteCreationAccessed,
     WPAnalyticsStatEnhancedSiteCreationSegmentsViewed,
