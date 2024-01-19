@@ -2,12 +2,14 @@
 
 default_platform(:ios)
 
+SWIFTLINT_PLUGIN_VALIDATION_BYPASS_ARGS = '-skipPackagePluginValidation -skipMacroValidation'
+
 platform :ios do
   desc 'Builds the project and runs tests'
   lane :test do
     xcodebuild(
       scheme: 'WordPressShared',
-      xcargs: '-resolvePackageDependencies'
+      xcargs: "-resolvePackageDependencies #{SWIFTLINT_PLUGIN_VALIDATION_BYPASS_ARGS}"
     )
     run_tests(
       package_path: '.',
