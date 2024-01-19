@@ -26,7 +26,10 @@ let package = Package(
             dependencies: [
                 .target(name: "WordPressSharedObjC"),
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            plugins: [
+              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .testTarget(
             name: "WordPressSharedTests",
@@ -36,6 +39,9 @@ let package = Package(
                 .product(name: "BuildkiteTestCollector", package: "test-collector-swift"),
                 "Quick",
                 "OHHTTPStubs",
+            ],
+            plugins: [
+              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
         ),
         .testTarget(
@@ -47,7 +53,10 @@ let package = Package(
                 "Quick",
                 "OHHTTPStubs",
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            plugins: [
+              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
     ]
 )
