@@ -48,6 +48,12 @@ _None._
 
 _None._
 
+## 2.3.0
+
+### New Features
+
+- Add editor upload paused event [#343]
+
 ## 2.2.0
 
 ### New Features
