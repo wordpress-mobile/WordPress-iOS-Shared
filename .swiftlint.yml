@@ -35,6 +35,7 @@ excluded:
   # Automattic's CI caching setup may generate this in the project folder
   - Users/builder/Library/Caches/CocoaPods/Pods
   - vendor
+  - .build/ # not in original configurartion!
 
 # Rules – Opt-in only, so we can progressively introduce new ones
 #
