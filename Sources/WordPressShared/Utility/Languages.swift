@@ -137,8 +137,8 @@ public class WordPressComLanguageDatabase: NSObject {
         ///
         init?(dict: [String: Any]) {
             guard let unwrappedId = (dict[Keys.identifier] as? NSNumber)?.intValue,
-                        let unwrappedSlug = dict[Keys.slug] as? String,
-                        let unwrappedName = dict[Keys.name] as? String else {
+                  let unwrappedSlug = dict[Keys.slug] as? String,
+                  let unwrappedName = dict[Keys.name] as? String else {
                 id = Int.min
                 name = String()
                 slug = String()
@@ -153,7 +153,7 @@ public class WordPressComLanguageDatabase: NSObject {
 
         /// Given an array of raw languages, will return a parsed array.
         ///
-        public static func fromArray(_ array: [[String:Any]] ) -> [Language] {
+        public static func fromArray(_ array: [[String: Any]] ) -> [Language] {
             return array.compactMap {
                 return Language(dict: $0)
             }

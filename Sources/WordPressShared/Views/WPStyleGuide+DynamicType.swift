@@ -119,20 +119,20 @@ extension WPStyleGuide {
         ///     is changed in real time.  Creating a scaled font offers an alternative solution that works well
         ///     even in real time.
         let weightsThatNeedScaledFont: [UIFont.Weight] = [.black, .bold, .heavy, .semibold]
-        
+
         guard !weightsThatNeedScaledFont.contains(weight) else {
             return scaledFont(for: style, weight: weight)
         }
-        
+
         var fontDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style)
 
-#if swift(>=4.0)
+        #if swift(>=4.0)
         let traits = [UIFontDescriptor.TraitKey.weight: weight]
         fontDescriptor = fontDescriptor.addingAttributes([.traits: traits])
-#else
+        #else
         let traits = [UIFontWeightTrait: weight]
         fontDescriptor = fontDescriptor.addingAttributes([UIFontDescriptorTraitsAttribute: traits])
-#endif
+        #endif
 
         return UIFont(descriptor: fontDescriptor, size: CGFloat(0.0))
     }
@@ -163,7 +163,7 @@ extension WPStyleGuide {
         let fontSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: defaultContentSizeCategory).pointSize
         return UIFont.systemFont(ofSize: fontSize, weight: weight)
     }
-    
+
     /// Created a scaled UIFont for the specified style and weight.  A scaled font will be resized Automatically
     /// by iOS to respond to dynamic type changes.
     ///

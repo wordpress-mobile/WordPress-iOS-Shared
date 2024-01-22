@@ -81,14 +81,14 @@ import WordPressSharedObjC
         var content = string
 
         content = RegEx.styleTags.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: "")
+                                                           options: .reportCompletion,
+                                                           range: NSRange(location: 0, length: content.count),
+                                                           withTemplate: "")
 
         content = RegEx.scriptTags.stringByReplacingMatches(in: content,
-                                                                    options: .reportCompletion,
-                                                                    range: NSRange(location: 0, length: content.count),
-                                                                    withTemplate: "")
+                                                            options: .reportCompletion,
+                                                            range: NSRange(location: 0, length: content.count),
+                                                            withTemplate: "")
 
         content = RegEx.gutenbergComments.stringByReplacingMatches(in: content,
                                                                    options: .reportCompletion,
@@ -114,27 +114,27 @@ import WordPressSharedObjC
         let openPTag = "<p>"
         let closePTag = "</p>"
 
-         // Convert div tags to p tags
+        // Convert div tags to p tags
         content = RegEx.divTagsStart.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: openPTag)
+                                                              options: .reportCompletion,
+                                                              range: NSRange(location: 0, length: content.count),
+                                                              withTemplate: openPTag)
 
         content = RegEx.divTagsEnd.stringByReplacingMatches(in: content,
-                                                                    options: .reportCompletion,
-                                                                    range: NSRange(location: 0, length: content.count),
-                                                                    withTemplate: closePTag)
+                                                            options: .reportCompletion,
+                                                            range: NSRange(location: 0, length: content.count),
+                                                            withTemplate: closePTag)
 
         // Remove duplicate/redundant p tags.
         content = RegEx.pTagsStart.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: openPTag)
+                                                            options: .reportCompletion,
+                                                            range: NSRange(location: 0, length: content.count),
+                                                            withTemplate: openPTag)
 
         content = RegEx.pTagsEnd.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: closePTag)
+                                                          options: .reportCompletion,
+                                                          range: NSRange(location: 0, length: content.count),
+                                                          withTemplate: closePTag)
 
         content = filterNewLines(content)
 
@@ -199,9 +199,9 @@ import WordPressSharedObjC
         var content = string
 
         content = RegEx.styleAttr.stringByReplacingMatches(in: content,
-                                                                   options: .reportCompletion,
-                                                                   range: NSRange(location: 0, length: content.count),
-                                                                   withTemplate: "")
+                                                           options: .reportCompletion,
+                                                           range: NSRange(location: 0, length: content.count),
+                                                           withTemplate: "")
 
         return content
     }
@@ -302,11 +302,11 @@ import WordPressSharedObjC
         let matches = RegEx.trailingBRTags.matches(in: content, options: .reportCompletion, range: NSRange(location: 0, length: content.count))
         if let match = matches.first {
             let index = content.index(content.startIndex, offsetBy: match.range.location)
-#if swift(>=4.0)
+            #if swift(>=4.0)
             content = String(content.prefix(upTo: index))
-#else
+            #else
             content = content.substring(to: index)
-#endif
+            #endif
         }
 
         return content
