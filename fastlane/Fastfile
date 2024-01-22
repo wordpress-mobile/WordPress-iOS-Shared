@@ -2,14 +2,14 @@
 
 default_platform(:ios)
 
-SWIFTLINT_PLUGIN_VALIDATION_BYPASS_ARGS = '-skipPackagePluginValidation -skipMacroValidation'
+SWIFTLINT_PLUGIN_VALIDATION_BYPASS_XCARGS = '-skipPackagePluginValidation -skipMacroValidation'
 
 platform :ios do
   desc 'Builds the project and runs tests'
   lane :test do
     xcodebuild(
       scheme: 'WordPressShared',
-      xcargs: "-resolvePackageDependencies #{SWIFTLINT_PLUGIN_VALIDATION_BYPASS_ARGS}"
+      xcargs: "-resolvePackageDependencies #{SWIFTLINT_PLUGIN_VALIDATION_BYPASS_XCARGS}"
     )
     run_tests(
       package_path: '.',
@@ -17,7 +17,8 @@ platform :ios do
       device: 'iPhone 14',
       prelaunch_simulator: true,
       buildlog_path: File.join(__dir__, '.build', 'logs'),
-      derived_data_path: File.join(__dir__, '.build', 'derived-data')
+      derived_data_path: File.join(__dir__, '.build', 'derived-data'),
+      xcargs: SWIFTLINT_PLUGIN_VALIDATION_BYPASS_XCARGS
     )
   end
 end
