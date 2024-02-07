@@ -38,16 +38,31 @@ steps:
     env: *common_env
     plugins: *common_plugins
 
+  - label: ':swift: SwiftLint'
+    key: swiftlint
+    command: .buildkite/commands/swiftlint.sh --strict
+    agents:
+      queue: default
+    plugins:
+      - docker#v5.8.0:
+          # TODO: Ensure the same version as local is used, i.e. with Buildkite env vars injection during pipeline upload
+          image: ghcr.io/realm/swiftlint:latest
+          mount-buildkite-agent: true # Needed for calling `buildkite-agent annotate`
+    notify:
+      - github_commit_status:
+          context: SwiftLint
+
   #################
   # Publish the Podspec (if we're building a tag)
   #################
   - label: "⬆️ Publish Podspec"
     key: "publish"
-    command: .buildkite/publish-pod.sh
+    command: .buildkite/commands/publish-pod.sh
     env: *common_env
     plugins: *common_plugins
     depends_on:
-      - "test"
-      - "validate"
-      - "lint"
+      - test
+      - validate
+      - lint
+      - swiftlint
     if: build.tag != null

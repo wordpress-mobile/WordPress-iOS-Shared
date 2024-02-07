@@ -40,7 +40,7 @@ private let knownDomains = Set([
 
     /* Domains used in Mexico */
     "hotmail.com", "gmail.com", "yahoo.com.mx", "live.com.mx", "yahoo.com", "hotmail.es", "live.com", "hotmail.com.mx", "prodigy.net.mx", "msn.com"
-    ])
+])
 
 /// Provides suggestions to fix common typos on email addresses.
 ///

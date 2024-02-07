@@ -25,7 +25,7 @@ public final class Debouncer {
     }
 
     // MARK: - Debounce Request
-    
+
     public func cancel() {
         timer?.invalidate()
     }

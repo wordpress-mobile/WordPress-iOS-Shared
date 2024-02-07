@@ -35,3 +35,6 @@ fastlane/README.md
 fastlane/report.xml
 
 .swiftpm
+
+# SwiftLint Remote Config Cache
+.swiftlint/RemoteConfigCache

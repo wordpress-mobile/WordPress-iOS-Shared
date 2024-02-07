@@ -7,12 +7,12 @@ class NSDateHelperTest: XCTestCase {
         let year: Int
         let month: Int
         let day: Int
-        
+
         var dateString: String {
             return "\(year)-\(month)-\(day)"
         }
     }
-    
+
     let data = Data(year: 2019, month: 02, day: 17)
     var date: Date?
     var dateFormatter: DateFormatter {
@@ -20,7 +20,7 @@ class NSDateHelperTest: XCTestCase {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }
-    
+
     override func setUp() {
         NSTimeZone.default = TimeZone(secondsFromGMT: 0)!
         date = dateFormatter.date(from: data.dateString)
@@ -61,17 +61,17 @@ class NSDateHelperTest: XCTestCase {
         let date = Date()
         let timeZone = TimeZone(secondsFromGMT: Calendar.current.timeZone.secondsFromGMT() - (60 * 60))
         XCTAssertEqual(date.toMediumString(inTimeZone: timeZone), "now")
-        
+
         let timeFormatter = DateFormatter()
         timeFormatter.dateStyle = .none
         timeFormatter.timeStyle = .short
         let withoutTimeZoneAdjust = timeFormatter.string(from: date)
-        
+
         XCTAssertEqual(date.mediumStringWithTime(), "Today, \(withoutTimeZoneAdjust)")
 
         timeFormatter.timeZone = timeZone
         let withTimeZoneAdjust = timeFormatter.string(from: date)
-        
+
         XCTAssertEqual(date.mediumStringWithTime(timeZone: timeZone), "Today, \(withTimeZoneAdjust)")
     }
 }

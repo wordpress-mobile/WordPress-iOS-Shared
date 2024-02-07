@@ -14,6 +14,7 @@ let package = Package(
         // See https://github.com/erikdoe/ocmock/issues/500#issuecomment-1002700625
         .package(url: "https://github.com/erikdoe/ocmock", revision: "afd2c6924e8a36cb872bc475248b978f743c6050"),
         .package(url: "https://github.com/Quick/Quick", from: "6.0.0"),
+        .package(url: "https://github.com/realm/SwiftLint", from: "0.54.0")
     ],
     targets: [
         .target(
@@ -25,7 +26,10 @@ let package = Package(
             dependencies: [
                 .target(name: "WordPressSharedObjC"),
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
         .testTarget(
             name: "WordPressSharedTests",
@@ -35,6 +39,9 @@ let package = Package(
                 .product(name: "BuildkiteTestCollector", package: "test-collector-swift"),
                 "Quick",
                 "OHHTTPStubs",
+            ],
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
         ),
         .testTarget(
@@ -46,7 +53,10 @@ let package = Package(
                 "Quick",
                 "OHHTTPStubs",
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            plugins: [
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+            ]
         ),
     ]
 )

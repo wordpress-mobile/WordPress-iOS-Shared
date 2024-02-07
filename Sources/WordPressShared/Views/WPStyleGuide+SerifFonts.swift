@@ -28,13 +28,13 @@ extension WPStyleGuide {
         let fontSize = UIFontDescriptor.preferredFontDescriptor(withTextStyle: style, compatibleWith: defaultContentSizeCategory).pointSize
 
         guard #available(iOS 13, *),
-            let fontDescriptor = UIFont.systemFont(ofSize: fontSize, weight: weight).fontDescriptor.withDesign(.serif)  else {
-                switch weight {
-                    case .bold, .semibold, .heavy, .black:
-                        return WPStyleGuide.fixedBoldNotoFontWithSize(fontSize)
-                default:
-                        return WPStyleGuide.fixedNotoFontWithSize(fontSize)
-                }
+              let fontDescriptor = UIFont.systemFont(ofSize: fontSize, weight: weight).fontDescriptor.withDesign(.serif)  else {
+            switch weight {
+            case .bold, .semibold, .heavy, .black:
+                return WPStyleGuide.fixedBoldNotoFontWithSize(fontSize)
+            default:
+                return WPStyleGuide.fixedNotoFontWithSize(fontSize)
+            }
         }
 
         // Uses size from original font, so we don't want to override it here.

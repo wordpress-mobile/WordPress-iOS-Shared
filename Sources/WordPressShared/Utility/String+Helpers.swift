@@ -78,7 +78,7 @@ public extension String {
     /// Removes the prefix from the string that matches the given pattern, if any.
     ///
     /// Calling this method might invalidate any existing indices for use with this string.
-    /// 
+    ///
     /// - Parameters:
     ///     - pattern: The regular expression pattern to search for. Avoid using `^`.
     ///     - options: The options applied to the regular expression during matching.

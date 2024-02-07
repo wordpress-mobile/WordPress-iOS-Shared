@@ -11,17 +11,17 @@ extension Bundle {
     /// otherwise it will be the framework bundle.
     ///
     @objc public class var wordPressSharedBundle: Bundle {
-#if SWIFT_PACKAGE
+        #if SWIFT_PACKAGE
         return Bundle.module
-#else
+        #else
         let defaultBundle = Bundle(for: BundleFinder.self)
         // If installed with CocoaPods, resources will be in WordPressShared.bundle
         if let bundleURL = defaultBundle.resourceURL,
-            let resourceBundle = Bundle(url: bundleURL.appendingPathComponent("WordPressShared.bundle")) {
+           let resourceBundle = Bundle(url: bundleURL.appendingPathComponent("WordPressShared.bundle")) {
             return resourceBundle
         }
         // Otherwise, the default bundle is used for resources
         return defaultBundle
-#endif
+        #endif
     }
 }
