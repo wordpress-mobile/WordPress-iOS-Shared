@@ -28,7 +28,7 @@ let package = Package(
             ],
             resources: [.process("Resources")],
             plugins: [
-              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
         ),
         .testTarget(
@@ -41,7 +41,7 @@ let package = Package(
                 "OHHTTPStubs",
             ],
             plugins: [
-              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
         ),
         .testTarget(
@@ -55,7 +55,7 @@ let package = Package(
             ],
             resources: [.process("Resources")],
             plugins: [
-              .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
+                .plugin(name: "SwiftLintPlugin", package: "SwiftLint")
             ]
         ),
     ]
