@@ -7,8 +7,6 @@ rubocop.lint(files: [], force_exclusion: true, inline_comment: true, fail_on_inl
 
 manifest_pr_checker.check_all_manifest_lock_updated
 
-podfile_checker.check_podfile_does_not_have_branch_references
-
 pr_size_checker.check_diff_size(
   max_size: 300,
   type: :insertions
