@@ -68,18 +68,18 @@ func loadSwiftLintVersion() -> Version {
                                         .appendingPathComponent(".swiftlint.yml")) else {
         fatalError("Failed to read YAML file.")
     }
-    
+
     guard let versionLine = yamlString.components(separatedBy: .newlines)
             .first(where: { $0.contains("swiftlint_version") }) else {
         fatalError("SwiftLint version not found in YAML file.")
     }
-    
+
     // assumes the format `swiftlint_version: <version>`
     guard let version = Version(versionLine.components(separatedBy: ":")
                                     .last?
                                     .trimmingCharacters(in: .whitespaces) ?? "") else {
         fatalError("Failed to extract SwiftLint version.")
     }
-    
+
     return version
 }
