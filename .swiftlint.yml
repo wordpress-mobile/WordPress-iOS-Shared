@@ -25,6 +25,8 @@
 # While we figure that out, here is a copy of the remote configuration.
 # Some of the custom rules are useless in this context, but we kept them to keep consistency for when we'll move back to it.
 
+swiftlint_version: 0.54.0
+
 # Project configuration
 #
 excluded:
