@@ -1,7 +1,7 @@
 # Nodes with values to reuse in the pipeline.
 common_params:
   plugins: &common_plugins
-    - automattic/a8c-ci-toolkit#3.0.1
+    - automattic/a8c-ci-toolkit#3.1.0
   env: &common_env
     IMAGE_ID: xcode-15.0.1
 
@@ -38,19 +38,14 @@ steps:
     env: *common_env
     plugins: *common_plugins
 
-  - label: ':swift: SwiftLint'
-    key: swiftlint
-    command: .buildkite/commands/swiftlint.sh --strict
-    agents:
-      queue: default
-    plugins:
-      - docker#v5.8.0:
-          # TODO: Ensure the same version as local is used, i.e. with Buildkite env vars injection during pipeline upload
-          image: ghcr.io/realm/swiftlint:latest
-          mount-buildkite-agent: true # Needed for calling `buildkite-agent annotate`
+  - label: ":swift: SwiftLint"
+    command: run_swiftlint --strict
+    plugins: *common_plugins
     notify:
       - github_commit_status:
-          context: SwiftLint
+          context: "SwiftLint"
+    agents:
+      queue: "default"
 
   #################
   # Publish the Podspec (if we're building a tag)
