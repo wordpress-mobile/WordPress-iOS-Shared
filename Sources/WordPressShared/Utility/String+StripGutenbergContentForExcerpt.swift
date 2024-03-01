@@ -19,10 +19,10 @@ extension String {
         return removingMatches(pattern: pattern, options: .caseInsensitive)
     }
 
-    /// Strips Gutenberg VideoPress block.
+    /// Strips VideoPress references from Gutenberg VideoPress and Video blocks.
     ///
     private func strippingGutenbergVideoPress() -> String {
-        let pattern = "(?s)\n?<!--\\swp:videopress/video?(.*?)wp:videopress/video\\s-->"
+        let pattern = "(?s)\n?<!--\\swp:video.*?(.*?)wp:video.*?\\s-->"
 
         return removingMatches(pattern: pattern, options: .caseInsensitive)
     }
