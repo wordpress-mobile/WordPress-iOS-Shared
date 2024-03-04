@@ -39,6 +39,7 @@ steps:
     plugins: *common_plugins
 
   - label: ":swift: SwiftLint"
+    key: "swiftlint"
     command: run_swiftlint --strict
     plugins: *common_plugins
     notify:
