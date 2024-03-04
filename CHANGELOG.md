@@ -48,6 +48,12 @@ _None._
 
 _None._
 
+## 2.3.1
+
+### Bug Fixes
+
+- Remove video block content from post excerpt [#352]
+
 ## 2.3.0
 
 ### New Features
